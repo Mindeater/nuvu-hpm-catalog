@@ -179,6 +179,13 @@
     // release scrollView as self.view retains it
     self.view = scrollView;
     [scrollView release];
+    
+    // set the page title
+    self.title = [NSString 
+                  stringWithFormat:@"%@ %d/%d",
+                  self.currentCategory,
+                  1,
+                  [_fetchedResultsController.fetchedObjects count]];
      
     
 }
@@ -243,6 +250,13 @@
             [pageThreeDoc drawWithMechanisms:productMechanisms];
 			break;
 	}	
+    
+    // set the page title
+    self.title = [NSString 
+                  stringWithFormat:@"%@ %d/%d",
+                  self.currentCategory,
+                  index +1,
+                  [_fetchedResultsController.fetchedObjects count]];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {     
