@@ -1,4 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Brand" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="brand" inverseEntity="Category" syncable="YES"/>
+        <relationship name="product" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="brand" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="brand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="category" inverseEntity="Brand" syncable="YES"/>
+        <relationship name="product" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="category" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Faceplate" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="faceplate" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Mechanism" syncable="YES">
+        <attribute name="count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="mechanism" inverseEntity="Product" syncable="YES"/>
+    </entity>
+    <entity name="Product" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="brand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="product" inverseEntity="Brand" syncable="YES"/>
+        <relationship name="category" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="product" inverseEntity="Category" syncable="YES"/>
+        <relationship name="faceplate" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Faceplate" inverseName="product" inverseEntity="Faceplate" syncable="YES"/>
+        <relationship name="mechanism" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Mechanism" inverseName="product" inverseEntity="Mechanism" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Brand" positionX="223" positionY="36" width="128" height="90"/>
+        <element name="Category" positionX="-135" positionY="108" width="128" height="90"/>
+        <element name="Product" positionX="63" positionY="192" width="128" height="120"/>
+        <element name="Mechanism" positionX="-108" positionY="381" width="128" height="120"/>
+        <element name="Faceplate" positionX="322" positionY="414" width="128" height="105"/>
+    </elements>
 </model>
