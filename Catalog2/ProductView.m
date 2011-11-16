@@ -105,7 +105,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"View Did Load for product");
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
@@ -213,9 +212,7 @@
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Mechanism"
                                               inManagedObjectContext:_context];
     [request setEntity:entity];
-    
-    NSLog(@"View did load request and entity set");
-    
+        
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"(%K == %@)",
                               @"product.name",
@@ -233,13 +230,10 @@
     NSArray *productMechanisms = [self getObjToScroll:index];
 	switch (page) {
 		case 0:
-			//pageOneDoc.text = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
             pageOneDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
             [pageOneDoc drawWithMechanisms:productMechanisms];
 			break;
 		case 1:
-			//pageTwoDoc.text = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
-            //[pageTwoDoc drawWithManagedObject:[_fetchedResultsController.fetchedObjects objectAtIndex:index]];
             pageTwoDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
 			[pageTwoDoc drawWithMechanisms:productMechanisms];
             break;
@@ -260,10 +254,9 @@
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {     
-	// All data for the documents are stored in an array (documentTitles).     
-	// We keep track of the index that we are scrolling to so that we     
-	// know what data to load for each page.  
+  
     int objCount = [_fetchedResultsController.fetchedObjects count];
+    
 	if(scrollView.contentOffset.x > scrollView.frame.size.width) {  
         
 		// We are moving forward. Load the current doc data on the first page.         
