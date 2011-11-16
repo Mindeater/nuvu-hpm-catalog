@@ -213,7 +213,7 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     
-     CatalogTableView *detailViewController = [[CatalogTableView alloc]init];
+     CatalogTableView *detailViewController = [[CatalogTableView alloc] initWithStyle:UITableViewStyleGrouped];
      detailViewController.context = self.context;
      NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
      detailViewController.currentBrand = [currentRecord valueForKey:@"name"];

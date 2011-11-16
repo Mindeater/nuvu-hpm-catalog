@@ -72,7 +72,8 @@
 -(void)showCatalog
 {
     NSLog(@"StartCatalog");
-    BrandTableView *brand = [[BrandTableView alloc]initWithNibName:nil bundle:nil];
+    //BrandTableView *brand = [[BrandTableView alloc]initWithNibName:nil bundle:nil];
+    BrandTableView *brand = [[BrandTableView alloc] initWithStyle:UITableViewStyleGrouped];
     brand.context = self.context;
     [self.navigationController pushViewController:brand animated:YES];
     [brand release];
