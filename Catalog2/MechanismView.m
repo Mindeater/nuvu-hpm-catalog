@@ -11,15 +11,20 @@
 @implementation MechanismView
 
 @synthesize parentProduct;
+@synthesize selected;
 
+-(void)dealloc
+{
+    [parentProduct release];
+    [super dealloc];
+}
 
 -(void)drawWithMechanisms:(NSArray *)mechanisms
 {
     // remove any views that already exist
     for (UIView *view in [self subviews]) { [view removeFromSuperview]; }
     
-    self.backgroundColor = [UIColor clearColor];
-    NSLog(@"Mechanism  Loaded %@",mechanisms);
+    //self.backgroundColor = [UIColor clearColor];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -32,15 +37,28 @@
     [self addSubview:myLabel];
     [myLabel release];
     
-    //Picture/s
-    NSLog(@"****  \n\n\n\n\n");
+    // button to choose this one
+    //CGRect buttonFrame = CGRectMake( 10, 80, 100, 30 );
+    //UIButton *button = [[UIButton alloc] initWithFrame: buttonFrame];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(10, 100, 100, 60);
+    [button setTitle: @"OK" forState: UIControlStateNormal];
+    [button setTitleColor: [UIColor redColor] forState: UIControlStateNormal];
+    [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview: button];
+    
+    // Mechanism Picture/s
     
     // note:
     //arteor 770 has AR in front of the part name which doesn't match the image
     for(NSManagedObject *mech in mechanisms){
+        NSLog(@"%@\n\n ++ id:%@ count:%@ name: %@",
+              self.parentProduct,[mech valueForKey:@"id"],
+              [mech valueForKey:@"count"],
+              [mech valueForKey:@"name"] );
         
-        NSLog(@"%@\n\n ++ id:%@ count:%@ name: %@",self.parentProduct,[mech valueForKey:@"id"],[mech valueForKey:@"count"],[mech valueForKey:@"name"] );
         NSString *img;
+        
         if([[mech valueForKey:@"count"] isEqualToNumber:[NSNumber numberWithInt:1]]){
             // load the image based on the id screen the Arteor 770 fields
             if([[mech valueForKey:@"name"] isEqualToString:@"Mech 2 Part #"]){
@@ -50,16 +68,14 @@
                 img = [mech valueForKey:@"id"];
             }
         }else{
-            // build the image name
-            
-            
+            // mechanism with more than one part
             img = [NSString stringWithFormat:@"%@-x-%@",
                              [mech valueForKey:@"count"],
                              [[mech valueForKey:@"id"]
                               stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
         }
-        //
-        NSLog(@"  - image name is %@",[img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]);
+        
+        // Grab the image off disk and load it up
         NSString *imageName = [[NSBundle mainBundle] 
                                pathForResource:[img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]
                                ofType:@"png"];
@@ -67,28 +83,28 @@
         UIImage *image = [UIImage imageWithContentsOfFile:imageName];
         UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
         nextImage.backgroundColor = [UIColor clearColor];
-        // calculate it's size
         nextImage.contentMode = UIViewContentModeScaleAspectFit;
-        //int width = image.size.width 
         nextImage.frame = CGRectMake(20, 20, screenWidth -20, screenHeight - 20);
-        //NSLog(@" mechanism picture added %@ =\n\n\n",imageName);
+
         [self addSubview:nextImage];
         [nextImage release];
-        
-        
     }
-    /*
-    NSString *imageName = [[NSBundle mainBundle] pathForResource:pListName ofType:@"png"];
-    UIImage *image = [UIImage imageWithContentsOfFile:imageName];
-     */
+   
+    
+    
 }
 
-
+-(void)chooseMe
+{
+    NSLog(@"Choose this");
+    self.selected =YES;
+}
 
 #pragma mark - View lifecycle
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
+    self.selected = NO;
     if (self) {
         // Initialization code
        

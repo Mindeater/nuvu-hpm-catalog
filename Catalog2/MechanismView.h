@@ -10,10 +10,14 @@
 
 @interface MechanismView : UIView{
     NSString *parentProduct;
+    BOOL selected;
 
 }
 
 @property(nonatomic,retain)NSString *parentProduct;
+@property(nonatomic)BOOL selected;
 
 -(void)drawWithMechanisms:(NSArray *)mechanisms;
+-(void)chooseMe;
+
 @end
