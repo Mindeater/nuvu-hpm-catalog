@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "LoadHPMData.h"
+#import "RootView.h"
 
 @implementation AppDelegate
 
@@ -14,6 +16,7 @@
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
+@synthesize navigationController = _navigationController;
 
 - (void)dealloc
 {
@@ -21,6 +24,7 @@
     [__managedObjectContext release];
     [__managedObjectModel release];
     [__persistentStoreCoordinator release];
+    [_navigationController release];
     [super dealloc];
 }
 
@@ -28,6 +32,39 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
+    
+    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand"
+                                              inManagedObjectContext:self.managedObjectContext];
+    [request setEntity:entity];
+    
+    NSError *error = nil;
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    if(![result lastObject]){
+        
+        // Is there a shipped sqlite file ?
+        
+        NSLog(@"Load Up the Data");
+        LoadHPMData *loader = [[LoadHPMData alloc]init];
+        loader.context = self.managedObjectContext; 
+        [loader processFiles];
+        [loader release];
+    }
+    
+    
+    
+    
+    //MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil] autorelease];
+    //self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
+    //masterViewController.managedObjectContext = self.managedObjectContext;
+    //self.window.rootViewController = self.navigationController;
+    
+    
+    
+    RootView *viewController = [[[RootView alloc]initWithNibName:nil bundle:nil] autorelease];
+    viewController.context = self.managedObjectContext;
+    self.navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    self.window.rootViewController = self.navigationController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
@@ -136,7 +173,30 @@
         return __persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Catalog2.sqlite"];
+    //NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"Catalog2.sqlite"];
+    
+    ////////////////////////////////////////////////////////
+    // copy the shipped sqlite db to the documents directory
+    //
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *storePath = [documentsDirectory stringByAppendingPathComponent: @"Catalog2.sqlite"];
+    NSURL *storeURL = [NSURL fileURLWithPath:storePath];
+    // Put down default db if it doesn't already exist
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if (![fileManager fileExistsAtPath:storePath]) {
+        NSString *defaultStorePath = [[NSBundle mainBundle] 
+                                      pathForResource:@"Catalog2" ofType:@"sqlite"];
+        if (defaultStorePath) {
+            NSError *copyError = nil;
+            if(![fileManager copyItemAtPath:defaultStorePath toPath:storePath error:&copyError]){
+                NSLog(@"\n*****\nERROR Copying\n\n\n %@",[copyError localizedDescription]);
+            }
+            
+        }
+    }
+    //
+    ////////////////////////////////////////////////////
     
     NSError *error = nil;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
