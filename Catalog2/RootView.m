@@ -52,17 +52,17 @@
     // create the main view Controller
     //allocate the view
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    //set the view's background color
-    //self.view.backgroundColor = [UIColor whiteColor];
-    //create the button
+    
+    /* this works for 4.3
+     CGRect buttonFrame = CGRectMake( 10, 80, 100, 30 );
+     UIButton *button = [[UIButton alloc] initWithFrame: buttonFrame];
+     [button setTitleColor: [UIColor redColor] forState: UIControlStateNormal];
+     */
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //set the position of the button
-    button.frame = CGRectMake(100, 170, 100, 30);
-    //set the button's title
+    button.frame = CGRectMake(100, 170, 100, 60);
     [button setTitle:@"Catalog" forState:UIControlStateNormal];
-    //listen for clicks
     [button addTarget:self action:@selector(showCatalog) forControlEvents:UIControlEventTouchUpInside];
-    //add the button to the view
+    
     [self.view addSubview:button];
     [button release];
 
