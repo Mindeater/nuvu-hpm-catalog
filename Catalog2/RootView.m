@@ -16,6 +16,7 @@
 -(void)dealloc
 {
     //[self.context release];
+    //[self.view release];
     [super dealloc];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -64,7 +65,7 @@
     [button addTarget:self action:@selector(showCatalog) forControlEvents:UIControlEventTouchUpInside];
     
     [self.view addSubview:button];
-    [button release];
+    //[button release];
 
    
 }
