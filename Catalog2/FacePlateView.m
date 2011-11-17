@@ -16,11 +16,12 @@
     [super dealloc];
 }
 
--(void)drawWithFacePlates:(NSArray *)faceplates
+-(void)drawWithItems:(NSArray *)items
 {
+    NSLog(@"Adding a Faceplate");
     // remove any views that already exist
     for (UIView *view in [self subviews]) { [view removeFromSuperview]; }
-    
+    NSLog(@"The faceplate is %@",items);
     //self.backgroundColor = [UIColor clearColor];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -33,6 +34,7 @@
     myLabel.textColor = [UIColor redColor];
     [self addSubview:myLabel];
     [myLabel release];
+    NSLog(@"PArent Product is %@",self.parentProduct);
     
     // button to choose this one
     //CGRect buttonFrame = CGRectMake( 10, 80, 100, 30 );
@@ -44,9 +46,12 @@
     [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview: button];
     
+    
     // FacePlate Picture
     
-    NSManagedObject *currentFacePlate = [faceplates lastObject];
+    NSManagedObject *currentFacePlate = [items lastObject];
+    
+    NSLog(@"Current Plate %@",[currentFacePlate valueForKey:@"id"]);
     
     NSString *img = [currentFacePlate valueForKey:@"id"];
     // Grab the image off disk and load it up
