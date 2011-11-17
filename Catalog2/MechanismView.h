@@ -7,17 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PartView.h"
 
-@interface MechanismView : UIView{
-    NSString *parentProduct;
-    BOOL selected;
+@interface MechanismView : PartView
+    
 
-}
 
-@property(nonatomic,retain)NSString *parentProduct;
-@property(nonatomic)BOOL selected;
-
--(void)drawWithMechanisms:(NSArray *)mechanisms;
--(void)chooseMe;
 
 @end

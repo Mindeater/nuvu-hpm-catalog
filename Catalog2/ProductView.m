@@ -7,7 +7,9 @@
 //
 
 #import "ProductView.h"
+#import "PartView.h"
 #import "MechanismView.h"
+#import "FacePlateView.h"
 
 @implementation ProductView
 
@@ -109,6 +111,11 @@
 {
     [super viewDidLoad];
     
+    // the size of the screen
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
     // hook up the product data
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
@@ -116,23 +123,40 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		exit(-1);  // Fail
 	}
-        
-    // the size of the screen
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
     
     // add a scrollview
     CGRect fullScreenRect=[[UIScreen mainScreen] applicationFrame];
     scrollView=[[UIScrollView alloc] initWithFrame:fullScreenRect];
     scrollView.delegate = self;
     
+    // adjust content size for three pages of data and reposition to center page
+	scrollView.contentSize = CGSizeMake(screenWidth * 3, 100);	
+	[scrollView scrollRectToVisible:CGRectMake(screenWidth,0,screenWidth,screenHeight -40) animated:NO];
+    
+    // release scrollView as self.view retains it
+    self.view = scrollView;
+    [scrollView release];
+    
+    [self addMechanismsToScrollView];
+    
+    
+}
+
+-(void)addMechanismsToScrollView
+{
+    // the size of the screen
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    //CGFloat screenHeight = screenRect.size.height;
+    
     // create three Mechanism Views to cycle and observe their selected property
 	pageOneDoc = [[MechanismView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)];
+    pageTwoDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
+    pageThreeDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
+
+
     [pageOneDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
-	pageTwoDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
     [pageTwoDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
-	pageThreeDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
     [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     
     // set the starting three items 
@@ -149,14 +173,6 @@
 	[scrollView addSubview:pageOneDoc];
 	[scrollView addSubview:pageTwoDoc];
 	[scrollView addSubview:pageThreeDoc];
-	
-	// adjust content size for three pages of data and reposition to center page
-	scrollView.contentSize = CGSizeMake(screenWidth * 3, 100);	
-	[scrollView scrollRectToVisible:CGRectMake(screenWidth,0,screenWidth,screenHeight -40) animated:NO];
-    
-    // release scrollView as self.view retains it
-    self.view = scrollView;
-    [scrollView release];
     
     // set the page title
     self.title = [NSString 
@@ -166,6 +182,48 @@
                   [_fetchedResultsController.fetchedObjects count]];
      
     
+}
+
+-(void)addFacePlatesToScrollView
+{
+    // remove the mechanisms
+    for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
+    
+    // the size of the screen
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    //CGFloat screenHeight = screenRect.size.height;
+    
+    // create three Mechanism Views to cycle and observe their selected property
+	pageOneDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)];
+    pageTwoDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
+    pageThreeDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
+    
+    [pageOneDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+    [pageTwoDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+    [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+    
+    // set the starting three items 
+    pageOneDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:
+                                 [_fetchedResultsController.fetchedObjects count] -1] valueForKey:@"name"];
+    pageTwoDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:0] valueForKey:@"name"];
+    pageThreeDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:1] valueForKey:@"name"];
+    
+	// load all three pages into our scroll view
+	[self loadPageWithId:[_fetchedResultsController.fetchedObjects count] -1 onPage:0];
+	[self loadPageWithId:0 onPage:1];
+	[self loadPageWithId:1 onPage:2];
+	
+	[scrollView addSubview:pageOneDoc];
+	[scrollView addSubview:pageTwoDoc];
+	[scrollView addSubview:pageThreeDoc];
+    
+    // set the page title
+    self.title = [NSString 
+                  stringWithFormat:@"%@ %d/%d",
+                  self.currentCategory,
+                  1,
+                  [_fetchedResultsController.fetchedObjects count]];
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -189,11 +247,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - Loading items in ScrollView
 
--(NSArray *)getObjToScroll:(int)index
+-(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name
 {
     NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Mechanism"
+    NSEntityDescription *entity = [NSEntityDescription entityForName:name
                                               inManagedObjectContext:_context];
     [request setEntity:entity];
         
@@ -208,24 +267,26 @@
     return result;
 }
 
-#pragma mark - Scrollable
+
 
 - (void)loadPageWithId:(int)index onPage:(int)page {
-    NSArray *productMechanisms = [self getObjToScroll:index];
+    
+    NSArray *productItems = [self getObjToScroll:index forEntityName:@"Mechanism"];
+    
 	switch (page) {
 		case 0:
             pageOneDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
-            [pageOneDoc drawWithMechanisms:productMechanisms];
+            [pageOneDoc drawWithMechanisms:productItems];
 			break;
 		case 1:
             pageTwoDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
-			[pageTwoDoc drawWithMechanisms:productMechanisms];
+			[pageTwoDoc drawWithMechanisms:productItems];
             break;
 		case 2:
 			//pageThreeDoc.text = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
             //[pageThreeDoc drawWithManagedObject:[_fetchedResultsController.fetchedObjects objectAtIndex:index]];
             pageThreeDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
-            [pageThreeDoc drawWithMechanisms:productMechanisms];
+            [pageThreeDoc drawWithMechanisms:productItems];
 			break;
 	}	
     
@@ -236,6 +297,7 @@
                   index +1,
                   [_fetchedResultsController.fetchedObjects count]];
 }
+
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {     
   

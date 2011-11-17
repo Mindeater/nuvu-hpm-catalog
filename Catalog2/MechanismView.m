@@ -10,12 +10,9 @@
 
 @implementation MechanismView
 
-@synthesize parentProduct;
-@synthesize selected;
 
 -(void)dealloc
 {
-    [parentProduct release];
     [super dealloc];
 }
 

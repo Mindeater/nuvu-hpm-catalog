@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class MechanismView;
+@class PartView;
 @interface ProductView : UIViewController<NSFetchedResultsControllerDelegate,UIScrollViewDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
     NSManagedObjectContext *_context; 
@@ -23,9 +23,9 @@
 //	UILabel *pageOneDoc;
 //	UILabel *pageTwoDoc;
 //	UILabel *pageThreeDoc;
-    MechanismView *pageOneDoc;
-	MechanismView *pageTwoDoc;
-	MechanismView *pageThreeDoc;
+    PartView *pageOneDoc;
+	PartView *pageTwoDoc;
+	PartView *pageThreeDoc;
 	int prevIndex;
 	int currIndex;
 	int nextIndex;
@@ -45,16 +45,18 @@
 //@property (nonatomic, retain) UILabel *pageOneDoc;
 //@property (nonatomic, retain) UILabel *pageTwoDoc;
 //@property (nonatomic, retain) UILabel *pageThreeDoc;
-@property (nonatomic, retain)MechanismView *pageOneDoc;
-@property (nonatomic, retain)MechanismView *pageTwoDoc;
-@property (nonatomic, retain)MechanismView *pageThreeDoc;
+@property (nonatomic, retain)PartView *pageOneDoc;
+@property (nonatomic, retain)PartView *pageTwoDoc;
+@property (nonatomic, retain)PartView *pageThreeDoc;
 @property (nonatomic) int prevIndex;
 @property (nonatomic) int currIndex;
 @property (nonatomic) int nextIndex;
 
 - (void)loadPageWithId:(int)index onPage:(int)page;
 
--(NSArray *)getObjToScroll:(int)index;
+-(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name;
+-(void)addMechanismsToScrollView;
+-(void)addFacePlatesToScrollView;
 
 
 

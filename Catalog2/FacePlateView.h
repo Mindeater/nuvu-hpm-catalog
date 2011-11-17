@@ -7,17 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PartView.h"
 
-@interface FacePlateView : UIView{
-    NSString *parentProduct;
-    BOOL selected;
-    
-}
+@interface FacePlateView : PartView
 
-@property(nonatomic,retain)NSString *parentProduct;
-@property(nonatomic)BOOL selected;
-
--(void)drawWithFacePlates:(NSArray *)faceplates;
--(void)chooseMe;
 
 @end
