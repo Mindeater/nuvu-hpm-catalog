@@ -13,6 +13,8 @@
 
 -(void)dealloc
 {
+    [parentProduct release];
+    [controlsView release];
     [super dealloc];
 }
 
@@ -49,11 +51,11 @@
     
     // FacePlate Picture
     
-    NSManagedObject *currentFacePlate = [items lastObject];
+   // NSManagedObject *currentFacePlate = [items lastObject];
     
-    NSLog(@"Current Plate %@",[currentFacePlate valueForKey:@"id"]);
+    NSLog(@"Current Plate %@",[items valueForKey:@"id"]);
     
-    NSString *img = [currentFacePlate valueForKey:@"id"];
+    NSString *img = [items valueForKey:@"id"];
     // Grab the image off disk and load it up
     NSString *imageName = [[NSBundle mainBundle] 
                            pathForResource:[img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]
@@ -82,6 +84,7 @@
 {
     self = [super initWithFrame:frame];
     self.selected = NO;
+    self.backgroundColor = [UIColor clearColor];
     if (self) {
         // Initialization code
         
