@@ -17,8 +17,7 @@
 @property(nonatomic,retain)NSString *parentProduct;
 @property(nonatomic)BOOL selected;
 
--(void)drawWithFacePlates:(NSArray *)faceplates;
--(void)drawWithMechanisms:(NSArray *)mechanisms;
+-(void)drawWithItems:(NSArray *)items;
 -(void)chooseMe;
 
 @end

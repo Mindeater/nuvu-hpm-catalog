@@ -28,11 +28,7 @@
     return self;
 }
 
--(void)drawWithFacePlates:(NSArray *)faceplates
-{
-    
-}
--(void)drawWithMechanisms:(NSArray *)mechanisms
+-(void)drawWithItems:(NSArray *)items
 {
     
 }
