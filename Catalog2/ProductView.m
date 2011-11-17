@@ -22,7 +22,7 @@
 @synthesize pageOneDoc, pageTwoDoc, pageThreeDoc;
 @synthesize prevIndex, currIndex, nextIndex;
 
-@synthesize currentBrand,currentCategory;
+@synthesize currentBrand,currentCategory,activeEntity;
 
 -(void)dealloc
 {
@@ -137,6 +137,7 @@
     self.view = scrollView;
     [scrollView release];
     
+    self.activeEntity = @"Mechanism";
     [self addMechanismsToScrollView];
     
     
@@ -166,9 +167,9 @@
     pageThreeDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:1] valueForKey:@"name"];
     
 	// load all three pages into our scroll view
-	[self loadPageWithId:[_fetchedResultsController.fetchedObjects count] -1 onPage:0];
-	[self loadPageWithId:0 onPage:1];
-	[self loadPageWithId:1 onPage:2];
+	[self loadPageWithId:[_fetchedResultsController.fetchedObjects count] -1 onPage:0 withEntity:self.activeEntity];
+	[self loadPageWithId:0 onPage:1 withEntity:self.activeEntity];
+	[self loadPageWithId:1 onPage:2 withEntity:self.activeEntity];
 	
 	[scrollView addSubview:pageOneDoc];
 	[scrollView addSubview:pageTwoDoc];
@@ -186,34 +187,59 @@
 
 -(void)addFacePlatesToScrollView
 {
+    self.activeEntity = @"Faceplate";
     // remove the mechanisms
-    for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
+    [pageOneDoc removeObserver:self forKeyPath:@"selected"];
+    [pageTwoDoc removeObserver:self forKeyPath:@"selected"];
+    [pageThreeDoc removeObserver:self forKeyPath:@"selected"];
     
+    NSLog(@"\n\n\nAdding Faceplates \n\n\n %@",[self.view subviews]);
+    for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
+    NSLog(@"1.- - - stripped subviews");
     // the size of the screen
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    //CGFloat screenHeight = screenRect.size.height;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    // add a scrollview
+    CGRect fullScreenRect=[[UIScreen mainScreen] applicationFrame];
+    scrollView=[[UIScrollView alloc] initWithFrame:fullScreenRect];
+    scrollView.delegate = self;
+    NSLog(@"2.Recreated ScrollView ---");
+    // adjust content size for three pages of data and reposition to center page
+	scrollView.contentSize = CGSizeMake(screenWidth * 3, 100);	
+	[scrollView scrollRectToVisible:CGRectMake(screenWidth,0,screenWidth,screenHeight -40) animated:NO];
+    
+    // release scrollView as self.view retains it
+    self.view = scrollView;
+    [scrollView release];
+    NSLog(@"3.Pushed scroll view to stack");
+
     
     // create three Mechanism Views to cycle and observe their selected property
 	pageOneDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)];
     pageTwoDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
     pageThreeDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
     
+    NSLog(@"4.Created FAcePlates for pages");
     [pageOneDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     [pageTwoDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     
+    NSLog(@"5.Set up observing");
     // set the starting three items 
     pageOneDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:
                                  [_fetchedResultsController.fetchedObjects count] -1] valueForKey:@"name"];
     pageTwoDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:0] valueForKey:@"name"];
     pageThreeDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:1] valueForKey:@"name"];
     
+    NSLog(@"6.Set parent product");
 	// load all three pages into our scroll view
-	[self loadPageWithId:[_fetchedResultsController.fetchedObjects count] -1 onPage:0];
-	[self loadPageWithId:0 onPage:1];
-	[self loadPageWithId:1 onPage:2];
+	[self loadPageWithId:[_fetchedResultsController.fetchedObjects count] -1 onPage:0 withEntity:self.activeEntity];
+	[self loadPageWithId:0 onPage:1 withEntity:self.activeEntity];
+	[self loadPageWithId:1 onPage:2 withEntity:self.activeEntity];
 	
+    NSLog(@"7.Set the specific faceplate for each page");
 	[scrollView addSubview:pageOneDoc];
 	[scrollView addSubview:pageTwoDoc];
 	[scrollView addSubview:pageThreeDoc];
@@ -230,6 +256,7 @@
 {
     NSLog(@"Choosen the Product %@",
           [[_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex] valueForKey:@"name"]);
+    [self addFacePlatesToScrollView];
 }
 
 - (void)viewDidUnload
@@ -269,24 +296,25 @@
 
 
 
-- (void)loadPageWithId:(int)index onPage:(int)page {
+- (void)loadPageWithId:(int)index onPage:(int)page withEntity:(NSString *)entityName
+{
     
-    NSArray *productItems = [self getObjToScroll:index forEntityName:@"Mechanism"];
+    NSArray *productItems = [self getObjToScroll:index forEntityName:entityName];
     
 	switch (page) {
 		case 0:
             pageOneDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
-            [pageOneDoc drawWithMechanisms:productItems];
+            [pageOneDoc drawWithItems:productItems];
 			break;
 		case 1:
             pageTwoDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
-			[pageTwoDoc drawWithMechanisms:productItems];
+			[pageTwoDoc drawWithItems:productItems];
             break;
 		case 2:
 			//pageThreeDoc.text = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
             //[pageThreeDoc drawWithManagedObject:[_fetchedResultsController.fetchedObjects objectAtIndex:index]];
             pageThreeDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
-            [pageThreeDoc drawWithMechanisms:productItems];
+            [pageThreeDoc drawWithItems:productItems];
 			break;
 	}	
     
@@ -306,30 +334,30 @@
 	if(scrollView.contentOffset.x > scrollView.frame.size.width) {  
         
 		// We are moving forward. Load the current doc data on the first page.         
-		[self loadPageWithId:currIndex onPage:0]; 
+		[self loadPageWithId:currIndex onPage:0 withEntity:self.activeEntity]; 
         
 		// Add one to the currentIndex or reset to 0 if we have reached the end.         
 		currIndex = (currIndex >= objCount-1) ? 0 : currIndex + 1;         
-		[self loadPageWithId:currIndex onPage:1];  
+		[self loadPageWithId:currIndex onPage:1 withEntity:self.activeEntity];  
         
 		// Load content on the last page. This is either from the next item in the array         
 		// or the first if we have reached the end.         
 		nextIndex = (currIndex >= objCount-1) ? 0 : currIndex + 1;         
-		[self loadPageWithId:nextIndex onPage:2];     
+		[self loadPageWithId:nextIndex onPage:2 withEntity:self.activeEntity];     
 	}     
 	if(scrollView.contentOffset.x < scrollView.frame.size.width) { 
         
 		// We are moving backward. Load the current doc data on the last page.         
-		[self loadPageWithId:currIndex onPage:2];  
+		[self loadPageWithId:currIndex onPage:2 withEntity:self.activeEntity];  
         
 		// Subtract one from the currentIndex or go to the end if we have reached the beginning.         
 		currIndex = (currIndex == 0) ? objCount -1 : currIndex - 1;         
-		[self loadPageWithId:currIndex onPage:1];  
+		[self loadPageWithId:currIndex onPage:1 withEntity:self.activeEntity];  
         
 		// Load content on the first page. This is either from the prev item in the array         
 		// or the last if we have reached the beginning.         
 		prevIndex = (currIndex == 0) ? objCount-1 : currIndex - 1;         
-		[self loadPageWithId:prevIndex onPage:0];     
+		[self loadPageWithId:prevIndex onPage:0 withEntity:self.activeEntity];     
 	}     
 	
 	// Reset offset back to middle page

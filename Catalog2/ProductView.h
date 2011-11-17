@@ -29,6 +29,8 @@
 	int prevIndex;
 	int currIndex;
 	int nextIndex;
+    
+    NSString * activeEntity;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -52,7 +54,10 @@
 @property (nonatomic) int currIndex;
 @property (nonatomic) int nextIndex;
 
-- (void)loadPageWithId:(int)index onPage:(int)page;
+@property(nonatomic,retain)NSString * activeEntity;
+
+//- (void)loadPageWithId:(int)index onPage:(int)page;
+- (void)loadPageWithId:(int)index onPage:(int)page withEntity:(NSString *)entityName;
 
 -(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name;
 -(void)addMechanismsToScrollView;
