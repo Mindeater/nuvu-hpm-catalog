@@ -26,8 +26,11 @@
 {
     self.fetchedResultsController.delegate = nil;
     self.fetchedResultsController = nil;
+    [pageOneDoc removeObserver:self forKeyPath:@"selected"];
 	[pageOneDoc release];
+    [pageTwoDoc removeObserver:self forKeyPath:@"selected"];
 	[pageTwoDoc release];
+    [pageThreeDoc removeObserver:self forKeyPath:@"selected"];
 	[pageThreeDoc release];
     [super dealloc];
 }
@@ -105,56 +108,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // hook up the product data
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		exit(-1);  // Fail
 	}
-    
-    self.title = self.currentCategory;
-    
-    
-    /*
-    //NSLog(@" %@ ",_fetchedResultsController.fetchedObjects);
-    NSMutableArray *mechViews = [[NSMutableArray alloc]init];
-    for(NSManagedObject *mech in _fetchedResultsController.fetchedObjects){
-        MechanismView *newMech = [MechanismView createWithManagedObject:mech];
-        [mechViews addObject:newMech];
-        //[newMech release];
-        NSLog(@"  -- %@",[mech valueForKey:@"name"] );
-    }
-    
-    // load the first one
-    [self.navigationController pushViewController:[mechViews objectAtIndex:0] animated:YES];
-     */
+        
+    // the size of the screen
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
     
     // add a scrollview
     CGRect fullScreenRect=[[UIScreen mainScreen] applicationFrame];
     scrollView=[[UIScrollView alloc] initWithFrame:fullScreenRect];
     scrollView.delegate = self;
     
-    //scrollView.contentSize=CGSizeMake(320,758);
-    // the size of the screen
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-    
-    // create placeholders for each of our documents
-    /*
-	pageOneDoc = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)];
-	pageTwoDoc = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
-	pageThreeDoc = [[UILabel alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
-	
-	pageOneDoc.textAlignment = UITextAlignmentCenter;
-	pageTwoDoc.textAlignment = UITextAlignmentCenter;
-	pageThreeDoc.textAlignment = UITextAlignmentCenter;
-    */
-    
-    // create three Mechanism Views to cycle
+    // create three Mechanism Views to cycle and observe their selected property
 	pageOneDoc = [[MechanismView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)];
+    [pageOneDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
 	pageTwoDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
+    [pageTwoDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
 	pageThreeDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
+    [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     
     // set the starting three items 
     pageOneDoc.parentProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:
@@ -189,6 +168,11 @@
     
 }
 
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    NSLog(@"Choosen the Product %@",
+          [[_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex] valueForKey:@"name"]);
+}
 
 - (void)viewDidUnload
 {
