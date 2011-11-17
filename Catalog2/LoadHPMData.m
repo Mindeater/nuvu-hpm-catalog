@@ -217,8 +217,8 @@
                         [NSArray arrayWithObjects:@"bt-living.csv",     @"BT Living",nil],
                         [NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life",nil],
                         [NSArray arrayWithObjects:@"excel.csv",        @"Excel",nil],
-                        */[NSArray arrayWithObjects:@"linea.csv",        @"Linea",nil],
-                        nil];
+                        [NSArray arrayWithObjects:@"linea.csv",        @"Linea",nil],
+                        */nil];
 
     return self;
 }
