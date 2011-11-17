@@ -31,6 +31,10 @@
 	int nextIndex;
     
     NSString * activeEntity;
+    
+    UIView *mechBg;
+    UIView *wallBg;
+    UIView *scrollHolder;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -55,6 +59,10 @@
 @property (nonatomic) int nextIndex;
 
 @property(nonatomic,retain)NSString * activeEntity;
+
+@property(nonatomic,retain)UIView *mechBg;
+@property(nonatomic,retain)UIView *wallBg;
+@property(nonatomic,retain)UIView *scrollHolder;
 
 //- (void)loadPageWithId:(int)index onPage:(int)page;
 - (void)loadPageWithId:(int)index onPage:(int)page withEntity:(NSString *)entityName;

@@ -10,6 +10,7 @@
 #import "PartView.h"
 #import "MechanismView.h"
 #import "FacePlateView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation ProductView
 
@@ -24,6 +25,8 @@
 
 @synthesize currentBrand,currentCategory,activeEntity;
 
+@synthesize wallBg,mechBg,scrollHolder;
+
 -(void)dealloc
 {
     self.fetchedResultsController.delegate = nil;
@@ -34,6 +37,10 @@
 	[pageTwoDoc release];
     [pageThreeDoc removeObserver:self forKeyPath:@"selected"];
 	[pageThreeDoc release];
+    [wallBg release];
+    mechBg = nil;
+    scrollHolder = nil;
+    [scrollView release];
     [super dealloc];
 }
 
@@ -115,6 +122,7 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
+    CGRect fullScreenRect=[[UIScreen mainScreen] applicationFrame];
     
     // hook up the product data
     NSError *error;
@@ -124,19 +132,34 @@
 		exit(-1);  // Fail
 	}
     
-    // add a scrollview
-    CGRect fullScreenRect=[[UIScreen mainScreen] applicationFrame];
-    scrollView=[[UIScrollView alloc] initWithFrame:fullScreenRect];
-    scrollView.delegate = self;
+    ///////////////////////////////////////////////
+    // the scrollHolder is going to hold everything
+    //  view = scrollHolder
+    //           - wallBg
+    //           - mechBg
+    //           - scrollView
+    
+    scrollHolder = [[UIView alloc] initWithFrame:fullScreenRect];
+    
+    ////////////////////////////////////////////////
+    //
+    
+    scrollView = [[UIScrollView alloc] initWithFrame:fullScreenRect];
+    scrollView.delegate = self;    
     
     // adjust content size for three pages of data and reposition to center page
 	scrollView.contentSize = CGSizeMake(screenWidth * 3, 100);	
 	[scrollView scrollRectToVisible:CGRectMake(screenWidth,0,screenWidth,screenHeight -40) animated:NO];
+    //scrollView.backgroundColor = [UIColor redColor];
     
     // release scrollView as self.view retains it
-    self.view = scrollView;
+    [self.scrollHolder addSubview:scrollView];
     [scrollView release];
+    self.view = scrollHolder;
+    [scrollHolder release];
     
+    
+    // setup and load the first set of mechanism views
     self.activeEntity = @"Mechanism";
     [self addMechanismsToScrollView];
     
@@ -148,12 +171,12 @@
     // the size of the screen
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    //CGFloat screenHeight = screenRect.size.height;
+    CGFloat screenHeight = screenRect.size.height;
     
     // create three Mechanism Views to cycle and observe their selected property
-	pageOneDoc = [[MechanismView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)];
-    pageTwoDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
-    pageThreeDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
+	pageOneDoc = [[MechanismView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
+    pageTwoDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, screenHeight)];
+    pageThreeDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, screenHeight)];
 
 
     [pageOneDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
@@ -188,38 +211,26 @@
 -(void)addFacePlatesToScrollView
 {
     self.activeEntity = @"Faceplate";
-    // remove the mechanisms
-    [pageOneDoc removeObserver:self forKeyPath:@"selected"];
-    [pageTwoDoc removeObserver:self forKeyPath:@"selected"];
-    [pageThreeDoc removeObserver:self forKeyPath:@"selected"];
     
-    NSLog(@"\n\n\nAdding Faceplates \n\n\n %@",[self.view subviews]);
-    for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
-    NSLog(@"1.- - - stripped subviews");
+    
+    //NSLog(@"\n\n\nAdding Faceplates \n\n\n %@",[self.view subviews]);
+    //for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
+    //for (UIView *view in [scrollView subviews]) { [view removeFromSuperview]; }
+    NSLog(@"1.- - - stripped subviews from scrollView");
+    
     // the size of the screen
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    
-    // add a scrollview
-    CGRect fullScreenRect=[[UIScreen mainScreen] applicationFrame];
-    scrollView=[[UIScrollView alloc] initWithFrame:fullScreenRect];
-    scrollView.delegate = self;
-    NSLog(@"2.Recreated ScrollView ---");
-    // adjust content size for three pages of data and reposition to center page
-	scrollView.contentSize = CGSizeMake(screenWidth * 3, 100);	
-	[scrollView scrollRectToVisible:CGRectMake(screenWidth,0,screenWidth,screenHeight -40) animated:NO];
-    
-    // release scrollView as self.view retains it
-    self.view = scrollView;
-    [scrollView release];
-    NSLog(@"3.Pushed scroll view to stack");
 
     
     // create three Mechanism Views to cycle and observe their selected property
-	pageOneDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 200)];
-    pageTwoDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, 200)];
-    pageThreeDoc = [[FacePlateView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, 200)];
+	pageOneDoc = [[FacePlateView alloc] 
+                  initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
+    pageTwoDoc = [[FacePlateView alloc] 
+                  initWithFrame:CGRectMake(screenWidth, 0, screenWidth, screenHeight)];
+    pageThreeDoc = [[FacePlateView alloc] 
+                    initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, screenHeight)];
     
     NSLog(@"4.Created FAcePlates for pages");
     [pageOneDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
@@ -256,7 +267,33 @@
 {
     NSLog(@"Choosen the Product %@",
           [[_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex] valueForKey:@"name"]);
-    [self addFacePlatesToScrollView];
+   
+    if([self.activeEntity isEqualToString:@"Mechanism"]){
+        
+        UIImage *mechPic = [pageTwoDoc getMechanismImage];
+        NSLog(@" \n\n\n\nPicture Passed %@\n\n\n\n",mechPic);
+        mechBg = [[UIView alloc]initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+        //mechBg.backgroundColor = [UIColor yellowColor];
+        UIImageView *mechToAdd = [[UIImageView alloc] initWithImage:mechPic];
+        mechToAdd.frame = [[UIScreen mainScreen] applicationFrame];
+        [mechBg addSubview:mechToAdd];
+        [mechToAdd release];
+        
+        [self.view addSubview:mechBg];
+        [self.view sendSubviewToBack:mechBg];
+        /*
+        CALayer *sublayer = [CALayer layer];
+        sublayer.frame = [[UIScreen mainScreen] applicationFrame];
+        sublayer.contents = (id) mechPic.CGImage;
+        [self.layer addSublayer:sublayer];
+        */
+        // remove the mechanisms observers
+        [pageOneDoc removeObserver:self forKeyPath:@"selected"];
+        [pageTwoDoc removeObserver:self forKeyPath:@"selected"];
+        [pageThreeDoc removeObserver:self forKeyPath:@"selected"];
+        for (UIView *view in [scrollView subviews]) { [view removeFromSuperview]; }
+        [self addFacePlatesToScrollView];
+    }
 }
 
 - (void)viewDidUnload
@@ -278,6 +315,7 @@
 
 -(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name
 {
+    NSLog(@"Getting %@ with index:%d",name,index);
     NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity = [NSEntityDescription entityForName:name
                                               inManagedObjectContext:_context];
@@ -291,6 +329,10 @@
     
     NSError *error = nil;
     NSArray *result = [_context executeFetchRequest:request error:&error];
+    if([name isEqualToString:@"Faceplate"]){
+        NSLog(@"resultSet \n\n\n%@\n\n\n",result);
+        return [result objectAtIndex:index];
+    }
     return result;
 }
 
