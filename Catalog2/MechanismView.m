@@ -16,7 +16,7 @@
     [super dealloc];
 }
 
--(void)drawWithMechanisms:(NSArray *)mechanisms
+-(void)drawWithItems:(NSArray *)items
 {
     // remove any views that already exist
     for (UIView *view in [self subviews]) { [view removeFromSuperview]; }
@@ -48,7 +48,7 @@
     
     // note:
     //arteor 770 has AR in front of the part name which doesn't match the image
-    for(NSManagedObject *mech in mechanisms){
+    for(NSManagedObject *mech in items){
         NSLog(@"%@\n\n ++ id:%@ count:%@ name: %@",
               self.parentProduct,[mech valueForKey:@"id"],
               [mech valueForKey:@"count"],
