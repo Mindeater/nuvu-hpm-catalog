@@ -11,13 +11,16 @@
 @interface PartView : UIView{
     NSString *parentProduct;
     BOOL selected;
+    UIView *controlsView;
     
 }
 
 @property(nonatomic,retain)NSString *parentProduct;
 @property(nonatomic)BOOL selected;
+@property(nonatomic,retain)UIView *controlsView;
 
 -(void)drawWithItems:(NSArray *)items;
 -(void)chooseMe;
+-(UIImage *)getMechanismImage;
 
 @end

@@ -12,10 +12,10 @@
 
 @synthesize parentProduct;
 @synthesize selected;
+@synthesize controlsView;
 
 -(void)dealloc
 {
-    [parentProduct release];
     [super dealloc];
 }
 
@@ -35,6 +35,10 @@
 -(void)chooseMe
 {
     
+}
+-(UIImage *)getMechanismImage
+{
+    return [[[UIImage alloc] init ] autorelease];
 }
 /*
 // Only override drawRect: if you perform custom drawing.
