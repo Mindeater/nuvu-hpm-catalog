@@ -7,12 +7,15 @@
 //
 
 #import "MechanismView.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation MechanismView
 
 
 -(void)dealloc
 {
+    [parentProduct release];
+    controlsView = nil;
     [super dealloc];
 }
 
@@ -20,7 +23,8 @@
 {
     // remove any views that already exist
     for (UIView *view in [self subviews]) { [view removeFromSuperview]; }
-    
+    controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    [self addSubview:self.controlsView];
     //self.backgroundColor = [UIColor clearColor];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -31,7 +35,7 @@
     UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(20,screenHeight - 150, screenWidth - 40, 100)];      
     myLabel.text = self.parentProduct;
     myLabel.textColor = [UIColor redColor];
-    [self addSubview:myLabel];
+    [self.controlsView addSubview:myLabel];
     [myLabel release];
     
     // button to choose this one
@@ -42,7 +46,7 @@
     [button setTitle: @"OK" forState: UIControlStateNormal];
     [button setTitleColor: [UIColor redColor] forState: UIControlStateNormal];
     [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview: button];
+    [self.controlsView addSubview: button];
     
     // Mechanism Picture/s
     
@@ -97,11 +101,28 @@
     self.selected =YES;
 }
 
+// don't forget Quartz.Core with this method
+-(UIImage *)getMechanismImage
+{
+    [self.controlsView removeFromSuperview];
+    NSLog(@" \n\n----\n\nSIZE frame--\n%@", NSStringFromCGRect(self.frame));
+    NSLog(@" \n\n----\n\nSIZE bounds--\n%@", NSStringFromCGRect(self.bounds));
+    UIGraphicsBeginImageContext(self.bounds.size);
+   // CALayer *myLayer = self.layer;
+    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+    return screenshot;
+}
+
 #pragma mark - View lifecycle
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     self.selected = NO;
+    controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    [self addSubview:self.controlsView];
     if (self) {
         // Initialization code
        

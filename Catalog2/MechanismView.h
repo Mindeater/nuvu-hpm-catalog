@@ -13,5 +13,5 @@
     
 
 
-
+-(UIImage *)getMechanismImage;
 @end
