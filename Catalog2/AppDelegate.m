@@ -33,6 +33,8 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     
+    
+    /// Is there a Dataset Available ??
     NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand"
                                               inManagedObjectContext:self.managedObjectContext];
@@ -41,8 +43,6 @@
     NSError *error = nil;
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
     if(![result lastObject]){
-        
-        // Is there a shipped sqlite file ?
         
         NSLog(@"Load Up the Data");
         LoadHPMData *loader = [[LoadHPMData alloc]init];
@@ -65,7 +65,7 @@
     viewController.context = self.managedObjectContext;
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
     self.window.rootViewController = self.navigationController;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
