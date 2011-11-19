@@ -28,6 +28,7 @@
 
 -(void)showAlert:(id)sender;
 -(void)showCatalog;
+-(void)showSettings;
 -(void)layoutButtons:(UIInterfaceOrientation)toInterfaceOrientation;
 
 @end

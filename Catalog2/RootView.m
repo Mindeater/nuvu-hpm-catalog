@@ -9,6 +9,10 @@
 #import "RootView.h"
 #import "BrandTableView.h"
 
+#import "SettingsPage.h"
+#import "BackgroundLibrary.h"
+#import "SearchPage.h"
+
 @implementation RootView
 
 @synthesize context;
@@ -26,7 +30,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        NSLog(@"init with nib");
         /*
         UIViewController *rootController = [[UIViewController alloc] init];
         UINavigationController *navCtl = [[UINavigationController alloc] initWithRootController:rootController];
@@ -46,16 +49,24 @@
 }
 
 #pragma mark - View lifecycle
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:NO];
+    NSLog(@"Root - view Will appear");
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    NSLog(@"Load view");
+    NSLog(@"Root - Load view");
     // create the main view Controller
     //allocate the view
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     self.view.backgroundColor = [UIColor blackColor];
+    //self.wantsFullScreenLayout = YES;
+    
 
     // main Navigation Options
     // 1. show catalog
@@ -66,7 +77,7 @@
     // 2. Choose Background (from supplied)
     button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button2 setTitle:@"Choose BG" forState:UIControlStateNormal];
-    [button2 addTarget:self action:@selector(showAlert:) forControlEvents:UIControlEventTouchUpInside];
+    [button2 addTarget:self action:@selector(chooseBackgroundFromLibrary) forControlEvents:UIControlEventTouchUpInside];
     
     // 3. Create Background (camera or library)
     button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
@@ -81,12 +92,12 @@
     // 5. show Settings
     button5 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button5 setTitle:@"Settings" forState:UIControlStateNormal];
-    [button5 addTarget:self action:@selector(showAlert:) forControlEvents:UIControlEventTouchUpInside];
+    [button5 addTarget:self action:@selector(showSettings) forControlEvents:UIControlEventTouchUpInside];
     
     // 6. show Search
     button6 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button6 setTitle:@"Searc" forState:UIControlStateNormal];
-    [button6 addTarget:self action:@selector(showAlert:) forControlEvents:UIControlEventTouchUpInside];
+    [button6 setTitle:@"Search" forState:UIControlStateNormal];
+    [button6 addTarget:self action:@selector(searchPage) forControlEvents:UIControlEventTouchUpInside];
     
     //[[UIApplication sharedApplication] statusBarOrientation];
     [self layoutButtons: [[UIApplication sharedApplication] statusBarOrientation]];
@@ -144,7 +155,6 @@
 #pragma mark - Button call Backs
 -(void)showCatalog
 {
-    NSLog(@"StartCatalog");
     //BrandTableView *brand = [[BrandTableView alloc]initWithNibName:nil bundle:nil];
     BrandTableView *brand = [[BrandTableView alloc] initWithStyle:UITableViewStyleGrouped];
     brand.context = self.context;
@@ -152,6 +162,27 @@
     [brand release];
 }
 
+-(void)showSettings
+{
+    SettingsPage *settings = [[SettingsPage alloc]init];
+    [self.navigationController pushViewController:settings animated:YES];
+    [settings release];
+}
+
+-(void)chooseBackgroundFromLibrary
+{
+    BackgroundLibrary *bgLibrary = [[BackgroundLibrary alloc]init];
+    [self.navigationController pushViewController:bgLibrary animated:YES];
+    [bgLibrary release];
+}
+
+-(void)searchPage
+{
+    SearchPage *search = [[SearchPage alloc]init];
+    search.context = self.context;
+    [self.navigationController pushViewController:search animated:YES];
+    [search release];
+}
 
 -(void)showAlert:(id)sender 
 {
