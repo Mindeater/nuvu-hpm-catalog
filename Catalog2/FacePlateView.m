@@ -20,52 +20,64 @@
 
 -(void)drawWithItems:(NSArray *)items
 {
-    NSLog(@"Adding a Faceplate");
     // remove any views that already exist
+    NSLog(@" - - draw Faceplate");
     for (UIView *view in [self subviews]) { [view removeFromSuperview]; }
-    NSLog(@"The faceplate is %@",items);
-    //self.backgroundColor = [UIColor clearColor];
+    NSLog(@" - - - stripped existing views");
+    // the Control View is going to hold the non-image elements
+    controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    [self addSubview:self.controlsView];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
     //Product Name
-    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(20,screenHeight - 150, screenWidth - 40, 100)];      
+    UILabel *myLabel = [[UILabel alloc] 
+                        initWithFrame:CGRectMake(20,screenHeight - 150, screenWidth - 40, 100)];      
     myLabel.text = self.parentProduct;
     myLabel.textColor = [UIColor redColor];
-    [self addSubview:myLabel];
+    [self.controlsView addSubview:myLabel];
     [myLabel release];
-    NSLog(@"PArent Product is %@",self.parentProduct);
     
     // button to choose this one
-    //CGRect buttonFrame = CGRectMake( 10, 80, 100, 30 );
-    //UIButton *button = [[UIButton alloc] initWithFrame: buttonFrame];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     button.frame = CGRectMake(10, 100, 100, 60);
     [button setTitle: @"OK" forState: UIControlStateNormal];
     [button setTitleColor: [UIColor redColor] forState: UIControlStateNormal];
     [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview: button];
-    
+    [self.controlsView addSubview: button];
     
     // FacePlate Picture
+    NSLog(@" \n\n Passed Image \n\n%@\n\n",items );
+    NSString *img = [[items lastObject] valueForKey:@"id"];
     
-   // NSManagedObject *currentFacePlate = [items lastObject];
+    NSString *dir = [NSString stringWithFormat:@"%@/Faceplate",
+           [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
     
-    NSLog(@"Current Plate %@",[items valueForKey:@"id"]);
+    NSString *imgCleaned = [NSString stringWithFormat:@"%@%@",
+                            self.orientationPrefix,
+                            [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
     
-    NSString *img = [items valueForKey:@"id"];
+    NSLog(@"  - File NAme %@",imgCleaned);
     // Grab the image off disk and load it up
     NSString *imageName = [[NSBundle mainBundle] 
-                           pathForResource:[img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]
-                           ofType:@"png"];
+                           pathForResource:imgCleaned
+                           ofType:@"png" 
+                           inDirectory:dir];
+    NSLog(@" - - - Path\n %@\n",imageName);
     
+    // Grab the image off disk and load it up
+    /*
+    NSString *imageName = [[NSBundle mainBundle] pathForResource:
+                           [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]
+                           ofType:@"png"];
+    */
     UIImage *image = [UIImage imageWithContentsOfFile:imageName];
     UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
     nextImage.backgroundColor = [UIColor clearColor];
     nextImage.contentMode = UIViewContentModeScaleAspectFit;
-    nextImage.frame = CGRectMake(20, 20, screenWidth -20, screenHeight - 20);
+    nextImage.frame = CGRectMake(10, 10, screenWidth-20, screenHeight-120);
     
     [self addSubview:nextImage];
     [nextImage release];
@@ -75,7 +87,7 @@
 }
 -(void)chooseMe
 {
-    NSLog(@"Choose this");
+    NSLog(@"Choose this FACEPLATE");
     self.selected =YES;
 }
 
