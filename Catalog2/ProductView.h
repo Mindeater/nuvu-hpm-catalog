@@ -20,9 +20,7 @@
     IBOutlet UIScrollView *scrollView;
 	
 	NSMutableArray *documentTitles;
-//	UILabel *pageOneDoc;
-//	UILabel *pageTwoDoc;
-//	UILabel *pageThreeDoc;
+
     PartView *pageOneDoc;
 	PartView *pageTwoDoc;
 	PartView *pageThreeDoc;
@@ -35,6 +33,10 @@
     UIView *mechBg;
     UIView *wallBg;
     UIView *scrollHolder;
+    
+    NSManagedObject *selectedMechanism;
+    NSString *selectedProduct;
+    NSArray *currentFacePlates;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -47,13 +49,11 @@
 // scrollable iVars
 @property (nonatomic, retain) UIScrollView *scrollView;
 
-@property (nonatomic, retain) NSMutableArray *documentTitles;
-//@property (nonatomic, retain) UILabel *pageOneDoc;
-//@property (nonatomic, retain) UILabel *pageTwoDoc;
-//@property (nonatomic, retain) UILabel *pageThreeDoc;
+
 @property (nonatomic, retain)PartView *pageOneDoc;
 @property (nonatomic, retain)PartView *pageTwoDoc;
 @property (nonatomic, retain)PartView *pageThreeDoc;
+
 @property (nonatomic) int prevIndex;
 @property (nonatomic) int currIndex;
 @property (nonatomic) int nextIndex;
@@ -64,7 +64,10 @@
 @property(nonatomic,retain)UIView *wallBg;
 @property(nonatomic,retain)UIView *scrollHolder;
 
-//- (void)loadPageWithId:(int)index onPage:(int)page;
+@property(nonatomic,retain)NSManagedObject *selectedMechanism;
+@property(nonatomic,retain)NSString *selectedProduct;
+@property(nonatomic,retain)NSArray *currentFacePlates;
+
 - (void)loadPageWithId:(int)index onPage:(int)page withEntity:(NSString *)entityName;
 
 -(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name;
