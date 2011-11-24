@@ -12,12 +12,16 @@
     NSString *parentProduct;
     BOOL selected;
     UIView *controlsView;
+    NSString *orientationPrefix;
+    NSString *brandName;
     
 }
 
 @property(nonatomic,retain)NSString *parentProduct;
 @property(nonatomic)BOOL selected;
 @property(nonatomic,retain)UIView *controlsView;
+@property(nonatomic,retain)NSString *orientationPrefix;
+@property(nonatomic,retain)NSString *brandName;
 
 -(void)drawWithItems:(NSArray *)items;
 -(void)chooseMe;

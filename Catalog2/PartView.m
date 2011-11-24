@@ -13,6 +13,8 @@
 @synthesize parentProduct;
 @synthesize selected;
 @synthesize controlsView;
+@synthesize orientationPrefix;
+@synthesize brandName;
 
 -(void)dealloc
 {
@@ -27,7 +29,18 @@
     }
     return self;
 }
-
+-(void)setOrientationPrefix:(NSString *)newValue
+{
+    // retain the passed value
+    if([newValue isEqualToString:@"Horizontal"]){
+        orientationPrefix = [[NSString stringWithString:@"h-"] retain];
+    }else if([newValue isEqualToString:@"Vertical"]){
+        orientationPrefix = [[NSString stringWithString:@"v-"] retain];
+    }else{
+        orientationPrefix = [[NSString stringWithString:@""] retain];
+    }
+    //NSLog(@" Now is %@\n\n",orientationPrefix);
+}
 -(void)drawWithItems:(NSArray *)items
 {
     
