@@ -7,6 +7,8 @@
 //
 
 #import "SearchResultTableView.h"
+#import "ProductView.h"
+#import "SearchPage.h"
 
 
 @implementation SearchResultTableView
@@ -14,6 +16,7 @@
 @synthesize context;
 @synthesize fetchedResultsController;
 @synthesize filteredListContents;
+@synthesize LINK;
 
 -(void)dealloc
 {
@@ -24,9 +27,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
-    self = [super initWithStyle:style];
-    NSLog(@"INIT for SearchREsultTableVoiew");
-    
+    self = [super initWithStyle:style];    
     
     
     
@@ -69,8 +70,6 @@
 {
     [super viewWillAppear:animated];
     
-    
-    NSLog(@"\n\n\n\nSEARCH RESULTS TABLEVIEW\n\n\n\n");
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
@@ -125,7 +124,7 @@
     }
     
     // Configure the cell...
-    NSLog(@"SearchresultTAble configure Cell %@",self.filteredListContents);
+    //NSLog(@"SearchresultTAble configure Cell %@",self.filteredListContents);
     cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"name"];
     return cell;
 }
@@ -150,7 +149,7 @@
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
     //NSLog(@"Filter Content %@",self.fetchedResultsController.fetchedObjects);
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name BEGINSWITH[cd] %@", searchText];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
     self.filteredListContents = [[[self fetchedResultsController] fetchedObjects] filteredArrayUsingPredicate:predicate];
 	/*
     [self.filteredstaffList removeAllObjects]; // First clear the filtered array.
@@ -212,14 +211,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+    ProductView *detailViewController = [[ProductView alloc] init];
+    
+    NSManagedObject *currentRecord = [self.filteredListContents objectAtIndex:indexPath.row];
+    NSLog(@" current Selected A -- \n\n%@ \n\n",
+          currentRecord);
+    NSLog(@"Worko ut %@",[currentRecord valueForKey:@"category"]);
+    //[fetchedResultsController.fetchedObjects  objectAtIndex:indexPath.section];
+    detailViewController.currentBrand = [[currentRecord valueForKey:@"brand"]
+                                         valueForKey:@"name"];
+    detailViewController.currentCategory = [[currentRecord valueForKey:@"category"]
+                                            valueForKey:@"name"];
+     
+    
+    detailViewController.context = self.context;
+    NSLog(@" View Controller ? ?? %@",[super navigationController] );
+    // detailViewController.managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
+    // ...
+    // Pass the selected object to the new view controller.
+
+    [self.LINK.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
 }
 
 @end

@@ -22,6 +22,7 @@
     self.searchBar = nil;
     self.resultTable = nil;
     self.searchController = nil;
+    //self.view = nil;
     [super dealloc];
 }
 
@@ -48,7 +49,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
@@ -65,7 +66,9 @@
     // create a tableView Controller to show the results
     resultTable = [[SearchResultTableView alloc] init];
     resultTable.context = self.context;
+    resultTable.LINK = self;
     [resultTable viewWillAppear:NO];
+    
     // create the UISearchDisplay controller
     
     searchController = [[UISearchDisplayController alloc]
@@ -73,7 +76,6 @@
     searchController.delegate = resultTable;
     searchController.searchResultsDataSource = resultTable;
     searchController.searchResultsDelegate = resultTable;
-    
     
 }
 
