@@ -23,7 +23,10 @@
 {
     // remove any views that already exist
     for (UIView *view in [self subviews]) { [view removeFromSuperview]; }
+    
+    // the Control View is going to hold the non-image elements
     controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    //controlsView.layer.borderColor = [UIColor redColor].CGColor;
     [self addSubview:self.controlsView];
     //self.backgroundColor = [UIColor clearColor];
     
@@ -32,9 +35,11 @@
     CGFloat screenHeight = screenRect.size.height;
     
     //Product Name
-    UILabel *myLabel = [[UILabel alloc] initWithFrame:CGRectMake(20,screenHeight - 150, screenWidth - 40, 100)];      
+    UILabel *myLabel = [[UILabel alloc] 
+                        initWithFrame:CGRectMake(20,screenHeight - 250, screenWidth - 40, 100)];      
     myLabel.text = self.parentProduct;
-    myLabel.textColor = [UIColor redColor];
+    myLabel.textColor = [UIColor whiteColor];
+    myLabel.backgroundColor = [UIColor clearColor];
     [self.controlsView addSubview:myLabel];
     [myLabel release];
     
@@ -68,6 +73,7 @@
             }else{
                 img = [mech valueForKey:@"id"];
             }
+            
         }else{
             // mechanism with more than one part
             img = [NSString stringWithFormat:@"%@-x-%@",
@@ -76,17 +82,40 @@
                               stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
         }
         
+        // Is is a frame ?
+        NSString *dir;
+        if([[mech valueForKey:@"name"] isEqualToString:@"Frame"]){
+            dir = @"Frame";
+        }else{
+            dir = [NSString stringWithFormat:@"%@/Mechanism",
+                                      [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
+        }
+        
+        NSLog(@" Directory %@",dir);
+        NSString *imgCleaned = [NSString stringWithFormat:@"%@%@",
+                                self.orientationPrefix,
+                                [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
+        
+        NSLog(@"  - File NAme %@",imgCleaned);
         // Grab the image off disk and load it up
         NSString *imageName = [[NSBundle mainBundle] 
-                               pathForResource:[img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]
+                          pathForResource:imgCleaned
+                          ofType:@"png" 
+                          inDirectory:dir];
+        /*
+        NSString *imageName = [[NSBundle mainBundle] 
+                               pathForResource:imgWithSubFolder
                                ofType:@"png"];
+         */
+        NSLog(@" FuLL image NAme:  %@",imageName);
         
         UIImage *image = [UIImage imageWithContentsOfFile:imageName];
         UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
         nextImage.backgroundColor = [UIColor clearColor];
         nextImage.contentMode = UIViewContentModeScaleAspectFit;
-        nextImage.frame = CGRectMake(20, 20, screenWidth -20, screenHeight - 20);
-
+        nextImage.frame = CGRectMake(10, 10, screenWidth-20, screenHeight-120);
+        nextImage.layer.borderColor = [[UIColor whiteColor] CGColor];
+        nextImage.layer.borderWidth = 4.0;
         [self addSubview:nextImage];
         [nextImage release];
     }
@@ -97,7 +126,6 @@
 
 -(void)chooseMe
 {
-    NSLog(@"Choose this");
     self.selected =YES;
 }
 
@@ -105,8 +133,6 @@
 -(UIImage *)getMechanismImage
 {
     [self.controlsView removeFromSuperview];
-    NSLog(@" \n\n----\n\nSIZE frame--\n%@", NSStringFromCGRect(self.frame));
-    NSLog(@" \n\n----\n\nSIZE bounds--\n%@", NSStringFromCGRect(self.bounds));
     UIGraphicsBeginImageContext(self.bounds.size);
    // CALayer *myLayer = self.layer;
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
