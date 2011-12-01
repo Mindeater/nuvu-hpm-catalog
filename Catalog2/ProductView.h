@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class PartView;
-@interface ProductView : UIViewController<NSFetchedResultsControllerDelegate,UIScrollViewDelegate> {
+@interface ProductView : UIViewController <NSFetchedResultsControllerDelegate,UIScrollViewDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
     NSManagedObjectContext *_context; 
     
@@ -24,6 +24,7 @@
     PartView *pageOneDoc;
 	PartView *pageTwoDoc;
 	PartView *pageThreeDoc;
+    
 	int prevIndex;
 	int currIndex;
 	int nextIndex;
@@ -34,9 +35,15 @@
     UIView *wallBg;
     UIView *scrollHolder;
     
-    NSManagedObject *selectedMechanism;
-    NSString *selectedProduct;
+    //NSManagedObject *selectedMechanism;
+    NSArray *selectedMechanism;
+    NSManagedObject *selectedFacePlate;
+    NSString *selectedProductName;
     NSArray *currentFacePlates;
+    
+    BOOL manipulationMethodsShouldReturn;
+    
+    UIToolbar *toolBar;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -64,15 +71,25 @@
 @property(nonatomic,retain)UIView *wallBg;
 @property(nonatomic,retain)UIView *scrollHolder;
 
-@property(nonatomic,retain)NSManagedObject *selectedMechanism;
-@property(nonatomic,retain)NSString *selectedProduct;
+@property(nonatomic,retain)NSArray *selectedMechanism;
+@property(nonatomic,retain)NSManagedObject *selectedFacePlate;
+@property(nonatomic,retain)NSString *selectedProductName;
 @property(nonatomic,retain)NSArray *currentFacePlates;
+
+@property(nonatomic)BOOL manipulationMethodsShouldReturn;
+
+@property(nonatomic,retain)UIToolbar *toolBar;
 
 - (void)loadPageWithId:(int)index onPage:(int)page withEntity:(NSString *)entityName;
 
 -(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name;
 -(void)addMechanismsToScrollView;
 -(void)addFacePlatesToScrollView;
+
+-(void)showManipulationControls;
+
+-(void)addToOrder;
+-(void)newOrder;
 
 
 

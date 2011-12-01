@@ -10,6 +10,12 @@
 #import "PartView.h"
 #import "MechanismView.h"
 #import "FacePlateView.h"
+
+#import "AddItemToOrderView.h"
+#import "AddOrderView.h"
+
+#import "SmallDisplay.h"
+
 #import <QuartzCore/QuartzCore.h>
 
 @implementation ProductView
@@ -27,8 +33,13 @@
 @synthesize wallBg,mechBg,scrollHolder;
 
 @synthesize selectedMechanism;
-@synthesize selectedProduct;
+@synthesize selectedFacePlate;
+@synthesize selectedProductName;
 @synthesize currentFacePlates;
+
+@synthesize manipulationMethodsShouldReturn;
+
+@synthesize toolBar;
 
 -(void)dealloc
 {
@@ -36,15 +47,18 @@
     self.fetchedResultsController = nil;
     self.context = nil;
     [pageOneDoc removeObserver:self forKeyPath:@"selected"];
-	[pageOneDoc release];
+    [pageOneDoc release];
     [pageTwoDoc removeObserver:self forKeyPath:@"selected"];
-	[pageTwoDoc release];
+    [pageTwoDoc release];
     [pageThreeDoc removeObserver:self forKeyPath:@"selected"];
-	[pageThreeDoc release];
+    [pageThreeDoc release];
     [wallBg release];
     mechBg = nil;
     scrollHolder = nil;
+    [toolBar release];
     //[scrollView release];
+    [selectedProductName release];
+    [selectedMechanism release];
     [super dealloc];
 }
 
@@ -112,17 +126,23 @@
 {
     NSLog(@"Choosen the Product %@",
           [[_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex] valueForKey:@"name"]);
-    self.selectedProduct = [[_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex] valueForKey:@"name"];
+    
+    self.selectedProductName = [[_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex] valueForKey:@"name"];
+    
     if([self.activeEntity isEqualToString:@"Mechanism"]){
         
-        self.selectedMechanism = [_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex];
-        
+        //self.selectedMechanism = [_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex];
+        self.selectedMechanism = [self getObjToScroll:self.currIndex forEntityName:@"Mechanism"];
+
         /// push the passed image into the background Holder
         UIImage *mechPic = [pageTwoDoc getMechanismImage];
-        // NSLog(@" \n\n\n\nPicture Passed From Mechanism %@\n\n\n\n",mechPic);
-        mechBg = [[UIView alloc]initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+        //mechBg = [[UIView alloc]initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+        // needs to match the size
+        mechBg = [[UIView alloc]initWithFrame:self.view.frame];
+        
         UIImageView *mechToAdd = [[UIImageView alloc] initWithImage:mechPic];
         mechToAdd.frame = [[UIScreen mainScreen] applicationFrame];
+        
         [mechBg addSubview:mechToAdd];
         [mechToAdd release];
         
@@ -143,8 +163,98 @@
         for (UIView *view in [scrollView subviews]) { [view removeFromSuperview]; }
         
         [self addFacePlatesToScrollView];
+        
+    }else{
+        // FacePlate Choice
+        
+        UIImage *faceplatePic = [pageTwoDoc getMechanismImage];
+        NSLog(@"PAssed faceplate image %@",faceplatePic);
+        
+        UIImageView *faceplateToAdd = [[UIImageView alloc] initWithImage:faceplatePic];
+        faceplateToAdd.frame = [[UIScreen mainScreen] applicationFrame];
+        
+        self.selectedFacePlate = [self.currentFacePlates objectAtIndex:self.currIndex];
+        /* these guys are retained because they are iVars
+         the observation will be ceased when
+        [pageOneDoc   removeObserver:self forKeyPath:@"selected"];
+        [pageTwoDoc   removeObserver:self forKeyPath:@"selected"];
+        [pageThreeDoc removeObserver:self forKeyPath:@"selected"];
+        */
+        // clear the mechanisms from the scrollView
+        for (UIView *view in [scrollView subviews]) { [view removeFromSuperview]; }
+        
+        [mechBg addSubview:faceplateToAdd];
+        [faceplateToAdd release];
+        [self showManipulationControls];
     }
 }
+
+-(void)showManipulationControls
+{
+    self.manipulationMethodsShouldReturn = YES;
+    /* Set these up for the scrollView defaults
+    self.scrollView.minimumZoomScale=0.5;
+    self.scrollView.maximumZoomScale=6.0;
+    self.scrollView.contentSize=CGSizeMake(1280, 960);
+    self.scrollView.delegate=self;
+     */
+}
+
+
+#pragma mark - toolBar Functions and delegates
+
+-(void)addToOrder
+{
+    // Create the root view controller for the navigation controller
+    // The new view controller configures a Cancel and Done button for the
+    // navigation bar.
+    AddItemToOrderView *addController = [[AddItemToOrderView alloc] init];
+    addController.context = self.context;
+    if(self.selectedFacePlate){
+        addController.faceplate = self.selectedFacePlate;
+    }
+    if(self.selectedMechanism){
+        addController.mechanism = self.selectedMechanism;
+    }
+    
+    addController.productToAdd = self.selectedProductName;
+    
+    // Create the navigation controller and present it modally.
+    UINavigationController *navigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:addController];
+    [self presentModalViewController:navigationController animated:YES];
+    
+    // The navigation controller is now owned by the current view controller
+    // and the root view controller is owned by the navigation controller,
+    // so both objects should be released to prevent over-retention.
+    [navigationController release];
+    [addController release];
+    
+}
+-(void)newOrder
+{
+    /*
+    AddOrderView *addOrder = [[AddOrderView alloc] init];
+    addOrder.context = self.context;
+    
+    // Create the navigation controller and present it modally.
+    UINavigationController *navigationController = [[UINavigationController alloc]
+                                                    initWithRootViewController:addOrder];
+    [self presentModalViewController:navigationController animated:YES];
+    
+    // The navigation controller is now owned by the current view controller
+    // and the root view controller is owned by the navigation controller,
+    // so both objects should be released to prevent over-retention.
+    [navigationController release];
+    [addOrder release];
+     */
+    
+    SmallDisplay *addOrder = [[SmallDisplay alloc]init];
+    [self presentModalViewController:addOrder animated:YES];
+    [addOrder release];
+    
+}
+
 
 
 #pragma mark - View lifecycle
@@ -175,6 +285,47 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		exit(-1);  // Fail
 	}
+    ///////////////////////////////////////////////
+    // ToolBar
+    toolBar = [[UIToolbar alloc] init];
+    toolBar.barStyle = UIBarStyleDefault;
+    
+    //Set the toolbar to fit the width of the app.
+    [toolBar sizeToFit];
+    
+    //Caclulate the height of the toolbar
+    CGFloat toolBarHeight = [toolBar frame].size.height;
+    
+    //Get the bounds of the parent view
+    CGRect rootViewBounds = self.view.bounds;
+    
+    //Get the height of the parent view.
+    CGFloat rootViewHeight = CGRectGetHeight(rootViewBounds);
+    
+    //Get the width of the parent view,
+    CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
+    
+    //Create a rectangle for the toolbar
+    CGRect rectArea = CGRectMake(0, rootViewHeight - toolBarHeight - 40, rootViewWidth, toolBarHeight);
+    //CGRect rectArea = CGRectMake(0, 400, rootViewWidth, toolBarHeight);
+    //Reposition and resize the receiver
+    [toolBar setFrame:rectArea];
+    
+    //Create a button
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Add To Order" style:UIBarButtonItemStyleBordered target:self action:@selector(addToOrder)];
+    UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Create a new order" style:UIBarButtonItemStyleBordered target:self action:@selector(newOrder)];
+    
+    [toolBar setItems:[NSArray arrayWithObjects:infoButton,newOrderButton, nil]];
+    
+    //Add the toolbar as a subview to the navigation controller.
+    //[self.navigationController.view addSubview:toolbar];
+    NSLog(@"     -      -           -       \n\n%@",toolBar);
+    
+    
+    
+    
     
     ///////////////////////////////////////////////
     // the scrollHolder is going to hold everything
@@ -189,6 +340,7 @@
     //
     scrollView = [[UIScrollView alloc] initWithFrame:fullScreenRect];
     scrollView.delegate = self;
+    self.manipulationMethodsShouldReturn = NO; // this will stop pinching from doing anything to the scrllView
     
     // adjust content size for three pages of data and reposition to center page
 	scrollView.contentSize = CGSizeMake(screenWidth * 3, 100);	
@@ -201,6 +353,7 @@
     self.view = scrollHolder;
     [scrollHolder release];
     
+    [self.view addSubview:toolBar];
     
     // setup and load the first set of mechanism views
     self.activeEntity = @"Mechanism";
@@ -267,42 +420,6 @@
 {
     self.activeEntity = @"Faceplate";
     
-    // the size of the screen
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-
-    // create three Mechanism Views to cycle and observe their selected property
-	pageOneDoc = [[FacePlateView alloc] 
-                  initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
-    pageTwoDoc = [[FacePlateView alloc] 
-                  initWithFrame:CGRectMake(screenWidth, 0, screenWidth, screenHeight)];
-    pageThreeDoc = [[FacePlateView alloc] 
-                    initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, screenHeight)];
-    
-    [pageOneDoc   addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
-    [pageTwoDoc   addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
-    [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
-    
-    // pass the product name through
-    pageOneDoc.parentProduct   = self.currentCategory;
-    pageTwoDoc.parentProduct   = self.currentCategory;
-    pageThreeDoc.parentProduct = self.currentCategory;
-    
-    // pass the Brand name through
-    pageOneDoc.brandName   = self.currentBrand;
-    pageTwoDoc.brandName   = self.currentBrand;
-    pageThreeDoc.brandName = self.currentBrand;
-    
-    // pass the orientation
-    NSString *productOrientation = [[_fetchedResultsController.fetchedObjects 
-                                     objectAtIndex:self.currIndex] 
-                                    valueForKey:@"orientation"];
-    pageOneDoc.orientationPrefix   = productOrientation;
-    pageTwoDoc.orientationPrefix   = productOrientation;
-    pageThreeDoc.orientationPrefix = productOrientation;
-    
-    
     //////////////////////////////////////////////////////////
     // Work out how many faceplates there are for this product
     NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
@@ -313,27 +430,64 @@
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
                               @"(%K == %@)",
                               @"product.name",
-                              self.selectedProduct];
-                              //[[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"]];
+                              self.selectedProductName];
+    //[[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"]];
     [request setPredicate:predicate];
-   // NSLog(@" Predicate %@",predicate);
+    // NSLog(@" Predicate %@",predicate);
     NSError *error = nil;
     self.currentFacePlates = [NSArray arrayWithArray:[_context executeFetchRequest:request error:&error]];
     
     NSLog(@" \n\n\n Current FAcePlates %d \n %@ \n\n\n======\n",[self.currentFacePlates count],[[self.currentFacePlates objectAtIndex:5] valueForKey:@"name"]);
-    ///NSLog(@"Current FAcePlates :- \n%@\n\n",self.currentFacePlates);
-	// load all three pages into our scroll view
-    NSLog(@"Setting 1");
-	[self loadPageWithId:[self.currentFacePlates count] -1 onPage:0 withEntity:self.activeEntity];
-    NSLog(@"Setting 2");
-	[self loadPageWithId:0 onPage:1 withEntity:self.activeEntity];
-    NSLog(@"Setting 3");
-	[self loadPageWithId:1 onPage:2 withEntity:self.activeEntity];
-	
-	[scrollView addSubview:pageOneDoc];
-	[scrollView addSubview:pageTwoDoc];
-	[scrollView addSubview:pageThreeDoc];
+    ////////////////////////////////////////////////
+    // the size of the screen
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
     
+    if([self.currentFacePlates count] >= 3){
+        // create three Mechanism Views to cycle and observe their selected property
+        pageOneDoc = [[FacePlateView alloc] 
+                      initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
+        pageTwoDoc = [[FacePlateView alloc] 
+                      initWithFrame:CGRectMake(screenWidth, 0, screenWidth, screenHeight)];
+        pageThreeDoc = [[FacePlateView alloc] 
+                        initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, screenHeight)];
+        
+        [pageOneDoc   addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+        [pageTwoDoc   addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+        [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+        
+        // pass the product name through
+        pageOneDoc.parentProduct   = self.currentCategory;
+        pageTwoDoc.parentProduct   = self.currentCategory;
+        pageThreeDoc.parentProduct = self.currentCategory;
+        
+        // pass the Brand name through
+        pageOneDoc.brandName   = self.currentBrand;
+        pageTwoDoc.brandName   = self.currentBrand;
+        pageThreeDoc.brandName = self.currentBrand;
+        
+        // pass the orientation
+        NSString *productOrientation = [[_fetchedResultsController.fetchedObjects 
+                                         objectAtIndex:self.currIndex] 
+                                        valueForKey:@"orientation"];
+        pageOneDoc.orientationPrefix   = productOrientation;
+        pageTwoDoc.orientationPrefix   = productOrientation;
+        pageThreeDoc.orientationPrefix = productOrientation;
+        
+        
+        
+        ///NSLog(@"Current FAcePlates :- \n%@\n\n",self.currentFacePlates);
+        
+        // load all three pages into our scroll view
+        [self loadPageWithId:[self.currentFacePlates count] -1 onPage:0 withEntity:self.activeEntity];
+        [self loadPageWithId:0 onPage:1 withEntity:self.activeEntity];
+        [self loadPageWithId:1 onPage:2 withEntity:self.activeEntity];
+        
+        [scrollView addSubview:pageOneDoc];
+        [scrollView addSubview:pageTwoDoc];
+        [scrollView addSubview:pageThreeDoc];
+    }
     // set the page title
     self.title = [NSString 
                   stringWithFormat:@"%@ %d/%d",
@@ -359,6 +513,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+
+
+#pragma mark - scroll View Delegates
+
+
+
+
 #pragma mark - Loading items in ScrollView
 
 -(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name
@@ -366,22 +527,28 @@
     NSLog(@"Getting |%@| with index:%d",name,index);
     if([name isEqualToString:@"Faceplate"]){
         
-        NSLog(@" \n\n\n NOW __ Current FAcePlates %d \n %@ \n\n\n======\n",[self.currentFacePlates count],[[self.currentFacePlates objectAtIndex:index] valueForKey:@"name"]);
+       // NSLog(@" \n\n\n NOW __ Current FAcePlates %d \n %@ \n\n\n======\n",[self.currentFacePlates count],[[self.currentFacePlates objectAtIndex:index] valueForKey:@"name"]);
         
         return [NSArray arrayWithObject:[self.currentFacePlates objectAtIndex:index]];
     }
     
-    // Get all the mechanisms or faceplates assosiated with the product
+    // Get all the mechanisms assosiated with the product
     NSFetchRequest*request = [[[NSFetchRequest alloc] init] autorelease];
     NSEntityDescription *entity = [NSEntityDescription entityForName:name
                                               inManagedObjectContext:_context];
     [request setEntity:entity];
     
     NSPredicate *predicate= [NSPredicate predicateWithFormat:
-                    @"(%K == %@)",
-                    @"product.name",
-                    [[_fetchedResultsController.fetchedObjects objectAtIndex:index] 
-                     valueForKey:@"name"]];
+                    @"(%K == %@ AND %K == %@) ",
+                    @"product.name", [[_fetchedResultsController.fetchedObjects objectAtIndex:index]valueForKey:@"name"],
+                    @"product.category.name", self.currentCategory
+                     ];
+    /*
+    NSPredicate *predicate = [NSPredicate 
+                              predicateWithFormat:@"(%K == %@ AND %K == %@)",
+                              @"category.name",self.currentCategory,
+                              @"brand.name",self.currentBrand];
+     */
     
     [request setPredicate:predicate];    
     NSError *error = nil;
@@ -392,16 +559,7 @@
         // Deal with error...
         NSLog(@"Error Returned from the fetchRequest ");
     }
-    /*
-    // if it's a faceplate we only need the currently active one
-    if([name isEqualToString:@"Faceplate"]){
-        NSLog(@"FacePlate resultSet \n\n\n%@/%d\n\n\n",[result allObjects] ,index);
-        // IS RESULT IS AN NSSET ???
-        return [result objectAtIndex:index]; //[NSArray arrayWithObject:[result objectAtIndex:index]]; //[[(NSSet *)result allObjects] objectAtIndex:index];
-    }
-    */
-   
-    NSLog(@"Mechanism resultSet \n\n\n%@\n\n\n",result);
+
     return result;
 }
 
@@ -414,7 +572,7 @@
     
     NSString *product;
     if([self.activeEntity isEqualToString:@"Faceplate"]){
-        product = self.selectedProduct;
+        product = self.selectedProductName;
     }else{
         product = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
     }
