@@ -12,6 +12,12 @@
 
 @synthesize button1,button2,button3,button4,button5,button6,button7,button8,button9,button10,button11,button12;
 
+-(void)dealloc
+{
+    //self.view = nil;
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -35,8 +41,11 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view.backgroundColor = [UIColor blackColor];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+
+    self.title = @"Backgrounds";
     
     //create 12 buttons and use the background images
     UIImage *img1 = [UIImage imageWithContentsOfFile:
@@ -142,8 +151,8 @@
     }
     
     float pad = 20;
-    float buttonWidth = 100;
-    float buttonHeight = 100;
+    float buttonWidth = screenWidth / 4 - pad*3;
+    float buttonHeight = buttonWidth; //screenHeight / 3 - pad*2;
     float startX = (screenWidth - (4 * buttonWidth + pad * 2))/2;
     float startY = (screenHeight -(3 * buttonHeight+pad))/2;
     
@@ -184,7 +193,15 @@
 
 -(void)chooseImage:(id)sender
 {
-    NSLog(@"Choosed the image");
+    NSLog(@"Hi The Button %@",sender);
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:3];
+    //theButton.alpha = 0;
+    UIButton * button = (UIButton *)sender;
+    button.frame = CGRectMake(0, 0, 500, 500);
+    [UIView commitAnimations];
+     
 }
 /*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
