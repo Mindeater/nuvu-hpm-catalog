@@ -11,7 +11,7 @@
 @interface BrandTableView : UITableViewController <NSFetchedResultsControllerDelegate> {
         NSFetchedResultsController *_fetchedResultsController;
         NSManagedObjectContext *_context;    
-    }
+}
     
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *context;

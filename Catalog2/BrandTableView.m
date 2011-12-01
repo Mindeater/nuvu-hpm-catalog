@@ -19,6 +19,7 @@
 {
     self.fetchedResultsController.delegate = nil;
     self.fetchedResultsController = nil;
+    self.context = nil;
     [super dealloc];
 }
 
@@ -35,7 +36,7 @@
     [fetchRequest setEntity:entity];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
-                              initWithKey:@"name" ascending:NO];
+                              initWithKey:@"name" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
     [fetchRequest setFetchBatchSize:20];
@@ -82,6 +83,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -140,6 +142,15 @@
     // Return the number of sections.
     return 1;
 }
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    // fixed font style. use custom view (UILabel) if you want something different
+    return @"Available Brands";
+    /*NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:[NSIndexPath indexPathWithIndex:section]];
+     
+     return [currentRecord valueForKey:@"name"];
+     */
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -147,6 +158,7 @@
     [[_fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects];
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
