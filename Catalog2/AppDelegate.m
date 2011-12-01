@@ -10,6 +10,8 @@
 #import "LoadHPMData.h"
 #import "RootView.h"
 
+#import "CheckProductsForImages.h"
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -32,27 +34,34 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    
+    application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     
     /// Is there a Dataset Available ??
-    NSFetchRequest *request = [[[NSFetchRequest alloc] init] autorelease];
+    // this call forces a copy of the sqlite db if one has been shipped in the App bundle
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand"
                                               inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
     
     NSError *error = nil;
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    [request release];
+    NSLog(@"Entity CHeck Returns %@",result);
+    // otherwize we read the data in from pLists
     if(![result lastObject]){
-        
-        NSLog(@"Load Up the Data");
         LoadHPMData *loader = [[LoadHPMData alloc]init];
         loader.context = self.managedObjectContext; 
         [loader processFiles];
         [loader release];
     }
     
-    
-    
+    /*
+    /// Run the image check
+    CheckProductsForImages *check = [[CheckProductsForImages alloc]init];
+    check.context = self.managedObjectContext;
+    [check runCheck];
+    NSLog(@"\n-------------------\n");
+    */
     
     //MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil] autorelease];
     //self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
@@ -64,6 +73,7 @@
     RootView *viewController = [[[RootView alloc]initWithNibName:nil bundle:nil] autorelease];
     viewController.context = self.managedObjectContext;
     self.navigationController = [[[UINavigationController alloc] initWithRootViewController:viewController] autorelease];
+    self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     self.window.rootViewController = self.navigationController;
     self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
@@ -178,19 +188,23 @@
     ////////////////////////////////////////////////////////
     // copy the shipped sqlite db to the documents directory
     //
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *storePath = [documentsDirectory stringByAppendingPathComponent: @"Catalog2.sqlite"];
+   // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
+    //NSString *documentsDirectory = [paths objectAtIndex:0];
+   // NSString *storePath = [documentsDirectory stringByAppendingPathComponent: @"Catalog2.sqlite"];
+    NSString *storePath = [[[self applicationDocumentsDirectory] path] stringByAppendingPathComponent:@"Catalog2.sqlite"];
     NSURL *storeURL = [NSURL fileURLWithPath:storePath];
     // Put down default db if it doesn't already exist
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:storePath]) {
         NSString *defaultStorePath = [[NSBundle mainBundle] 
                                       pathForResource:@"Catalog2" ofType:@"sqlite"];
+       // NSLog(@"\n\n---\nStore path : %@",storePath);
         if (defaultStorePath) {
             NSError *copyError = nil;
             if(![fileManager copyItemAtPath:defaultStorePath toPath:storePath error:&copyError]){
                 NSLog(@"\n*****\nERROR Copying\n\n\n %@",[copyError localizedDescription]);
+            }else{
+                NSLog(@"\n\n+++\nCOPIED sqllite db");
             }
             
         }
