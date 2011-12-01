@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootView : UIViewController{
+@interface RootView : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>{
     NSManagedObjectContext *context;
     UIButton *button1;
     UIButton *button2;
@@ -16,6 +16,8 @@
     UIButton *button4;
     UIButton *button5;
     UIButton *button6;
+    
+    UIPopoverController *popOver;
 }
 
 @property(nonatomic,retain)NSManagedObjectContext *context;
@@ -26,9 +28,18 @@
 @property(nonatomic,retain)UIButton *button5;
 @property(nonatomic,retain)UIButton *button6;
 
+@property(nonatomic,retain)UIPopoverController *popOver;
+
+
 -(void)showAlert:(id)sender;
+
 -(void)showCatalog;
 -(void)showSettings;
+-(void)searchPage;
+-(void)chooseBackgroundFromLibrary;
+-(void)takePicture:(id)sender;
+-(void)showOrders;
+
 -(void)layoutButtons:(UIInterfaceOrientation)toInterfaceOrientation;
 
 @end
