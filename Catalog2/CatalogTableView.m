@@ -21,6 +21,7 @@
 {
     self.fetchedResultsController.delegate = nil;
     self.fetchedResultsController = nil;
+    self.context = nil;
     [super dealloc];
 }
 
@@ -215,15 +216,15 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     
-     ProductView *detailViewController = [[ProductView alloc] init];
+    ProductView *detailViewController = [[ProductView alloc] init];
     detailViewController.currentBrand = self.currentBrand;
     NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     detailViewController.currentCategory = [currentRecord valueForKey:@"name"];
     detailViewController.context = self.context;
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    [detailViewController release];
      
 }
 #pragma mark - NSFetchedResultsController Delegate methods
