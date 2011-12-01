@@ -10,8 +10,8 @@
 
 @interface PartView : UIView{
     NSString *parentProduct;
-    BOOL selected;
-    UIView *controlsView;
+    BOOL      selected;
+    UIView   *controlsView;
     NSString *orientationPrefix;
     NSString *brandName;
     
