@@ -26,15 +26,14 @@
     
     // the Control View is going to hold the non-image elements
     controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    //controlsView.layer.borderColor = [UIColor redColor].CGColor;
     [self addSubview:self.controlsView];
-    //self.backgroundColor = [UIColor clearColor];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    //Product Name
+    ///////////////////////////////////
+    //Product Label
     UILabel *myLabel = [[UILabel alloc] 
                         initWithFrame:CGRectMake(20,screenHeight - 250, screenWidth - 40, 100)];      
     myLabel.text = self.parentProduct;
@@ -43,13 +42,12 @@
     [self.controlsView addSubview:myLabel];
     [myLabel release];
     
+    ///////////////////////////////
     // button to choose this one
-    //CGRect buttonFrame = CGRectMake( 10, 80, 100, 30 );
-    //UIButton *button = [[UIButton alloc] initWithFrame: buttonFrame];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(10, 100, 100, 60);
-    [button setTitle: @"OK" forState: UIControlStateNormal];
-    [button setTitleColor: [UIColor redColor] forState: UIControlStateNormal];
+    button.frame = CGRectMake(10, 0, 50, 30);
+    [button setTitle: @"ok" forState: UIControlStateNormal];
+    [button setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
     [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
     [self.controlsView addSubview: button];
     
@@ -58,7 +56,7 @@
     // note:
     //arteor 770 has AR in front of the part name which doesn't match the image
     for(NSManagedObject *mech in items){
-        NSLog(@"%@\n\n ++ id:%@ count:%@ name: %@",
+        NSLog(@"%@\n\n +Mech Add+ \nid:%@ count:%@ name: %@\n\n",
               self.parentProduct,[mech valueForKey:@"id"],
               [mech valueForKey:@"count"],
               [mech valueForKey:@"name"] );
@@ -67,7 +65,7 @@
         
         if([[mech valueForKey:@"count"] isEqualToNumber:[NSNumber numberWithInt:1]]){
             // load the image based on the id screen the Arteor 770 fields
-            if([[mech valueForKey:@"name"] isEqualToString:@"Mech 2 Part #"]){
+            if([[mech valueForKey:@"name"] isEqualToString:@"Mech 2 Part #"] && [self.brandName isEqualToString:@"Arteor 770"]){
                 img = [[mech valueForKey:@"id"] 
                    stringByReplacingOccurrencesOfString:@"AR" withString:@""];
             }else{
@@ -82,21 +80,25 @@
                               stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
         }
         
-        // Is is a frame ?
+        // Build the Directory string
         NSString *dir;
+        NSString *prefix = self.orientationPrefix;
         if([[mech valueForKey:@"name"] isEqualToString:@"Frame"]){
-            dir = @"Frame";
+            dir = @"Frames";
+            // remove prefix for frames
+            prefix = @"";
         }else{
             dir = [NSString stringWithFormat:@"%@/Mechanism",
                                       [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
         }
         
-        NSLog(@" Directory %@",dir);
+        NSLog(@" Directory %@ \nWith Orientation: %@",dir,prefix);
         NSString *imgCleaned = [NSString stringWithFormat:@"%@%@",
-                                self.orientationPrefix,
+                                prefix,
                                 [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
         
         NSLog(@"  - File NAme %@",imgCleaned);
+        
         // Grab the image off disk and load it up
         NSString *imageName = [[NSBundle mainBundle] 
                           pathForResource:imgCleaned
@@ -107,15 +109,26 @@
                                pathForResource:imgWithSubFolder
                                ofType:@"png"];
          */
+        
         NSLog(@" FuLL image NAme:  %@",imageName);
         
         UIImage *image = [UIImage imageWithContentsOfFile:imageName];
         UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
         nextImage.backgroundColor = [UIColor clearColor];
         nextImage.contentMode = UIViewContentModeScaleAspectFit;
-        nextImage.frame = CGRectMake(10, 10, screenWidth-20, screenHeight-120);
+        
+        //nextImage.frame = CGRectMake(40, 40, screenWidth-80, screenHeight-180);
+        float iWidth = screenWidth * 0.8;
+        float iHeight = screenHeight * 0.8;
+        float sX = (screenWidth -iWidth)/2.0;
+        float sY = (screenHeight - iHeight)/2.0;
+        
+        //nextImage.frame = CGRectMake(80, 80, screenWidth-160, screenHeight-260);
+        nextImage.frame = CGRectMake(sX, sY, iWidth, iHeight- 100.0);
+        /*
         nextImage.layer.borderColor = [[UIColor whiteColor] CGColor];
         nextImage.layer.borderWidth = 4.0;
+         */
         [self addSubview:nextImage];
         [nextImage release];
     }
@@ -134,7 +147,6 @@
 {
     [self.controlsView removeFromSuperview];
     UIGraphicsBeginImageContext(self.bounds.size);
-   // CALayer *myLayer = self.layer;
     [self.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
