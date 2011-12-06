@@ -26,5 +26,6 @@
 
 
 -(void)cancelSelection:(id)sender;
+-(void)acceptSelection:(id)sender;
 
 @end

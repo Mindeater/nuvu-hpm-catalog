@@ -99,7 +99,7 @@
     [cancelButton release];
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithTitle:@"Confirm" style:UIBarButtonItemStylePlain target:self action:@selector(acceptSelection:)];          
-    self.navigationItem.rightBarButtonItem = cancelButton;
+    self.navigationItem.rightBarButtonItem = addButton;
     [addButton release];
     
     /////////////////////////
@@ -109,6 +109,7 @@
     // textview to put some info
     
     UITextView *info = [[UITextView alloc]initWithFrame:CGRectMake(40, 20, 600, 600)];
+    [info setFont:[UIFont fontWithName:@"ArialMT" size:20]];
     
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
@@ -118,8 +119,8 @@
     
     NSLog(@" +++ = == \n%@\n\n\n",self.fetchedResultsController.fetchedObjects);
     if([self.fetchedResultsController.fetchedObjects lastObject] == nil){
-        NSLog(@"EMPTY RESULTS");
-        
+        ////////////////////////////
+        // DEFAULT
         // Create a new Entity
         
         // Create a new instance of the entity managed by the fetched results controller.
@@ -128,7 +129,7 @@
         NSManagedObject *newEntity = [NSEntityDescription 
                                       insertNewObjectForEntityForName:[entity name] inManagedObjectContext:[self.fetchedResultsController managedObjectContext]];
         
-        /*
+        /* non- fetchedResults controller version
         NSManagedObject *newEntity = [NSEntityDescription 
                                       insertNewObjectForEntityForName:@"Order"
                                       inManagedObjectContext:self.context];
@@ -177,9 +178,10 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
--(void)addSelection:(id)sender
+-(void)acceptSelection:(id)sender
 {
     NSError *error;
+    NSLog(@"ADD to cart");
     // for each of the mechanisms and the faceplate
     // insert and order line
     
@@ -187,6 +189,7 @@
     
     // mechanisms first
     for(NSManagedObject *mech in self.mechanism){
+        NSLog(@"Mechanism");
         NSManagedObject *newEntity = [NSEntityDescription 
                                       insertNewObjectForEntityForName:@"OrderLine"
                                       inManagedObjectContext:self.context];
@@ -204,6 +207,7 @@
         
         [self.context insertObject:newEntity];
     }
+    NSLog(@"Facreplate");
     
     // now the faceplate
     NSManagedObject *newEntity = [NSEntityDescription 
