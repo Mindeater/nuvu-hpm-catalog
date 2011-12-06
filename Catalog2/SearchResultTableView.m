@@ -7,7 +7,8 @@
 //
 
 #import "SearchResultTableView.h"
-#import "ProductView.h"
+//#import "ProductView.h"
+#import "ProductChooserView.h"
 #import "SearchPage.h"
 
 
@@ -211,8 +212,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ProductView *detailViewController = [[ProductView alloc] init];
-    
+    //ProductView *detailViewController = [[ProductView alloc] init];
+    ProductChooserView *detailViewController = [[ProductChooserView alloc] init];
     NSManagedObject *currentRecord = [self.filteredListContents objectAtIndex:indexPath.row];
     NSLog(@" current Selected A -- \n\n%@ \n\n",
           currentRecord);
