@@ -11,5 +11,4 @@
 
 @interface FacePlateView : PartView
 
-
 @end
