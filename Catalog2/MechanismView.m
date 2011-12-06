@@ -14,7 +14,7 @@
 
 -(void)dealloc
 {
-    [parentProduct release];
+    [categoryName release];
     controlsView = nil;
     [super dealloc];
 }
@@ -22,11 +22,12 @@
 -(void)drawWithItems:(NSArray *)items
 {
     // remove any views that already exist
-    for (UIView *view in [self subviews]) { [view removeFromSuperview]; }
+    for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
     
     // the Control View is going to hold the non-image elements
+    
     controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [self addSubview:self.controlsView];
+    [self.view addSubview:self.controlsView];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -35,8 +36,9 @@
     ///////////////////////////////////
     //Product Label
     UILabel *myLabel = [[UILabel alloc] 
-                        initWithFrame:CGRectMake(20,screenHeight - 250, screenWidth - 40, 100)];      
-    myLabel.text = self.parentProduct;
+                        initWithFrame:CGRectMake(20,screenHeight - 250, screenWidth - 40, 100)]; 
+                       // initWithFrame:CGRectMake(20,20, 400, 100)];      
+    myLabel.text = self.productName;
     myLabel.textColor = [UIColor whiteColor];
     myLabel.backgroundColor = [UIColor clearColor];
     [self.controlsView addSubview:myLabel];
@@ -56,8 +58,10 @@
     // note:
     //arteor 770 has AR in front of the part name which doesn't match the image
     for(NSManagedObject *mech in items){
-        NSLog(@"%@\n\n +Mech Add+ \nid:%@ count:%@ name: %@\n\n",
-              self.parentProduct,[mech valueForKey:@"id"],
+        NSLog(@"\n+Mech Add+ \n%@\n name: %@\nid:%@ count:%@ name: %@\n\n",
+              self.categoryName,
+              self.productName,
+              [mech valueForKey:@"id"],
               [mech valueForKey:@"count"],
               [mech valueForKey:@"name"] );
         
@@ -92,12 +96,12 @@
                                       [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
         }
         
-        NSLog(@" Directory %@ \nWith Orientation: %@",dir,prefix);
+        //NSLog(@" Directory %@ \nWith Orientation: %@",dir,prefix);
         NSString *imgCleaned = [NSString stringWithFormat:@"%@%@",
                                 prefix,
                                 [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
         
-        NSLog(@"  - File NAme %@",imgCleaned);
+        //NSLog(@"  - File NAme %@",imgCleaned);
         
         // Grab the image off disk and load it up
         NSString *imageName = [[NSBundle mainBundle] 
@@ -129,12 +133,11 @@
         nextImage.layer.borderColor = [[UIColor whiteColor] CGColor];
         nextImage.layer.borderWidth = 4.0;
          */
-        [self addSubview:nextImage];
+        [self.view addSubview:nextImage];
         [nextImage release];
     }
    
-    
-    
+    [self addToolBarToView];
 }
 
 -(void)chooseMe
@@ -146,8 +149,8 @@
 -(UIImage *)getMechanismImage
 {
     [self.controlsView removeFromSuperview];
-    UIGraphicsBeginImageContext(self.bounds.size);
-    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
@@ -155,6 +158,7 @@
 }
 
 #pragma mark - View lifecycle
+/*
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -167,22 +171,22 @@
     }
     return self;
 }
-
+*/
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView
+- (void)viewDidLoad
 {
-    
-    //self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    [super viewDidLoad];
+
+    //controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     /*
      // Add a view cause there ain't no nib
+     //self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     UIView *view = [[UIView alloc] initWithFrame:[UIScreen mainScreen].applicationFrame];
     [view setAutoresizingMask:UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth];
     [view setBackgroundColor:[UIColor blueColor]];
     self.view = view;
     [view release];
-    */
-    // the size of the screen
-    
+    */    
 }
 
 

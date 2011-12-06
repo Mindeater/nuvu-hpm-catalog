@@ -11,7 +11,4 @@
 
 @interface MechanismView : PartView
     
-
-
--(UIImage *)getMechanismImage;
 @end
