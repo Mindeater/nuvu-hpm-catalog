@@ -10,6 +10,7 @@
 #import "LoadHPMData.h"
 #import "RootView.h"
 
+
 #import "CheckProductsForImages.h"
 
 @implementation AppDelegate
@@ -46,7 +47,7 @@
     NSError *error = nil;
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
     [request release];
-    NSLog(@"Entity CHeck Returns %@",result);
+    //NSLog(@"Entity CHeck Returns %@",result);
     // otherwize we read the data in from pLists
     if(![result lastObject]){
         LoadHPMData *loader = [[LoadHPMData alloc]init];
@@ -69,6 +70,12 @@
     //self.window.rootViewController = self.navigationController;
     
     
+
+    
+    
+    
+    /////////////////////////////////////////////
+    // UI
     
     RootView *viewController = [[[RootView alloc]initWithNibName:nil bundle:nil] autorelease];
     viewController.context = self.managedObjectContext;
