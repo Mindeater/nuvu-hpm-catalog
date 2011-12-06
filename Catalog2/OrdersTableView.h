@@ -17,4 +17,5 @@
 @property (nonatomic, retain) NSManagedObjectContext *context;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+-(void)addNewOrder;
 @end

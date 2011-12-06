@@ -7,7 +7,8 @@
 //
 
 #import "OrdersTableView.h"
-#import "OrderDetailPage.h"
+//#import "OrderDetailPage.h"
+#import "OrderDetailTableView.h"
 
 @implementation OrdersTableView
 
@@ -57,6 +58,23 @@
     
 }
 
+-(void)addNewOrder
+{
+    NSError *error;
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    
+    NSManagedObject *newEntity = [NSEntityDescription 
+                                  insertNewObjectForEntityForName:[entity name] inManagedObjectContext:[self.fetchedResultsController managedObjectContext]];
+    
+    [newEntity setValue:@"New Order" forKey:@"name"];
+    [newEntity setValue:
+     [NSString stringWithFormat:@"%d", NSTimeIntervalSince1970]
+                 forKey:@"uniqueId"];
+    [newEntity setValue:[NSNumber numberWithBool:NO] forKey:@"active"];
+    
+    [self.context insertObject:newEntity];
+    [self.context save:&error];
+}
 
 #pragma mark - view
 
@@ -83,13 +101,19 @@
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.tableView setBackgroundView:nil];
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor whiteColor];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+     self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    UIBarButtonItem *tempButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewOrder)];
+    self.navigationItem.rightBarButtonItem = tempButton;
+    [tempButton release];
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
@@ -136,10 +160,67 @@
 
 #pragma mark - Table view data source
 
+#define SectionHeaderHeight 40
+//from:
+// http://undefinedvalue.com/2009/08/25/changing-background-color-and-section-header-text-color-grouped-style-uitableview
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([self tableView:tableView titleForHeaderInSection:section] != nil) {
+        return SectionHeaderHeight;
+    }
+    else {
+        // If no section header title, no section header needed
+        return 0;
+    }
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
+    if (sectionTitle == nil) {
+        return nil;
+    }
+    
+    // Create label with section title
+    UILabel *label = [[[UILabel alloc] init] autorelease];
+    label.frame = CGRectMake(20, 6, 300, 30);
+    label.backgroundColor = [UIColor clearColor];
+    /*
+     label.textColor = [UIColor colorWithHue:(136.0/360.0)  // Slightly bluish green
+     saturation:1.0
+     brightness:0.60
+     alpha:1.0];
+     label.shadowColor = [UIColor whiteColor];
+     */
+    label.textColor = [UIColor whiteColor];
+    label.shadowColor = [UIColor grayColor];
+    label.shadowOffset = CGSizeMake(0.0, 1.0);
+    label.font = [UIFont boldSystemFontOfSize:16];
+    label.text = sectionTitle;
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, SectionHeaderHeight)];
+    [view autorelease];
+    [view addSubview:label];
+    
+    return view;
+}
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
     return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    // fixed font style. use custom view (UILabel) if you want something different
+    if (![_fetchedResultsController.fetchedObjects lastObject]) {
+        return @"There are no orders to view";
+    }
+    return @"Orders:";
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -168,6 +249,8 @@
     
     NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     cell.textLabel.text = [currentRecord valueForKey:@"name"];
+    cell.backgroundColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
 }
 /*
  // Override to support conditional editing of the table view.
@@ -182,13 +265,27 @@
  // Override to support editing the table view.
  - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
  {
- if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
- }   
- else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
- }   
+     if (editingStyle == UITableViewCellEditingStyleDelete) {
+         // Delete the row from the data source
+         [self.context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
+         
+         // Save the context.
+         NSError *error;
+         if (![self.context save:&error]) {
+             /*
+              Replace this implementation with code to handle the error appropriately.
+              
+              abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+              */
+             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+             abort();
+         }
+         //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+     }   
+     else if (editingStyle == UITableViewCellEditingStyleInsert) {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+         
+     }   
  }
  
 
@@ -214,8 +311,12 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     
-    OrderDetailPage *detailViewController = [[OrderDetailPage alloc] init];
+   // OrderDetailPage *detailViewController = [[OrderDetailPage alloc] init];
+    OrderDetailTableView *detailViewController = [[OrderDetailTableView alloc] init];
+    //OrderDetailTableView *detailViewController = [[OrderDetailTableView alloc] initWithStyle:UITableViewStyleGrouped];
     detailViewController.context = self.context;
+    NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
+    detailViewController.orderId = [currentRecord valueForKey:@"uniqueId"];
     
     //NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     //detailViewController.currentBrand = [currentRecord valueForKey:@"name"];
