@@ -7,7 +7,9 @@
 //
 
 #import "BrandCatalogTableView.h"
-#import "ProductView.h"
+//#import "ProductView.h"
+
+#import "ProductChooserView.h"
 
 
 @implementation BrandCatalogTableView
@@ -77,13 +79,14 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
-#pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    self.view.backgroundColor = [UIColor blackColor];
+    [self.tableView setBackgroundView:nil];
+    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.separatorColor = [UIColor whiteColor];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -135,6 +138,57 @@
 
 #pragma mark - Table view data source
 
+
+#define SectionHeaderHeight 40
+//from:
+// http://undefinedvalue.com/2009/08/25/changing-background-color-and-section-header-text-color-grouped-style-uitableview
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if ([self tableView:tableView titleForHeaderInSection:section] != nil) {
+        return SectionHeaderHeight;
+    }
+    else {
+        // If no section header title, no section header needed
+        return 0;
+    }
+}
+
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
+    if (sectionTitle == nil) {
+        return nil;
+    }
+    
+    // Create label with section title
+    UILabel *label = [[[UILabel alloc] init] autorelease];
+    label.frame = CGRectMake(20, 6, 300, 30);
+    label.backgroundColor = [UIColor clearColor];
+    /*
+    label.textColor = [UIColor colorWithHue:(136.0/360.0)  // Slightly bluish green
+                                 saturation:1.0
+                                 brightness:0.60
+                                      alpha:1.0];
+    label.shadowColor = [UIColor whiteColor];
+     */
+    label.textColor = [UIColor whiteColor];
+    label.shadowColor = [UIColor grayColor];
+    label.shadowOffset = CGSizeMake(0.0, 1.0);
+    label.font = [UIFont boldSystemFontOfSize:16];
+    label.text = sectionTitle;
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, SectionHeaderHeight)];
+    [view autorelease];
+    [view addSubview:label];
+    
+    return view;
+}
+
+
+
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
@@ -179,6 +233,11 @@
     //NSLog(@"Section Object : %@",[sectionBrand mutableSetValueForKey:@"category"]);
     NSManagedObject *category = [[[sectionBrand mutableSetValueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
     cell.textLabel.text = [category valueForKey:@"name"];
+    
+    // custom coloring
+    cell.backgroundColor = [UIColor blackColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    //cell.textLabel.highlightedTextColor = [UIColor blackColor];
 }
 
 
@@ -188,7 +247,8 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     
-    ProductView *detailViewController = [[ProductView alloc] init];
+   // ProductView *detailViewController = [[ProductView alloc] init];
+    ProductChooserView *detailViewController = [[ProductChooserView alloc] init];
 
     NSManagedObject *currentRecord = [_fetchedResultsController.fetchedObjects 
                                       objectAtIndex:indexPath.section];
