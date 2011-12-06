@@ -289,22 +289,16 @@
     // ToolBar
     toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleDefault;
-    
     //Set the toolbar to fit the width of the app.
     [toolBar sizeToFit];
-    
     //Caclulate the height of the toolbar
     CGFloat toolBarHeight = [toolBar frame].size.height;
-    
     //Get the bounds of the parent view
     CGRect rootViewBounds = self.view.bounds;
-    
     //Get the height of the parent view.
     CGFloat rootViewHeight = CGRectGetHeight(rootViewBounds);
-    
     //Get the width of the parent view,
     CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
-    
     //Create a rectangle for the toolbar
     CGRect rectArea = CGRectMake(0, rootViewHeight - toolBarHeight - 40, rootViewWidth, toolBarHeight);
     //CGRect rectArea = CGRectMake(0, 400, rootViewWidth, toolBarHeight);
@@ -323,7 +317,8 @@
     //[self.navigationController.view addSubview:toolbar];
     NSLog(@"     -      -           -       \n\n%@",toolBar);
     
-    
+    [infoButton release];
+    [newOrderButton release];
     
     
     
@@ -365,23 +360,28 @@
 -(void)addMechanismsToScrollView
 {
     // the size of the screen
+    /*
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    
+    */
     // create three Mechanism Views to cycle and observe their selected property
+    /*
 	pageOneDoc = [[MechanismView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
     pageTwoDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth, 0, screenWidth, screenHeight)];
     pageThreeDoc = [[MechanismView alloc] initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, screenHeight)];
-
+     */
+    pageOneDoc = [[MechanismView alloc] init];
+    pageTwoDoc = [[MechanismView alloc] init];
+    pageThreeDoc = [[MechanismView alloc] init];
     [pageOneDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     [pageTwoDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     
     // pass the product name through
-    pageOneDoc.parentProduct = self.currentCategory;
-    pageTwoDoc.parentProduct = self.currentCategory;
-    pageThreeDoc.parentProduct = self.currentCategory;
+    pageOneDoc.categoryName = self.currentCategory;
+    pageTwoDoc.categoryName = self.currentCategory;
+    pageThreeDoc.categoryName = self.currentCategory;
     
     // pass the Brand name through
     pageOneDoc.brandName = self.currentBrand;
@@ -402,9 +402,9 @@
 	[self loadPageWithId:0 onPage:1 withEntity:self.activeEntity];
 	[self loadPageWithId:1 onPage:2 withEntity:self.activeEntity];
 	
-	[scrollView addSubview:pageOneDoc];
-	[scrollView addSubview:pageTwoDoc];
-	[scrollView addSubview:pageThreeDoc];
+	[scrollView addSubview:pageOneDoc.view];
+	[scrollView addSubview:pageTwoDoc.view];
+	[scrollView addSubview:pageThreeDoc.view];
     
     // set the page title
     self.title = [NSString 
@@ -440,27 +440,33 @@
     NSLog(@" \n\n\n Current FAcePlates %d \n %@ \n\n\n======\n",[self.currentFacePlates count],[[self.currentFacePlates objectAtIndex:5] valueForKey:@"name"]);
     ////////////////////////////////////////////////
     // the size of the screen
+    /*
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    
+    */
     if([self.currentFacePlates count] >= 3){
         // create three Mechanism Views to cycle and observe their selected property
+        /*
         pageOneDoc = [[FacePlateView alloc] 
                       initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight)];
         pageTwoDoc = [[FacePlateView alloc] 
                       initWithFrame:CGRectMake(screenWidth, 0, screenWidth, screenHeight)];
         pageThreeDoc = [[FacePlateView alloc] 
                         initWithFrame:CGRectMake(screenWidth *2, 0, screenWidth, screenHeight)];
+         */
+        pageOneDoc = [[FacePlateView alloc] init];
+        pageTwoDoc = [[FacePlateView alloc]init]; 
+        pageThreeDoc = [[FacePlateView alloc]init]; 
         
         [pageOneDoc   addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
         [pageTwoDoc   addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
         [pageThreeDoc addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
         
         // pass the product name through
-        pageOneDoc.parentProduct   = self.currentCategory;
-        pageTwoDoc.parentProduct   = self.currentCategory;
-        pageThreeDoc.parentProduct = self.currentCategory;
+        pageOneDoc.categoryName   = self.currentCategory;
+        pageTwoDoc.categoryName   = self.currentCategory;
+        pageThreeDoc.categoryName = self.currentCategory;
         
         // pass the Brand name through
         pageOneDoc.brandName   = self.currentBrand;
@@ -484,9 +490,9 @@
         [self loadPageWithId:0 onPage:1 withEntity:self.activeEntity];
         [self loadPageWithId:1 onPage:2 withEntity:self.activeEntity];
         
-        [scrollView addSubview:pageOneDoc];
-        [scrollView addSubview:pageTwoDoc];
-        [scrollView addSubview:pageThreeDoc];
+        [scrollView addSubview:pageOneDoc.view];
+        [scrollView addSubview:pageTwoDoc.view];
+        [scrollView addSubview:pageThreeDoc.view];
     }
     // set the page title
     self.title = [NSString 
@@ -579,17 +585,17 @@
     
 	switch (page) {
 		case 0:
-            pageOneDoc.parentProduct = product;
+            pageOneDoc.productName = product;
             [pageOneDoc drawWithItems:productItems];
 			break;
 		case 1:
-            pageTwoDoc.parentProduct = product;
+            pageTwoDoc.productName = product;
 			[pageTwoDoc drawWithItems:productItems];
             break;
 		case 2:
 			//pageThreeDoc.text = [[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"];
             //[pageThreeDoc drawWithManagedObject:[_fetchedResultsController.fetchedObjects objectAtIndex:index]];
-            pageThreeDoc.parentProduct = product;
+            pageThreeDoc.productName = product;
             [pageThreeDoc drawWithItems:productItems];
 			break;
 	}	
@@ -613,7 +619,6 @@
 
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)sender {  
-    
     int objCount;
     
     if([self.activeEntity isEqualToString:@"Faceplate"]){
