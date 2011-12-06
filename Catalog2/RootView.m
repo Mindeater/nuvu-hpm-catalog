@@ -7,6 +7,7 @@
 //
 
 #import "RootView.h"
+#import <MediaPlayer/MediaPlayer.h>
 //#import "BrandTableView.h"
 #import "BrandCatalogTableView.h"
 
@@ -20,6 +21,7 @@
 @synthesize context;
 @synthesize button1,button2,button3,button4,button5,button6;
 @synthesize popOver;
+@synthesize bgImg;
 
 -(void)dealloc
 {
@@ -69,37 +71,82 @@
     self.view.backgroundColor = [UIColor blackColor];
     //self.wantsFullScreenLayout = YES;
     
+    
+    [self playMovie];
+   
+    
+    //else 
+    
+    //[self renderInterface];
+}
 
+-(void)renderInterface
+{
+ 
+    // background Image
+    UIImage *bg = [UIImage imageWithContentsOfFile:
+                   [[NSBundle mainBundle] pathForResource:@"main-bg" ofType:@"png"]];
+    bgImg =[[UIImageView alloc]initWithImage:bg];
+    //bgImg.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    [self.view addSubview:bgImg];
+    
+    //////////////////////////////
     // main Navigation Options
     // 1. show catalog
-    button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIImage *img1 = [UIImage imageWithContentsOfFile:
+                     [[NSBundle mainBundle] pathForResource:@"catalog-btn" ofType:@"png"]]; 
+    button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button1 setImage:img1 forState:UIControlStateNormal];
+    
+    //button1 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button1 setTitle:@"Catalog" forState:UIControlStateNormal];
     [button1 addTarget:self action:@selector(showCatalog) forControlEvents:UIControlEventTouchUpInside];
 
     // 2. Choose Background (from supplied)
-    button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIImage *img2 = [UIImage imageWithContentsOfFile:
+                     [[NSBundle mainBundle] pathForResource:@"bg-btn" ofType:@"png"]];
+    button2 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button2 setImage:img2 forState:UIControlStateNormal];
+    //button2 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button2 setTitle:@"Choose BG" forState:UIControlStateNormal];
     [button2 addTarget:self action:@selector(chooseBackgroundFromLibrary) forControlEvents:UIControlEventTouchUpInside];
     
     // 3. Create Background (camera or library)
-    button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIImage *img3 = [UIImage imageWithContentsOfFile:
+                     [[NSBundle mainBundle] pathForResource:@"photo-btn" ofType:@"png"]];
+    
+    button3 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button3 setImage:img3 forState:UIControlStateNormal];
+    //button3 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button3 setTitle:@"Create BG" forState:UIControlStateNormal];
     [button3 addTarget:self action:@selector(takePicture:) forControlEvents:UIControlEventTouchUpInside];
     
     // 4. show Orders
-    button4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    UIImage *img4 = [UIImage imageWithContentsOfFile:
+                     [[NSBundle mainBundle] pathForResource:@"cart-btn" ofType:@"png"]];
+    button4 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button4 setImage:img4 forState:UIControlStateNormal];
+    //button4 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [button4 setTitle:@"Orders" forState:UIControlStateNormal];
     [button4 addTarget:self action:@selector(showOrders) forControlEvents:UIControlEventTouchUpInside];
     
-    // 5. show Settings
-    button5 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button5 setTitle:@"Settings" forState:UIControlStateNormal];
-    [button5 addTarget:self action:@selector(showSettings) forControlEvents:UIControlEventTouchUpInside];
+    // 5. show Search
+    UIImage *img5 = [UIImage imageWithContentsOfFile:
+                     [[NSBundle mainBundle] pathForResource:@"search-btn" ofType:@"png"]];
+    button5 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button5 setImage:img5 forState:UIControlStateNormal];
+    //button5 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button5 setTitle:@"Search" forState:UIControlStateNormal];
+    [button5 addTarget:self action:@selector(searchPage) forControlEvents:UIControlEventTouchUpInside];
     
-    // 6. show Search
-    button6 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    [button6 setTitle:@"Search" forState:UIControlStateNormal];
-    [button6 addTarget:self action:@selector(searchPage) forControlEvents:UIControlEventTouchUpInside];
+    // 6. show Settings
+    UIImage *img6 = [UIImage imageWithContentsOfFile:
+                     [[NSBundle mainBundle] pathForResource:@"setting-btn" ofType:@"png"]];
+    button6 = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button6 setImage:img6 forState:UIControlStateNormal];
+    //button6 = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [button6 setTitle:@"Settings" forState:UIControlStateNormal];
+    [button6 addTarget:self action:@selector(showSettings) forControlEvents:UIControlEventTouchUpInside];
     
     //[[UIApplication sharedApplication] statusBarOrientation];
     [self layoutButtons: [[UIApplication sharedApplication] statusBarOrientation]];
@@ -110,7 +157,8 @@
     [self.view addSubview:button4];
     [self.view addSubview:button5];
     [self.view addSubview:button6];
-   
+    
+     
 }
 
 -(void)layoutButtons:(UIInterfaceOrientation)toInterfaceOrientation
@@ -118,6 +166,7 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
+    
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
         toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
@@ -125,11 +174,14 @@
         screenHeight = screenRect.size.width;
     }
 
-
+    //@TODO: layout for iphone padding should be tighter
     
-    float buttonWidth = 100;
-    float buttonHeight = 100;
-    float pad = 20;
+    //float buttonWidth = 100;
+    //float buttonHeight = 100;
+    float pad = 40;
+    float buttonWidth = screenWidth / 3 - pad*2;
+    float buttonHeight = buttonWidth; //screenHeight / 3 - pad*2;
+    
     float startX = (screenWidth - (3 * buttonWidth + pad * 2))/2;
     float startY = (screenHeight -(2 * buttonHeight+pad))/2;
     
@@ -165,6 +217,49 @@
     self.button5 = nil;
     self.button6 = nil;
 }
+#pragma mark - MoviePlayer
+-(void)playMovie
+{
+    /////////////////////////////////////////////
+    // Play movie
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
+                                         pathForResource:@"ipadIntro" ofType:@"mov"]];
+    MPMoviePlayerController *moviePlayer = 
+    [[MPMoviePlayerController alloc] 
+     initWithContentURL:url];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(moviePlayBackDidFinish:)
+                                                 name:MPMoviePlayerPlaybackDidFinishNotification
+                                               object:moviePlayer];
+    
+    moviePlayer.controlStyle = MPMovieControlStyleNone;
+    moviePlayer.shouldAutoplay = YES;
+    moviePlayer.fullscreen = YES;
+    moviePlayer.view.frame = [[UIScreen mainScreen] bounds];
+    [self.view addSubview:moviePlayer.view];
+    //[self.view bringSubviewToFront:moviePlayer.view];
+    [moviePlayer setFullscreen:YES animated:YES];
+    //[moviePlayer release];
+}
+
+-(void)moviePlayBackDidFinish:(NSNotification*)notification 
+{
+    
+    MPMoviePlayerController *moviePlayer = [notification object];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self      
+                                                    name:MPMoviePlayerPlaybackDidFinishNotification
+                                                  object:moviePlayer];
+    
+    if ([moviePlayer 
+         respondsToSelector:@selector(setFullscreen:animated:)])
+    {
+        [moviePlayer.view removeFromSuperview];
+    }
+    [moviePlayer release];
+    [self renderInterface];
+}
 
 #pragma mark - Button call Backs
 -(void)showCatalog
@@ -179,7 +274,8 @@
 
 -(void)showOrders
 {
-    OrdersTableView *orders = [[OrdersTableView alloc]init];
+    //OrdersTableView *orders = [[OrdersTableView alloc]init];
+    OrdersTableView *orders = [[OrdersTableView alloc] initWithStyle:UITableViewStyleGrouped];
     orders.context = self.context;
     [self.navigationController pushViewController:orders animated:YES];
     [orders release];
@@ -194,6 +290,9 @@
 -(void)chooseBackgroundFromLibrary
 {
     BackgroundLibrary *bgLibrary = [[BackgroundLibrary alloc]init];
+    // watch for it's compleation
+    bgLibrary.selected = NO;
+    [bgLibrary addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
     [self.navigationController pushViewController:bgLibrary animated:YES];
     [bgLibrary release];
 }
@@ -228,8 +327,26 @@
 
 }
 */
+-(void)setBackgroundImageFromLibrary
+{
+    
+}
 
-
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    // catch the background selection finish
+    NSLog(@"CAtch Change");
+    [object removeObserver:self forKeyPath:@"selected"];
+    BackgroundLibrary *senderType = (BackgroundLibrary *)object;
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: senderType.selectedImage]; 
+    
+    [self.view addSubview: imageView]; 
+    [self.view sendSubviewToBack:imageView];
+    [imageView release];
+    // [self showOrders];
+    [senderType.navigationController popViewControllerAnimated:YES];
+}
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

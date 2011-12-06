@@ -18,6 +18,8 @@
     UIButton *button6;
     
     UIPopoverController *popOver;
+    
+    UIImageView *bgImg;
 }
 
 @property(nonatomic,retain)NSManagedObjectContext *context;
@@ -29,6 +31,8 @@
 @property(nonatomic,retain)UIButton *button6;
 
 @property(nonatomic,retain)UIPopoverController *popOver;
+
+@property(nonatomic,retain)UIImageView *bgImg;
 
 
 -(void)showAlert:(id)sender;
@@ -42,4 +46,10 @@
 
 -(void)layoutButtons:(UIInterfaceOrientation)toInterfaceOrientation;
 
+-(void)setBackgroundImageFromLibrary;
+
+-(void)playMovie;
+-(void)moviePlayBackDidFinish:(NSNotification*)notification;
+
+-(void)renderInterface;
 @end
