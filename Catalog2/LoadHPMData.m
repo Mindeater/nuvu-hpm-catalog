@@ -25,7 +25,7 @@
 {
     NSError *error = nil;
     // does the entity already exist ??
-    /* TOO COMPLEX !!
+    /*TOO COMPLEX !!
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *existingEntity = [NSEntityDescription entityForName:entity
                                               inManagedObjectContext:self.context];
@@ -51,19 +51,21 @@
     }
      */
     // if not create it
+    
     NSManagedObject *newEntity = [NSEntityDescription 
                                  insertNewObjectForEntityForName:entity 
                                  inManagedObjectContext:self.context];
     NSString *key;
     for(key in keyValues){
-        //NSLog(@"Key: %@, Value %@", key, [keyValues objectForKey: key]);
+       // NSLog(@"Key: %@, Value %@", key, [keyValues objectForKey: key]);
         [newEntity setValue:[keyValues objectForKey: key] forKey:key];
     }
     
-    
     [self.context insertObject:newEntity];
     [self.context save:&error];
+    
     if(error){
+        
         NSLog(@" Error adding %@ with %@ \n \nError: %@\n\n",entity,keyValues,[error localizedDescription]);
     } 
     return newEntity;
@@ -116,7 +118,8 @@
         id catName;
         while ((catName = [enumerator nextObject])) {
             
-            //insert Cat
+            ////////////////////////////////////
+            //insert Each Category
             
             NSManagedObject *catObj = [self addEntityWithValues:@"Category":
                                              [NSDictionary dictionaryWithObjectsAndKeys:
@@ -129,7 +132,7 @@
             NSEnumerator *catEnum = [[catInBrand objectForKey:catName] keyEnumerator];
             id product;
             while((product = [catEnum nextObject])){
-            
+                /////////////////////////////////////////////////////
                 // get the orientation Horizontal or Vertical or Both
                 NSString *orientation;
                 NSRange range = [catName rangeOfString:@"Vertical"];
@@ -137,7 +140,15 @@
                     orientation = @"Vertical";
                     NSRange range2 = [catName rangeOfString:@"Horizontal"];
                     if(range2.location != NSNotFound){
-                        orientation = @"Both";
+                        // Linea uses Vertical
+                        if([[brand objectAtIndex:1] isEqualToString:@"Linea"]){
+                            orientation = @"Vertical";
+                        }else if([[brand objectAtIndex:1] isEqualToString:@"Arteor 770"]){
+                            // Arteor 770 uses horizontal
+                            orientation = @"Horizontal";
+                        }else{
+                            orientation = @"Both";
+                        }
                     }
                 }else{
                     orientation = @"Horizontal";
@@ -158,11 +169,11 @@
                 
                 // Loop product parts
                 for(int i=0; i<[keys count];i++){
-                   //  NSLog(@"\n\n\n %d \n\n\n",i);
-                    NSString *heading = [[[keys objectAtIndex:i] allKeys] lastObject];
-                    NSString *value = [[[keys objectAtIndex:i] allObjects] lastObject];
-                    NSString *nextHeading = [[[keys objectAtIndex:i+1] allKeys] lastObject];
-                    NSString *nextValue = [[[keys objectAtIndex:i+1] allObjects] lastObject];
+                   // NSLog(@"\n\n\n %d \n\n\n",i);
+                    NSString *heading =     [[[keys objectAtIndex:i]   allKeys]    lastObject];
+                    NSString *value =       [[[keys objectAtIndex:i]   allObjects] lastObject];
+                    NSString *nextHeading = [[[keys objectAtIndex:i+1] allKeys]    lastObject];
+                    NSString *nextValue =   [[[keys objectAtIndex:i+1] allObjects] lastObject];
                     
                     NSLog(@"4. - - - - PART NAME : %@ ->",heading);
                     
@@ -170,7 +181,7 @@
                         ||[heading isEqualToString:@"Frame"]
                         ||[heading isEqualToString:@"Mechanism 3"]
                         ||[heading isEqualToString:@"Mechanism 2"]){
-                        // next : Trade Price
+                        // check the next one is : Trade Price
                         if([nextHeading isEqualToString:@"Trade Price"]){
                             if (![value isEqualToString:@""]) {
                                // push in the mechanism 
@@ -250,14 +261,14 @@
 -(id)init
 {
     self.pListFiles = [NSArray arrayWithObjects:
-                       /*[NSArray arrayWithObjects:@"arteor-770.csv",    @"Arteor 770",nil],
+                        [NSArray arrayWithObjects:@"arteor-770.csv",    @"Arteor 770",nil],
                        [NSArray arrayWithObjects:@"arteor-rd.csv",     @"Arteor RD",nil],
                         [NSArray arrayWithObjects:@"arteor-sq.csv",     @"Arteor SQ",nil],
-                        [NSArray arrayWithObjects:@"bt-light-and-tech.csv", @"BT Light and Tech",nil],
+                        /*[NSArray arrayWithObjects:@"bt-light-and-tech.csv", @"BT Light and Tech",nil],
                         [NSArray arrayWithObjects:@"bt-living.csv",     @"BT Living",nil],
-                        [NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life",nil],
+                        */[NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life",nil],
                         [NSArray arrayWithObjects:@"excel.csv",        @"Excel",nil],
-                        */[NSArray arrayWithObjects:@"linea.csv",        @"Linea",nil],
+                        [NSArray arrayWithObjects:@"linea.csv",        @"Linea",nil],
                         nil];
 
     return self;
