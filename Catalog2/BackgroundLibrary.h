@@ -21,6 +21,10 @@
     UIButton *button10;
     UIButton *button11;
     UIButton *button12;
+    
+    BOOL selected;
+    UIImage *selectedImage;
+    NSArray *buttonImages;
 }
 
 @property(nonatomic,retain)UIButton *button1;
@@ -36,6 +40,12 @@
 @property(nonatomic,retain)UIButton *button11;
 @property(nonatomic,retain)UIButton *button12;
 
+@property(nonatomic)BOOL selected;
+@property(nonatomic,retain)NSArray *buttonImages;
+@property(nonatomic,retain)UIImage *selectedImage;
+
 -(void)layoutButtons:(UIInterfaceOrientation)toInterfaceOrientation;
 -(void)chooseImage:(id)sender;
+
+-(void)nextView:(id)sender;
 @end
