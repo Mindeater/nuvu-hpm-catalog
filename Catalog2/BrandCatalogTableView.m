@@ -17,6 +17,8 @@
 @synthesize fetchedResultsController = _fetchedResultsController;
 @synthesize context = _context;
 
+@synthesize wallImage;
+
 -(void)dealloc
 {
     self.fetchedResultsController.delegate = nil;
@@ -87,6 +89,7 @@
     [self.tableView setBackgroundView:nil];
     self.tableView.backgroundColor = [UIColor blackColor];
     self.tableView.separatorColor = [UIColor whiteColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -164,13 +167,7 @@
     UILabel *label = [[[UILabel alloc] init] autorelease];
     label.frame = CGRectMake(20, 6, 300, 30);
     label.backgroundColor = [UIColor clearColor];
-    /*
-    label.textColor = [UIColor colorWithHue:(136.0/360.0)  // Slightly bluish green
-                                 saturation:1.0
-                                 brightness:0.60
-                                      alpha:1.0];
-    label.shadowColor = [UIColor whiteColor];
-     */
+
     label.textColor = [UIColor whiteColor];
     label.shadowColor = [UIColor grayColor];
     label.shadowOffset = CGSizeMake(0.0, 1.0);
@@ -231,7 +228,13 @@
     NSManagedObject *sectionBrand = [_fetchedResultsController.fetchedObjects 
                                       objectAtIndex:indexPath.section];
     //NSLog(@"Section Object : %@",[sectionBrand mutableSetValueForKey:@"category"]);
-    NSManagedObject *category = [[[sectionBrand mutableSetValueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
+    
+    //@TODO: ordering of this set to be consistant
+   //NSPredicate *predicate =[NSPredicate alloc] 
+
+   // NSManagedObject *category = [[[sectionBrand mutableSetValueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
+    NSManagedObject *category = [[[sectionBrand valueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
+    
     cell.textLabel.text = [category valueForKey:@"name"];
     
     // custom coloring
@@ -259,6 +262,8 @@
                                             valueForKey:@"name"];
     
     detailViewController.context = self.context;
+    detailViewController.wallImage = self.wallImage;
+    
     // detailViewController.managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
     // ...
     // Pass the selected object to the new view controller.

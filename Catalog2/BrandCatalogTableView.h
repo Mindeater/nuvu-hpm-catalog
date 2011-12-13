@@ -10,11 +10,15 @@
 
 @interface BrandCatalogTableView : UITableViewController <NSFetchedResultsControllerDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
-    NSManagedObjectContext *_context;    
+    NSManagedObjectContext *_context;  
+    
+    UIImage *wallImage;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *context;
+
+@property(nonatomic,retain)UIImage *wallImage;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
