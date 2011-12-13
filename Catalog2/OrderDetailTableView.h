@@ -7,19 +7,35 @@
 //
 
 #import <UIKit/UIKit.h>
+// sending mail
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface OrderDetailTableView : UITableViewController<NSFetchedResultsControllerDelegate> {
+@interface OrderDetailTableView : UITableViewController<NSFetchedResultsControllerDelegate, UITextViewDelegate,MFMailComposeViewControllerDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
     NSManagedObjectContext *_context;
     
     NSString *orderId;
+    float orderTotal;
+    int quantityCount;
+    
+    NSMutableString *emailOrderBody;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *context;
 
 @property(nonatomic,retain)NSString *orderId;
+@property(nonatomic)float orderTotal;
+@property(nonatomic)int quantityCount;
+
+@property(nonatomic,retain)NSMutableString *emailOrderBody;
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
+-(NSArray *)getPartsFromOrderLine:(NSManagedObject *)orderLine;
+-(void)updateComment:(NSString *)comment atIndexRow:(NSInteger)indexRow;
+
+-(void)emailOrder:(id)sender;
 
 @end
