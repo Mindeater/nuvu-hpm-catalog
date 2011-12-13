@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+@class MPMoviePlayerController;
 @interface RootView : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIPopoverControllerDelegate>{
     NSManagedObjectContext *context;
     UIButton *button1;
@@ -20,6 +21,10 @@
     UIPopoverController *popOver;
     
     UIImageView *bgImg;
+    
+    UIImage *choosenWall;
+    
+    MPMoviePlayerController *moviePlayer;
 }
 
 @property(nonatomic,retain)NSManagedObjectContext *context;
@@ -33,6 +38,9 @@
 @property(nonatomic,retain)UIPopoverController *popOver;
 
 @property(nonatomic,retain)UIImageView *bgImg;
+@property(nonatomic,retain)MPMoviePlayerController *moviePlayer;
+
+@property(nonatomic,retain)UIImage *choosenWall;
 
 
 -(void)showAlert:(id)sender;

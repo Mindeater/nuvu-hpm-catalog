@@ -23,6 +23,10 @@
 @synthesize popOver;
 @synthesize bgImg;
 
+@synthesize moviePlayer;
+
+@synthesize choosenWall;
+
 -(void)dealloc
 {
     self.context = nil;
@@ -72,12 +76,12 @@
     //self.wantsFullScreenLayout = YES;
     
     
-    [self playMovie];
+   // [self playMovie];
    
     
     //else 
     
-    //[self renderInterface];
+    [self renderInterface];
 }
 
 -(void)renderInterface
@@ -89,6 +93,13 @@
     bgImg =[[UIImageView alloc]initWithImage:bg];
     //bgImg.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:bgImg];
+    
+    
+    ///////////////////////////
+    // A default image for manipulation
+    
+    self.choosenWall = [UIImage imageWithContentsOfFile:
+                  [[NSBundle mainBundle] pathForResource:@"Arteor_caesarstone_white" ofType:@"png"]];
     
     //////////////////////////////
     // main Navigation Options
@@ -224,9 +235,7 @@
     // Play movie
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
                                          pathForResource:@"ipadIntro" ofType:@"mov"]];
-    MPMoviePlayerController *moviePlayer = 
-    [[MPMoviePlayerController alloc] 
-     initWithContentURL:url];
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(moviePlayBackDidFinish:)
@@ -237,16 +246,29 @@
     moviePlayer.shouldAutoplay = YES;
     moviePlayer.fullscreen = YES;
     moviePlayer.view.frame = [[UIScreen mainScreen] bounds];
-    [self.view addSubview:moviePlayer.view];
-    //[self.view bringSubviewToFront:moviePlayer.view];
+    
+    
     [moviePlayer setFullscreen:YES animated:YES];
     //[moviePlayer release];
+    [self.view addSubview:moviePlayer.view];
+    /* This doesn't work for the movie but does if you apply it to the view
+    UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [moviePlayer.view addGestureRecognizer:tap];
+    [tap release];
+    */
+    
 }
+/*
+- (void)handleTap:(UITapGestureRecognizer *)gesture {
+    // Do some other action as intended.
+    NSLog(@"TAPPER TAPPER TAPPER");
+}
+ */
 
 -(void)moviePlayBackDidFinish:(NSNotification*)notification 
 {
     
-    MPMoviePlayerController *moviePlayer = [notification object];
+    //MPMoviePlayerController *moviePlayer = [notification object];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self      
                                                     name:MPMoviePlayerPlaybackDidFinishNotification
@@ -268,6 +290,7 @@
     //BrandTableView *brand = [[BrandTableView alloc] initWithStyle:UITableViewStyleGrouped];
     BrandCatalogTableView *brand = [[BrandCatalogTableView alloc] initWithStyle:UITableViewStyleGrouped];
     brand.context = self.context;
+    brand.wallImage = self.choosenWall;
     [self.navigationController pushViewController:brand animated:YES];
     [brand release];
 }
@@ -338,12 +361,14 @@
     NSLog(@"CAtch Change");
     [object removeObserver:self forKeyPath:@"selected"];
     BackgroundLibrary *senderType = (BackgroundLibrary *)object;
-    
+    /*
     UIImageView *imageView = [[UIImageView alloc] initWithImage: senderType.selectedImage]; 
     
     [self.view addSubview: imageView]; 
     [self.view sendSubviewToBack:imageView];
     [imageView release];
+    */
+    self.choosenWall = senderType.selectedImage;
     // [self showOrders];
     [senderType.navigationController popViewControllerAnimated:YES];
 }
@@ -356,8 +381,7 @@
 }
 
 
-#pragma mark
-#pragma - Image Picking
+
 #pragma mark - TAke a picture
 
 -(void)takePicture:(id)sender;
@@ -416,8 +440,7 @@
 {
     
     NSLog(@"sent %@",info);
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];    
-    NSLog(@"Choosen an Image %@",image);
+    self.choosenWall = [info objectForKey:UIImagePickerControllerOriginalImage];    
     
     if (self.popOver != nil) {
         [self.popOver dismissPopoverAnimated:YES];
