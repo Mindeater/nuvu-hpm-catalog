@@ -140,8 +140,9 @@
                     orientation = @"Vertical";
                     NSRange range2 = [catName rangeOfString:@"Horizontal"];
                     if(range2.location != NSNotFound){
-                        // Linea uses Vertical
-                        if([[brand objectAtIndex:1] isEqualToString:@"Linea"]){
+                        // Linea uses Vertical as does Excel Life
+                        if([[brand objectAtIndex:1] isEqualToString:@"Linea"] 
+                           || [[brand objectAtIndex:1] isEqualToString:@"Excel Life"]){
                             orientation = @"Vertical";
                         }else if([[brand objectAtIndex:1] isEqualToString:@"Arteor 770"]){
                             // Arteor 770 uses horizontal
