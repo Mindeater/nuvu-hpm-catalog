@@ -53,11 +53,13 @@
 {
     [super viewDidLoad];
     NSLog(@"Search results Table View view Did Load");
+    self.filteredListContents = [NSArray arrayWithObjects: nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)viewDidUnload
@@ -126,7 +128,22 @@
     
     // Configure the cell...
     //NSLog(@"SearchresultTAble configure Cell %@",self.filteredListContents);
-    cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"name"];
+    NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
+    switch (item) {
+        case 0:
+            cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"name"];
+            break;
+        case 1:
+            cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"id"];
+            break;
+        case 2:
+            cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"id"];
+            break;
+            
+        default:
+            break;
+    }
+    
     return cell;
 }
 
@@ -135,7 +152,8 @@
 
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    NSLog(@"Search results table view - searchDisplayController callback \n\n %@",searchString);
+    NSLog(@"Search results table view - searchDisplayController callback \n\n %@ \n\n--\n\n%i ",searchString,self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex);
+    
     [self filterContentForSearchText:searchString scope:
 	 [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:
 	  [self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
@@ -149,25 +167,57 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    //NSLog(@"Filter Content %@",self.fetchedResultsController.fetchedObjects);
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
-    self.filteredListContents = [[[self fetchedResultsController] fetchedObjects] filteredArrayUsingPredicate:predicate];
-	/*
-    [self.filteredstaffList removeAllObjects]; // First clear the filtered array.
+    //[self.filteredListContents removeAllObjects]; // First clear the filtered array.
 
-    NSPredicate *predicate = nil;
-    if([scope isEqualToString:@"Staff Code"])
-    {
-        predicate = [NSPredicate predicateWithFormat:@"(SELF.staffCode contains[cd] %@)", searchText]; 	
-    }
-    if([scope isEqualToString:@"Staff FullName"])
-    {
-        predicate = [NSPredicate predicateWithFormat:@"(SELF.staffFullName contains[cd] %@)", searchText]; 
+    NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
+     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
+    
+    if(item == 0){ 
+        // products
+        self.filteredListContents = [[[self fetchedResultsController] fetchedObjects] filteredArrayUsingPredicate:predicate];
+
+    }else if(item == 1){ 
+        // mechanisms
+        NSLog(@"Mechanism Search");
+        NSError *error = nil;
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entityMechansim = [NSEntityDescription entityForName:@"Mechanism"
+                                                           inManagedObjectContext:self.context];
+        [request setEntity:entityMechansim];
+        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@", searchText];
+        [request setPredicate:mechPredicate];
+        
+         self.filteredListContents =  [self.context executeFetchRequest:request error:&error];
+        
+        [request release];
+        
+    }else if(item == 2){ // coverplates 
+        NSError *error = nil;
+        NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entityFaceplate = [NSEntityDescription entityForName:@"Faceplate"
+                                                           inManagedObjectContext:self.context];
+        [request setEntity:entityFaceplate];
+        NSPredicate * fbPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@", searchText];
+        [request setPredicate:fbPredicate];
+        
+        ////////////////////////
+        // make sure there are no duplicates returned
+        NSArray *result =  [self.context executeFetchRequest:request error:&error];
+        NSMutableSet* existingNames = [NSMutableSet set];
+        NSMutableArray* filteredArray = [NSMutableArray array];
+        for (id object in result) {
+            if (![existingNames containsObject:[object name]]) {
+                [existingNames addObject:[object name]];
+                [filteredArray addObject:object];
+            }
+        }
+        
+        self.filteredListContents =  [NSArray arrayWithArray:filteredArray];
+        
+        [request release];
+
     }
 
-    NSArray *array = [staffList filteredArrayUsingPredicate:predicate];
-    self.filteredstaffList = [NSMutableArray arrayWithArray: array];
-    */
 }
 #pragma mark -
 #pragma mark Fetched results controller
@@ -213,26 +263,52 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //ProductView *detailViewController = [[ProductView alloc] init];
-    ProductChooserView *detailViewController = [[ProductChooserView alloc] init];
-    NSManagedObject *currentRecord = [self.filteredListContents objectAtIndex:indexPath.row];
-    NSLog(@" current Selected A -- \n\n%@ \n\n",
-          currentRecord);
-    NSLog(@"Worko ut %@",[currentRecord valueForKey:@"category"]);
-    //[fetchedResultsController.fetchedObjects  objectAtIndex:indexPath.section];
-    detailViewController.currentBrand = [[currentRecord valueForKey:@"brand"]
-                                         valueForKey:@"name"];
-    detailViewController.currentCategory = [[currentRecord valueForKey:@"category"]
-                                            valueForKey:@"name"];
-     
     
+    
+    NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
+    switch (item) {
+        case 0: // product
+        {
+            ProductChooserView *detailViewController = [[ProductChooserView alloc] init];
+            NSManagedObject *currentRecord = [self.filteredListContents objectAtIndex:indexPath.row];
+            detailViewController.currentBrand = [[currentRecord valueForKey:@"brand"]
+                                                 valueForKey:@"name"];
+            detailViewController.currentCategory = [[currentRecord valueForKey:@"category"]
+                                                    valueForKey:@"name"];
+            detailViewController.context = self.context;
+            // detailViewController.managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
+            // ...
+            // Pass the selected object to the new view controller.
+            
+            [self.LINK.navigationController pushViewController:detailViewController animated:YES];
+            [detailViewController release];
+        
+        }
+            break;
+        case 1: // mechanism
+            
+            
+            break;
+        case 2: // faceplates
+            
+            
+            break;
+            
+        default:
+            break;
+    }
+    
+   
+     
+    /*
     detailViewController.context = self.context;
-    NSLog(@" View Controller ? ?? %@",[super navigationController] );
     // detailViewController.managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
     // ...
     // Pass the selected object to the new view controller.
 
     [self.LINK.navigationController pushViewController:detailViewController animated:YES];
     [detailViewController release];
+    */
 }
 
 @end
