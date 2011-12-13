@@ -11,10 +11,16 @@
 @interface AddPartToOrder : NSObject <NSFetchedResultsControllerDelegate>{
     NSFetchedResultsController *_fetchedResultsController;
     NSManagedObjectContext *context;
+    
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property(nonatomic,retain)NSManagedObjectContext *context;
+
+@property(nonatomic,retain)NSManagedObject *currentOrderLine;
+
+-(void)setUpFetchedResultsController;
+-(void)setActiveOrderLine:(NSString *)productName;
 
 -(void)addMechanismsToDefaultOrder:(NSArray *)mechanisms withProductName:(NSString *)productName;
 -(void)addFaceplateToDefaultOrder:(NSArray *)faceplate withProductName:(NSString *)productName;
