@@ -162,24 +162,8 @@
 */
 -(UIImage *)cleanTransparentPixelsFromImage:(UIImage *)anImage
 {
-    //CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(anImage.CGImage)); 
-    //const UInt32 *pixels = (const UInt32*)CFDataGetBytePtr(imageData);
+    // http://iphonedevelopertips.com/graphics/how-to-crop-an-image.html
     
-    //the new image
-   // unsigned char* pixelBytes = (unsigned char *)[imageData bytes];
-    //and you can just iterate through it:
-    /*
-    for (int j = 0; j < (anImage.size.height * anImage.size.width); j++)
-    {
-        if (pixels[j] & 0xff000000)
-        {
-            //this is not a transparent pixel
-            // add it to the new image
-           // NSLog(@"%lu", pixels[j]); //trace hexes
-            
-        }
-    }*/
-    /*
     CGImageRef imageRef = anImage.CGImage;
     NSData *data        = (NSData *)CGDataProviderCopyData(CGImageGetDataProvider(imageRef));
     char *pixels        = (char *)[data bytes];
@@ -187,58 +171,88 @@
     // this is where you manipulate the individual pixels
     // assumes a 4 byte pixel consisting of rgb and alpha
     // for PNGs without transparency use i+=3 and remove int a
+    
+    
+    // need to create a CGRect for the internal image ignoring the transparency outside
+    size_t width                    = CGImageGetWidth(imageRef);
+    //size_t height                   = CGImageGetHeight(imageRef);
+    
+    int topLX = 0;
+    int topLY = 0; 
+    int topRX = 0; 
+    int botLY = 0;
+    
+    size_t colCount= 0;
+    size_t lineCount = 0;
+    
+    BOOL firstPixelFound = NO;
+    BOOL secondPixelFound = NO;
+    BOOL thirdPixelFound = NO;
+    
     for(int i = 0; i < [data length]; i += 4)
     {
-        int r = i;
+        /*int r = i;
         int g = i+1;
-        int b = i+2;
+        int b = i+2;*/
         int a = i+3;
-        if(a !=0){
-        pixels[r]   = pixels[r];
-        pixels[g]   = pixels[g];
-        pixels[b]   = pixels[b];
-        pixels[a]   = pixels[a];
+        
+        
+        // line count
+        if(colCount == width){
+            lineCount++;
+            colCount = 0;
         }
+        colCount++;
+        
+        
+        // the first pixel that is not transparent gives the startpoint to crop from
+        if(pixels[a] != 0 && !firstPixelFound){
+            topLX = colCount;
+            topLY = lineCount;
+            firstPixelFound = YES;
+            
+        }
+        // after that the next transparent pixel on the same line will be the end
+        if(!secondPixelFound && firstPixelFound && pixels[a] == 0 ){
+            topRX = colCount;
+            secondPixelFound = YES;
+            
+        }
+        // after that anytime the pixel next to the start one is transparent we should be at the end.
+        if(firstPixelFound && secondPixelFound && !thirdPixelFound && pixels[a] == 0 && colCount == topLX +1){
+            botLY = lineCount;
+            NSLog(@"Got bottom point");
+            thirdPixelFound = YES;
+        }
+        // modify the image pixels
+       /*
+        if(a !=0){
+            pixels[r]   = pixels[r];
+            pixels[g]   = pixels[g];
+            pixels[b]   = pixels[b];
+            pixels[a]   = pixels[a];
+        }
+        */
     }
+    /*
+    NSLog(@" \n\nThe points ::\ntopLX,topLY (%i , %i),\ntopRX,topRY (%i , %i),\nbotLX,botLY(%i , %i)\n\n",
+          topLX,topLY,
+          topRX,topRY,
+          botLX,botLY);
+    */
+    //crop an image based on CGRect bounds
+     CGImageRef imageRefCrop = CGImageCreateWithImageInRect([anImage CGImage],
+                                                            CGRectMake(topLX,
+                                                                       topLY, 
+                                                                       topRX - topLX,
+                                                                       //width - topLX , 
+                                                                       botLY - topLY));
+                                                                       //height - topLY));
+     UIImage *croppedImage = [UIImage imageWithCGImage:imageRefCrop];
+     CGImageRelease(imageRefCrop);
+    [data release];
+     return croppedImage;
     
-    // create a new image from the modified pixel data
-    size_t width                    = CGImageGetWidth(imageRef);
-    size_t height                   = CGImageGetHeight(imageRef);
-    size_t bitsPerComponent         = CGImageGetBitsPerComponent(imageRef);
-    size_t bitsPerPixel             = CGImageGetBitsPerPixel(imageRef);
-    size_t bytesPerRow              = CGImageGetBytesPerRow(imageRef);
-    
-    CGColorSpaceRef colorspace      = CGColorSpaceCreateDeviceRGB();
-    CGBitmapInfo bitmapInfo         = CGImageGetBitmapInfo(imageRef);
-    CGDataProviderRef provider      = CGDataProviderCreateWithData(NULL, pixels, [data length], NULL);
-    
-    CGImageRef newImageRef = CGImageCreate (
-                                            width,
-                                            height,
-                                            bitsPerComponent,
-                                            bitsPerPixel,
-                                            bytesPerRow,
-                                            colorspace,
-                                            bitmapInfo,
-                                            provider,
-                                            NULL,
-                                            false,
-                                            kCGRenderingIntentDefault
-                                            );
-    // the modified image
-    UIImage *newImage   = [UIImage imageWithCGImage:newImageRef];
-    
-   // NSUInteger myImageDataLength = [data length]; 
-    //UIImage *newImage = [UIImage imageWithData:[NSData dataWithBytes:pixels length:myImageDataLength]];;
-    // cleanup
-    free(pixels);
-    CGImageRelease(imageRef);
-    CGColorSpaceRelease(colorspace);
-    CGDataProviderRelease(provider);
-    CGImageRelease(newImageRef);
-    
-    return newImage;
-    //*/return [[[UIImage alloc]init]autorelease];
 }
  
 
@@ -247,6 +261,9 @@
 {
     [super viewDidLoad];
     self.navigationController.navigationBar.backgroundColor = [UIColor blackColor];
+    
+    self.view.backgroundColor = [UIColor blackColor];
+    
     
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStylePlain target:self action:@selector(cancelResize:)];          
     self.navigationItem.leftBarButtonItem = anotherButton;
@@ -259,22 +276,54 @@
     //////////////////////
     // background image
     
-    
-    
     UIImageView *bg = [[UIImageView alloc]initWithImage:self.backgroundImage];
     [self.view addSubview:bg];
     [bg release];
     
-    //self.view.backgroundColor = [UIColor yellowColor];
     /////////////////////
     // product
     
-    
     canvas = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     
+    /////////////////////
+    /////// try masking 
+    /*
+    //UIImage *maskBase = [UIImage imageNamed: @"image1.png"];
+    UIImage *maskBase =[self cleanTransparentPixelsFromImage:self.resizingImage];
+    //UIImage *imageBase = [UIImage imageNamed: @"image2.png"];
+    UIImage *imageBase = self.resizingImage;
     
-    photoImage =[[UIImageView alloc] initWithImage:self.resizingImage];
-    //photoImage =[[UIImageView alloc] initWithImage: [self cleanTransparentPixelsFromImage:self.resizingImage]];
+    CGImageRef maskReference = maskBase.CGImage;
+    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskReference), 
+                                        CGImageGetHeight(maskReference), 
+                                        CGImageGetBitsPerComponent(maskReference),
+                                        CGImageGetBitsPerPixel(maskReference), 
+                                        CGImageGetBytesPerRow(maskReference),
+                                        CGImageGetDataProvider(maskReference), NULL, false);
+    
+    UIImage *newImage = [UIImage imageWithCGImage: CGImageCreateWithMask (imageBase.CGImage, mask)];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: newImage]; 
+    //imageView.frame = CGRectMake(0.0f, 50.0f, 320.0f, 200.0f); 
+    [self.canvas addSubview: imageView];
+    */
+    
+    // http://www.ehow.com/how_8786373_use-cgimage-make-masks.html#ixzz1g0SXjS38
+    
+    
+    
+    
+    ////////////////////////
+    // The image 
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    //photoImage =[[UIImageView alloc] initWithImage:self.resizingImage];
+    UIImage *new = [self cleanTransparentPixelsFromImage:self.resizingImage];
+    photoImage =[[UIImageView alloc] initWithImage: new];
+    photoImage.frame = CGRectMake((screenWidth - new.size.width)/2,
+                                  (screenHeight - new.size.height)/2 -100, 
+                                  new.size.width, new.size.height);
+    
     [self.canvas addSubview:photoImage];
     
     [self.view addSubview:canvas];
@@ -314,6 +363,10 @@
     [tapProfileImageRecognizer setDelegate:self];
     [canvas addGestureRecognizer:tapProfileImageRecognizer];
     
+    /*
+    UISwipeGestureRecognizerDirectionDown *downRecognizer = [[[UISwipeGestureRecognizerDirectionDown alloc] initWithTarget:self action:@selector(swipeDown:)]autorelease];
+    [canvas addGestureRecognizer:downRecognizer];
+    */
 
     
 }
