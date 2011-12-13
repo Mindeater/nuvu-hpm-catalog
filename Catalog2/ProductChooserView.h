@@ -30,13 +30,15 @@
 	PartView *vc2;
 	PartView *vc3;
     
-    
     // retaining selections
     NSString *selectedProductName;
     NSArray *currentFacePlates;
     UIImage *selectedMechanismImage;
+    NSArray *mechanismObject;
     
     AddPartToOrder *shoppingCart;
+    
+    UIImage *wallImage;
     
 }
 
@@ -61,8 +63,11 @@
 @property(nonatomic,retain)NSString *selectedProductName;
 @property(nonatomic,retain)NSArray *currentFacePlates;
 @property(nonatomic,retain)UIImage *selectedMechanismImage;
+@property(nonatomic,retain)NSArray *mechanismObject;
 
 @property(nonatomic,retain)AddPartToOrder *shoppingCart;
+
+@property(nonatomic,retain)UIImage *wallImage;
 
 -(void)setViewControllerCommonProperties;
 -(void)setMechanismsOnViewControllers;

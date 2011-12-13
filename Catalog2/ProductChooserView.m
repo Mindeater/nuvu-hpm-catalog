@@ -29,8 +29,11 @@
 @synthesize selectedProductName;
 @synthesize currentFacePlates;
 @synthesize selectedMechanismImage;
+@synthesize mechanismObject;
 
 @synthesize shoppingCart;
+
+@synthesize wallImage;
 
 -(void)dealloc
 {
@@ -91,11 +94,18 @@
 
 -(void)addActivePartToCart
 {
+    // this will have already been set when the mechanism was selected
+    if(self.selectedProductName == nil){
+        self.selectedProductName = [[_fetchedResultsController.fetchedObjects objectAtIndex:currIndex] valueForKey:@"name"];
+    }
+    // Not adding Mechanisms on their own a the moment defaults to faceplate with mechanims
     if([self.currentEntityName isEqualToString:@"Mechanism"]){
         [self.shoppingCart addMechanismsToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Mechanism"]
                                        withProductName:self.selectedProductName];
     }else{
-       [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]
+        [self.shoppingCart addMechanismsToDefaultOrder:self.mechanismObject
+                                       withProductName:self.selectedProductName];
+        [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]
                                     withProductName:self.selectedProductName];
     }
 }
@@ -133,7 +143,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     
     /////////////////////////////
     // hook up the product data
@@ -145,6 +155,7 @@
 	}
     
     self.currentEntityName = @"Mechanism";
+    
     // set up the current Index
     prevIndex = [_fetchedResultsController.fetchedObjects count]-1;
     currIndex = 0;
@@ -174,22 +185,17 @@
     
     ////////////////////////////////////////////
     // Set up the nav controller
-
-    //baseViewControllers = self.navigationController.viewControllers;
     
+    /* manually setting
     NSMutableArray *baseViewStack = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
-    NSLog(@"\nProduct Chooser - View Did Load Starts With \n\n%@\n\n",baseViewStack);
-    NSLog(@"\nNavigationBAr\n %@",self.navigationController.navigationBar.items);
-    
-    
     [baseViewStack addObjectsFromArray:[NSArray arrayWithObjects:vc1,vc2, nil]];
     NSArray *newStack = (NSArray *)baseViewStack;
-    NSLog(@"\nProduct Chooser - View Did Load Ends with \n\n%@\n\n",newStack); 
-    NSLog(@"\nNavigationBAr\n %@",self.navigationController.navigationBar.items);
     
-    //[self.navigationController setNavigationBarHidden:YES];
     [self.navigationController setViewControllers:newStack animated:NO];
-    //[self.navigationController setNavigationBarHidden:NO];
+    */
+    // vs pushing
+    [self.navigationController pushViewController:vc1 animated:NO];
+    [self.navigationController pushViewController:vc2 animated:YES];
     
     [self setMechanismsOnViewControllers];
     
@@ -303,19 +309,39 @@
     
     [self setViewControllerCommonProperties];
     
-    vc1.productName = [[self.currentFacePlates objectAtIndex:prevIndex] valueForKey:@"name"];
-    vc2.productName = [[self.currentFacePlates objectAtIndex:currIndex] valueForKey:@"name"];
-    vc3.productName = [[self.currentFacePlates objectAtIndex:nextIndex] valueForKey:@"name"];
-    
-    [vc1 drawWithItems:[self getObjToScroll:prevIndex forEntityName:@"Faceplate"]];
-    [vc2 drawWithItems:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]];
-    [vc3 drawWithItems:[self getObjToScroll:nextIndex forEntityName:@"Faceplate"]];
-    
-    [vc1 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
-    [vc2 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
-    [vc3 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL]; 
-    
-    [self resetViewControllers];
+    if([self.currentFacePlates count] == 1){
+        
+        // Excel Life has single faceplates
+        vc1.productName = [[self.currentFacePlates lastObject] valueForKey:@"name"];
+        [vc1 drawWithItems:[self getObjToScroll:0 forEntityName:@"Faceplate"]];
+        [vc1 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+        [vc1.view sendSubviewToBack:vc1.toolBar];
+        
+        // reset the view controller stack
+        NSMutableArray *baseViewStack = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
+        [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
+        [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
+        vc1.productName = [[self.currentFacePlates objectAtIndex:currIndex] valueForKey:@"name"];
+        
+        [self.navigationController pushViewController:vc1 animated:YES];
+        
+        
+    }else if([self.currentFacePlates count] >1 ){
+        
+        vc1.productName = [[self.currentFacePlates objectAtIndex:prevIndex] valueForKey:@"name"];
+        vc2.productName = [[self.currentFacePlates objectAtIndex:currIndex] valueForKey:@"name"];
+        vc3.productName = [[self.currentFacePlates objectAtIndex:nextIndex] valueForKey:@"name"];
+        
+        [vc1 drawWithItems:[self getObjToScroll:prevIndex forEntityName:@"Faceplate"]];
+        [vc2 drawWithItems:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]];
+        [vc3 drawWithItems:[self getObjToScroll:nextIndex forEntityName:@"Faceplate"]];
+        
+        [vc1 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+        [vc2 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+        [vc3 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL]; 
+        
+        [self resetViewControllers];
+    }
 }
 
 -(void)getFaceplatesForCurrentMechanism
@@ -337,6 +363,7 @@
     NSError *error = nil;
     self.currentFacePlates = [NSArray arrayWithArray:[_context executeFetchRequest:request error:&error]];
     
+    //NSLog(@"Getting Current Faceplates");
     //@TODO: There may be only one of these faceplates returned
 }
 
@@ -344,15 +371,16 @@
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    NSLog(@"Choosen the Product %@",
-          [[_fetchedResultsController.fetchedObjects objectAtIndex:self.currIndex] valueForKey:@"name"]);
-    
-    self.selectedProductName = [[_fetchedResultsController.fetchedObjects objectAtIndex:currIndex] valueForKey:@"name"];
-    
+        
     if([self.currentEntityName isEqualToString:@"Mechanism"]){
+        
+        // this can also be set when a mechanism is added to the cart
+        self.selectedProductName = [[_fetchedResultsController.fetchedObjects objectAtIndex:currIndex] valueForKey:@"name"];
+        self.mechanismObject = [self getObjToScroll:currIndex forEntityName:@"Mechanism"];
         
         // get the faceplates
         [self getFaceplatesForCurrentMechanism];
+        
         //reset the indexes
         self.currentEntityName = @"Faceplate";
         prevIndex = [self.currentFacePlates count]-1;
@@ -374,7 +402,7 @@
         ProductBackgroundResize *resizeSheet = [[ProductBackgroundResize alloc]init];
         
         resizeSheet.resizingImage = [object getMechanismImage];
-        NSLog(@"PAssed faceplate image !!");
+        resizeSheet.backgroundImage = self.wallImage;
         
         //[self.navigationController pushViewController:resizeSheet animated:NO];
         // Create the navigation controller and present it modally.
@@ -407,6 +435,8 @@
 
 -(void)resetViewControllers
 {
+    
+    //NSLog(@"ResetViewControllers currIndex is: %d",currIndex);
     // calculate next and previous based on current
     //nextIndex = (currIndex >= [self.dataModel count]-1) ? 0 : currIndex + 1;
     //prevIndex = (currIndex <= 0) ? [self.dataModel count]-1 : currIndex - 1;
@@ -416,7 +446,9 @@
     NSMutableArray *baseViewStack = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
     [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
     [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
-    // get the current product name
+    
+    ///////////////////////////////////////////////
+    // get the current product name to pass through
     NSString *productName;
     if([self.currentEntityName isEqualToString:@"Mechanism"]){
         productName = [[_fetchedResultsController.fetchedObjects 
@@ -425,6 +457,7 @@
     }else{
         productName = [[self.currentFacePlates objectAtIndex:currIndex] valueForKey:@"name"];
     }
+    
     
     switch (vcIndex) {
         case 0:
@@ -447,7 +480,7 @@
     }
     
     NSArray *newStack = (NSArray *)baseViewStack;
-    NSLog(@"\n\n%@\n\n",newStack);    
+    //NSLog(@"\n\n%@\n\n",newStack);    
     [self.navigationController setViewControllers:newStack animated:YES];
     
 }
