@@ -8,6 +8,11 @@
 
 #import "ProductBackgroundResize.h"
 
+
+// http://b2cloud.com.au/how-to-guides/ios-distort-transform
+#define CGAffineTransformDistort(t, x, y) (CGAffineTransformConcat(t, CGAffineTransformMake(1, y, x, 1, 0, 0)))
+#define CGAffineTransformMakeDistort(x, y) (CGAffineTransformDistort(CGAffineTransformIdentity, x, y))
+
 @implementation ProductBackgroundResize
 
 @synthesize backgroundImage,resizingImage;
@@ -67,6 +72,15 @@
     
 }
 
+-(void)resetSize:(id)sender
+{
+    // scale
+    // rotation
+    // translation
+    
+    [self viewDidLoad];
+    //[self showOverlayWithFrame:photoImage.frame];
+}
 -(void)scale:(id)sender {
     
     if([(UIPinchGestureRecognizer*)sender state] == UIGestureRecognizerStateBegan) {
@@ -92,7 +106,17 @@
         return;
     }
     
+    //photoImage.layer.anchorPoint = CGPointMake(0.0, 0.5);
+    /*
+    CATransform3D rotatedTransform = photoImage.layer.transform;
+    rotatedTransform = CATransform3DRotate(rotatedTransform, 60.0 * M_PI / 180.0, 0.0f, 0.0f, 1.0f);
+    photoImage.layer.transform = rotatedTransform;
+    */
+    //CATransform3DRotate the3DRotation ??
+    //CATransform3D rotatedTransform = photoImage.layer.transform;
+   // photoImage.layer.transform = CATransform3DMakeRotation(M_PI, 0, 0.0, 1.0);
     CGFloat rotation = 0.0 - (_lastRotation - [(UIRotationGestureRecognizer*)sender rotation]);
+    
     
     CGAffineTransform currentTransform = photoImage.transform;
     CGAffineTransform newTransform = CGAffineTransformRotate(currentTransform,rotation);
@@ -100,6 +124,7 @@
     [photoImage setTransform:newTransform];
     
     _lastRotation = [(UIRotationGestureRecognizer*)sender rotation];
+     
     [self showOverlayWithFrame:photoImage.frame];
 }
 
@@ -204,6 +229,8 @@
         }
         colCount++;
         
+        //@TODO: this logic only works if the image has 90 degree corners
+        // need to allow tolerance for rounded edges
         
         // the first pixel that is not transparent gives the startpoint to crop from
         if(pixels[a] != 0 && !firstPixelFound){
@@ -344,25 +371,42 @@
     }
     [[self.view layer] addSublayer:_marque];
     
+    /// Pinch to scale -yes
     UIPinchGestureRecognizer *pinchRecognizer = [[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(scale:)] autorelease];
     [pinchRecognizer setDelegate:self];
     [self.view addGestureRecognizer:pinchRecognizer];
+    
     
     UIRotationGestureRecognizer *rotationRecognizer = [[[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(rotate:)] autorelease];
     [rotationRecognizer setDelegate:self];
     [self.view addGestureRecognizer:rotationRecognizer];
     
+    
+    // single touch move 
     UIPanGestureRecognizer *panRecognizer = [[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(move:)] autorelease];
     [panRecognizer setMinimumNumberOfTouches:1];
     [panRecognizer setMaximumNumberOfTouches:1];
     [panRecognizer setDelegate:self];
     [canvas addGestureRecognizer:panRecognizer];
     
+    // tap switch marquee on and off
     UITapGestureRecognizer *tapProfileImageRecognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)] autorelease];
     [tapProfileImageRecognizer setNumberOfTapsRequired:1];
     [tapProfileImageRecognizer setDelegate:self];
     [canvas addGestureRecognizer:tapProfileImageRecognizer];
     
+    
+    // reset on double tap
+    // Create gesture recognizer
+    UITapGestureRecognizer *oneFingerTwoTaps = 
+    [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(resetSize:)] autorelease];
+    
+    // Set required taps and number of touches
+    [oneFingerTwoTaps setNumberOfTapsRequired:2];
+    [oneFingerTwoTaps setNumberOfTouchesRequired:1];
+    
+    // Add the gesture to the view
+    [canvas addGestureRecognizer:oneFingerTwoTaps];
     /*
     UISwipeGestureRecognizerDirectionDown *downRecognizer = [[[UISwipeGestureRecognizerDirectionDown alloc] initWithTarget:self action:@selector(swipeDown:)]autorelease];
     [canvas addGestureRecognizer:downRecognizer];
@@ -384,6 +428,8 @@
     // e.g. self.myOutlet = nil;
 }
 
+
+#pragma mark - navbar event handlers
 -(void)cancelResize:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
@@ -392,6 +438,9 @@
 {
     [self dismissModalViewControllerAnimated:YES];
 }
+
+
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
