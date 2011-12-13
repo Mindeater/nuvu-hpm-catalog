@@ -20,6 +20,7 @@
     [super dealloc];
 }
 
+
 -(void)drawWithItems:(NSArray *)items
 {
     // remove any views that already exist
@@ -47,8 +48,9 @@
     ////////////////////////////////
     // button to choose this one
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(10, 10, 50, 30);
-    [button setTitle: @"ok" forState: UIControlStateNormal];
+    //button.frame = CGRectMake(10, 10, 50, 30);
+    button.frame = CGRectMake(20, screenHeight - 300, 200, 30);
+    [button setTitle: @"Resize on Background" forState: UIControlStateNormal];
     [button setTitleColor: [UIColor redColor] forState: UIControlStateNormal];
     [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
     [self.controlsView addSubview: button];
@@ -61,6 +63,8 @@
     // FacePlate Picture
    // NSLog(@" \n\n Passed Image \n\n%@\n\n",items );
     NSString *img = [[items lastObject] valueForKey:@"id"];
+    
+    self.price = [[items lastObject] valueForKey:@"price"];
     
     NSString *dir = [NSString stringWithFormat:@"%@/Faceplate",
            [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
@@ -91,7 +95,7 @@
     float iWidth = screenWidth * 0.8;
     float iHeight = screenHeight * 0.8;
     float sX = (screenWidth -iWidth)/2.0;
-    float sY = (screenHeight - iHeight)/2.0;
+    float sY = (screenHeight - iHeight)/2.0 - 60;
     
     //nextImage.frame = CGRectMake(80, 80, screenWidth-160, screenHeight-260);
     nextImage.frame = CGRectMake(sX, sY, iWidth, iHeight- 100.0);
@@ -105,7 +109,6 @@
 }
 -(void)chooseMe
 {
-    NSLog(@"Choose this FACEPLATE");
     self.selected =YES;
 }
 
@@ -127,12 +130,14 @@
 // don't forget Quartz.Core with this method
 -(UIImage *)getMechanismImage
 {
-    [self.controlsView removeFromSuperview];
+    //[self.controlsView removeFromSuperview];
+    self.controlsView.hidden = YES;
     UIGraphicsBeginImageContext(self.view.bounds.size);
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+    //UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+    self.controlsView.hidden = NO;
     return screenshot;
 }
 
