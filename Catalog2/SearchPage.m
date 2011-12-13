@@ -55,20 +55,28 @@
     
     self.title = @"Search Catalog";
     
+    ///////////////////////////////
     // create a search bar
     searchBar = [[UISearchBar alloc] init];
     //[searchBar setAutoresizingMask:(UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight)];
     searchBar.frame = CGRectMake(0, 0, self.view.frame.size.width, 0);
     [searchBar sizeToFit];
+    searchBar.tintColor = [UIColor blackColor];
+    searchBar.showsScopeBar = YES;
+    searchBar.scopeButtonTitles = [NSArray arrayWithObjects:@"Products",@"Mechanisms",@"Coverplates", nil];
     
     [self.view addSubview:searchBar];
     
+    
+    
+    ////////////////////////////////////////////////////
     // create a tableView Controller to show the results
     resultTable = [[SearchResultTableView alloc] init];
     resultTable.context = self.context;
     resultTable.LINK = self;
     [resultTable viewWillAppear:NO];
     
+    ////////////////////////////////////////
     // create the UISearchDisplay controller
     
     searchController = [[UISearchDisplayController alloc]
