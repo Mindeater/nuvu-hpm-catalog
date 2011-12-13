@@ -17,6 +17,7 @@
     NSString *orientationPrefix;
     NSString *brandName;
     NSString *productName;
+    NSString *price;
     
     ProductChooserView *_parent; 
     UIToolbar *toolBar;
@@ -31,6 +32,7 @@
 @property(nonatomic,retain)NSString *orientationPrefix;
 @property(nonatomic,retain)NSString *brandName;
 @property(nonatomic,retain)NSString *productName;
+@property(nonatomic,retain)NSString *price;
 
 @property(nonatomic,retain)ProductChooserView *_parent;
 @property(nonatomic,retain)UIToolbar *toolBar;
@@ -42,15 +44,19 @@
 -(UIImage *)getMechanismImage;
 
 -(void)addNavigationBar;
+-(void)pressThePart:(id)sender;
 -(void)addToolBarToView;
+-(void)addOrderStatusToView;
+
+-(void)updateSelectedStatus;
 
 // scrolling methods
 -(void)nextItem:(id)sender;
 -(void)previousItem:(id)sender;
 
 // toolbar selectors
--(void)showMenuSheet;
--(void)addItemToCart;
+-(void)showMenuSheet:(id)sender;
+-(void)addItemToCart:(id)sender;
 
 -(void)addToDefaultActiveOrder;
 -(void)returnToMainMenu;

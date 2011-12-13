@@ -10,6 +10,7 @@
 #import "ProductChooserView.h"
 
 #import "AddPartToOrder.h"
+#import "FacePlateView.h"
 
 @implementation PartView
 
@@ -19,6 +20,7 @@
 @synthesize orientationPrefix;
 @synthesize brandName;
 @synthesize productName;
+@synthesize price;
 
 @synthesize _parent;
 @synthesize toolBar;
@@ -49,7 +51,7 @@
     self = [super init];
     if (self) {
         // Custom initialization
-        [self addNavigationBar];
+        
         controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
         self.currentAction = @"";
     }
@@ -58,7 +60,9 @@
 
 -(void)viewDidLoad
 {
-
+    [self addNavigationBar];
+    //_view.backgroundColor = [UIColor whiteColor];
+    //[self addToolBarToView];
     ///////////////////////////////////
     // Gesture recognisers
     // adapted from https://github.com/nicktmro/NPGesturedViewController
@@ -79,12 +83,16 @@
     [swipeGestureRecognizer release];
 }
 
+#pragma mark - UI additions
+
 -(void)addNavigationBar
 {
-   // NSLog(@"\nAdding NAvigation BAr\n");
+   NSLog(@"\n1. Adding NAvigation BAr\n");
     
     //////////////////////////////////
     // Navigation Bar
+    
+    /* next and prev
     UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextItem:)];          
     self.navigationItem.rightBarButtonItem = anotherButton;
     [anotherButton release];
@@ -92,45 +100,109 @@
     UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStylePlain target:self action:@selector(previousItem:)];          
     self.navigationItem.leftBarButtonItem = anotherButton2;
     [anotherButton2 release];
+    */
+    
+    
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(showMenuSheet:)];
+    self.navigationItem.leftBarButtonItem = infoButton;
+    [infoButton release];
+    
+    // this guy only gets added for faceplates
+    if([self isKindOfClass:[FacePlateView class]]){
+        UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
+                                           initWithTitle:@"Add to Cart" style:UIBarButtonItemStyleBordered target:self action:@selector(addItemToCart:)];
+        self.navigationItem.rightBarButtonItem = newOrderButton;
+        [newOrderButton release];
+    }
+    
      
 }
 
 -(void)addToolBarToView
 {
+    NSLog(@"\n2. Adding ToolBAr");
+    
     ///////////////////////////////////////////////
     // ToolBar
     toolBar = [[UIToolbar alloc] init];
     toolBar.barStyle = UIBarStyleDefault;
     toolBar.tintColor = [UIColor blackColor];
-    //Set the toolbar to fit the width of the app.
-    [toolBar sizeToFit];
-    //Caclulate the height of the toolbar
-    CGFloat toolBarHeight = [toolBar frame].size.height;
-    //Get the bounds of the parent view
-    CGRect rootViewBounds = self.view.bounds;
+    [toolBar sizeToFit];//Set the toolbar to fit the width of the app.
+    CGFloat toolBarHeight = [toolBar frame].size.height;//Caclulate the height of the toolbar
+    NSLog(@"%f",toolBarHeight);
+    /*
+    CGRect rootViewBounds = self.view.bounds; //Get the bounds of the parent view
     //Get the height of the parent view.
     CGFloat rootViewHeight = CGRectGetHeight(rootViewBounds);
     //Get the width of the parent view,
     CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
     //Create a rectangle for the toolbar
-    CGRect rectArea = CGRectMake(0, rootViewHeight - toolBarHeight - 80, rootViewWidth, toolBarHeight);
+    CGRect rectArea = CGRectMake(0, rootViewHeight - toolBarHeight-60, rootViewWidth, toolBarHeight);
     //CGRect rectArea = CGRectMake(0, 400, rootViewWidth, toolBarHeight);
+    */
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
     //Reposition and resize the receiver
-    [toolBar setFrame:rectArea];
+    [toolBar setFrame:CGRectMake(0, screenHeight-toolBarHeight-80, screenWidth, toolBarHeight)];
     
     //Create a button
+    
+    UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(nextItem:)];          
+    
+    UIBarButtonItem	*flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+
+    UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:self action:@selector(previousItem:)];          
+    
+    /*
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(showMenuSheet)];
     UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
                                        initWithTitle:@"Add to Cart" style:UIBarButtonItemStyleBordered target:self action:@selector(addItemToCart)];
-    
-    [toolBar setItems:[NSArray arrayWithObjects:infoButton,newOrderButton, nil]];
-    
+    */
+    //[toolBar setItems:[NSArray arrayWithObjects:infoButton,newOrderButton, nil]];
+    [toolBar setItems:[NSArray arrayWithObjects:prevButton,flex,nextButton, nil]];
+
     [self.controlsView addSubview:toolBar];
-    [infoButton release];
-    [newOrderButton release];
+    [prevButton release];
+    [flex release];
+    [nextButton release];
+    
+    //[infoButton release];
+    //[newOrderButton release];
     [toolBar release];
+    
+    
+    //////////////////////////////////////
+    // gesture recogniser for the part
+    /*
+    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressThePart:)];
+    [self.view addGestureRecognizer:press];
+    [press release];
+    */
+    // Create gesture recognizer
+    UITapGestureRecognizer *oneFingerTwoTaps = 
+    [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressThePart:)] autorelease];
+    
+    // Set required taps and number of touches
+    [oneFingerTwoTaps setNumberOfTapsRequired:2];
+    [oneFingerTwoTaps setNumberOfTouchesRequired:1];
+    
+    // Add the gesture to the view
+    [[self view] addGestureRecognizer:oneFingerTwoTaps];
 }
+
+-(void)pressThePart:(id)sender
+{
+    NSString *message = [NSString stringWithFormat:@"%@ - %@:\n%@\n%@",
+                         self.brandName,self.categoryName,self.productName,self.price];
+    UIAlertView *notice = [[UIAlertView alloc] initWithTitle:@"Part Details" message:message delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+    [notice show];
+    [notice release];
+}
+
 -(void)setOrientationPrefix:(NSString *)newValue
 {
     // retain the passed value
@@ -153,24 +225,49 @@
     [self._parent prevItem:self];
 }
 
+#pragma mark - OrderStatus
+-(void)updateSelectedStatus
+{
+    
+    // show the item is in the cart
+    [self addOrderStatusToView];
+}
+
+-(void)addOrderStatusToView
+{
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    ///////////////////////////////////
+    //OrderStatus
+    UILabel *orderStatusLabel = [[UILabel alloc] 
+                        initWithFrame:CGRectMake(screenWidth-60,20, 60, 30)]; 
+    // initWithFrame:CGRectMake(20,20, 400, 100)];      
+    orderStatusLabel.text = @"Added";
+    orderStatusLabel.textColor = [UIColor whiteColor];
+    orderStatusLabel.backgroundColor = [UIColor clearColor];
+    [self.controlsView addSubview:orderStatusLabel];
+    [orderStatusLabel release]; 
+}
 #pragma mark - Actions from toolbar
 
--(void)showMenuSheet
+-(void)showMenuSheet:(id)sender
 {
     self.currentAction = @"menu";
     
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Menu Choices" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalog", @"Go To Cart", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[popupQuery showInView:self.view];
+	//[popupQuery showInView:self.view];
+    [popupQuery showFromBarButtonItem:sender animated:YES];
 	[popupQuery release];  
 }
--(void)addItemToCart
+
+-(void)addItemToCart:(id)sender
 {
     self.currentAction = @"cart";
     UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Menu Choices" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save to Cart" otherButtonTitles: @"Go To Cart", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
-	[popupQuery showInView:self.view];
-    //[popupQuery showFromToolbar:toolBar];
+	//[popupQuery showInView:self.view];
+    [popupQuery showFromBarButtonItem:sender animated:YES];
 	[popupQuery release];    
 }
 
@@ -180,19 +277,19 @@
     
     if([self.currentAction isEqualToString:@"menu"]){
         if (buttonIndex == 0) {
-            NSLog(@"Return to Main Menu");
+            //NSLog(@"Return to Main Menu");
             [self returnToMainMenu];
         } else if (buttonIndex == 1) {
-            NSLog(@"Return to Catalog");
+            //NSLog(@"Return to Catalog");
             [self returnToCatalogMenu];
         } else if (buttonIndex == 2) {
             NSLog(@"Go To Cart");
         } else if (buttonIndex == 3) {
-            NSLog(@"Cancel Button Clicked");
+            //NSLog(@"Cancel Button Clicked");
         }
     }else if([self.currentAction isEqualToString:@"cart"]){
         if (buttonIndex == 0) {
-            NSLog(@"Add Whatever is here to the cart");
+            //NSLog(@"Add Whatever is here to the cart");
             [self addToDefaultActiveOrder];
         } else if (buttonIndex == 1) {
             NSLog(@"Go to the Cart");
@@ -205,6 +302,7 @@
 
 -(void)addToDefaultActiveOrder
 {
+    [self updateSelectedStatus];
     [self._parent addActivePartToCart];
     
 }
