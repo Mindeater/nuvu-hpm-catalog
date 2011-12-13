@@ -68,7 +68,7 @@
     
     [newEntity setValue:@"New Order" forKey:@"name"];
     [newEntity setValue:
-     [NSString stringWithFormat:@"%d", NSTimeIntervalSince1970]
+     [NSString stringWithFormat:@"%@",  [[NSProcessInfo processInfo] globallyUniqueString]]
                  forKey:@"uniqueId"];
     [newEntity setValue:[NSNumber numberWithBool:NO] forKey:@"active"];
     
@@ -100,20 +100,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    /////////////
+    // style
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.tableView setBackgroundView:nil];
     self.tableView.backgroundColor = [UIColor blackColor];
     self.tableView.separatorColor = [UIColor whiteColor];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-     self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *tempButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewOrder)];
-    self.navigationItem.rightBarButtonItem = tempButton;
+    //self.navigationItem.rightBarButtonItem = tempButton;
+    
+    //@TODO: iOS5 only function
+    
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:self.editButtonItem,tempButton, nil];
+    
     [tempButton release];
+    
+    //////////////////////////////
+    /// fetchedResultsController
     NSError *error;
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
@@ -121,7 +133,7 @@
 		exit(-1);  // Fail
 	}
     
-    self.title = @"Brands";
+    self.title = @"Orders";
 }
 
 - (void)viewDidUnload
@@ -247,10 +259,51 @@
 
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
-    NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [currentRecord valueForKey:@"name"];
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.textColor = [UIColor whiteColor];
+    
+    NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
+    
+    /////////////////////////////////
+    // date under title
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    
+    NSDate *date = [NSDate dateWithTimeIntervalSinceReferenceDate:
+                    [[currentRecord valueForKey:@"uniqueId"] intValue]];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:date]; 
+    [dateFormatter release];
+    
+    ///////////////////////////////////
+    // title editable
+    //cell.textLabel.text = [currentRecord valueForKey:@"name"];
+    
+    UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(5, 5, 200, 21)];
+    textField.text = [currentRecord valueForKey:@"name"];
+    textField.tag = indexPath.row;
+    textField.delegate = self;
+    textField.textColor = [UIColor whiteColor];
+    //cell.accessoryView = textField;
+    [cell.contentView addSubview:textField];
+    [textField release];
+    
+
+    
+    
+    /////////////////////////////////
+    // the active switch
+    UISwitch *switchview = [[UISwitch alloc] initWithFrame:CGRectZero];
+    switchview.tag = indexPath.row;
+    //switchview.delegate = self;
+    [switchview addTarget:self action:@selector(switched:) forControlEvents:UIControlEventValueChanged];
+    
+    if([[currentRecord valueForKey:@"active"] boolValue]){
+        switchview.on = YES;
+    }
+    cell.accessoryView = switchview;
+    [switchview release];
+    
 }
 /*
  // Override to support conditional editing of the table view.
@@ -266,6 +319,11 @@
  - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
  {
      if (editingStyle == UITableViewCellEditingStyleDelete) {
+         // check if it's active
+         NSManagedObject *selected = [_fetchedResultsController objectAtIndexPath:indexPath];
+         if([[selected valueForKey:@"active"] boolValue]){
+             return;
+         }
          // Delete the row from the data source
          [self.context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
          
@@ -289,6 +347,49 @@
  }
  
 
+#pragma mark - switch call back
+- (void)switched:(id)sender 
+{
+    UISwitch *switchedSwitch = (UISwitch *)sender;
+    NSLog(@" Switcharoo --- %i",switchedSwitch.tag);
+    [switchedSwitch resignFirstResponder];
+    /*
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    UISwitch *switchView = (UISwitch *)cell.accessoryView;
+    
+    if ([switchView isOn]) {
+        [switchView setOn:NO animated:YES];
+    } else {
+        [switchView setOn:YES animated:YES];
+    }*/
+    // can only switch on a new one
+    if(![switchedSwitch isOn]){
+        [switchedSwitch setOn:YES animated:YES];
+        return;
+    }
+    for(NSManagedObject *order in _fetchedResultsController.fetchedObjects){
+        [order setValue:[NSNumber numberWithBool:NO]
+                forKey:@"active"];
+    }
+    NSManagedObject *changed = [_fetchedResultsController.fetchedObjects objectAtIndex:switchedSwitch.tag];
+    [changed setValue:[NSNumber numberWithBool:YES]
+             forKey:@"active"];
+    NSError *error;
+    [self.context save:&error];
+    
+}
+ 
+#pragma mark - name change callback
+
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:textField.tag];
+    [curr setValue:textField.text
+            forKey:@"name"];
+    NSError *error;
+    [self.context save:&error];
+}
 /*
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface OrdersTableView : UITableViewController <NSFetchedResultsControllerDelegate> {
+@interface OrdersTableView : UITableViewController <NSFetchedResultsControllerDelegate, UITextFieldDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
     NSManagedObjectContext *_context;    
 }
@@ -16,6 +16,7 @@
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
 @property (nonatomic, retain) NSManagedObjectContext *context;
 
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+-(void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
+
 -(void)addNewOrder;
 @end
