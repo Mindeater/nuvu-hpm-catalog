@@ -23,10 +23,11 @@
 {
     // remove any views that already exist
     for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
-    
+    // self.view.backgroundColor = [UIColor whiteColor];
     // the Control View is going to hold the non-image elements
     
     controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    //controlsView.backgroundColor = [UIColor greenColor];
     [self.view addSubview:self.controlsView];
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -39,6 +40,8 @@
                         initWithFrame:CGRectMake(20,screenHeight - 250, screenWidth - 40, 100)]; 
                        // initWithFrame:CGRectMake(20,20, 400, 100)];      
     myLabel.text = self.productName;
+    myLabel.lineBreakMode = UILineBreakModeWordWrap;
+    myLabel.numberOfLines = 0;
     myLabel.textColor = [UIColor whiteColor];
     myLabel.backgroundColor = [UIColor clearColor];
     [self.controlsView addSubview:myLabel];
@@ -47,13 +50,17 @@
     ///////////////////////////////
     // button to choose this one
     UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    button.frame = CGRectMake(10, 0, 50, 30);
-    [button setTitle: @"ok" forState: UIControlStateNormal];
+    //button.frame = CGRectMake(10, 0, 50, 30);
+    button.frame = CGRectMake(20, screenHeight - 300, 200, 30);
+    //button.frame = CGRectMake(10, 220, 200, 30);
+    [button setTitle: @"Choose Cover Plate" forState: UIControlStateNormal];
     [button setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
     [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
     [self.controlsView addSubview: button];
     
     // Mechanism Picture/s
+    
+    float cost = 0;
     
     // note:
     //arteor 770 has AR in front of the part name which doesn't match the image
@@ -76,14 +83,17 @@
                 img = [mech valueForKey:@"id"];
             }
             
+            cost += [[mech valueForKey:@"price"] floatValue];
         }else{
             // mechanism with more than one part
             img = [NSString stringWithFormat:@"%@-x-%@",
                              [mech valueForKey:@"count"],
                              [[mech valueForKey:@"id"]
                               stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
+            cost += [[mech valueForKey:@"price"] floatValue] * [[mech valueForKey:@"count"]intValue];
         }
         
+        self.price = [NSString stringWithFormat:@"%f",cost];
         // Build the Directory string
         NSString *dir;
         NSString *prefix = self.orientationPrefix;
@@ -125,7 +135,7 @@
         float iWidth = screenWidth * 0.8;
         float iHeight = screenHeight * 0.8;
         float sX = (screenWidth -iWidth)/2.0;
-        float sY = (screenHeight - iHeight)/2.0;
+        float sY = (screenHeight - iHeight)/2.0 - 60;
         
         //nextImage.frame = CGRectMake(80, 80, screenWidth-160, screenHeight-260);
         nextImage.frame = CGRectMake(sX, sY, iWidth, iHeight- 100.0);
@@ -148,12 +158,14 @@
 // don't forget Quartz.Core with this method
 -(UIImage *)getMechanismImage
 {
-    [self.controlsView removeFromSuperview];
+    //[self.controlsView removeFromSuperview];
+    self.controlsView.hidden = YES;
     UIGraphicsBeginImageContext(self.view.bounds.size);
     [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
-    UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+   // UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+    self.controlsView.hidden = NO;
     return screenshot;
 }
 
