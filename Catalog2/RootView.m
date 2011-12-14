@@ -88,8 +88,10 @@
 {
  
     // background Image
+    
+    
     UIImage *bg = [UIImage imageWithContentsOfFile:
-                   [[NSBundle mainBundle] pathForResource:@"main-bg" ofType:@"png"]];
+                   [[NSBundle mainBundle] pathForResource:@"main-bg-port" ofType:@"png"]];
     bgImg =[[UIImageView alloc]initWithImage:bg];
     //bgImg.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     [self.view addSubview:bgImg];
