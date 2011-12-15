@@ -76,6 +76,8 @@
     resultTable.LINK = self;
     [resultTable viewWillAppear:NO];
     
+    searchBar.delegate = resultTable;
+    
     ////////////////////////////////////////
     // create the UISearchDisplay controller
     
