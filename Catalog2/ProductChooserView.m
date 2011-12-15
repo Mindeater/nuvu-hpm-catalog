@@ -147,6 +147,8 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
+    
+    
     /////////////////////////////
     // hook up the product data
     NSError *error;
@@ -230,7 +232,7 @@
 
 -(NSArray *)getObjToScroll:(int)index forEntityName:(NSString *)name
 {
-    NSLog(@"Getting |%@| with index:%d",name,index);
+    //NSLog(@"Getting |%@| with index:%d",name,index);
     if([name isEqualToString:@"Faceplate"]){
         
         // NSLog(@" \n\n\n NOW __ Current FAcePlates %d \n %@ \n\n\n======\n",[self.currentFacePlates count],[[self.currentFacePlates objectAtIndex:index] valueForKey:@"name"]);
@@ -268,6 +270,10 @@
     vc1._parent = self;
     vc2._parent = self;
     vc3._parent = self;
+    
+    vc1.wallImage = self.wallImage;
+    vc2.wallImage = self.wallImage;
+    vc3.wallImage = self.wallImage;
     
     // pass the product name through
     vc1.categoryName = self.currentCategory;
