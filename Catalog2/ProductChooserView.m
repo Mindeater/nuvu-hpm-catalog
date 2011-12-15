@@ -135,6 +135,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
+ self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
 }
 */
 
@@ -143,6 +144,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     /////////////////////////////
@@ -195,7 +197,7 @@
     */
     // vs pushing
     [self.navigationController pushViewController:vc1 animated:NO];
-    [self.navigationController pushViewController:vc2 animated:YES];
+    [self.navigationController pushViewController:vc2 animated:NO];
     
     [self setMechanismsOnViewControllers];
     
