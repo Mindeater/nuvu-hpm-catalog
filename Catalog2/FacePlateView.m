@@ -65,7 +65,8 @@
     NSString *img = [[items lastObject] valueForKey:@"id"];
     
     self.price = [[items lastObject] valueForKey:@"price"];
-    
+ 
+  
     NSString *dir = [NSString stringWithFormat:@"%@/Faceplate",
            [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
     
@@ -80,6 +81,7 @@
                            ofType:@"png" 
                            inDirectory:dir];
     //NSLog(@" - - - Path\n %@\n",imageName);
+    self.parts = [NSString stringWithFormat:@"%@",imageName];
     
     // Grab the image off disk and load it up
     /*
