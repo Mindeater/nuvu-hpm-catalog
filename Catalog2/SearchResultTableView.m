@@ -10,6 +10,7 @@
 //#import "ProductView.h"
 #import "ProductChooserView.h"
 #import "SearchPage.h"
+#import "MechanismView.h"
 
 
 @implementation SearchResultTableView
@@ -150,9 +151,15 @@
 
 #pragma mark - Search results delegate
 
+- (void)searchBar:(UISearchBar *)searchBar selectedScopeButtonIndexDidChange:(NSInteger)selectedScope
+{
+    // reset the search
+    self.LINK.searchDisplayController.searchBar.text = @"";
+}
+
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
 {
-    NSLog(@"Search results table view - searchDisplayController callback \n\n %@ \n\n--\n\n%i ",searchString,self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex);
+   // NSLog(@"Search results table view - searchDisplayController callback \n\n %@ \n\n--\n\n%i ",searchString,self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex);
     
     [self filterContentForSearchText:searchString scope:
 	 [[self.searchDisplayController.searchBar scopeButtonTitles] objectAtIndex:
@@ -286,9 +293,27 @@
         }
             break;
         case 1: // mechanism
+        {
             
+            /*MechanismView *detailViewController = [[MechanismView alloc] init];
+            NSManagedObject *currentRecord = [self.filteredListContents objectAtIndex:indexPath.row];
+            detailViewController.brandName = [[currentRecord valueForKey:@"brand"]
+                                                 valueForKey:@"name"];
+            detailViewController.categoryName = [[currentRecord valueForKey:@"category"]
+                                                    valueForKey:@"name"];
+            //detailViewController.context = self.context;
+            //[detailViewController drawWithItems:[currentRecord valueForKey:@"
+            // detailViewController.managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
+            // ...
+            // Pass the selected object to the new view controller.
+            
+            [self.LINK.navigationController pushViewController:detailViewController animated:YES];
+            [detailViewController release];
+            */
+            NSLog(@"SEelected searched item %@",[self.filteredListContents objectAtIndex:indexPath.row]);
             
             break;
+        }
         case 2: // faceplates
             
             
