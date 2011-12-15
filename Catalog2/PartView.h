@@ -18,6 +18,7 @@
     NSString *brandName;
     NSString *productName;
     NSString *price;
+    NSString *parts;
     
     ProductChooserView *_parent; 
     UIToolbar *toolBar;
@@ -33,6 +34,7 @@
 @property(nonatomic,retain)NSString *brandName;
 @property(nonatomic,retain)NSString *productName;
 @property(nonatomic,retain)NSString *price;
+@property(nonatomic,retain)NSString *parts;
 
 @property(nonatomic,retain)ProductChooserView *_parent;
 @property(nonatomic,retain)UIToolbar *toolBar;

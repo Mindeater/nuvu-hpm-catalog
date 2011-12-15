@@ -21,6 +21,7 @@
 @synthesize brandName;
 @synthesize productName;
 @synthesize price;
+@synthesize parts;
 
 @synthesize _parent;
 @synthesize toolBar;
@@ -61,7 +62,7 @@
 -(void)viewDidLoad
 {
     [self addNavigationBar];
-    //_view.backgroundColor = [UIColor whiteColor];
+    //self.view.backgroundColor = [UIColor clearColor];
     //[self addToolBarToView];
     ///////////////////////////////////
     // Gesture recognisers
@@ -196,8 +197,8 @@
 
 -(void)pressThePart:(id)sender
 {
-    NSString *message = [NSString stringWithFormat:@"%@ - %@:\n%@\n%@",
-                         self.brandName,self.categoryName,self.productName,self.price];
+    NSString *message = [NSString stringWithFormat:@"%@ - %@:\n%@\n%@\n%@",
+                         self.brandName,self.categoryName,self.productName,self.price,self.parts];
     UIAlertView *notice = [[UIAlertView alloc] initWithTitle:@"Part Details" message:message delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [notice show];
     [notice release];
