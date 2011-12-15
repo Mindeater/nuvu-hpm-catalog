@@ -7,7 +7,6 @@
 //
 
 #import "MechanismView.h"
-#import <QuartzCore/QuartzCore.h>
 
 @implementation MechanismView
 
@@ -47,16 +46,7 @@
     [self.controlsView addSubview:myLabel];
     [myLabel release];
     
-    ///////////////////////////////
-    // button to choose this one
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //button.frame = CGRectMake(10, 0, 50, 30);
-    button.frame = CGRectMake(20, screenHeight - 300, 200, 30);
-    //button.frame = CGRectMake(10, 220, 200, 30);
-    [button setTitle: @"Choose Cover Plate" forState: UIControlStateNormal];
-    [button setTitleColor: [UIColor blackColor] forState: UIControlStateNormal];
-    [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
-    [self.controlsView addSubview: button];
+  
     
     // Mechanism Picture/s
     
@@ -94,6 +84,7 @@
         }
         
         self.price = [NSString stringWithFormat:@"%f",cost];
+        
         // Build the Directory string
         NSString *dir;
         NSString *prefix = self.orientationPrefix;
@@ -149,25 +140,6 @@
     }
     self.parts = tmpParts;
     [self addToolBarToView];
-}
-
--(void)chooseMe
-{
-    self.selected =YES;
-}
-
-// don't forget Quartz.Core with this method
--(UIImage *)getMechanismImage
-{
-    //[self.controlsView removeFromSuperview];
-    self.controlsView.hidden = YES;
-    UIGraphicsBeginImageContext(self.view.bounds.size);
-    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-   // UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
-    self.controlsView.hidden = NO;
-    return screenshot;
 }
 
 #pragma mark - View lifecycle

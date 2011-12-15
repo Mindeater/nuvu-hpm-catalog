@@ -8,9 +8,11 @@
 
 #import "PartView.h"
 #import "ProductChooserView.h"
+#import <QuartzCore/QuartzCore.h>
 
 #import "AddPartToOrder.h"
 #import "FacePlateView.h"
+
 
 @implementation PartView
 
@@ -22,6 +24,8 @@
 @synthesize productName;
 @synthesize price;
 @synthesize parts;
+
+@synthesize wallImage;
 
 @synthesize _parent;
 @synthesize toolBar;
@@ -59,9 +63,11 @@
     return self;
 }
 
+#pragma mark - view lifecycle
 -(void)viewDidLoad
 {
     [self addNavigationBar];
+    
     //self.view.backgroundColor = [UIColor clearColor];
     //[self addToolBarToView];
     ///////////////////////////////////
@@ -87,9 +93,7 @@
 #pragma mark - UI additions
 
 -(void)addNavigationBar
-{
-   NSLog(@"\n1. Adding NAvigation BAr\n");
-    
+{    
     //////////////////////////////////
     // Navigation Bar
     
@@ -121,8 +125,13 @@
 }
 
 -(void)addToolBarToView
-{
-    NSLog(@"\n2. Adding ToolBAr");
+{    
+    ///////////////////////////////
+    // passed background image
+    UIImageView *bg = [[UIImageView alloc] initWithImage:self.wallImage];
+    //bg.frame = CGRectMake(0, 0, 300, 300);
+    [self.controlsView addSubview:bg];
+    [bg release];
     
     ///////////////////////////////////////////////
     // ToolBar
@@ -131,17 +140,6 @@
     toolBar.tintColor = [UIColor blackColor];
     [toolBar sizeToFit];//Set the toolbar to fit the width of the app.
     CGFloat toolBarHeight = [toolBar frame].size.height;//Caclulate the height of the toolbar
-    NSLog(@"%f",toolBarHeight);
-    /*
-    CGRect rootViewBounds = self.view.bounds; //Get the bounds of the parent view
-    //Get the height of the parent view.
-    CGFloat rootViewHeight = CGRectGetHeight(rootViewBounds);
-    //Get the width of the parent view,
-    CGFloat rootViewWidth = CGRectGetWidth(rootViewBounds);
-    //Create a rectangle for the toolbar
-    CGRect rectArea = CGRectMake(0, rootViewHeight - toolBarHeight-60, rootViewWidth, toolBarHeight);
-    //CGRect rectArea = CGRectMake(0, 400, rootViewWidth, toolBarHeight);
-    */
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
@@ -149,31 +147,38 @@
     //Reposition and resize the receiver
     [toolBar setFrame:CGRectMake(0, screenHeight-toolBarHeight-80, screenWidth, toolBarHeight)];
     
-    //Create a button
+    ///////////////////
+    //Buttons
     
     UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(nextItem:)];          
     
     UIBarButtonItem	*flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    
+    ///////////////////////////////
+    // button to choose item
+    UIBarButtonItem *chooseItem;
+    if([self isKindOfClass:[FacePlateView class]]){
+        chooseItem = [[UIBarButtonItem alloc] initWithTitle:@"Resize and Save" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseMe)];
+    }else{
+        chooseItem = [[UIBarButtonItem alloc] initWithTitle:@"Choose Cover Plate" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseMe)];
+    }
+    
+    UIBarButtonItem	*flex2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
 
     UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:self action:@selector(previousItem:)];          
     
-    /*
-    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(showMenuSheet)];
-    UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Add to Cart" style:UIBarButtonItemStyleBordered target:self action:@selector(addItemToCart)];
-    */
-    //[toolBar setItems:[NSArray arrayWithObjects:infoButton,newOrderButton, nil]];
-    [toolBar setItems:[NSArray arrayWithObjects:prevButton,flex,nextButton, nil]];
+    [toolBar setItems:[NSArray arrayWithObjects:prevButton,flex,chooseItem,flex2,nextButton, nil]];
 
     [self.controlsView addSubview:toolBar];
     [prevButton release];
     [flex release];
+    [chooseItem release];
+    [flex2 release];
     [nextButton release];
     
-    //[infoButton release];
-    //[newOrderButton release];
     [toolBar release];
+    
+    
     
     
     //////////////////////////////////////
@@ -315,25 +320,30 @@
 {
     [self._parent returnToCatalogMenu];
 }
+
+// don't forget Quartz.Core with this method
+-(UIImage *)getMechanismImage
+{
+    self.controlsView.hidden = YES;
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    //UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
+    self.controlsView.hidden = NO;
+    return screenshot;
+}
+
+-(void)chooseMe
+{
+    self.selected =YES;
+}
+
+
 #pragma mark - abstract methods should defined in subclass
 
 -(void)drawWithItems:(NSArray *)items
 {
 }
--(void)chooseMe
-{
-}
--(UIImage *)getMechanismImage
-{
-    return [[[UIImage alloc] init ] autorelease];
-}
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect
-{
-    // Drawing code
-}
-*/
 
 @end

@@ -25,6 +25,8 @@
     
     NSString *currentAction;
     
+    UIImage *wallImage;
+    
 }
 
 @property(nonatomic,retain)NSString *categoryName;
@@ -35,6 +37,8 @@
 @property(nonatomic,retain)NSString *productName;
 @property(nonatomic,retain)NSString *price;
 @property(nonatomic,retain)NSString *parts;
+
+@property(nonatomic,retain)UIImage *wallImage;
 
 @property(nonatomic,retain)ProductChooserView *_parent;
 @property(nonatomic,retain)UIToolbar *toolBar;

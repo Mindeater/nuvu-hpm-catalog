@@ -7,7 +7,7 @@
 //
 
 #import "FacePlateView.h"
-#import <QuartzCore/QuartzCore.h>
+
 
 @implementation FacePlateView
 
@@ -26,7 +26,7 @@
     // remove any views that already exist
     for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
     
-
+    ////////////////////////////////////////////////////////////
     // the Control View is going to hold the non-image elements
     controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     [self.view addSubview:self.controlsView];
@@ -45,27 +45,16 @@
     [self.controlsView addSubview:myLabel];
     [myLabel release];
     
-    ////////////////////////////////
-    // button to choose this one
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-    //button.frame = CGRectMake(10, 10, 50, 30);
-    button.frame = CGRectMake(20, screenHeight - 300, 200, 30);
-    [button setTitle: @"Resize on Background" forState: UIControlStateNormal];
-    [button setTitleColor: [UIColor redColor] forState: UIControlStateNormal];
-    [button addTarget:self action:@selector(chooseMe) forControlEvents:UIControlEventTouchUpInside];
-    [self.controlsView addSubview: button];
-    
+    ////////////////////////
     // the mechanism picture
     UIImageView *bgMech = [[UIImageView alloc] initWithImage:[items objectAtIndex:0]];
     [self.view addSubview:bgMech];
     [bgMech release];
     
-    // FacePlate Picture
-   // NSLog(@" \n\n Passed Image \n\n%@\n\n",items );
-    NSString *img = [[items lastObject] valueForKey:@"id"];
     
-    self.price = [[items lastObject] valueForKey:@"price"];
- 
+    /////////////////////////////////////
+    // Build the file path and image name
+    NSString *img = [[items lastObject] valueForKey:@"id"];
   
     NSString *dir = [NSString stringWithFormat:@"%@/Faceplate",
            [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
@@ -75,31 +64,31 @@
                             [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
     
     //NSLog(@"  - File NAme %@",imgCleaned);
-    // Grab the image off disk and load it up
     NSString *imageName = [[NSBundle mainBundle] 
                            pathForResource:imgCleaned
                            ofType:@"png" 
                            inDirectory:dir];
     //NSLog(@" - - - Path\n %@\n",imageName);
-    self.parts = [NSString stringWithFormat:@"%@",imageName];
     
+    ///////////////////////////////
+    // store internals
+    self.parts = [NSString stringWithFormat:@"%@",imageName];
+    self.price = [[items lastObject] valueForKey:@"price"];
+    
+    /////////////////////////////////////////
     // Grab the image off disk and load it up
-    /*
-    NSString *imageName = [[NSBundle mainBundle] pathForResource:
-                           [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]
-                           ofType:@"png"];
-    */
+
     UIImage *image = [UIImage imageWithContentsOfFile:imageName];
     UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
     nextImage.backgroundColor = [UIColor clearColor];
     nextImage.contentMode = UIViewContentModeScaleAspectFit;
-   // nextImage.frame = CGRectMake(20, 20, screenWidth-40, screenHeight-140);
+
+    /////////////////////////////////
+    // calculate size based on interface
     float iWidth = screenWidth * 0.8;
     float iHeight = screenHeight * 0.8;
     float sX = (screenWidth -iWidth)/2.0;
     float sY = (screenHeight - iHeight)/2.0 - 60;
-    
-    //nextImage.frame = CGRectMake(80, 80, screenWidth-160, screenHeight-260);
     nextImage.frame = CGRectMake(sX, sY, iWidth, iHeight- 100.0);
     
     [self.view addSubview:nextImage];
@@ -108,10 +97,6 @@
     
     [self addToolBarToView];
     
-}
--(void)chooseMe
-{
-    self.selected =YES;
 }
 
 #pragma mark - View lifecycle
@@ -129,19 +114,6 @@
 }
  */
 
-// don't forget Quartz.Core with this method
--(UIImage *)getMechanismImage
-{
-    //[self.controlsView removeFromSuperview];
-    self.controlsView.hidden = YES;
-    UIGraphicsBeginImageContext(self.view.bounds.size);
-    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    //UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
-    self.controlsView.hidden = NO;
-    return screenshot;
-}
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
