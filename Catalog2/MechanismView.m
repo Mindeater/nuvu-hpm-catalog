@@ -61,7 +61,7 @@
     // Mechanism Picture/s
     
     float cost = 0;
-    
+    NSMutableString *tmpParts = [NSMutableString stringWithString:@""];
     // note:
     //arteor 770 has AR in front of the part name which doesn't match the image
     for(NSManagedObject *mech in items){
@@ -111,7 +111,7 @@
                                 prefix,
                                 [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
         
-        //NSLog(@"  - File NAme %@",imgCleaned);
+        NSLog(@"  - File NAme %@",imgCleaned);
         
         // Grab the image off disk and load it up
         NSString *imageName = [[NSBundle mainBundle] 
@@ -125,6 +125,7 @@
          */
         
         NSLog(@" FuLL image NAme:  %@",imageName);
+        [tmpParts appendFormat:@"%@\n",imageName];
         
         UIImage *image = [UIImage imageWithContentsOfFile:imageName];
         UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
@@ -146,7 +147,7 @@
         [self.view addSubview:nextImage];
         [nextImage release];
     }
-   
+    self.parts = tmpParts;
     [self addToolBarToView];
 }
 
