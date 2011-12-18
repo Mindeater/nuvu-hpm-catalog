@@ -7,7 +7,6 @@
 //
 
 #import "OrderLineViewCell.h"
-#import "OrderDetailTableView.h"
 /*
 #define cell1Width 80
 #define cell2Width 80
@@ -16,11 +15,13 @@
 @implementation OrderLineViewCell
 
 @synthesize lineColor, topCell, bottomCell, cell1, cell2, cell3, cell4, cell5;
+@synthesize editingMode;
 
-@synthesize commentField;
+@synthesize commentField,quantField;
 
 @synthesize cell1Width,cell2Width,cell3Width,cell4Width,cell5Width,cellHeight;
 
+@synthesize padding;
 @synthesize indexRow;
 
 
@@ -32,6 +33,7 @@
     [cell4 release];
     [cell5 release];
     [commentField release];
+    [quantField release];
     [super dealloc];
 }
 
@@ -39,7 +41,7 @@
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
+    //CGFloat screenHeight = screenRect.size.height;
     // iphone 640 px
     //@TODO : define constants here to speed up table render
     cell1Width = screenWidth * .30;//desc .18;    //128.0;//code    20%
@@ -47,12 +49,15 @@
     cell3Width = screenWidth * .06;//quant .30;   //192.0;//comment 30%
     cell4Width = screenWidth * .30;//comment .06;  //64.0;//quant   10%
     cell5Width = screenWidth * .16;//96.0;//price   15%
-    cellHeight = screenHeight/12;
+    cellHeight = 140; //screenHeight/12;
+    
+    padding = 10.0;
 }
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    editingMode = NO;
     if (self) {
         [self calculateCellWidths];
 		topCell = NO;
@@ -75,20 +80,19 @@
         
         
         // quant
-        cell3 = [[UILabel alloc]init];
-        cell3.lineBreakMode = UILineBreakModeWordWrap;
-        cell3.numberOfLines = 0;
-        cell3.textAlignment = UITextAlignmentCenter;
-        cell3.backgroundColor = [UIColor clearColor]; // Important to set or lines will not appear
-        
+        quantField = [[UITextField alloc] init];
+        quantField.backgroundColor = [UIColor clearColor]; 
+        [quantField setKeyboardType:UIKeyboardTypeNumberPad];
+        quantField.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
+        quantField.textAlignment = UITextAlignmentCenter;
         
         
         commentField = [[UITextView alloc]init];
-        commentField.textAlignment = UITextAlignmentCenter;
         commentField.backgroundColor = [UIColor clearColor];//yellowColor];
-        //commentField.delegate = self;
-        commentField.frame = CGRectMake(cell1Width+cell2Width+cell3Width, 0,
-                                        cell4Width, cellHeight);
+       // commentField.textAlignment = UITextAlignmentLeft;
+        commentField.font = cell1.font;//[UIFont fontWithName:@"Helvetica" size:12.0];
+        
+        
         /*
         commentField = [[UITextView alloc]init];
         commentField.backgroundColor = [UIColor whiteColor];
@@ -98,55 +102,32 @@
         commentField.showsHorizontalScrollIndicator = NO;
         commentField.contentInset = UIEdgeInsetsZero;
          */
-        [self addSubview:commentField];
         
-        /*
-        // quantity
-        cell4 = [[UILabel alloc]init];
-        cell4.textAlignment = UITextAlignmentCenter;
-        cell4.lineBreakMode = UILineBreakModeWordWrap;
-        cell4.numberOfLines = 0;
-		cell4.backgroundColor = [UIColor clearColor]; // Important to set or lines will not appear
-        */
+        
+        
         
         // price
         cell5 = [[UILabel alloc]init];
         cell5.textAlignment = UITextAlignmentRight;
 		cell5.backgroundColor = [UIColor clearColor]; // Important to set or lines will not appear
         
-        cell1.frame = CGRectMake(0, 0,
-                                 cell1Width, cellHeight);
-        cell2.frame = CGRectMake(cell1Width, 0,
-                                 cell2Width, cellHeight);
-        cell3.frame = CGRectMake(cell1Width+cell2Width, 0,
-                                 cell3Width, cellHeight);
-        //cell4.frame = CGRectMake(cell1Width+cell2Width+cell3Width, 0,
-         //                        cell4Width, cellHeight);
+        cell1.frame = CGRectMake(0+padding, 0,
+                                 cell1Width-padding, cellHeight);
+        cell2.frame = CGRectMake(cell1Width+padding, 0,
+                                 cell2Width-padding, cellHeight);
+        quantField.frame = CGRectMake(cell1Width+cell2Width, 0,
+                                      cell3Width, 30);
+        commentField.frame = CGRectMake(cell1Width+cell2Width+cell3Width+padding, 0,
+                                        cell4Width, cellHeight);
         cell5.frame = CGRectMake(cell1Width+cell2Width+cell3Width+cell4Width, 0,
-                                 cell5Width, cellHeight);
+                                 cell5Width-padding, 40);
         
         [self addSubview:cell1];
         [self addSubview:cell2];
-        [self addSubview:cell3];
-        //[self addSubview:cell4];
+        [self addSubview:quantField];
+        [self addSubview:commentField];
         [self addSubview:cell5];
-        /*
-		// Add labels for the three cells
-		cell1 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, cell1Width, cellHeight)];
-		cell1.textAlignment = UITextAlignmentCenter;
-		cell1.backgroundColor = [UIColor clearColor]; // Important to set or lines will not appear
-		[self addSubview:cell1];
-		
-		cell2 = [[UILabel alloc] initWithFrame:CGRectMake(cell1Width, 0, cell2Width, cellHeight)];
-		cell2.textAlignment = UITextAlignmentCenter;
-		cell2.backgroundColor = [UIColor clearColor]; // Important to set or lines will not appear
-		[self addSubview:cell2];
-        
-		cell3 = [[UILabel alloc] initWithFrame:CGRectMake(cell1Width+cell2Width, 0, 320-(cell1Width+cell2Width), cellHeight)]; // Note - hardcoded 320 is not ideal; this can be done better
-		cell3.textAlignment = UITextAlignmentCenter;
-		cell3.backgroundColor = [UIColor clearColor]; // Important to set or lines will not appear
-		[self addSubview:cell3];
-         */
+       
     }
     return self;
 }
@@ -161,11 +142,20 @@
     
     // Configure the view for the selected state
 }
-
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated
+{
+    if(!topCell && !bottomCell){
+        [super setEditing:editing animated:animated];
+        //@TODO: does this need to call setNeedsLayout ?? -no
+        editingMode = YES;
+        //[self setNeedsDisplay];
+        //[self setNeedsLayout];
+    }
+}
 
 - (void)drawRect:(CGRect)rect
 {
-	CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextSetStrokeColorWithColor(context, lineColor.CGColor);       
     
 	// CGContextSetLineWidth: The default line width is 1 unit. When stroked, the line straddles the path, with half of the total width on either side.
@@ -217,6 +207,20 @@
 	[self setNeedsDisplay];
 }
 
+-(void)setCellAsHeader
+{
+    cellHeight = 60;
+    cell1.frame = CGRectMake(0, 0,
+                             cell1Width, cellHeight);
+    cell2.frame = CGRectMake(cell1Width, 0,
+                             cell2Width, cellHeight);
+    quantField.frame = CGRectMake(cell1Width+cell2Width, 0,
+                                  cell3Width, cellHeight);
+    commentField.frame = CGRectMake(cell1Width+cell2Width+cell3Width, 0,
+                                    cell4Width, cellHeight);
+    cell5.frame = CGRectMake(cell1Width+cell2Width+cell3Width+cell4Width, 0,
+                             cell5Width, cellHeight);
+}
 
 
 @end
