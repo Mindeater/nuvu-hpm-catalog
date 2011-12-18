@@ -84,5 +84,7 @@
 -(void)addActivePartToCart;
 -(void)returnToMainMenu;
 -(void)returnToCatalogMenu;
+-(void)returnToMechanism;
+-(void)gotoCart;
 
 @end

@@ -14,6 +14,8 @@
 #import "ProductBackgroundResize.h"
 #import "AddPartToOrder.h"
 
+#import "OrderDetailTableView.h"
+
 @implementation ProductChooserView
 
 @synthesize fetchedResultsController = _fetchedResultsController;
@@ -138,15 +140,21 @@
  self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
 }
 */
-
+-(void)viewWillAppear:(BOOL)animated
+{
+    
+//}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
+//- (void)viewDidLoad
+//{
+   // [super viewDidLoad];
+    
+    
+    NSLog(@"\n^Chooser 1.^^^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
+          self.navigationItem, self.navigationController.navigationBar);
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
     
     
     /////////////////////////////
@@ -157,7 +165,7 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		exit(-1);  // Fail
 	}
-    
+
     self.currentEntityName = @"Mechanism";
     
     // set up the current Index
@@ -165,6 +173,7 @@
     currIndex = 0;
     nextIndex = 1;
     
+
     /*
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -173,6 +182,7 @@
     vc1 = [[MechanismView alloc]init];
     vc2 = [[MechanismView alloc]init];
     vc3 = [[MechanismView alloc]init];
+    
 
     
     vc1.productName = [[_fetchedResultsController.fetchedObjects 
@@ -201,9 +211,14 @@
     [self.navigationController pushViewController:vc1 animated:NO];
     [self.navigationController pushViewController:vc2 animated:NO];
     
+
     [self setMechanismsOnViewControllers];
     
+
     vcIndex = 2;
+    
+    NSLog(@"\n^^^Chooser 2.^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
+          self.navigationController, self.navigationController.navigationBar);
     
     //[self.navigationController.navigationBar popNavigationItemAnimated:YES];
     
@@ -289,6 +304,7 @@
     NSString *productOrientation = [[_fetchedResultsController.fetchedObjects 
                                      objectAtIndex:self.currIndex] 
                                     valueForKey:@"orientation"];
+   // NSLog(@"\n\n\nSetting Orientation Prefix :%@\n for\n%@\n%@",productOrientation,self.currentBrand,self.currentCategory);
     
     vc1.orientationPrefix = productOrientation;
     vc2.orientationPrefix = productOrientation;
@@ -438,6 +454,23 @@
 {
     // remove the top two items from the viewcontroller and get the base of the stack
     [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];  
+}
+-(void)returnToMechanism
+{
+    //@TODO : this resets the counter - needs to return to the actual base mechanism
+    [self viewDidLoad];
+}
+-(void)gotoCart
+{
+    OrderDetailTableView *cart = [[OrderDetailTableView alloc] init];
+    //OrderDetailTableView *detailViewController = [[OrderDetailTableView alloc] initWithStyle:UITableViewStyleGrouped];
+    cart.context = self.context;
+    //NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
+    cart.orderId = [self.shoppingCart getActiveOrderId];//[currentRecord valueForKey:@"uniqueId"];
+    
+
+    [self.navigationController pushViewController:cart animated:YES];
+    [cart release];
 }
 #pragma mark - manage cycling view controllers
 
