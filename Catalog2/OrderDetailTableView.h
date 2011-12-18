@@ -11,7 +11,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface OrderDetailTableView : UITableViewController<NSFetchedResultsControllerDelegate, UITextViewDelegate,MFMailComposeViewControllerDelegate> {
+@interface OrderDetailTableView : UITableViewController<NSFetchedResultsControllerDelegate, UITextViewDelegate,UITextFieldDelegate,MFMailComposeViewControllerDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
     NSManagedObjectContext *_context;
     
@@ -30,8 +30,6 @@
 @property(nonatomic)int quantityCount;
 
 @property(nonatomic,retain)NSMutableString *emailOrderBody;
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 
 -(NSArray *)getPartsFromOrderLine:(NSManagedObject *)orderLine;
 -(void)updateComment:(NSString *)comment atIndexRow:(NSInteger)indexRow;

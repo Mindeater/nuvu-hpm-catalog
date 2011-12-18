@@ -11,6 +11,7 @@
 
 #import "EditOrderLineView.h"
 
+
 @implementation OrderDetailTableView
 
 
@@ -44,9 +45,7 @@
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(%K == %@)",@"order.uniqueId",self.orderId];
     [fetchRequest setPredicate:predicate];
-     
-    NSLog(@" passed uniqueID : %@\n\n",self.orderId);
-    
+         
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
                               initWithKey:@"name" ascending:NO];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
@@ -86,8 +85,9 @@
 -(NSArray *)getPartsFromOrderLine:(NSManagedObject *)orderLine
 {
     //NSMutableString *partNum = [NSMutableString stringWithString:@""];
-    NSMutableString *mechPartDesc = [NSMutableString stringWithString:@""];
-    NSMutableString *faceplatePartDesc = [NSMutableString stringWithString:@""];
+    NSMutableString *mechPartDesc = [[NSMutableString alloc] initWithString:@""];// [NSMutableString stringWithString:@""];
+    NSMutableString *faceplatePartDesc = [[NSMutableString alloc] initWithString:@""];// [NSMutableString stringWithString:@""];
+    NSMutableString *faceplateName = [[NSMutableString alloc] initWithString:@""]; //[NSMutableString stringWithString:@""];
     NSMutableString *count = [NSMutableString stringWithString:@""];
     float totalCost = 0;
     
@@ -95,7 +95,7 @@
     //NSLog(@"\nMECHANISMS : \n %@", [orderLine valueForKey:@"product"]);;
     
     for(NSManagedObject *part in [orderLine valueForKey:@"items"]){
-        //NSLog(@" - %@",[part valueForKey:@"type"]);
+        NSLog(@" - %@",[part valueForKey:@"type"]);
         
         
         if([[part valueForKey:@"type"] isEqualToString:@"Mechanism"]){
@@ -110,33 +110,44 @@
                         [part valueForKey:@"name"]];
                 totalCost += [[[part valueForKey:@"mechanism"] valueForKey:@"price"] floatValue] * [[[part valueForKey:@"mechanism"] valueForKey:@"count"] floatValue];
                 //NSLog(@"2. totalCount : %f",totalCost);
-                
+                NSLog(@"Mechanism add - %@",mechPartDesc);
             }else{
                 [mechPartDesc appendFormat:@"%@\n",
                  [part valueForKey:@"name"]];
                 totalCost += [[[part valueForKey:@"mechanism"] valueForKey:@"price"] floatValue];
                // NSLog(@"3. totalCount : %f",totalCost);
-
+                NSLog(@"Mechanism add - %@",mechPartDesc);
             }
             //NSLog(@"Price : %@",[[part valueForKey:@"mechanism"] valueForKey:@"price"]);
         
         }else{
-            [faceplatePartDesc appendFormat:@"\n%@\n",
-                    [part valueForKey:@"name"]];
+            [faceplatePartDesc appendFormat:@"\n%@\n",[part valueForKey:@"name"]];
+            
+            [faceplateName appendFormat:@"\n\nCover Plate: %@",[[part valueForKey:@"faceplate"] valueForKey:@"name"]];
+            
+            NSLog(@"CoverPlate :%@",faceplateName);
+            
             [count appendString:@"1\n"];
-             totalCost += [[[part valueForKey:@"faceplate"] valueForKey:@"price"] floatValue];
-            //NSLog(@"4. totalCount : %f",totalCost);
+             
+            totalCost += [[[part valueForKey:@"faceplate"] valueForKey:@"price"] floatValue];
         }
 
     }
     // are there faceplates ?
     //NSLog(@"\nMECHANISMS : \n %@",[orderLine valueForKey:@"faceplate"]);
     
-    return [NSArray arrayWithObjects:
+    NSArray *values = [NSArray arrayWithObjects:
             [NSString stringWithFormat:@"%@%@",mechPartDesc,faceplatePartDesc],
             count,
             [NSNumber numberWithFloat:totalCost],
-            nil];;
+            [NSString stringWithString:faceplateName],
+            nil];
+    [mechPartDesc release];
+    [faceplatePartDesc release];
+    [faceplateName release];
+    
+    NSLog(@" being returned : %@:\n\n",values);
+    return values;
 }
 
 
@@ -158,10 +169,38 @@
 }
 
 #pragma mark - View lifecycle
+#define DEGREES_TO_RADIANS(angle) ((angle) / 180.0 * M_PI)
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        /* option 1:
+         // force to landscape
+        // First rotate the screen:
+        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+        // Then rotate the view and re-align it:
+        CGAffineTransform landscapeTransform = CGAffineTransformMakeRotation( DEGREES_TO_RADIANS(90) );
+        landscapeTransform = CGAffineTransformTranslate( landscapeTransform, +90.0, +90.0 );
+        [self.view setTransform:landscapeTransform];
+        
+         // option 2:
+        //====================================================
+		//ROTATES VIEW TO LANDSCAPE MODE AND SETS THE STAGE SIZE
+		CGAffineTransform rotate = CGAffineTransformMakeRotation(1.57079633);
+		[self.view setTransform:rotate];
+		
+		CGRect contentRect = CGRectMake(0, 0, 480, 320); 
+		window.bounds = contentRect; 
+		[window setCenter:CGPointMake(160.0f, 240.0f)];
+		//====================================================
+         */
+         
+    }
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -187,7 +226,8 @@
     // Email Order Button
     UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
                                        initWithTitle:@"Email Order" style:UIBarButtonItemStyleBordered target:self action:@selector(emailOrder:)];
-    self.navigationItem.rightBarButtonItem = newOrderButton;
+    //self.navigationItem.rightBarButtonItem = newOrderButton;
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:self.editButtonItem,newOrderButton, nil];
     [newOrderButton release];
     
     self.emailOrderBody = [NSMutableString string];
@@ -199,11 +239,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -237,7 +272,7 @@
         // CREATING MAIL VIEW
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setSubject:@"Here is an image"];
+        [controller setSubject:@"HPM Product Order"];
         [controller setMessageBody:[NSString stringWithString:self.emailOrderBody]
                             isHTML:YES];
         
@@ -273,7 +308,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 100;
+    if(indexPath.row == 0 || indexPath.row == [_fetchedResultsController.fetchedObjects count]+1){
+        return 60;
+    }
+    
+    return 150;
     /*
      CGSize size = [str sizeWithFont:[UIFont fontWithName:@"Georgia-Bold" size:18.0] constrainedToSize:CGSizeMake(240.0, 480.0) lineBreakMode:UILineBreakModeWordWrap];
      return size.height + 20;
@@ -304,35 +343,63 @@
         cell = [[[OrderLineViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
         cell.lineColor = [UIColor blackColor];
     }
+    
+    ////////////////////////////////
+    // formating for prices
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];  
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    //////////////////////////////
+    // count
     cell.indexRow = [NSNumber numberWithInt: indexPath.row -1];
-    // Since we are drawing the lines ourself, we need to know which cell is the top cell in the table so that
-    // we can draw the line on the top
+    
     if (indexPath.row == 0){
+        
+        ////////////////////////////////
+        // Order Table heading
+        
         cell.topCell = YES;
-        // Make a table Heading in the first instance
+        [cell setCellAsHeader];
+        
         cell.cell1.textAlignment = UITextAlignmentCenter;
         cell.cell1.text = @"DESCRIPTION";
+        
         cell.cell2.text = @"CODE";
-        //cell.cell3.text = @"COMMENTS";
+        cell.cell2.textAlignment = UITextAlignmentCenter;
+        
         cell.commentField.text =@"COMMENTS";
         cell.commentField.userInteractionEnabled = NO;
-        cell.cell3.text = @"QTY";
+        cell.commentField.textAlignment = UITextAlignmentCenter;
+        cell.commentField.contentInset = UIEdgeInsetsMake(10,100,0,0);
+
+        cell.quantField.text =@"QTY";
+        cell.quantField.enabled = NO;
+        cell.quantField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        
         cell.cell5.text = @"PRICE";
+        cell.cell5.textAlignment = UITextAlignmentCenter;
         
         [self.emailOrderBody 
          appendFormat:@"<table border=\"1\"><tr><th>%@</th><th>%@</th><th>%@</th><th>%@</th><th>%@</th></tr>",
         @"Description",@"Code",@"Comments",@"Qty",@"Price"];
         
     }else if(indexPath.row == [_fetchedResultsController.fetchedObjects count]+1){
+        
+        /////////////////////////////////////////
         // the bottom cell should have the total
+        
         cell.bottomCell = YES;
+        
         cell.cell1.text = @"";
         cell.cell2.text = @"";
-        cell.cell3.text = [NSString stringWithFormat:@"%d",quantityCount];  
+
+        cell.quantField.text = @"";// [NSString stringWithFormat:@"%d",quantityCount];
+        cell.quantField.enabled = NO;
+        
         cell.commentField.text =@"TOTAL:";
         cell.commentField.userInteractionEnabled = NO;
+        cell.commentField.textAlignment = UITextAlignmentCenter;
+        cell.commentField.contentInset = UIEdgeInsetsMake(10,100,0,0);
         
         cell.cell5.text = [formatter stringFromNumber:[NSNumber numberWithFloat:orderTotal]];
         
@@ -341,19 +408,46 @@
          @"",@"",@"TOTAL:",cell.cell5.text];
         
     }else{
-        cell.topCell = NO;
-    
+        //////////////////////////////////
+        // ordered Item
         
+        cell.topCell = NO;
+        cell.bottomCell = NO;
         // Configure the cell.
+        
+        //@TODO: needs to be boundry checked before calling ??
         NSManagedObject *currentRecord = [_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1];
         
-        // parts
+        // get the parts strings to populat the cell
         NSArray *parts = [self getPartsFromOrderLine:currentRecord];
-
         // desc
-        cell.cell1.text = [currentRecord valueForKey:@"product"];
+        /*
+        NSString *descText = [NSString stringWithFormat:@" *%@%@*",
+                              [currentRecord valueForKey:@"product"],
+                              [parts objectAtIndex:3]];
+       
+        CGSize maximumLabelSize = CGSizeMake(296,9999);
+        CGSize expectedLabelSize = [descText sizeWithFont:cell.cell1.font 
+                                          constrainedToSize:maximumLabelSize 
+                                              lineBreakMode:cell.cell1.lineBreakMode]; 
+        NSLog(@" - Label size = %@",expectedLabelSize);
+        //adjust the label the the new height.
+        CGRect newFrame = cell.cell1.frame;
+        NSLog(@"startFrame %@",newFrame);
+        newFrame.size.height = expectedLabelSize.height;
+        cell.cell1.frame = newFrame;
+        NSLog(@"cellFrame %@",newFrame);
+        cell.cell1.text = descText;
+         */
+        //[cell.cell1 sizeToFit];
+        cell.cell1.text = [NSString stringWithFormat:@" *%@%@*",
+                           [currentRecord valueForKey:@"product"],
+                           [parts objectAtIndex:3]];
+        cell.cell1.textAlignment = UITextAlignmentLeft;
+        
         // code
         cell.cell2.text = [parts objectAtIndex:0];//[currentRecord valueForKey:@"name"];
+        cell.cell2.textAlignment = UITextAlignmentLeft;
         
         // comments
         //cell.commentField.placeholder = @"- - - - - - -";
@@ -361,93 +455,41 @@
         cell.commentField.delegate = self;
         cell.commentField.text = [currentRecord valueForKey:@"comment"];
         
-        //cell.cell3.text = @"USer Added Comment could be quite long so there has to be some expansion here or truncation";
-        //cell.commentField.delegate = self;
         
         // Qty
-        cell.cell3.text = [NSString stringWithFormat:@"%@",[currentRecord valueForKey:@"quantity"]]; //@"2";
-        
+        //cell.cell3.text = [NSString stringWithFormat:@"%@",[currentRecord valueForKey:@"quantity"]]; //@"2";
+        cell.quantField.tag = indexPath.row -1;
+        cell.quantField.text = [NSString stringWithFormat:@"%@",[currentRecord valueForKey:@"quantity"]];
+        cell.quantField.delegate = self;
         //////////////////
         // price
         
-        //@TODO: assuming all items are the multiple
         NSNumber *theLineTotal = [NSNumber numberWithFloat:
                                         [[parts objectAtIndex:2] floatValue] * [[currentRecord valueForKey:@"quantity"] floatValue]];
         NSString *totalFormat = [formatter stringFromNumber:
                                  theLineTotal];
         
         cell.cell5.text = totalFormat; //@"$72.80";
+        cell.cell5.textAlignment = UITextAlignmentRight;
         
-        //NSLog(@"1. total - %f",orderTotal);
+        //////////////////////////////////
+        // increment the internal counters
         orderTotal += [theLineTotal floatValue];
-        //NSLog(@"2. Added %f now total - %f",[[parts objectAtIndex:2] floatValue],orderTotal);
         quantityCount += [[currentRecord valueForKey:@"quantity"] intValue];
         
-        
+        ///////////////////////////////////
+        // sored email string
         [self.emailOrderBody 
          appendFormat:@"<tr><td>%@</td><td>%@</td><td>%@</td><td>%@</td><td>%@</td></tr>",
          cell.cell1.text,
          [cell.cell2.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          [cell.commentField.text  stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
-         cell.cell3.text,
-         cell.cell5.text];
-        
+         cell.quantField.text,
+         cell.cell5.text];        
     }
+    
     [formatter release];
     return cell;
-    /*static NSString *CellIdentifier = @"Cell";
-    
-    //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    OrderLineViewCell *cell = (OrderLineViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    
-    NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
-    
-    if (cell == nil) {
-        cell = [[[OrderLineViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        
-		UILabel *label = [[[UILabel	alloc] initWithFrame:CGRectMake(0.0, 0, 150.0,
-                                                                    tableView.rowHeight)] autorelease];
-		[cell addColumn:150];
-		label.tag = 1;//LABEL_TAG;
-		label.font = [UIFont systemFontOfSize:12.0];
-		label.text = [NSString stringWithFormat:@"%d", 
-                      [currentRecord valueForKey:@"name"]];
-		label.textAlignment = UITextAlignmentRight;
-		label.textColor = [UIColor blueColor];
-		label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin |
-		UIViewAutoresizingFlexibleHeight;
-		[cell.contentView addSubview:label]; 
-        
-		label =  [[[UILabel	alloc] initWithFrame:CGRectMake(250.0, 0, 150.0,
-															tableView.rowHeight)] autorelease];
-		[cell addColumn:250];
-		label.tag = 2;//VALUE_TAG;
-		label.font = [UIFont systemFontOfSize:12.0];
-		// add some silly value
-		label.text = [NSString stringWithFormat:@"%d", 
-                      [currentRecord valueForKey:@"time"]];
-		label.textAlignment = UITextAlignmentRight;
-		label.textColor = [UIColor blueColor];
-		label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin |
-		UIViewAutoresizingFlexibleHeight;
-		[cell.contentView addSubview:label];
-    }
-    
-    // Configure the cell...
-    
-    NSLog(@"\n\n CeLL :: - \n%@\n\n",[currentRecord valueForKey:@"product"]);
-    
-    return cell;*/
-}
-
-
-
-- (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
-    NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
-    cell.textLabel.text = [currentRecord valueForKey:@"name"];
-
 }
 
 
@@ -465,9 +507,15 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
+        NSLog(@"DELETE item %i",indexPath.row);
+        if(indexPath.row == 0 || indexPath.row == [_fetchedResultsController.fetchedObjects count]+1){
+            
+        }
         
+        // need to make sure the actual indexpath is being used
         // Delete the row from the data source
         [self.context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
+        //[self.context deleteObject:[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1]];
         
         // Save the context.
         NSError *error;
@@ -488,7 +536,24 @@
     }   
 }
 
-#pragma mark - textfield delegate
+#pragma mark - text delegates
+- (void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:textField.tag];
+    
+    // make sure it is 1 or more
+    int enteredNumber = [textField.text intValue];
+    if(enteredNumber == 0){
+        enteredNumber = 1;
+    }
+    
+    [curr setValue:[NSNumber numberWithInt:enteredNumber]
+            forKey:@"quantity"];
+    NSError *error;
+    [self.context save:&error];
+    
+}
 /*
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
@@ -582,11 +647,19 @@
             break;
             
         case NSFetchedResultsChangeDelete:
+            NSLog(@"getting delete message from order table %@",indexPath);
+            // the index path will be one less than the cell we want to remove
+            NSIndexPath *ip = [indexPath indexPathByAddingIndex:1];
+            NSLog(@"index path: %@ vs created %@",indexPath,ip);
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
         case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
+            //NSLog(@" Update Change");
+            quantityCount = 0;
+            orderTotal = 0.0;
+            [self.emailOrderBody setString:@""];
+            [tableView reloadData];
             break;
             
         case NSFetchedResultsChangeMove:
