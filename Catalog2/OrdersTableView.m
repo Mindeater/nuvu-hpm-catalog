@@ -58,21 +58,34 @@
     
 }
 
+
 -(void)addNewOrder
 {
+
     NSError *error;
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     
+    // turn off the existing objects
+    for(NSManagedObject *order in _fetchedResultsController.fetchedObjects){
+        [order setValue:[NSNumber numberWithBool:NO]
+                 forKey:@"active"];
+    } 
+    [self.context save:&error];
+    
+    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
     NSManagedObject *newEntity = [NSEntityDescription 
                                   insertNewObjectForEntityForName:[entity name] inManagedObjectContext:[self.fetchedResultsController managedObjectContext]];
     
-    [newEntity setValue:@"New Order" forKey:@"name"];
+    NSInteger nextRow = [_fetchedResultsController.fetchedObjects count]+1;
+    [newEntity setValue:[NSString stringWithFormat:@"New Order %i",nextRow] 
+                 forKey:@"name"];
     [newEntity setValue:
      [NSString stringWithFormat:@"%@",  [[NSProcessInfo processInfo] globallyUniqueString]]
                  forKey:@"uniqueId"];
-    [newEntity setValue:[NSNumber numberWithBool:NO] forKey:@"active"];
+    [newEntity setValue:[NSNumber numberWithBool:YES] forKey:@"active"];
+    
     
     [self.context insertObject:newEntity];
+     
     [self.context save:&error];
 }
 
@@ -321,8 +334,10 @@
      if (editingStyle == UITableViewCellEditingStyleDelete) {
          // check if it's active
          NSManagedObject *selected = [_fetchedResultsController objectAtIndexPath:indexPath];
+         
+         //@TODO: this means they can break it by removing all the orders
          if([[selected valueForKey:@"active"] boolValue]){
-             return;
+             //return;
          }
          // Delete the row from the data source
          [self.context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
@@ -351,26 +366,21 @@
 - (void)switched:(id)sender 
 {
     UISwitch *switchedSwitch = (UISwitch *)sender;
-    NSLog(@" Switcharoo --- %i",switchedSwitch.tag);
     [switchedSwitch resignFirstResponder];
-    /*
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    UISwitch *switchView = (UISwitch *)cell.accessoryView;
-    
-    if ([switchView isOn]) {
-        [switchView setOn:NO animated:YES];
-    } else {
-        [switchView setOn:YES animated:YES];
-    }*/
+
     // can only switch on a new one
     if(![switchedSwitch isOn]){
         [switchedSwitch setOn:YES animated:YES];
         return;
     }
+    
+    // switch all of them off
     for(NSManagedObject *order in _fetchedResultsController.fetchedObjects){
         [order setValue:[NSNumber numberWithBool:NO]
-                forKey:@"active"];
-    }
+                 forKey:@"active"];
+    } 
+    
+    //switch on the selected item
     NSManagedObject *changed = [_fetchedResultsController.fetchedObjects objectAtIndex:switchedSwitch.tag];
     [changed setValue:[NSNumber numberWithBool:YES]
              forKey:@"active"];
