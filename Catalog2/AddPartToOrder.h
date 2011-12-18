@@ -22,6 +22,8 @@
 -(void)setUpFetchedResultsController;
 -(void)setActiveOrderLine:(NSString *)productName;
 
+-(NSString *)getActiveOrderId;
+
 -(void)addMechanismsToDefaultOrder:(NSArray *)mechanisms withProductName:(NSString *)productName;
 -(void)addFaceplateToDefaultOrder:(NSArray *)faceplate withProductName:(NSString *)productName;
 @end

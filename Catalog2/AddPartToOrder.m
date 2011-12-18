@@ -73,12 +73,10 @@
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
     
-    //NSLog(@" +++ = == \n%@\n\n\n",self.fetchedResultsController.fetchedObjects);
     if([self.fetchedResultsController.fetchedObjects lastObject] == nil){
         ////////////////////////////
         // DEFAULT
         // Create a new Entity
-        
         // Create a new instance of the entity managed by the fetched results controller.
         NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
         
@@ -101,10 +99,14 @@
 
 }
 
-
+-(NSString *)getActiveOrderId
+{
+    return [[_fetchedResultsController.fetchedObjects lastObject] valueForKey:@"uniqueId"];
+    
+}
 -(void)setActiveOrderLine:(NSString *)productName
 {
-    //NSLog(@"Setting Active Orderline with %@",productName);
+
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"OrderLine"
                                               inManagedObjectContext:self.context];
@@ -116,16 +118,11 @@
     
     [request setPredicate:predicate];
     
-    
     NSError *error = nil;
     NSArray *result = [self.context executeFetchRequest:request error:&error];
-    [request release];
-    //[predicate release];
-    
-    self.currentOrderLine = [result lastObject];
     
     if(![result lastObject]){
-        // Need to make a new one and return it
+
         NSManagedObject *newEntity = [NSEntityDescription 
                                       insertNewObjectForEntityForName:@"OrderLine"
                                       inManagedObjectContext:self.context];
@@ -146,6 +143,10 @@
         
     }
     
+    result = [self.context executeFetchRequest:request error:&error];
+    self.currentOrderLine = [result lastObject];
+
+    [request release];
     
     
 
@@ -220,8 +221,8 @@
 -(void)addFaceplateToDefaultOrder:(NSArray *)faceplate withProductName:(NSString *)productName
 {
 
-    [self setUpFetchedResultsController];
-    [self setActiveOrderLine:productName];
+    //[self setUpFetchedResultsController];
+    //[self setActiveOrderLine:productName];
     
     NSError *error;
     BOOL insert = YES;
