@@ -16,7 +16,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>7.51</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -35,12 +35,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG ILLUMINATED SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>7.51</string></dict>
 			<dict><key>Mechanism 2</key><string>EM770LEDUG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM770LEDUG</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>4.77</string></dict>
+			<dict><key>Mech 2 Price</key><string>4.77</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -59,12 +59,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 5A 1-GANG ELECTRONIC SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>EM883UG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM883UG</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>40.45</string></dict>
+			<dict><key>Mech 2 Price</key><string>40.45</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -78,7 +78,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 16AX 2-GANG SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>12.14</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -97,12 +97,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 5A 2-GANG ELECTRONIC SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>2 X EM883UG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM883UG</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>40.45</string></dict>
+			<dict><key>Mech 2 Price</key><string>80.90</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -116,7 +116,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 16AX 3-GANG SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/3UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>21.06</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/3PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -135,12 +135,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 5A 3-GANG ELECTRONIC SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/3GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>3 X EM883UG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM883UG</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>40.45</string></dict>
+			<dict><key>Mech 2 Price</key><string>121.35</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/3PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -154,7 +154,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 16AX 4-GANG SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/4UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>32.84</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/4PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -173,12 +173,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 5A 4-GANG ELECTRONIC SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/4GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>6.32</string></dict>
 			<dict><key>Mechanism 2</key><string>4 X EM883UG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM883UG</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>40.45</string></dict>
+			<dict><key>Mech 2 Price</key><string>161.80</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/4PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -192,7 +192,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 16AX 5-GANG SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/5UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>46.37</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/5PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -211,12 +211,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 5A 5-GANG ELECTRONIC SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/5GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>6.32</string></dict>
 			<dict><key>Mechanism 2</key><string>5 X EM883UG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM883UG</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>40.45</string></dict>
+			<dict><key>Mech 2 Price</key><string>202.25</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/5PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -230,7 +230,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 16AX 6-GANG SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/6UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>54.56</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/6PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -249,12 +249,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 5A 6-GANG ELECTRONIC SWITCH URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/6GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>6.32</string></dict>
 			<dict><key>Mechanism 2</key><string>6 X EM883UG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM883UG</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>40.45</string></dict>
+			<dict><key>Mech 2 Price</key><string>242.70</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/6PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -426,7 +426,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG POWERPOINT URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED777UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>15.98</string></dict>
 			<dict><key>MATT SILVER</key><string>ED777PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -440,7 +440,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG EXTRA-FUNCTION POWERPOINT URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED777XUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>31.70</string></dict>
 			<dict><key>MATT SILVER</key><string>ED777XPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -454,7 +454,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG POWERPOINT URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787UG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>9.98</string></dict>
 			<dict><key>MATT SILVER</key><string>ED787PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -468,7 +468,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 1 EXTRA-FUNCTION POWERPOINT URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787XUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>19.50</string></dict>
 			<dict><key>MATT SILVER</key><string>EDCWPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -482,12 +482,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 2 EXTRA-FUNCTION POWERPOINT URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787/2XUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>34.91</string></dict>
 			<dict><key>MATT SILVER</key><string>EDCWPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
 </dict>
-<key>Common Plate Horizontal Socket Outlets</key>
+<key>Common Plate Horizontal Powerpoints</key>
 <dict>
 		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 2-GANG POWERPOINT WHITE</key>
 		<array>
@@ -552,12 +552,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO SADDLE TV OUTLET URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>EMSPUG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EMSPUG</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>5.42</string></dict>
+			<dict><key>Mech 2 Price</key><string>5.42</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -576,7 +576,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO F TV OUTLET URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>EMPFWE</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EMPFWE</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
@@ -600,12 +600,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 1-GANG F TO F TV OUTLET PAY TV URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>EMFFFOXUG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EMFFFOXUG</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>5.42</string></dict>
+			<dict><key>Mech 2 Price</key><string>5.42</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
@@ -616,8 +616,8 @@
 			<dict><key>Mechanism 2</key><string>EMSPUG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EMSPUG</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>5.42</string></dict>
+			<dict><key>Mech 2 Price</key><string>5.42</string></dict>
 			<dict><key>MATT SILVER</key><string>EDCWPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
@@ -669,7 +669,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET BLACK</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>EMRJ45C5EBL</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EMRJ45C5EBL</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
@@ -693,7 +693,7 @@
 		<key>EXCEL LIFE DEDICATED PLATE 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET BLACK</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>2 X EMRJ45C5EBL</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EMRJ45C5EBL</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
@@ -748,12 +748,12 @@
 		<key>EXCEL LIFE DEDICATED PLATE 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER URBAN GREY</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>3.62</string></dict>
 			<dict><key>Mechanism 2</key><string>EM450UPUG</string></dict>
 			<dict><key>Mech 2 Part #</key><string>EM450UPUG</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>0.01</string></dict>
-			<dict><key>Mech 2 Price</key><string>0.01</string></dict>
+			<dict><key>Trade Price</key><string>61.15</string></dict>
+			<dict><key>Mech 2 Price</key><string>61.15</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>

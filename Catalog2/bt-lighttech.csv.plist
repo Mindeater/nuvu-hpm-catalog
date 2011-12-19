@@ -1,0 +1,1063 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bt-lighttech.csv</key>
+	<dict>
+<key>Horizontal Rocker Switches</key>
+<dict>
+		<key>LIGHT 16A 1-GANG 2-MOD SWITCH</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>N4003/2</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4003/2</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>6.20</string></dict>
+			<dict><key>Mech 1 Price</key><string>6.20</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 16A 1-GANG 2-MOD SWITCH</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>NT4003/2</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4003/2</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>6.81</string></dict>
+			<dict><key>Mech 1 Price</key><string>6.81</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+		<key>LIGHT 16A 2-GANG 2-MOD SWITCH</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X N4003</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4003</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>6.20</string></dict>
+			<dict><key>Mech 1 Price</key><string>12.40</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 16A 2-GANG 2-MOD SWITCH</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X NT4003</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4003</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>6.81</string></dict>
+			<dict><key>Mech 1 Price</key><string>13.62</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+		<key>LIGHT 16A 3-GANG 3-MOD SWITCH</key>
+		<array>
+			<dict><key>Frame</key><string>L4703AS</string></dict>
+			<dict><key>Trade Price</key><string>3.72</string></dict>
+			<dict><key>Mechanism 1</key><string>3 X N4003</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4003</string></dict>
+			<dict><key>Qty</key><string>3</string></dict>
+			<dict><key>Trade Price</key><string>6.20</string></dict>
+			<dict><key>Mech 1 Price</key><string>18.60</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4803LB</string></dict>
+			<dict><key>Trade Price</key><string>4.68</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4803IB</string></dict>
+			<dict><key>Trade Price</key><string>4.68</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4803OB</string></dict>
+			<dict><key>Trade Price</key><string>8.02</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4803AP</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4803BP</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4803VP</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4803AJ</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4803BJ</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>JELLY RED</key><string>N4803RJ</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4803YN</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>PEARL GREY</key><string>N4803GN</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4803AN</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>RUBBER RED</key><string>N4803RE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>TEA GREEN</key><string>N4803VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4803GE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4803TA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4803SA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4803OS</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>COPPER</key><string>N4803RA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4803AA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>KRISTALL</key><string>N4803KR</string></dict>
+			<dict><key>Trade Price</key><string>11.23</string></dict>
+			<dict><key>TECH</key><string>N4803TH</string></dict>
+			<dict><key>CHROME</key><string>N4803CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4803LCA</string></dict>
+			<dict><key>Trade Price</key><string>32.76</string></dict>
+			<dict><key>ASH</key><string>N4803LFR</string></dict>
+			<dict><key>Trade Price</key><string>32.76</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4803LPR</string></dict>
+			<dict><key>Trade Price</key><string>32.76</string></dict>
+		</array>
+		<key>LIGHT TECH 16A 3-GANG 3-MOD SWITCH</key>
+		<array>
+			<dict><key>Frame</key><string>L4703AS</string></dict>
+			<dict><key>Trade Price</key><string>3.72</string></dict>
+			<dict><key>Mechanism 1</key><string>3 X NT4003</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4003</string></dict>
+			<dict><key>Qty</key><string>3</string></dict>
+			<dict><key>Trade Price</key><string>6.81</string></dict>
+			<dict><key>Mech 1 Price</key><string>20.43</string></dict>
+			<dict><key>TECH</key><string>NT4803TH</string></dict>
+			<dict><key>Trade Price</key><string>15.91</string></dict>
+			<dict><key>CHROME</key><string>NT4803CR</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+		</array>
+</dict>
+<key>Horizontal Powerpoints</key>
+<dict>
+		<key>LIGHT 10A 1-GANG 3-MOD POWERPOINT</key>
+		<array>
+			<dict><key>Frame</key><string>L4703AS</string></dict>
+			<dict><key>Trade Price</key><string>3.72</string></dict>
+			<dict><key>Mechanism 1</key><string>N4132</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4132</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>13.64</string></dict>
+			<dict><key>Mech 1 Price</key><string>13.64</string></dict>
+			<dict><key>Mechanism 2</key><string>N4003</string></dict>
+			<dict><key>Trade Price</key><string>6.20</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4803LB</string></dict>
+			<dict><key>Trade Price</key><string>4.68</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4803IB</string></dict>
+			<dict><key>Trade Price</key><string>4.68</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4803OB</string></dict>
+			<dict><key>Trade Price</key><string>8.02</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4803AP</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4803BP</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4803VP</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4803AJ</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4803BJ</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>JELLY RED</key><string>N4803RJ</string></dict>
+			<dict><key>Trade Price</key><string>8.42</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4803YN</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>PEARL GREY</key><string>N4803GN</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4803AN</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>RUBBER RED</key><string>N4803RE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>TEA GREEN</key><string>N4803VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4803GE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4803TA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4803SA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4803OS</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>COPPER</key><string>N4803RA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4803AA</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+			<dict><key>KRISTALL</key><string>N4803KR</string></dict>
+			<dict><key>Trade Price</key><string>11.23</string></dict>
+			<dict><key>TECH</key><string>N4803TH</string></dict>
+			<dict><key>CHROME</key><string>N4803CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4803LCA</string></dict>
+			<dict><key>Trade Price</key><string>32.76</string></dict>
+			<dict><key>ASH</key><string>N4803LFR</string></dict>
+			<dict><key>Trade Price</key><string>32.76</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4803LPR</string></dict>
+			<dict><key>Trade Price</key><string>32.76</string></dict>
+		</array>
+		<key>LIGHT TECH 10A 1-GANG 3-MOD POWERPOINT</key>
+		<array>
+			<dict><key>Frame</key><string>L4703AS</string></dict>
+			<dict><key>Trade Price</key><string>3.72</string></dict>
+			<dict><key>Mechanism 1</key><string>NT4132</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4132</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>15.01</string></dict>
+			<dict><key>Mech 1 Price</key><string>15.01</string></dict>
+			<dict><key>Mechanism 2</key><string>NT4003</string></dict>
+			<dict><key>Trade Price</key><string>6.81</string></dict>
+			<dict><key>TECH</key><string>NT4803TH</string></dict>
+			<dict><key>Trade Price</key><string>15.91</string></dict>
+			<dict><key>CHROME</key><string>NT4803CR</string></dict>
+			<dict><key>Trade Price</key><string>23.40</string></dict>
+		</array>
+		<key>LIGHT 10A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>N4132</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4132</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>13.64</string></dict>
+			<dict><key>Mech 1 Price</key><string>13.64</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 10A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>NT4132</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4132</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>15.01</string></dict>
+			<dict><key>Mech 1 Price</key><string>15.01</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+		<key>LIGHT 15A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>N4133</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4133</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>21.35</string></dict>
+			<dict><key>Mech 1 Price</key><string>21.35</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 15A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>NT4133</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4133</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>23.48</string></dict>
+			<dict><key>Mech 1 Price</key><string>23.48</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+		<key>LIGHT 10A 2-GANG 3/4-MOD POWERPOINT</key>
+		<array>
+			<dict><key>Mechanism 1</key><string>N4134</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4134</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>20.03</string></dict>
+			<dict><key>Mech 1 Price</key><string>20.03</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4804LB</string></dict>
+			<dict><key>Trade Price</key><string>5.20</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4804IB</string></dict>
+			<dict><key>Trade Price</key><string>5.20</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4804OB</string></dict>
+			<dict><key>Trade Price</key><string>9.36</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4804AP</string></dict>
+			<dict><key>Trade Price</key><string>9.36</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4804BP</string></dict>
+			<dict><key>Trade Price</key><string>9.36</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4804VP</string></dict>
+			<dict><key>Trade Price</key><string>9.36</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4804AJ</string></dict>
+			<dict><key>Trade Price</key><string>9.36</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4804BJ</string></dict>
+			<dict><key>Trade Price</key><string>9.36</string></dict>
+			<dict><key>JELLY RED</key><string>N4804RJ</string></dict>
+			<dict><key>Trade Price</key><string>9.36</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4804YN</string></dict>
+			<dict><key>Trade Price</key><string>15.60</string></dict>
+			<dict><key>PEARL GREY</key><string>N4804GN</string></dict>
+			<dict><key>Trade Price</key><string>15.60</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4804AN</string></dict>
+			<dict><key>Trade Price</key><string>15.60</string></dict>
+			<dict><key>RUBBER RED</key><string>N4804RE</string></dict>
+			<dict><key>Trade Price</key><string>15.60</string></dict>
+			<dict><key>TEA GREEN</key><string>N4804VE</string></dict>
+			<dict><key>Trade Price</key><string>15.60</string></dict>
+			<dict><key>STONE GREY</key><string>N4804GE</string></dict>
+			<dict><key>Trade Price</key><string>15.60</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4804TA</string></dict>
+			<dict><key>Trade Price</key><string>26.00</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4804SA</string></dict>
+			<dict><key>Trade Price</key><string>26.00</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4804OS</string></dict>
+			<dict><key>Trade Price</key><string>26.00</string></dict>
+			<dict><key>COPPER</key><string>N4804RA</string></dict>
+			<dict><key>Trade Price</key><string>26.00</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4804AA</string></dict>
+			<dict><key>Trade Price</key><string>26.00</string></dict>
+			<dict><key>KRISTALL</key><string>N4804KR</string></dict>
+			<dict><key>Trade Price</key><string>12.48</string></dict>
+			<dict><key>TECH</key><string>N4804TH</string></dict>
+			<dict><key>CHROME</key><string>N4804CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4804LCA</string></dict>
+			<dict><key>Trade Price</key><string>36.40</string></dict>
+			<dict><key>ASH</key><string>N4804LFR</string></dict>
+			<dict><key>Trade Price</key><string>36.40</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4804LPR</string></dict>
+			<dict><key>Trade Price</key><string>36.40</string></dict>
+		</array>
+		<key>LIGHT TECH 10A 2-GANG 3/4-MOD POWERPOINT</key>
+		<array>
+			<dict><key>Mechanism 1</key><string>NT4134</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4134</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>22.04</string></dict>
+			<dict><key>Mech 1 Price</key><string>22.04</string></dict>
+			<dict><key>TECH</key><string>NT4804TH</string></dict>
+			<dict><key>Trade Price</key><string>17.68</string></dict>
+			<dict><key>CHROME</key><string>NT4804CR</string></dict>
+			<dict><key>Trade Price</key><string>26.00</string></dict>
+		</array>
+</dict>
+<key>Horizontal TV Outlets</key>
+<dict>
+		<key>LIGHT 2-GANG F TO F TV OUTLET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X N4269F</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4269F</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>12.40</string></dict>
+			<dict><key>Mech 1 Price</key><string>24.80</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH  2-GANG F TO F TV OUTLET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X NT4269F</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4269F</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>13.63</string></dict>
+			<dict><key>Mech 1 Price</key><string>27.26</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+</dict>
+<key>Horizontal Phone / Data Outlets</key>
+<dict>
+		<key>LIGHT 2-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X N4279C5E</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4279C5E</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>20.16</string></dict>
+			<dict><key>Mech 1 Price</key><string>40.32</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 2-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X NT4279C5E</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4279C5E</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>20.16</string></dict>
+			<dict><key>Mech 1 Price</key><string>40.32</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+</dict>
+<key>Horizontal Audio / Visual Outlets</key>
+<dict>
+		<key>LIGHT 2-GANG 2-MOD USB A FEMALE SOCKET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X N4269USB</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4269USB</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>40.77</string></dict>
+			<dict><key>Mech 1 Price</key><string>81.54</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 2-GANG 2-MOD USB A FEMALE SOCKET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X NT4269USB</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4269USB</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>40.77</string></dict>
+			<dict><key>Mech 1 Price</key><string>81.54</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+		<key>LIGHT 2-GANG 2-MOD RGB (RED/GREEN/BLUE) SOCKET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X N4269RGB</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4269RGB</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>46.38</string></dict>
+			<dict><key>Mech 1 Price</key><string>92.76</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH  2-GANG 2-MOD RGB (RED/GREEN/BLUE) SOCKET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X NT4269RGB</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4269RGB</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>46.38</string></dict>
+			<dict><key>Mech 1 Price</key><string>92.76</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+		<key>LIGHT 2-GANG 2-MOD VGA OUTLET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X N4269VGA</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4269VGA</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>41.08</string></dict>
+			<dict><key>Mech 1 Price</key><string>82.16</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 2-GANG 2-MOD VGA OUTLET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X NT4269VGA</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4269VGA</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>41.08</string></dict>
+			<dict><key>Mech 1 Price</key><string>82.16</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+		<key>LIGHT 2-GANG 2-MOD HDMI OUTLET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X N4269HDMI</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4269HDMI</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>50.65</string></dict>
+			<dict><key>Mech 1 Price</key><string>101.30</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 2-GANG 2-MOD HDMI OUTLET</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>2 X NT4269HDMI</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4269HDMI</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>50.65</string></dict>
+			<dict><key>Mech 1 Price</key><string>101.30</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+</dict>
+<key>Horizontal Dimmers</key>
+<dict>
+		<key>LIGHT 1-GANG 2-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>N4407</string></dict>
+			<dict><key>Mech 1 Part #</key><string>N4407</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>87.65</string></dict>
+			<dict><key>Mech 1 Price</key><string>87.65</string></dict>
+			<dict><key>LIGHT WHITE</key><string>N4819LB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>INTEGRAL WHITE</key><string>N4819IB</string></dict>
+			<dict><key>Trade Price</key><string>4.42</string></dict>
+			<dict><key>OPAL WHITE</key><string>N4819OB</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL AMBER</key><string>N4819AP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL BLUE</key><string>N4819BP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>OPAL GREEN</key><string>N4819VP</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY ORANGE</key><string>N4819AJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY BLUE</key><string>N4819BJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>JELLY RED</key><string>N4819RJ</string></dict>
+			<dict><key>Trade Price</key><string>7.96</string></dict>
+			<dict><key>PEARL YELLOW</key><string>N4819YN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL GREY</key><string>N4819GN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>PEARL AZURE</key><string>N4819AN</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>RUBBER RED</key><string>N4819RE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>TEA GREEN</key><string>N4819VE</string></dict>
+			<dict><key>Trade Price</key><string>14.04</string></dict>
+			<dict><key>STONE GREY</key><string>N4819GE</string></dict>
+			<dict><key>Trade Price</key><string>13.26</string></dict>
+			<dict><key>SOFT TITANIUM</key><string>N4819TA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>GLOSSY SILVER</key><string>N4819SA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>SATIN FINISH GOLD</key><string>N4819OS</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>COPPER</key><string>N4819RA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>NATURAL ALUMINIUM</key><string>N4819AA</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+			<dict><key>KRISTALL</key><string>N4819KR</string></dict>
+			<dict><key>Trade Price</key><string>10.61</string></dict>
+			<dict><key>TECH</key><string>N4819TH</string></dict>
+			<dict><key>CHROME</key><string>N4819CR</string></dict>
+			<dict><key>AMERICAN CHERRY WOOD</key><string>N4819LCA</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>ASH</key><string>N4819LFR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
+			<dict><key>Trade Price</key><string>30.94</string></dict>
+		</array>
+		<key>LIGHT TECH 1-GANG 2-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER</key>
+		<array>
+			<dict><key>Frame</key><string>L4722</string></dict>
+			<dict><key>Trade Price</key><string>4.05</string></dict>
+			<dict><key>Mechanism 1</key><string>NT4407</string></dict>
+			<dict><key>Mech 1 Part #</key><string>NT4407</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>96.42</string></dict>
+			<dict><key>Mech 1 Price</key><string>96.42</string></dict>
+			<dict><key>TECH</key><string>NT4819TH</string></dict>
+			<dict><key>Trade Price</key><string>15.03</string></dict>
+			<dict><key>CHROME</key><string>NT4819CR</string></dict>
+			<dict><key>Trade Price</key><string>22.10</string></dict>
+		</array>
+</dict>
+</dict>
+</dict>
+</plist>
