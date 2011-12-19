@@ -22,11 +22,7 @@
 
 -(void)processFiles;
 -(NSDictionary *)readPlist:(NSString *)pListName;
--(void)extractBrandsFrom:(NSDictionary *)dictionary;
--(void)extractCategoriesFrom:(NSDictionary *)dictionary;
--(void)extractProductsFrom:(NSDictionary *)dictionary;
--(void)extractMechanismsFrom:(NSDictionary *)dictionary;
--(void)extractFacePlatesFrom:(NSDictionary *)dictionary;
+
 
 -(NSManagedObject *)addEntityWithValues:(NSString*)entity:(NSDictionary *)keyValues;
 @end

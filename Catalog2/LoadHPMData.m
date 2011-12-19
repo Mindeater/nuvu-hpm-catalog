@@ -70,26 +70,7 @@
     } 
     return newEntity;
 }
--(void)extractBrandsFrom:(NSDictionary *)dictionary
-{
-    
-}
--(void)extractCategoriesFrom:(NSDictionary *)dictionary
-{
-    
-}
--(void)extractProductsFrom:(NSDictionary *)dictionary
-{
-    
-}
--(void)extractMechanismsFrom:(NSDictionary *)dictionary
-{
-    
-}
--(void)extractFacePlatesFrom:(NSDictionary *)dictionary;
-{
-    
-}
+
 
 -(NSDictionary *)readPlist:(NSString *)pListName
 {
@@ -100,6 +81,10 @@
 
 -(void)processFiles
 {
+    int brandMenuOrder = 1;
+    int categoryMenuOrder = 1;
+    int productMenuOrder = 1;
+    
     for (NSArray *brand in self.pListFiles) {
          
         
@@ -107,7 +92,10 @@
         // insert Brand 
         
         NSManagedObject *brandObj = [self addEntityWithValues:@"Brand":
-                                         [NSDictionary dictionaryWithObject:[brand objectAtIndex:1]forKey:@"name" ]];
+                                         [NSDictionary dictionaryWithObjectsAndKeys:
+                                          [brand objectAtIndex:1],@"name",
+                                          [NSNumber numberWithInt:brandMenuOrder++],@"menuOrder",
+                                          nil]];
          
         NSLog(@"1. Brand INSERT : %@",[brand objectAtIndex:1]);
         
@@ -116,6 +104,7 @@
         // Loop categories
         NSEnumerator *enumerator = [catInBrand keyEnumerator];
         id catName;
+        categoryMenuOrder = 1;
         while ((catName = [enumerator nextObject])) {
             
             ////////////////////////////////////
@@ -125,12 +114,15 @@
                                              [NSDictionary dictionaryWithObjectsAndKeys:
                                               catName,@"name",
                                               brandObj,@"brand",
+                                              [NSNumber numberWithInt:categoryMenuOrder++],@"menuOrder",
                                               nil]];
              NSLog(@"2. - Category INSERT : %@",catName);
             
             // Loop products
             NSEnumerator *catEnum = [[catInBrand objectForKey:catName] keyEnumerator];
             id product;
+            productMenuOrder = 1;
+            
             while((product = [catEnum nextObject])){
                 /////////////////////////////////////////////////////
                 // get the orientation Horizontal or Vertical or Both
@@ -162,6 +154,7 @@
                                             brandObj,    @"brand",
                                             catObj,      @"category",
                                             orientation, @"orientation",
+                                            [NSNumber numberWithInt:productMenuOrder++],@"menuOrder",
                                             nil]];
                  
                 NSLog(@"3. - - Product INSERT : %@",product);
