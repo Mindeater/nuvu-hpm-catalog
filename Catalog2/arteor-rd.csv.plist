@@ -4,9 +4,9 @@
 <dict>
 	<key>arteor-rd.csv</key>
 	<dict>
-<key>Vertical Rocker Switches</key>
+<key>Vertical Rocker Switches|1</key>
 <dict>
-		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH WHITE|1</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -47,7 +47,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH MAGNESIUM|2</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -88,7 +88,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH WHITE|3</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -131,7 +131,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH MAGNESIUM|4</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -174,7 +174,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH WHITE|5</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -215,7 +215,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH MAGNESIUM|6</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -256,7 +256,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1000W 1-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 1000W 1-GANG 2-MOD RD SWITCH WHITE|7</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -297,7 +297,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1000W 1-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 1000W 1-GANG 2-MOD RD SWITCH MAGNESIUM|8</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -338,7 +338,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1000W 2-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 1000W 2-GANG 2-MOD RD SWITCH WHITE|9</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -379,7 +379,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1000W 2-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 1000W 2-GANG 2-MOD RD SWITCH MAGNESIUM|10</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -420,7 +420,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1000W 3-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 1000W 3-GANG 2-MOD RD SWITCH WHITE|11</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -461,7 +461,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1000W 3-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 1000W 3-GANG 2-MOD RD SWITCH MAGNESIUM|12</key>
 		<array>
 			<dict><key>Frame</key><string>571910</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -503,9 +503,9 @@
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
 </dict>
-<key>Horizontal Rocker Switches</key>
+<key>Horizontal Rocker Switches|2</key>
 <dict>
-		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH WHITE|1</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -546,7 +546,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH MAGNESIUM|2</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -587,7 +587,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH WHITE|3</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -630,7 +630,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 2-GANG 2-MOD RD SWITCH MAGNESIUM|4</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -673,7 +673,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH WHITE|5</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -714,7 +714,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 20AX 3-GANG 2-MOD RD SWITCH MAGNESIUM|6</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -755,7 +755,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 3-GANG 3-MOD RD SWITCH WHITE</key>
+		<key>ARTEOR 16AX 3-GANG 3-MOD RD SWITCH WHITE|7</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -800,7 +800,7 @@
 			<dict><key>WOVEN METAL</key><string>576447</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 16AX 3-GANG 3-MOD RD SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 3-GANG 3-MOD RD SWITCH MAGNESIUM|8</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -846,9 +846,9 @@
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets</key>
+<key>Horizontal Phone / Data Outlets|3</key>
 <dict>
-		<key>ARTEOR 1-GANG 2-MOD RD CAT-5E RJ45 PHONE / DATA SOCKET WHITE</key>
+		<key>ARTEOR 1-GANG 2-MOD RD CAT-5E RJ45 PHONE / DATA SOCKET WHITE|1</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -889,7 +889,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1-GANG 2-MOD RD CAT-5E RJ45 PHONE / DATA SOCKET MAGNESIUM</key>
+		<key>ARTEOR 1-GANG 2-MOD RD CAT-5E RJ45 PHONE / DATA SOCKET MAGNESIUM|2</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -931,9 +931,9 @@
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
 </dict>
-<key>Horizontal Audio / Visual Outlets</key>
+<key>Horizontal Audio / Visual Outlets|4</key>
 <dict>
-		<key>ARTEOR 2-GANG 2-MOD RD USB A FEMALE SOCKET WHITE</key>
+		<key>ARTEOR 2-GANG 2-MOD RD USB A FEMALE SOCKET WHITE|1</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -974,7 +974,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 2-GANG 2-MOD RD USB A FEMALE SOCKET MAGNESIUM</key>
+		<key>ARTEOR 2-GANG 2-MOD RD USB A FEMALE SOCKET MAGNESIUM|2</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1015,7 +1015,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED / WHITE) SOCKET WHITE</key>
+		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED / WHITE) SOCKET WHITE|3</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1056,7 +1056,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED / WHITE) SOCKET MAGNESIUM</key>
+		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED / WHITE) SOCKET MAGNESIUM|4</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1097,7 +1097,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED/WHITE/YELLOW) SOCKET WHITE</key>
+		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED/WHITE/YELLOW) SOCKET WHITE|5</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1138,7 +1138,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED/WHITE/YELLOW) SOCKET MAGNESIUM</key>
+		<key>ARTEOR 2-GANG 2-MOD RD RCA (RED/WHITE/YELLOW) SOCKET MAGNESIUM|6</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1179,7 +1179,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1-GANG 2-MOD RD HDMI OUTLET WHITE</key>
+		<key>ARTEOR 1-GANG 2-MOD RD HDMI OUTLET WHITE|7</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1220,7 +1220,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1-GANG 2-MOD RD HDMI OUTLET MAGNESIUM</key>
+		<key>ARTEOR 1-GANG 2-MOD RD HDMI OUTLET MAGNESIUM|8</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1261,7 +1261,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1-GANG 2-MOD RD HD15 + JACK 3.5 OUTLET WHITE</key>
+		<key>ARTEOR 1-GANG 2-MOD RD HD15 + JACK 3.5 OUTLET WHITE|9</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>
@@ -1302,7 +1302,7 @@
 			<dict><key>WOVEN METAL</key><string>576427</string></dict>
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
-		<key>ARTEOR 1-GANG 2-MOD RD HD15 + JACK 3.5 OUTLET MAGNESIUM</key>
+		<key>ARTEOR 1-GANG 2-MOD RD HD15 + JACK 3.5 OUTLET MAGNESIUM|10</key>
 		<array>
 			<dict><key>Frame</key><string>571920</string></dict>
 			<dict><key>Trade Price</key><string>1.49</string></dict>

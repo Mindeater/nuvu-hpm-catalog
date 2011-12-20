@@ -4,9 +4,9 @@
 <dict>
 	<key>arteor-770.csv</key>
 	<dict>
-<key>Vertical Rocker Switches</key>
+<key>Vertical Rocker Switches|1</key>
 <dict>
-		<key>ARTEOR 16AX 1-GANG SWITCH WHITE</key>
+		<key>ARTEOR 16AX 1-GANG SWITCH WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1WE</string></dict>
 			<dict><key>Trade Price</key><string>7.80</string></dict>
@@ -45,7 +45,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 1-GANG SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 1-GANG SWITCH MAGNESIUM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1MGN</string></dict>
 			<dict><key>Trade Price</key><string>8.97</string></dict>
@@ -84,7 +84,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 1-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 1-GANG ELECTRONIC SWITCH WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -128,7 +128,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 1-GANG ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 1-GANG ELECTRONIC SWITCH MAGNESIUM|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -172,7 +172,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG SWITCH WHITE</key>
+		<key>ARTEOR 16AX 2-GANG SWITCH WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2WE</string></dict>
 			<dict><key>Trade Price</key><string>12.61</string></dict>
@@ -211,7 +211,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 2-GANG SWITCH MAGNESIUM|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2MGN</string></dict>
 			<dict><key>Trade Price</key><string>14.50</string></dict>
@@ -250,7 +250,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 2-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 2-GANG ELECTRONIC SWITCH WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -294,7 +294,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 2-GANG ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 2-GANG ELECTRONIC SWITCH MAGNESIUM|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -338,7 +338,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 3-GANG SWITCH WHITE</key>
+		<key>ARTEOR 16AX 3-GANG SWITCH WHITE|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3WE</string></dict>
 			<dict><key>Trade Price</key><string>21.87</string></dict>
@@ -377,7 +377,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 3-GANG SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 3-GANG SWITCH MAGNESIUM|10</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3MGN</string></dict>
 			<dict><key>Trade Price</key><string>25.15</string></dict>
@@ -416,7 +416,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 3-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 3-GANG ELECTRONIC SWITCH WHITE|11</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -460,7 +460,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 3-GANG ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 3-GANG ELECTRONIC SWITCH MAGNESIUM|12</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -504,7 +504,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 4-GANG SWITCH WHITE</key>
+		<key>ARTEOR 16AX 4-GANG SWITCH WHITE|13</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4WE</string></dict>
 			<dict><key>Trade Price</key><string>34.10</string></dict>
@@ -543,7 +543,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 4-GANG SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 4-GANG SWITCH MAGNESIUM|14</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4MGN</string></dict>
 			<dict><key>Trade Price</key><string>39.22</string></dict>
@@ -582,7 +582,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 4-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 4-GANG ELECTRONIC SWITCH WHITE|15</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -626,7 +626,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 4-GANG ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 4-GANG ELECTRONIC SWITCH MAGNESIUM|16</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -670,7 +670,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 5-GANG SWITCH WHITE</key>
+		<key>ARTEOR 16AX 5-GANG SWITCH WHITE|17</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5WE</string></dict>
 			<dict><key>Trade Price</key><string>48.16</string></dict>
@@ -709,7 +709,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 5-GANG SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 5-GANG SWITCH MAGNESIUM|18</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5MGN</string></dict>
 			<dict><key>Trade Price</key><string>55.38</string></dict>
@@ -748,7 +748,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 5-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 5-GANG ELECTRONIC SWITCH WHITE|19</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -792,7 +792,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 5-GANG ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 5-GANG ELECTRONIC SWITCH MAGNESIUM|20</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -836,7 +836,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 6-GANG SWITCH WHITE</key>
+		<key>ARTEOR 16AX 6-GANG SWITCH WHITE|21</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6WE</string></dict>
 			<dict><key>Trade Price</key><string>56.66</string></dict>
@@ -875,7 +875,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 6-GANG SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 6-GANG SWITCH MAGNESIUM|22</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6MGN</string></dict>
 			<dict><key>Trade Price</key><string>65.16</string></dict>
@@ -914,7 +914,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 6-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 6-GANG ELECTRONIC SWITCH WHITE|23</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -958,7 +958,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 6-GANG ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 6-GANG ELECTRONIC SWITCH MAGNESIUM|24</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -1003,9 +1003,9 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal Rocker Switches</key>
+<key>Horizontal Rocker Switches|2</key>
 <dict>
-		<key>ARTEOR 16AX 1-GANG HORIZONTAL SWITCH WHITE</key>
+		<key>ARTEOR 16AX 1-GANG HORIZONTAL SWITCH WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1HWE</string></dict>
 			<dict><key>Trade Price</key><string>7.80</string></dict>
@@ -1044,7 +1044,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 1-GANG HORIZONTAL SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 1-GANG HORIZONTAL SWITCH MAGNESIUM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1HMGN</string></dict>
 			<dict><key>Trade Price</key><string>8.97</string></dict>
@@ -1083,7 +1083,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 1-GANG HORIZONTAL ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 1-GANG HORIZONTAL ELECTRONIC SWITCH WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -1127,7 +1127,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 1-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 1-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -1171,7 +1171,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG HORIZONTAL SWITCH WHITE</key>
+		<key>ARTEOR 16AX 2-GANG HORIZONTAL SWITCH WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2HWE</string></dict>
 			<dict><key>Trade Price</key><string>12.61</string></dict>
@@ -1210,7 +1210,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 2-GANG HORIZONTAL SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 2-GANG HORIZONTAL SWITCH MAGNESIUM|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2HMGN</string></dict>
 			<dict><key>Trade Price</key><string>14.50</string></dict>
@@ -1249,7 +1249,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 2-GANG HORIZONTAL ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 2-GANG HORIZONTAL ELECTRONIC SWITCH WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -1293,7 +1293,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 2-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 2-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -1337,7 +1337,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 3-GANG HORIZONTAL SWITCH WHITE</key>
+		<key>ARTEOR 16AX 3-GANG HORIZONTAL SWITCH WHITE|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3HWE</string></dict>
 			<dict><key>Trade Price</key><string>21.87</string></dict>
@@ -1376,7 +1376,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 3-GANG HORIZONTAL SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 3-GANG HORIZONTAL SWITCH MAGNESIUM|10</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3HMGN</string></dict>
 			<dict><key>Trade Price</key><string>25.15</string></dict>
@@ -1415,7 +1415,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 3-GANG HORIZONTAL ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 3-GANG HORIZONTAL ELECTRONIC SWITCH WHITE|11</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -1459,7 +1459,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 3-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 3-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM|12</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -1503,7 +1503,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 4-GANG HORIZONTAL SWITCH WHITE</key>
+		<key>ARTEOR 16AX 4-GANG HORIZONTAL SWITCH WHITE|13</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4HWE</string></dict>
 			<dict><key>Trade Price</key><string>34.10</string></dict>
@@ -1542,7 +1542,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 4-GANG HORIZONTAL SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 4-GANG HORIZONTAL SWITCH MAGNESIUM|14</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4HMGN</string></dict>
 			<dict><key>Trade Price</key><string>39.22</string></dict>
@@ -1581,7 +1581,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 4-GANG HORIZONTAL ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 4-GANG HORIZONTAL ELECTRONIC SWITCH WHITE|15</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -1625,7 +1625,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 4-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 4-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM|16</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -1669,7 +1669,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 5-GANG HORIZONTAL SWITCH WHITE</key>
+		<key>ARTEOR 16AX 5-GANG HORIZONTAL SWITCH WHITE|17</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5HWE</string></dict>
 			<dict><key>Trade Price</key><string>48.16</string></dict>
@@ -1708,7 +1708,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 5-GANG HORIZONTAL SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 5-GANG HORIZONTAL SWITCH MAGNESIUM|18</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5HMGN</string></dict>
 			<dict><key>Trade Price</key><string>55.38</string></dict>
@@ -1747,7 +1747,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 5-GANG HORIZONTAL ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 5-GANG HORIZONTAL ELECTRONIC SWITCH WHITE|19</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -1791,7 +1791,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 5-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 5-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM|20</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -1835,7 +1835,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 6-GANG HORIZONTAL SWITCH WHITE</key>
+		<key>ARTEOR 16AX 6-GANG HORIZONTAL SWITCH WHITE|21</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6HWE</string></dict>
 			<dict><key>Trade Price</key><string>56.66</string></dict>
@@ -1874,7 +1874,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 16AX 6-GANG HORIZONTAL SWITCH MAGNESIUM</key>
+		<key>ARTEOR 16AX 6-GANG HORIZONTAL SWITCH MAGNESIUM|22</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6HMGN</string></dict>
 			<dict><key>Trade Price</key><string>65.16</string></dict>
@@ -1913,7 +1913,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 6-GANG HORIZONTAL ELECTRONIC SWITCH WHITE</key>
+		<key>ARTEOR 5A 6-GANG HORIZONTAL ELECTRONIC SWITCH WHITE|23</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -1957,7 +1957,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 5A 6-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM</key>
+		<key>ARTEOR 5A 6-GANG HORIZONTAL ELECTRONIC SWITCH MAGNESIUM|24</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
@@ -2002,9 +2002,9 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal Powerpoints</key>
+<key>Horizontal Powerpoints|3</key>
 <dict>
-		<key>ARTEOR 10A 2-GANG POWERPOINT WHITE</key>
+		<key>ARTEOR 10A 2-GANG POWERPOINT WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR777WE</string></dict>
 			<dict><key>Trade Price</key><string>16.59</string></dict>
@@ -2043,7 +2043,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 10A 2-GANG POWERPOINT MAGNESIUM</key>
+		<key>ARTEOR 10A 2-GANG POWERPOINT MAGNESIUM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR777MGN</string></dict>
 			<dict><key>Trade Price</key><string>19.08</string></dict>
@@ -2082,7 +2082,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 10A 2-GANG AUTOSWITCHED POWERPOINT WHITE</key>
+		<key>ARTEOR 10A 2-GANG AUTOSWITCHED POWERPOINT WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR777AWE</string></dict>
 			<dict><key>Trade Price</key><string>16.59</string></dict>
@@ -2121,7 +2121,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 10A 2-GANG AUTOSWITCHED POWERPOINT MAGNESIUM</key>
+		<key>ARTEOR 10A 2-GANG AUTOSWITCHED POWERPOINT MAGNESIUM|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR777AMGN</string></dict>
 			<dict><key>Trade Price</key><string>19.08</string></dict>
@@ -2160,7 +2160,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 10A 2-GANG EXTRA-SWITCH POWERPOINT WHITE</key>
+		<key>ARTEOR 10A 2-GANG EXTRA-SWITCH POWERPOINT WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR777XWE</string></dict>
 			<dict><key>Trade Price</key><string>32.92</string></dict>
@@ -2199,7 +2199,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 10A 2-GANG EXTRA-SWITCH POWERPOINT MAGNESIUM</key>
+		<key>ARTEOR 10A 2-GANG EXTRA-SWITCH POWERPOINT MAGNESIUM|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR777XMGN</string></dict>
 			<dict><key>Trade Price</key><string>37.86</string></dict>
@@ -2239,9 +2239,9 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal or Vertical TV Outlets</key>
+<key>Horizontal or Vertical TV Outlets|4</key>
 <dict>
-		<key>ARTEOR 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE</key>
+		<key>ARTEOR 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -2285,7 +2285,7 @@
 			<dict><key>WOVEN METAL</key><string>576477</string></dict>
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
-		<key>ARTEOR 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER MAGNESIUM</key>
+		<key>ARTEOR 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER MAGNESIUM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>

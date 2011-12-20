@@ -4,23 +4,23 @@
 <dict>
 	<key>excel-life.csv</key>
 	<dict>
-<key>Dedicated Plate Vertical Switches</key>
+<key>Dedicated Plate Vertical Switches|1</key>
 <dict>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG SWITCH WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1WE</string></dict>
 			<dict><key>Trade Price</key><string>7.02</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG SWITCH URBAN GREY|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1UG</string></dict>
 			<dict><key>Trade Price</key><string>7.51</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG ILLUMINATED SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG ILLUMINATED SWITCH WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1WE</string></dict>
 			<dict><key>Trade Price</key><string>7.02</string></dict>
@@ -32,7 +32,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG ILLUMINATED SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 1-GANG ILLUMINATED SWITCH URBAN GREY|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1UG</string></dict>
 			<dict><key>Trade Price</key><string>7.51</string></dict>
@@ -44,7 +44,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 1-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 1-GANG ELECTRONIC SWITCH WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -56,7 +56,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 1-GANG ELECTRONIC SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 1-GANG ELECTRONIC SWITCH URBAN GREY|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -68,21 +68,21 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 2-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 2-GANG SWITCH WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2WE</string></dict>
 			<dict><key>Trade Price</key><string>11.35</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 2-GANG SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 2-GANG SWITCH URBAN GREY|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2UG</string></dict>
 			<dict><key>Trade Price</key><string>12.14</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 2-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 2-GANG ELECTRONIC SWITCH WHITE|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -94,7 +94,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 2-GANG ELECTRONIC SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 2-GANG ELECTRONIC SWITCH URBAN GREY|10</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -106,21 +106,21 @@
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 3-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 3-GANG SWITCH WHITE|11</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/3WE</string></dict>
 			<dict><key>Trade Price</key><string>19.68</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/3PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 3-GANG SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 3-GANG SWITCH URBAN GREY|12</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/3UG</string></dict>
 			<dict><key>Trade Price</key><string>21.06</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/3PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 3-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 3-GANG ELECTRONIC SWITCH WHITE|13</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/3GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -132,7 +132,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/3PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 3-GANG ELECTRONIC SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 3-GANG ELECTRONIC SWITCH URBAN GREY|14</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/3GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -144,21 +144,21 @@
 			<dict><key>MATT SILVER</key><string>ED770/3PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 4-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 4-GANG SWITCH WHITE|15</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/4WE</string></dict>
 			<dict><key>Trade Price</key><string>30.69</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/4PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 4-GANG SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 4-GANG SWITCH URBAN GREY|16</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/4UG</string></dict>
 			<dict><key>Trade Price</key><string>32.84</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/4PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 4-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 4-GANG ELECTRONIC SWITCH WHITE|17</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/4GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.91</string></dict>
@@ -170,7 +170,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/4PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 4-GANG ELECTRONIC SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 4-GANG ELECTRONIC SWITCH URBAN GREY|18</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/4GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>6.32</string></dict>
@@ -182,21 +182,21 @@
 			<dict><key>MATT SILVER</key><string>ED770/4PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 5-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 5-GANG SWITCH WHITE|19</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/5WE</string></dict>
 			<dict><key>Trade Price</key><string>43.34</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/5PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 5-GANG SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 5-GANG SWITCH URBAN GREY|20</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/5UG</string></dict>
 			<dict><key>Trade Price</key><string>46.37</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/5PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 5-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 5-GANG ELECTRONIC SWITCH WHITE|21</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/5GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.91</string></dict>
@@ -208,7 +208,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/5PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 5-GANG ELECTRONIC SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 5-GANG ELECTRONIC SWITCH URBAN GREY|22</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/5GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>6.32</string></dict>
@@ -220,21 +220,21 @@
 			<dict><key>MATT SILVER</key><string>ED770/5PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 6-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 6-GANG SWITCH WHITE|23</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/6WE</string></dict>
 			<dict><key>Trade Price</key><string>50.99</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/6PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 16AX 6-GANG SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 16AX 6-GANG SWITCH URBAN GREY|24</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/6UG</string></dict>
 			<dict><key>Trade Price</key><string>54.56</string></dict>
 			<dict><key>MATT SILVER</key><string>ED770/6PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 6-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 6-GANG ELECTRONIC SWITCH WHITE|25</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/6GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.91</string></dict>
@@ -246,7 +246,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/6PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 5A 6-GANG ELECTRONIC SWITCH URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 5A 6-GANG ELECTRONIC SWITCH URBAN GREY|26</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/6GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>6.32</string></dict>
@@ -259,9 +259,9 @@
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
 </dict>
-<key>Common Plate Vertical Switches</key>
+<key>Common Plate Vertical Switches|2</key>
 <dict>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 1-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 1-GANG SWITCH WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1WE</string></dict>
 			<dict><key>Trade Price</key><string>7.02</string></dict>
@@ -270,7 +270,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 1-GANG ILLUMINATED SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 1-GANG ILLUMINATED SWITCH WHITE|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1WE</string></dict>
 			<dict><key>Trade Price</key><string>7.02</string></dict>
@@ -284,7 +284,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 1-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 1-GANG ELECTRONIC SWITCH WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -298,7 +298,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 2-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 2-GANG SWITCH WHITE|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/2WE</string></dict>
 			<dict><key>Trade Price</key><string>11.35</string></dict>
@@ -307,7 +307,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 2-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 2-GANG ELECTRONIC SWITCH WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/2GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -321,7 +321,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 3-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 3-GANG SWITCH WHITE|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/3WE</string></dict>
 			<dict><key>Trade Price</key><string>19.68</string></dict>
@@ -330,7 +330,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 3-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 3-GANG ELECTRONIC SWITCH WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/3GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -344,7 +344,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 4-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 4-GANG SWITCH WHITE|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/4WE</string></dict>
 			<dict><key>Trade Price</key><string>30.69</string></dict>
@@ -353,7 +353,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 4-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 4-GANG ELECTRONIC SWITCH WHITE|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/4GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.91</string></dict>
@@ -367,7 +367,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 5-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 5-GANG SWITCH WHITE|10</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/5WE</string></dict>
 			<dict><key>Trade Price</key><string>43.34</string></dict>
@@ -376,7 +376,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 5-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 5-GANG ELECTRONIC SWITCH WHITE|11</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/5GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.91</string></dict>
@@ -390,7 +390,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 6-GANG SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 16AX 6-GANG SWITCH WHITE|12</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/6WE</string></dict>
 			<dict><key>Trade Price</key><string>50.99</string></dict>
@@ -399,7 +399,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 6-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 5A 6-GANG ELECTRONIC SWITCH WHITE|13</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/6GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.91</string></dict>
@@ -414,72 +414,72 @@
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
 </dict>
-<key>Dedicated Plate Horizontal Socket Outlets</key>
+<key>Dedicated Plate Horizontal Socket Outlets|3</key>
 <dict>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG POWERPOINT WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG POWERPOINT WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED777WE</string></dict>
 			<dict><key>Trade Price</key><string>14.93</string></dict>
 			<dict><key>MATT SILVER</key><string>ED777PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG POWERPOINT URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG POWERPOINT URBAN GREY|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED777UG</string></dict>
 			<dict><key>Trade Price</key><string>15.98</string></dict>
 			<dict><key>MATT SILVER</key><string>ED777PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG EXTRA-FUNCTION POWERPOINT WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG EXTRA-FUNCTION POWERPOINT WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED777XWE</string></dict>
 			<dict><key>Trade Price</key><string>29.63</string></dict>
 			<dict><key>MATT SILVER</key><string>ED777XPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG EXTRA-FUNCTION POWERPOINT URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG EXTRA-FUNCTION POWERPOINT URBAN GREY|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED777XUG</string></dict>
 			<dict><key>Trade Price</key><string>31.70</string></dict>
 			<dict><key>MATT SILVER</key><string>ED777XPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG POWERPOINT WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG POWERPOINT WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787WE</string></dict>
 			<dict><key>Trade Price</key><string>9.33</string></dict>
 			<dict><key>MATT SILVER</key><string>ED787PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG POWERPOINT URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG POWERPOINT URBAN GREY|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787UG</string></dict>
 			<dict><key>Trade Price</key><string>9.98</string></dict>
 			<dict><key>MATT SILVER</key><string>ED787PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 1 EXTRA-FUNCTION POWERPOINT WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 1 EXTRA-FUNCTION POWERPOINT WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787XWE</string></dict>
 			<dict><key>Trade Price</key><string>18.22</string></dict>
 			<dict><key>MATT SILVER</key><string>EDCWPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 1 EXTRA-FUNCTION POWERPOINT URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 1 EXTRA-FUNCTION POWERPOINT URBAN GREY|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787XUG</string></dict>
 			<dict><key>Trade Price</key><string>19.50</string></dict>
 			<dict><key>MATT SILVER</key><string>EDCWPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 2 EXTRA-FUNCTION POWERPOINT WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 2 EXTRA-FUNCTION POWERPOINT WHITE|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787/2XWE</string></dict>
 			<dict><key>Trade Price</key><string>32.63</string></dict>
 			<dict><key>MATT SILVER</key><string>EDCWPLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 2 EXTRA-FUNCTION POWERPOINT URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 10A 1-GANG 2 EXTRA-FUNCTION POWERPOINT URBAN GREY|10</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED787/2XUG</string></dict>
 			<dict><key>Trade Price</key><string>34.91</string></dict>
@@ -487,9 +487,9 @@
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
 </dict>
-<key>Common Plate Horizontal Powerpoints</key>
+<key>Common Plate Horizontal Powerpoints|4</key>
 <dict>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 2-GANG POWERPOINT WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 2-GANG POWERPOINT WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC777WE</string></dict>
 			<dict><key>Trade Price</key><string>14.93</string></dict>
@@ -498,7 +498,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 2-GANG EXTRA-FUNCTION POWERPOINT WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 2-GANG EXTRA-FUNCTION POWERPOINT WHITE|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC777XWE</string></dict>
 			<dict><key>Trade Price</key><string>29.63</string></dict>
@@ -507,7 +507,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 1-GANG POWERPOINT WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 1-GANG POWERPOINT WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC787WE</string></dict>
 			<dict><key>Trade Price</key><string>9.33</string></dict>
@@ -516,7 +516,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 1-GANG 1 EXTRA-FUNCTION POWERPOINT WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 1-GANG 1 EXTRA-FUNCTION POWERPOINT WHITE|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC787XWE</string></dict>
 			<dict><key>Trade Price</key><string>18.22</string></dict>
@@ -525,7 +525,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 1-GANG 2 EXTRA-FUNCTION POWERPOINT WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 10A 1-GANG 2 EXTRA-FUNCTION POWERPOINT WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC787/2XWE</string></dict>
 			<dict><key>Trade Price</key><string>32.63</string></dict>
@@ -535,9 +535,9 @@
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
 </dict>
-<key>Horizontal or Vertical TV Outlets</key>
+<key>Horizontal or Vertical TV Outlets|5</key>
 <dict>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO SADDLE TV OUTLET WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO SADDLE TV OUTLET WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -549,7 +549,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO SADDLE TV OUTLET URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO SADDLE TV OUTLET URBAN GREY|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -561,7 +561,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO F TV OUTLET WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO F TV OUTLET WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -573,7 +573,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO F TV OUTLET URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG PAL TO F TV OUTLET URBAN GREY|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -585,7 +585,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG F TO F TV OUTLET PAY TV WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG F TO F TV OUTLET PAY TV WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -597,7 +597,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG F TO F TV OUTLET PAY TV URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG F TO F TV OUTLET PAY TV URBAN GREY|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -609,7 +609,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG PAL TO SADDLE TV OUTLET WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG PAL TO SADDLE TV OUTLET WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -623,7 +623,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG PAL TO F TV OUTLET WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG PAL TO F TV OUTLET WHITE|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -637,7 +637,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG F TO F TV OUTLET PAY TV WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG F TO F TV OUTLET PAY TV WHITE|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -652,9 +652,9 @@
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets</key>
+<key>Horizontal Phone / Data Outlets|6</key>
 <dict>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -666,7 +666,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET BLACK</key>
+		<key>EXCEL LIFE DEDICATED PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET BLACK|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -678,7 +678,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -690,7 +690,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET BLACK</key>
+		<key>EXCEL LIFE DEDICATED PLATE 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET BLACK|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/2GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -702,7 +702,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -716,7 +716,7 @@
 			<dict><key>SECURE PLATE</key><string>ESCWPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/2GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -731,9 +731,9 @@
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
 </dict>
-<key>Vertical Complete Dimmers</key>
+<key>Vertical Complete Dimmers|7</key>
 <dict>
-		<key>EXCEL LIFE DEDICATED PLATE 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE</key>
+		<key>EXCEL LIFE DEDICATED PLATE 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>
@@ -745,7 +745,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE DEDICATED PLATE 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER URBAN GREY</key>
+		<key>EXCEL LIFE DEDICATED PLATE 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER URBAN GREY|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>ED770/1GPLUG</string></dict>
 			<dict><key>Trade Price</key><string>3.62</string></dict>
@@ -757,7 +757,7 @@
 			<dict><key>MATT SILVER</key><string>ED770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.71</string></dict>
 		</array>
-		<key>EXCEL LIFE COMMON WINDOW PLATE 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE</key>
+		<key>EXCEL LIFE COMMON WINDOW PLATE 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>EC770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>3.38</string></dict>

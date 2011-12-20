@@ -4,9 +4,9 @@
 <dict>
 	<key>linea.csv</key>
 	<dict>
-<key>Vertical Switches</key>
+<key>Vertical Switches|1</key>
 <dict>
-		<key>LINEA 10AX 1-GANG SWITCH WHITE</key>
+		<key>LINEA 10AX 1-GANG SWITCH WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1WE</string></dict>
 			<dict><key>Trade Price</key><string>7.80</string></dict>
@@ -43,7 +43,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 1-GANG SWITCH CREAM</key>
+		<key>LINEA 10AX 1-GANG SWITCH CREAM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1CR</string></dict>
 			<dict><key>Trade Price</key><string>7.80</string></dict>
@@ -80,7 +80,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 1-GANG SWITCH BLACK</key>
+		<key>LINEA 10AX 1-GANG SWITCH BLACK|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1BL</string></dict>
 			<dict><key>Trade Price</key><string>8.11</string></dict>
@@ -117,7 +117,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 1-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>LINEA 5A 1-GANG ELECTRONIC SWITCH WHITE|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -159,7 +159,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 1-GANG ELECTRONIC SWITCH CREAM</key>
+		<key>LINEA 5A 1-GANG ELECTRONIC SWITCH CREAM|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -201,7 +201,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 1-GANG ELECTRONIC SWITCH BLACK</key>
+		<key>LINEA 5A 1-GANG ELECTRONIC SWITCH BLACK|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
@@ -243,7 +243,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 2-GANG SWITCH WHITE</key>
+		<key>LINEA 10AX 2-GANG SWITCH WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2WE</string></dict>
 			<dict><key>Trade Price</key><string>12.61</string></dict>
@@ -280,7 +280,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 2-GANG SWITCH CREAM</key>
+		<key>LINEA 10AX 2-GANG SWITCH CREAM|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2CR</string></dict>
 			<dict><key>Trade Price</key><string>12.61</string></dict>
@@ -317,7 +317,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 2-GANG SWITCH BLACK</key>
+		<key>LINEA 10AX 2-GANG SWITCH BLACK|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2BL</string></dict>
 			<dict><key>Trade Price</key><string>12.61</string></dict>
@@ -354,7 +354,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 2-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>LINEA 5A 2-GANG ELECTRONIC SWITCH WHITE|10</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.10</string></dict>
@@ -396,7 +396,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 2-GANG ELECTRONIC SWITCH CREAM</key>
+		<key>LINEA 5A 2-GANG ELECTRONIC SWITCH CREAM|11</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>5.10</string></dict>
@@ -438,7 +438,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 2-GANG ELECTRONIC SWITCH BLACK</key>
+		<key>LINEA 5A 2-GANG ELECTRONIC SWITCH BLACK|12</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>5.30</string></dict>
@@ -480,7 +480,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 3-GANG SWITCH WHITE</key>
+		<key>LINEA 10AX 3-GANG SWITCH WHITE|13</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/3WE</string></dict>
 			<dict><key>Trade Price</key><string>21.87</string></dict>
@@ -517,7 +517,7 @@
 			<dict><key>Gun Metal</key><string>LN770/3PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 3-GANG SWITCH CREAM</key>
+		<key>LINEA 10AX 3-GANG SWITCH CREAM|14</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/3CR</string></dict>
 			<dict><key>Trade Price</key><string>21.87</string></dict>
@@ -554,7 +554,7 @@
 			<dict><key>Gun Metal</key><string>LN770/3PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 3-GANG SWITCH BLACK</key>
+		<key>LINEA 10AX 3-GANG SWITCH BLACK|15</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/3BL</string></dict>
 			<dict><key>Trade Price</key><string>21.87</string></dict>
@@ -591,7 +591,7 @@
 			<dict><key>Gun Metal</key><string>LN770/3PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 3-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>LINEA 5A 3-GANG ELECTRONIC SWITCH WHITE|16</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/3GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.58</string></dict>
@@ -633,7 +633,7 @@
 			<dict><key>Gun Metal</key><string>LN770/3PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 3-GANG ELECTRONIC SWITCH CREAM</key>
+		<key>LINEA 5A 3-GANG ELECTRONIC SWITCH CREAM|17</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/3GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>5.58</string></dict>
@@ -675,7 +675,7 @@
 			<dict><key>Gun Metal</key><string>LN770/3PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 3-GANG ELECTRONIC SWITCH BLACK</key>
+		<key>LINEA 5A 3-GANG ELECTRONIC SWITCH BLACK|18</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/3GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>5.58</string></dict>
@@ -717,7 +717,7 @@
 			<dict><key>Gun Metal</key><string>LN770/3PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 4-GANG SWITCH WHITE</key>
+		<key>LINEA 10AX 4-GANG SWITCH WHITE|19</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/4WE</string></dict>
 			<dict><key>Trade Price</key><string>34.10</string></dict>
@@ -754,7 +754,7 @@
 			<dict><key>Gun Metal</key><string>LN770/4PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 4-GANG SWITCH CREAM</key>
+		<key>LINEA 10AX 4-GANG SWITCH CREAM|20</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/4CR</string></dict>
 			<dict><key>Trade Price</key><string>34.10</string></dict>
@@ -791,7 +791,7 @@
 			<dict><key>Gun Metal</key><string>LN770/4PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 4-GANG SWITCH BLACK</key>
+		<key>LINEA 10AX 4-GANG SWITCH BLACK|21</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/4BL</string></dict>
 			<dict><key>Trade Price</key><string>34.10</string></dict>
@@ -828,7 +828,7 @@
 			<dict><key>Gun Metal</key><string>LN770/4PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 4-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>LINEA 5A 4-GANG ELECTRONIC SWITCH WHITE|22</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/4GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>9.03</string></dict>
@@ -870,7 +870,7 @@
 			<dict><key>Gun Metal</key><string>LN770/4PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 4-GANG ELECTRONIC SWITCH CREAM</key>
+		<key>LINEA 5A 4-GANG ELECTRONIC SWITCH CREAM|23</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/4GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>9.03</string></dict>
@@ -912,7 +912,7 @@
 			<dict><key>Gun Metal</key><string>LN770/4PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 4-GANG ELECTRONIC SWITCH BLACK</key>
+		<key>LINEA 5A 4-GANG ELECTRONIC SWITCH BLACK|24</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/4GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>9.03</string></dict>
@@ -954,7 +954,7 @@
 			<dict><key>Gun Metal</key><string>LN770/4PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 5-GANG SWITCH WHITE</key>
+		<key>LINEA 10AX 5-GANG SWITCH WHITE|25</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/5WE</string></dict>
 			<dict><key>Trade Price</key><string>48.16</string></dict>
@@ -991,7 +991,7 @@
 			<dict><key>Gun Metal</key><string>LN770/5PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 5-GANG SWITCH CREAM</key>
+		<key>LINEA 10AX 5-GANG SWITCH CREAM|26</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/5CR</string></dict>
 			<dict><key>Trade Price</key><string>48.16</string></dict>
@@ -1028,7 +1028,7 @@
 			<dict><key>Gun Metal</key><string>LN770/5PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 5-GANG SWITCH BLACK</key>
+		<key>LINEA 10AX 5-GANG SWITCH BLACK|27</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/5BL</string></dict>
 			<dict><key>Trade Price</key><string>48.16</string></dict>
@@ -1065,7 +1065,7 @@
 			<dict><key>Gun Metal</key><string>LN770/5PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 5-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>LINEA 5A 5-GANG ELECTRONIC SWITCH WHITE|28</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/5GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
@@ -1107,7 +1107,7 @@
 			<dict><key>Gun Metal</key><string>LN770/5PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 5-GANG ELECTRONIC SWITCH CREAM</key>
+		<key>LINEA 5A 5-GANG ELECTRONIC SWITCH CREAM|29</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/5GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
@@ -1149,7 +1149,7 @@
 			<dict><key>Gun Metal</key><string>LN770/5PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 5-GANG ELECTRONIC SWITCH BLACK</key>
+		<key>LINEA 5A 5-GANG ELECTRONIC SWITCH BLACK|30</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/5GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
@@ -1191,7 +1191,7 @@
 			<dict><key>Gun Metal</key><string>LN770/5PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 6-GANG SWITCH WHITE</key>
+		<key>LINEA 10AX 6-GANG SWITCH WHITE|31</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/6WE</string></dict>
 			<dict><key>Trade Price</key><string>56.66</string></dict>
@@ -1228,7 +1228,7 @@
 			<dict><key>Gun Metal</key><string>LN770/6PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 6-GANG SWITCH CREAM</key>
+		<key>LINEA 10AX 6-GANG SWITCH CREAM|32</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/6CR</string></dict>
 			<dict><key>Trade Price</key><string>56.66</string></dict>
@@ -1265,7 +1265,7 @@
 			<dict><key>Gun Metal</key><string>LN770/6PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10AX 6-GANG SWITCH BLACK</key>
+		<key>LINEA 10AX 6-GANG SWITCH BLACK|33</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/6BL</string></dict>
 			<dict><key>Trade Price</key><string>56.66</string></dict>
@@ -1302,7 +1302,7 @@
 			<dict><key>Gun Metal</key><string>LN770/6PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 6-GANG ELECTRONIC SWITCH WHITE</key>
+		<key>LINEA 5A 6-GANG ELECTRONIC SWITCH WHITE|34</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/6GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
@@ -1344,7 +1344,7 @@
 			<dict><key>Gun Metal</key><string>LN770/6PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 6-GANG ELECTRONIC SWITCH CREAM</key>
+		<key>LINEA 5A 6-GANG ELECTRONIC SWITCH CREAM|35</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/6GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
@@ -1386,7 +1386,7 @@
 			<dict><key>Gun Metal</key><string>LN770/6PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 5A 6-GANG ELECTRONIC SWITCH BLACK</key>
+		<key>LINEA 5A 6-GANG ELECTRONIC SWITCH BLACK|36</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/6GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
@@ -1429,9 +1429,9 @@
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 </dict>
-<key>Horizontal Powerpoints</key>
+<key>Horizontal Powerpoints|2</key>
 <dict>
-		<key>LINEA 10A 2-GANG POWERPOINT  WHITE</key>
+		<key>LINEA 10A 2-GANG POWERPOINT  WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777WE</string></dict>
 			<dict><key>Trade Price</key><string>16.59</string></dict>
@@ -1468,7 +1468,7 @@
 			<dict><key>Gun Metal</key><string>LN777PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG POWERPOINT  CREAM</key>
+		<key>LINEA 10A 2-GANG POWERPOINT  CREAM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777CR</string></dict>
 			<dict><key>Trade Price</key><string>16.59</string></dict>
@@ -1505,7 +1505,7 @@
 			<dict><key>Gun Metal</key><string>LN777PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG POWERPOINT  BLACK</key>
+		<key>LINEA 10A 2-GANG POWERPOINT  BLACK|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777BL</string></dict>
 			<dict><key>Trade Price</key><string>16.59</string></dict>
@@ -1542,7 +1542,7 @@
 			<dict><key>Gun Metal</key><string>LN777PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG EXTRA SAFETY POWERPOINT  WHITE</key>
+		<key>LINEA 10A 2-GANG EXTRA SAFETY POWERPOINT  WHITE|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777ESWEWE</string></dict>
 			<dict><key>Trade Price</key><string>21.35</string></dict>
@@ -1579,7 +1579,7 @@
 			<dict><key>Gun Metal</key><string>LN777ESPLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG EXTRA SAFETY POWERPOINT  CREAM</key>
+		<key>LINEA 10A 2-GANG EXTRA SAFETY POWERPOINT  CREAM|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777ESCRCR</string></dict>
 			<dict><key>Trade Price</key><string>21.35</string></dict>
@@ -1616,7 +1616,7 @@
 			<dict><key>Gun Metal</key><string>LN777ESPLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG EXTRA SAFETY POWERPOINT  BLACK</key>
+		<key>LINEA 10A 2-GANG EXTRA SAFETY POWERPOINT  BLACK|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777ESBLBL</string></dict>
 			<dict><key>Trade Price</key><string>21.35</string></dict>
@@ -1653,7 +1653,7 @@
 			<dict><key>Gun Metal</key><string>LN777ESPLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG EXTRA-SWITCH POWERPOINT  WHITE</key>
+		<key>LINEA 10A 2-GANG EXTRA-SWITCH POWERPOINT  WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777XWE</string></dict>
 			<dict><key>Trade Price</key><string>32.92</string></dict>
@@ -1690,7 +1690,7 @@
 			<dict><key>Gun Metal</key><string>LN777XPLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG EXTRA-SWITCH POWERPOINT  CREAM</key>
+		<key>LINEA 10A 2-GANG EXTRA-SWITCH POWERPOINT  CREAM|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777XCR</string></dict>
 			<dict><key>Trade Price</key><string>32.92</string></dict>
@@ -1727,7 +1727,7 @@
 			<dict><key>Gun Metal</key><string>LN777XPLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 2-GANG EXTRA-SWITCH POWERPOINT  BLACK</key>
+		<key>LINEA 10A 2-GANG EXTRA-SWITCH POWERPOINT  BLACK|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN777XBL</string></dict>
 			<dict><key>Trade Price</key><string>32.92</string></dict>
@@ -1764,7 +1764,7 @@
 			<dict><key>Gun Metal</key><string>LN777XPLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 1-GANG POWERPOINT  WHITE</key>
+		<key>LINEA 10A 1-GANG POWERPOINT  WHITE|10</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN787WE</string></dict>
 			<dict><key>Trade Price</key><string>10.37</string></dict>
@@ -1801,7 +1801,7 @@
 			<dict><key>Gun Metal</key><string>LN787PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 1-GANG POWERPOINT  CREAM</key>
+		<key>LINEA 10A 1-GANG POWERPOINT  CREAM|11</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN787CR</string></dict>
 			<dict><key>Trade Price</key><string>10.37</string></dict>
@@ -1838,7 +1838,7 @@
 			<dict><key>Gun Metal</key><string>LN787PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 10A 1-GANG POWERPOINT  BLACK</key>
+		<key>LINEA 10A 1-GANG POWERPOINT  BLACK|12</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN787BL</string></dict>
 			<dict><key>Trade Price</key><string>10.37</string></dict>
@@ -1876,9 +1876,9 @@
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 </dict>
-<key>Horizontal or Vertical TV Outlets</key>
+<key>Horizontal or Vertical TV Outlets|3</key>
 <dict>
-		<key>LINEA 1-GANG PAL TO SADDLE TV OUTLET  WHITE</key>
+		<key>LINEA 1-GANG PAL TO SADDLE TV OUTLET  WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1CXWE</string></dict>
 			<dict><key>Trade Price</key><string>7.60</string></dict>
@@ -1915,7 +1915,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 1-GANG PAL TO SADDLE TV OUTLET  CREAM</key>
+		<key>LINEA 1-GANG PAL TO SADDLE TV OUTLET  CREAM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1CXCR</string></dict>
 			<dict><key>Trade Price</key><string>7.60</string></dict>
@@ -1952,7 +1952,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 1-GANG PAL TO SADDLE TV OUTLET  BLACK</key>
+		<key>LINEA 1-GANG PAL TO SADDLE TV OUTLET  BLACK|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1CXBL</string></dict>
 			<dict><key>Trade Price</key><string>7.60</string></dict>
@@ -1989,7 +1989,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 1-GANG PAL TO F TV OUTLET WHITE WHITE</key>
+		<key>LINEA 1-GANG PAL TO F TV OUTLET WHITE WHITE|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1FCXWE</string></dict>
 			<dict><key>Trade Price</key><string>8.34</string></dict>
@@ -2026,7 +2026,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 1-GANG PAL TO F TV OUTLET WHITE CREAM</key>
+		<key>LINEA 1-GANG PAL TO F TV OUTLET WHITE CREAM|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1FCXCR</string></dict>
 			<dict><key>Trade Price</key><string>8.34</string></dict>
@@ -2063,7 +2063,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 1-GANG PAL TO F TV OUTLET WHITE BLACK</key>
+		<key>LINEA 1-GANG PAL TO F TV OUTLET WHITE BLACK|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1FCXBL</string></dict>
 			<dict><key>Trade Price</key><string>8.34</string></dict>
@@ -2101,9 +2101,9 @@
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets</key>
+<key>Horizontal Phone / Data Outlets|4</key>
 <dict>
-		<key>LINEA 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE</key>
+		<key>LINEA 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1RJ2EWE</string></dict>
 			<dict><key>Trade Price</key><string>18.86</string></dict>
@@ -2140,7 +2140,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  CREAM</key>
+		<key>LINEA 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  CREAM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1RJ2ECR</string></dict>
 			<dict><key>Trade Price</key><string>19.36</string></dict>
@@ -2177,7 +2177,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  BLACK</key>
+		<key>LINEA 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  BLACK|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/1RJ2EBL</string></dict>
 			<dict><key>Trade Price</key><string>16.47</string></dict>
@@ -2214,7 +2214,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE</key>
+		<key>LINEA 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2RJ2EWE</string></dict>
 			<dict><key>Trade Price</key><string>30.31</string></dict>
@@ -2251,7 +2251,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  CREAM</key>
+		<key>LINEA 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  CREAM|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2RJ2ECR</string></dict>
 			<dict><key>Trade Price</key><string>32.99</string></dict>
@@ -2288,7 +2288,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  BLACK</key>
+		<key>LINEA 2-GANG CAT-5E RJ45 PHONE / DATA SOCKET  BLACK|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2RJ2EBL</string></dict>
 			<dict><key>Trade Price</key><string>27.86</string></dict>
@@ -2326,9 +2326,9 @@
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 </dict>
-<key>Vertical Complete Dimmers</key>
+<key>Vertical Complete Dimmers|5</key>
 <dict>
-		<key>LINEA 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE</key>
+		<key>LINEA 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE|1</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN450PWE</string></dict>
 			<dict><key>Trade Price</key><string>72.59</string></dict>
@@ -2365,7 +2365,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER CREAM</key>
+		<key>LINEA 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER CREAM|2</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN450PCR</string></dict>
 			<dict><key>Trade Price</key><string>72.59</string></dict>
@@ -2402,7 +2402,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER BLACK</key>
+		<key>LINEA 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER BLACK|3</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN450PBL</string></dict>
 			<dict><key>Trade Price</key><string>72.59</string></dict>
@@ -2439,7 +2439,7 @@
 			<dict><key>Gun Metal</key><string>LN770/1PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER WHITE</key>
+		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER WHITE|4</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LWE</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
@@ -2476,7 +2476,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER CREAM</key>
+		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER CREAM|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LCR</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
@@ -2513,7 +2513,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER BLACK</key>
+		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER BLACK|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LBL</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
@@ -2550,7 +2550,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER WHITE</key>
+		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TWE</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
@@ -2587,7 +2587,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER CREAM</key>
+		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER CREAM|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TCR</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
@@ -2624,7 +2624,7 @@
 			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
-		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER BLACK</key>
+		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER BLACK|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TBL</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>

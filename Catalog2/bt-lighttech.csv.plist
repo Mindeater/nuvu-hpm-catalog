@@ -4,9 +4,9 @@
 <dict>
 	<key>bt-lighttech.csv</key>
 	<dict>
-<key>Horizontal Rocker Switches</key>
+<key>Horizontal Rocker Switches|1</key>
 <dict>
-		<key>LIGHT 16A 1-GANG 2-MOD SWITCH</key>
+		<key>LIGHT 16A 1-GANG 2-MOD SWITCH|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -66,7 +66,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 16A 1-GANG 2-MOD SWITCH</key>
+		<key>LIGHT TECH 16A 1-GANG 2-MOD SWITCH|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -80,7 +80,7 @@
 			<dict><key>CHROME</key><string>NT4819CR</string></dict>
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
-		<key>LIGHT 16A 2-GANG 2-MOD SWITCH</key>
+		<key>LIGHT 16A 2-GANG 2-MOD SWITCH|3</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -140,7 +140,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 16A 2-GANG 2-MOD SWITCH</key>
+		<key>LIGHT TECH 16A 2-GANG 2-MOD SWITCH|4</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -154,7 +154,7 @@
 			<dict><key>CHROME</key><string>NT4819CR</string></dict>
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
-		<key>LIGHT 16A 3-GANG 3-MOD SWITCH</key>
+		<key>LIGHT 16A 3-GANG 3-MOD SWITCH|5</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
 			<dict><key>Trade Price</key><string>3.72</string></dict>
@@ -214,7 +214,7 @@
 			<dict><key>PEAR WOOD</key><string>N4803LPR</string></dict>
 			<dict><key>Trade Price</key><string>32.76</string></dict>
 		</array>
-		<key>LIGHT TECH 16A 3-GANG 3-MOD SWITCH</key>
+		<key>LIGHT TECH 16A 3-GANG 3-MOD SWITCH|6</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
 			<dict><key>Trade Price</key><string>3.72</string></dict>
@@ -229,9 +229,9 @@
 			<dict><key>Trade Price</key><string>23.40</string></dict>
 		</array>
 </dict>
-<key>Horizontal Powerpoints</key>
+<key>Horizontal Powerpoints|2</key>
 <dict>
-		<key>LIGHT 10A 1-GANG 3-MOD POWERPOINT</key>
+		<key>LIGHT 10A 1-GANG 3-MOD POWERPOINT|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
 			<dict><key>Trade Price</key><string>3.72</string></dict>
@@ -293,7 +293,7 @@
 			<dict><key>PEAR WOOD</key><string>N4803LPR</string></dict>
 			<dict><key>Trade Price</key><string>32.76</string></dict>
 		</array>
-		<key>LIGHT TECH 10A 1-GANG 3-MOD POWERPOINT</key>
+		<key>LIGHT TECH 10A 1-GANG 3-MOD POWERPOINT|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
 			<dict><key>Trade Price</key><string>3.72</string></dict>
@@ -309,7 +309,7 @@
 			<dict><key>CHROME</key><string>NT4803CR</string></dict>
 			<dict><key>Trade Price</key><string>23.40</string></dict>
 		</array>
-		<key>LIGHT 10A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<key>LIGHT 10A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT|3</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -369,7 +369,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 10A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<key>LIGHT TECH 10A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT|4</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -383,7 +383,7 @@
 			<dict><key>CHROME</key><string>NT4819CR</string></dict>
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
-		<key>LIGHT 15A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<key>LIGHT 15A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT|5</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -443,7 +443,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 15A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT</key>
+		<key>LIGHT TECH 15A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT|6</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -457,7 +457,7 @@
 			<dict><key>CHROME</key><string>NT4819CR</string></dict>
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
-		<key>LIGHT 10A 2-GANG 3/4-MOD POWERPOINT</key>
+		<key>LIGHT 10A 2-GANG 3/4-MOD POWERPOINT|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>N4134</string></dict>
 			<dict><key>Mech 1 Part #</key><string>N4134</string></dict>
@@ -515,7 +515,7 @@
 			<dict><key>PEAR WOOD</key><string>N4804LPR</string></dict>
 			<dict><key>Trade Price</key><string>36.40</string></dict>
 		</array>
-		<key>LIGHT TECH 10A 2-GANG 3/4-MOD POWERPOINT</key>
+		<key>LIGHT TECH 10A 2-GANG 3/4-MOD POWERPOINT|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>NT4134</string></dict>
 			<dict><key>Mech 1 Part #</key><string>NT4134</string></dict>
@@ -528,9 +528,9 @@
 			<dict><key>Trade Price</key><string>26.00</string></dict>
 		</array>
 </dict>
-<key>Horizontal TV Outlets</key>
+<key>Horizontal TV Outlets|3</key>
 <dict>
-		<key>LIGHT 2-GANG F TO F TV OUTLET</key>
+		<key>LIGHT 2-GANG F TO F TV OUTLET|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -590,7 +590,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH  2-GANG F TO F TV OUTLET</key>
+		<key>LIGHT TECH  2-GANG F TO F TV OUTLET|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -605,9 +605,9 @@
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets</key>
+<key>Horizontal Phone / Data Outlets|4</key>
 <dict>
-		<key>LIGHT 2-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET</key>
+		<key>LIGHT 2-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -667,7 +667,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 2-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET</key>
+		<key>LIGHT TECH 2-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -682,9 +682,9 @@
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
 </dict>
-<key>Horizontal Audio / Visual Outlets</key>
+<key>Horizontal Audio / Visual Outlets|5</key>
 <dict>
-		<key>LIGHT 2-GANG 2-MOD USB A FEMALE SOCKET</key>
+		<key>LIGHT 2-GANG 2-MOD USB A FEMALE SOCKET|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -744,7 +744,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 2-GANG 2-MOD USB A FEMALE SOCKET</key>
+		<key>LIGHT TECH 2-GANG 2-MOD USB A FEMALE SOCKET|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -758,7 +758,7 @@
 			<dict><key>CHROME</key><string>NT4819CR</string></dict>
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
-		<key>LIGHT 2-GANG 2-MOD RGB (RED/GREEN/BLUE) SOCKET</key>
+		<key>LIGHT 2-GANG 2-MOD RGB (RED/GREEN/BLUE) SOCKET|3</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -818,7 +818,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH  2-GANG 2-MOD RGB (RED/GREEN/BLUE) SOCKET</key>
+		<key>LIGHT TECH  2-GANG 2-MOD RGB (RED/GREEN/BLUE) SOCKET|4</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -832,7 +832,7 @@
 			<dict><key>CHROME</key><string>NT4819CR</string></dict>
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
-		<key>LIGHT 2-GANG 2-MOD VGA OUTLET</key>
+		<key>LIGHT 2-GANG 2-MOD VGA OUTLET|5</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -892,7 +892,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 2-GANG 2-MOD VGA OUTLET</key>
+		<key>LIGHT TECH 2-GANG 2-MOD VGA OUTLET|6</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -906,7 +906,7 @@
 			<dict><key>CHROME</key><string>NT4819CR</string></dict>
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
-		<key>LIGHT 2-GANG 2-MOD HDMI OUTLET</key>
+		<key>LIGHT 2-GANG 2-MOD HDMI OUTLET|7</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -966,7 +966,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 2-GANG 2-MOD HDMI OUTLET</key>
+		<key>LIGHT TECH 2-GANG 2-MOD HDMI OUTLET|8</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -981,9 +981,9 @@
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
 </dict>
-<key>Horizontal Dimmers</key>
+<key>Horizontal Dimmers|6</key>
 <dict>
-		<key>LIGHT 1-GANG 2-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER</key>
+		<key>LIGHT 1-GANG 2-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
@@ -1043,7 +1043,7 @@
 			<dict><key>PEAR WOOD</key><string>N4819LPR</string></dict>
 			<dict><key>Trade Price</key><string>30.94</string></dict>
 		</array>
-		<key>LIGHT TECH 1-GANG 2-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER</key>
+		<key>LIGHT TECH 1-GANG 2-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4722</string></dict>
 			<dict><key>Trade Price</key><string>4.05</string></dict>
