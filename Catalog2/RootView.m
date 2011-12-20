@@ -21,7 +21,7 @@
 @synthesize context;
 @synthesize button1,button2,button3,button4,button5,button6;
 @synthesize popOver;
-@synthesize bgImg;
+@synthesize bgImgLand,bgImgPort;
 
 @synthesize moviePlayer;
 
@@ -31,6 +31,8 @@
 {
     self.context = nil;
     self.view = nil;
+    self.bgImgLand = nil;
+    self.bgImgPort = nil;
     [super dealloc];
 }
 
@@ -75,30 +77,36 @@
     self.view.backgroundColor = [UIColor blackColor];
     //self.wantsFullScreenLayout = YES;
     
-    
-   // [self playMovie];
-   
-    
-    //else 
-    
-    [self renderInterface];
+    //if([[NSUserDefaults standardUserDefaults] boolForKey:@"playMovie"]){
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
+        [self playMovie];
+    }else{ 
+        [self renderInterface];
+    }
 }
 
 -(void)renderInterface
 {
- 
+
     // background Image
-    
-    
-    UIImage *bg = [UIImage imageWithContentsOfFile:
+    UIImage *bgPort = [UIImage imageWithContentsOfFile:
                    [[NSBundle mainBundle] pathForResource:@"main-bg-port" ofType:@"png"]];
-    bgImg =[[UIImageView alloc]initWithImage:bg];
+    bgImgPort =[[UIImageView alloc] initWithImage:bgPort];
+    UIImage *bgLand = [UIImage imageWithContentsOfFile:
+                       [[NSBundle mainBundle] pathForResource:@"main-bg-land" ofType:@"png"]];
+    bgImgLand =[[UIImageView alloc] initWithImage:bgLand];
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+
+    bgImgLand.frame = CGRectMake(0, -40, screenHeight, screenWidth);
     //bgImg.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:bgImg];
+    [self.view addSubview:bgImgLand];
+    [self.view addSubview:bgImgPort];
     
     
     ///////////////////////////
-    // A default image for manipulation
+    // A default image for manipulation (empty by default)
     
     self.choosenWall = [UIImage imageWithContentsOfFile:
                   [[NSBundle mainBundle] pathForResource:@"Arteor_caesarstone_white" ofType:@"png"]];
@@ -180,21 +188,31 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
+    //////////////////////////
+    // swap bg for orientation
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
         toInterfaceOrientation == UIInterfaceOrientationLandscapeRight)
     {
         screenWidth = screenRect.size.height;
-        screenHeight = screenRect.size.width;
+        screenHeight = screenRect.size.width - 160;
+        
+        [self.view sendSubviewToBack:bgImgPort];
+       
+    }else{
+        [self.view sendSubviewToBack:bgImgLand];
     }
-
-    //@TODO: layout for iphone padding should be tighter
     
-    //float buttonWidth = 100;
-    //float buttonHeight = 100;
-    float pad = 40;
-    float buttonWidth = screenWidth / 3 - pad*2;
-    float buttonHeight = buttonWidth; //screenHeight / 3 - pad*2;
     
+    
+    float pad = 50;
+    float buttonWidth = 150;
+    float buttonHeight = 150;
+    
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        pad = 10;
+        buttonWidth = 80;
+        buttonHeight = 80;
+    }
     float startX = (screenWidth - (3 * buttonWidth + pad * 2))/2;
     float startY = (screenHeight -(2 * buttonHeight+pad))/2;
     
@@ -210,6 +228,7 @@
                                 buttonWidth, buttonHeight);
     button6.frame =  CGRectMake(startX + buttonHeight*2+2*pad, startY + buttonHeight+pad,
                                 buttonWidth, buttonHeight);
+    
 }
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
@@ -235,8 +254,15 @@
 {
     /////////////////////////////////////////////
     // Play movie
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
-                                         pathForResource:@"ipadIntro" ofType:@"mov"]];
+    NSURL *url;
+    if(YES){
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
+                                         pathForResource:@"ipadIntro_14Dec" ofType:@"mov"]];
+    }else{
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
+                                         pathForResource:@"iPhoneIntro_14Dec" ofType:@"mov"]];
+    }
+    
     moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -379,7 +405,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES; //(interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 

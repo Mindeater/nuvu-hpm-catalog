@@ -20,7 +20,8 @@
     
     UIPopoverController *popOver;
     
-    UIImageView *bgImg;
+    UIImageView *bgImgPort;
+    UIImageView *bgImgLand;
     
     UIImage *choosenWall;
     
@@ -37,7 +38,8 @@
 
 @property(nonatomic,retain)UIPopoverController *popOver;
 
-@property(nonatomic,retain)UIImageView *bgImg;
+@property(nonatomic,retain)UIImageView *bgImgPort;
+@property(nonatomic,retain)UIImageView *bgImgLand;
 @property(nonatomic,retain)MPMoviePlayerController *moviePlayer;
 
 @property(nonatomic,retain)UIImage *choosenWall;
