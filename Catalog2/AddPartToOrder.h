@@ -26,4 +26,6 @@
 
 -(void)addMechanismsToDefaultOrder:(NSArray *)mechanisms withProductName:(NSString *)productName;
 -(void)addFaceplateToDefaultOrder:(NSArray *)faceplate withProductName:(NSString *)productName;
+
+-(void)addNewOrder;
 @end

@@ -104,6 +104,46 @@
     return [[_fetchedResultsController.fetchedObjects lastObject] valueForKey:@"uniqueId"];
     
 }
+
+-(void)addNewOrder
+{
+    NSError *error;
+    
+    // get all the orders
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Order"
+                                              inManagedObjectContext:self.context];
+    [request setEntity:entity];
+    
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    [request release];
+    
+    // turn off the existing object
+    for(NSManagedObject *order in result){
+        [order setValue:[NSNumber numberWithBool:NO]
+                 forKey:@"active"];
+    } 
+    [self.context save:&error];
+    
+   // NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
+    NSManagedObject *newEntity = [NSEntityDescription 
+                                  insertNewObjectForEntityForName:[entity name] inManagedObjectContext:[self.fetchedResultsController managedObjectContext]];
+    
+    NSInteger nextRow = [result count]+1;
+    [newEntity setValue:[NSString stringWithFormat:@"New Order %i",nextRow] 
+                 forKey:@"name"];
+    [newEntity setValue:
+     [NSString stringWithFormat:@"%@",  [[NSProcessInfo processInfo] globallyUniqueString]]
+                 forKey:@"uniqueId"];
+    [newEntity setValue:[NSNumber numberWithBool:YES] forKey:@"active"];
+    
+    
+    [self.context insertObject:newEntity];
+    
+    [self.context save:&error];
+    
+}
+
 -(void)setActiveOrderLine:(NSString *)productName
 {
 
