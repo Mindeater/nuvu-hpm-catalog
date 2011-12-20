@@ -20,6 +20,7 @@
 
 @synthesize orderId;
 @synthesize orderTotal,quantityCount;
+@synthesize backString;
 
 @synthesize emailOrderBody;
 
@@ -28,6 +29,7 @@
     self.fetchedResultsController.delegate = nil;
     self.fetchedResultsController = nil;
     self.context = nil;
+    
     [super dealloc];
 }
 
@@ -95,7 +97,7 @@
     //NSLog(@"\nMECHANISMS : \n %@", [orderLine valueForKey:@"product"]);;
     
     for(NSManagedObject *part in [orderLine valueForKey:@"items"]){
-        NSLog(@" - %@",[part valueForKey:@"type"]);
+        //NSLog(@" - %@",[part valueForKey:@"type"]);
         
         
         if([[part valueForKey:@"type"] isEqualToString:@"Mechanism"]){
@@ -110,13 +112,13 @@
                         [part valueForKey:@"name"]];
                 totalCost += [[[part valueForKey:@"mechanism"] valueForKey:@"price"] floatValue] * [[[part valueForKey:@"mechanism"] valueForKey:@"count"] floatValue];
                 //NSLog(@"2. totalCount : %f",totalCost);
-                NSLog(@"Mechanism add - %@",mechPartDesc);
+                //NSLog(@"Mechanism add - %@",mechPartDesc);
             }else{
                 [mechPartDesc appendFormat:@"%@\n",
                  [part valueForKey:@"name"]];
                 totalCost += [[[part valueForKey:@"mechanism"] valueForKey:@"price"] floatValue];
                // NSLog(@"3. totalCount : %f",totalCost);
-                NSLog(@"Mechanism add - %@",mechPartDesc);
+                //NSLog(@"Mechanism add - %@",mechPartDesc);
             }
             //NSLog(@"Price : %@",[[part valueForKey:@"mechanism"] valueForKey:@"price"]);
         
@@ -125,7 +127,7 @@
             
             [faceplateName appendFormat:@"\n\nCover Plate: %@",[[part valueForKey:@"faceplate"] valueForKey:@"name"]];
             
-            NSLog(@"CoverPlate :%@",faceplateName);
+            //NSLog(@"CoverPlate :%@",faceplateName);
             
             [count appendString:@"1\n"];
              
@@ -146,7 +148,6 @@
     [faceplatePartDesc release];
     [faceplateName release];
     
-    NSLog(@" being returned : %@:\n\n",values);
     return values;
 }
 
@@ -218,8 +219,18 @@
     orderTotal = 0;
     quantityCount = 0;
     
-    //NSLog(@" %@",_fetchedResultsController.fetchedObjects);
-    self.title = @"An Order";
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Order"
+                                              inManagedObjectContext:self.context];
+    [request setEntity:entity];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(%K == %@)",@"uniqueId",self.orderId];
+    [request setPredicate:predicate];
+    
+    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    [request release];
+    
+    self.title = [[result lastObject] valueForKey:@"name"];// @"An Order";
     
     
     ///////////////////////////////////////
@@ -231,6 +242,8 @@
     [newOrderButton release];
     
     self.emailOrderBody = [NSMutableString string];
+    
+    [self addLeftNavigationButton];
     
 }
 
@@ -266,7 +279,6 @@
 
 -(void)emailOrder:(id)sender
 {
-    NSLog(@"_____%@",self.emailOrderBody);
     if ([MFMailComposeViewController canSendMail]) {
         // Build an email body to send
         // CREATING MAIL VIEW
@@ -327,15 +339,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    id <NSFetchedResultsSectionInfo> sectionInfo = 
-    [[_fetchedResultsController sections] objectAtIndex:section];
+    //Return the number of rows in the section.
+    id <NSFetchedResultsSectionInfo> sectionInfo = [[_fetchedResultsController sections] objectAtIndex:section];
     return [sectionInfo numberOfObjects]+2;
+    //return [_fetchedResultsController.fetchedObjects count] +2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     static NSString *CellIdentifier = @"Cell";
     
     OrderLineViewCell *cell = (OrderLineViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -416,7 +427,7 @@
         // Configure the cell.
         
         //@TODO: needs to be boundry checked before calling ??
-        NSManagedObject *currentRecord = [_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1];
+        NSManagedObject *currentRecord = [_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row-1];
         
         // get the parts strings to populat the cell
         NSArray *parts = [self getPartsFromOrderLine:currentRecord];
@@ -440,7 +451,7 @@
         cell.cell1.text = descText;
          */
         //[cell.cell1 sizeToFit];
-        cell.cell1.text = [NSString stringWithFormat:@" *%@%@*",
+        cell.cell1.text = [NSString stringWithFormat:@"%@%@",
                            [currentRecord valueForKey:@"product"],
                            [parts objectAtIndex:3]];
         cell.cell1.textAlignment = UITextAlignmentLeft;
@@ -507,16 +518,14 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        NSLog(@"DELETE item %i",indexPath.row);
-        if(indexPath.row == 0 || indexPath.row == [_fetchedResultsController.fetchedObjects count]+1){
-            
+        
+        // boundry check for last item
+        if(indexPath.row +1 >[_fetchedResultsController.fetchedObjects count]){
+            [self.context deleteObject:[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1]];
+        }else{
+            // Delete the row from the data source indexPath matches fetchedResults controller
+            [self.context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
         }
-        
-        // need to make sure the actual indexpath is being used
-        // Delete the row from the data source
-        [self.context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
-        //[self.context deleteObject:[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1]];
-        
         // Save the context.
         NSError *error;
         if (![self.context save:&error]) {
@@ -528,8 +537,6 @@
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
         }
-        
-        //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -554,17 +561,12 @@
     [self.context save:&error];
     
 }
-/*
-- (void)textFieldDidEndEditing:(UITextField *)textField
+- (BOOL)textFieldShouldReturn:(UITextField*)textField
 {
     [textField resignFirstResponder];
-    // update the comment to the fetchedResultsController
-    NSLog(@"Modify comment index: %i",textField.tag);
-}
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField {
-    //[inputTexts replaceObjectAtIndex:textField.tag withObject:textField.text];
     return YES;
-}*/
+}
+
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     //NSLog(@" Catch the textView finished editing %i",textView.tag);
@@ -574,23 +576,45 @@
     NSError *error;
     [self.context save:&error];
 }
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 #pragma mark - NavBar Choices
 
+-(void)addLeftNavigationButton
+{
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
+                                   initWithTitle:@"Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(showMenuSheet:)];
+    self.navigationItem.leftBarButtonItem = infoButton;
+    [infoButton release];
+}
+
+-(void)showMenuSheet:(id)sender
+{
+    
+    UIActionSheet *popupQuery;
+
+    popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:self.backString, nil];
+
+	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
+	//[popupQuery showInView:self.view];
+    [popupQuery showFromBarButtonItem:sender animated:YES];
+	[popupQuery release];  
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+        if (buttonIndex == 0) {
+            //NSLog(@"Return to Main Menu");
+            [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:YES]; 
+        } else if (buttonIndex == 1) {
+            //NSLog(@"Return to Catalog");
+            [self.navigationController popViewControllerAnimated:YES];
+        } else if (buttonIndex == 2) {
+            //
+        } else if (buttonIndex == 3) {
+            //NSLog(@"Cancel Button Clicked");
+        }
+}
+        
 -(void)sendCurrentOrder
 {
     //http://stackoverflow.com/questions/6750126/create-pdf-file-from-uitableview
@@ -647,11 +671,19 @@
             break;
             
         case NSFetchedResultsChangeDelete:
-            NSLog(@"getting delete message from order table %@",indexPath);
+            //clear the totaol
+            
             // the index path will be one less than the cell we want to remove
-            NSIndexPath *ip = [indexPath indexPathByAddingIndex:1];
-            NSLog(@"index path: %@ vs created %@",indexPath,ip);
-            [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            if(indexPath.row +1 >[_fetchedResultsController.fetchedObjects count]){
+                // create a new index path
+                NSIndexPath *ip = [NSIndexPath indexPathForRow:indexPath.row +1 inSection:indexPath.section];
+                [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:ip] withRowAnimation:UITableViewRowAnimationFade];
+            }else{
+                [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            }
+            orderTotal = 0.0;
+            [self.emailOrderBody setString:@""];
+            [tableView reloadData];
             break;
             
         case NSFetchedResultsChangeUpdate:

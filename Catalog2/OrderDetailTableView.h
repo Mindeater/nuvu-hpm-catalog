@@ -11,13 +11,15 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
-@interface OrderDetailTableView : UITableViewController<NSFetchedResultsControllerDelegate, UITextViewDelegate,UITextFieldDelegate,MFMailComposeViewControllerDelegate> {
+@interface OrderDetailTableView : UITableViewController<NSFetchedResultsControllerDelegate, UITextViewDelegate, UITextFieldDelegate,MFMailComposeViewControllerDelegate, UIActionSheetDelegate> {
     NSFetchedResultsController *_fetchedResultsController;
     NSManagedObjectContext *_context;
     
     NSString *orderId;
     float orderTotal;
     int quantityCount;
+    
+    NSString *backString;
     
     NSMutableString *emailOrderBody;
 }
@@ -29,11 +31,15 @@
 @property(nonatomic)float orderTotal;
 @property(nonatomic)int quantityCount;
 
+@property(nonatomic,retain)NSString *backString;
+
 @property(nonatomic,retain)NSMutableString *emailOrderBody;
 
 -(NSArray *)getPartsFromOrderLine:(NSManagedObject *)orderLine;
 -(void)updateComment:(NSString *)comment atIndexRow:(NSInteger)indexRow;
 
 -(void)emailOrder:(id)sender;
+
+-(void)addLeftNavigationButton;
 
 @end
