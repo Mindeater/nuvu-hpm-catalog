@@ -400,6 +400,11 @@
     NSError *error;
     [self.context save:&error];
 }
+- (BOOL)textFieldShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 /*
  // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
@@ -428,6 +433,7 @@
     detailViewController.context = self.context;
     NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     detailViewController.orderId = [currentRecord valueForKey:@"uniqueId"];
+    detailViewController.backString = @"Orders";
     
     //NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     //detailViewController.currentBrand = [currentRecord valueForKey:@"name"];
