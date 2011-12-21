@@ -4,7 +4,7 @@
 <dict>
 	<key>excel.csv</key>
 	<dict>
-<key>Vertical Rocker Switches|1</key>
+<key>Vertical Switches|1</key>
 <dict>
 		<key>EXCEL 10AX 1-GANG SWITCH WHITE|1</key>
 		<array>
@@ -1113,7 +1113,7 @@
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets|4</key>
+<key>Horizontal Phone / Data Sockets|4</key>
 <dict>
 		<key>EXCEL 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|1</key>
 		<array>
@@ -1184,7 +1184,7 @@
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 </dict>
-<key>Vertical Dimmers|5</key>
+<key>Vertical Complete Dimmers|5</key>
 <dict>
 		<key>EXCEL 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER GLOSS WHITE|1</key>
 		<array>

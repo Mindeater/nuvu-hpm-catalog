@@ -4,7 +4,7 @@
 <dict>
 	<key>arteor-770.csv</key>
 	<dict>
-<key>Vertical Rocker Switches|1</key>
+<key>Vertical Switches|1</key>
 <dict>
 		<key>ARTEOR 16AX 1-GANG SWITCH WHITE|1</key>
 		<array>
@@ -1003,7 +1003,7 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal Rocker Switches|2</key>
+<key>Horizontal  Switches|2</key>
 <dict>
 		<key>ARTEOR 16AX 1-GANG HORIZONTAL SWITCH WHITE|1</key>
 		<array>
@@ -2239,7 +2239,7 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal or Vertical TV Outlets|4</key>
+<key>Vertical Complete Dimmers|4</key>
 <dict>
 		<key>ARTEOR 450VA UNIVERSAL-LOAD PUSH BUTTON DIMMER WHITE|1</key>
 		<array>

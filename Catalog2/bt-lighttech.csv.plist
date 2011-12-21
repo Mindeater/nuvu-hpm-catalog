@@ -605,7 +605,7 @@
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets|4</key>
+<key>Horizontal Phone / Data Sockets|4</key>
 <dict>
 		<key>LIGHT 2-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET|1</key>
 		<array>
@@ -981,7 +981,7 @@
 			<dict><key>Trade Price</key><string>22.10</string></dict>
 		</array>
 </dict>
-<key>Horizontal Dimmers|6</key>
+<key>Horizontal complete Dimmers|6</key>
 <dict>
 		<key>LIGHT 1-GANG 2-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER|1</key>
 		<array>

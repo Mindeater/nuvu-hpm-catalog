@@ -4,7 +4,7 @@
 <dict>
 	<key>arteor-rd.csv</key>
 	<dict>
-<key>Vertical Rocker Switches|1</key>
+<key>Vertical Switches|1</key>
 <dict>
 		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH WHITE|1</key>
 		<array>
@@ -503,7 +503,7 @@
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
 </dict>
-<key>Horizontal Rocker Switches|2</key>
+<key>Horizontal Switches|2</key>
 <dict>
 		<key>ARTEOR 16AX 1-GANG 2-MOD RD SWITCH WHITE|1</key>
 		<array>
@@ -846,7 +846,7 @@
 			<dict><key>Trade Price</key><string>122.36</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets|3</key>
+<key>Horizontal Phone / Data Sockets|3</key>
 <dict>
 		<key>ARTEOR 1-GANG 2-MOD RD CAT-5E RJ45 PHONE / DATA SOCKET WHITE|1</key>
 		<array>

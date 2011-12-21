@@ -414,7 +414,7 @@
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
 </dict>
-<key>Dedicated Plate Horizontal Socket Outlets|3</key>
+<key>Dedicated Plate Horizontal Powerpoints|3</key>
 <dict>
 		<key>EXCEL LIFE DEDICATED PLATE 10A 2-GANG POWERPOINT WHITE|1</key>
 		<array>
@@ -652,7 +652,7 @@
 			<dict><key>Trade Price</key><string>3.14</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets|6</key>
+<key>Horizontal Phone / Data Sockets|6</key>
 <dict>
 		<key>EXCEL LIFE DEDICATED PLATE 1-GANG CAT-5E RJ45 PHONE / DATA SOCKET  WHITE|1</key>
 		<array>

@@ -4,7 +4,7 @@
 <dict>
 	<key>arteor-sq.csv</key>
 	<dict>
-<key>Vertical Rocker Switches|1</key>
+<key>Vertical Switches|1</key>
 <dict>
 		<key>ARTEOR 16AX 1-GANG 2-MOD SQ SWITCH WHITE|1</key>
 		<array>
@@ -535,7 +535,7 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal Rocker Switches|2</key>
+<key>Horizontal Switches|2</key>
 <dict>
 		<key>ARTEOR 16AX 1-GANG 2-MOD SQ SWITCH WHITE|1</key>
 		<array>
@@ -890,7 +890,7 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal Socket Outlets|3</key>
+<key>Horizontal Powerpoints|3</key>
 <dict>
 		<key>ARTEOR 10A 1-GANG 3-MOD POWERPOINT WHITE|1</key>
 		<array>
@@ -1245,7 +1245,7 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Vertical Socket Outlets|4</key>
+<key>Vertcial Powerpoints|4</key>
 <dict>
 		<key>ARTEOR 10A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT WHITE|1</key>
 		<array>
@@ -1603,7 +1603,7 @@
 			<dict><key>Trade Price</key><string>111.24</string></dict>
 		</array>
 </dict>
-<key>Horizontal Phone / Data Outlets|6</key>
+<key>Horizontal Phone / Data Socket|6</key>
 <dict>
 		<key>ARTEOR 1-GANG 2-MOD CAT-5E RJ45 PHONE / DATA SOCKET WHITE|1</key>
 		<array>
