@@ -40,7 +40,7 @@
     [fetchRequest setEntity:entity];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
-                              initWithKey:@"name" ascending:YES];
+                              initWithKey:@"menuOrder" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
     [fetchRequest setFetchBatchSize:20];
@@ -141,12 +141,12 @@
 
 #pragma mark - Table view data source
 
-
 #define SectionHeaderHeight 40
 //from:
 // http://undefinedvalue.com/2009/08/25/changing-background-color-and-section-header-text-color-grouped-style-uitableview
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    
     if ([self tableView:tableView titleForHeaderInSection:section] != nil) {
         return SectionHeaderHeight;
     }
@@ -155,7 +155,44 @@
         return 0;
     }
 }
-
+-(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    if(section == [_fetchedResultsController.fetchedObjects count]-1){
+        return 80;
+    }
+    return 10;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    // only for the last section
+    UIView * view = [[UIView alloc] init];
+    [view autorelease];
+    if(section == [_fetchedResultsController.fetchedObjects count]-1){
+        
+        
+        
+        // Create label with section title
+        UILabel *label = [[[UILabel alloc] init] autorelease];
+        label.frame = CGRectMake(10, 0, tableView.bounds.size.width, 60);
+        label.backgroundColor = [UIColor clearColor];
+        label.lineBreakMode = UILineBreakModeWordWrap;
+        label.numberOfLines = 0;
+        
+        label.textColor = [UIColor whiteColor];
+        label.shadowColor = [UIColor grayColor];
+        label.shadowOffset = CGSizeMake(0.0, 1.0);
+        label.font = [UIFont boldSystemFontOfSize:12];
+        label.text = @"*This is a selection of product only. For the full range visit the individual brand websites.";
+        
+        // Create header view and add label as a subview
+        
+        view.frame = CGRectMake(0, 0, tableView.bounds.size.width +20, 80);
+        [view addSubview:label];  
+    }else{
+        view.frame = CGRectMake(0, 0, 0, 0);
+    }
+    
+    return view;
+}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     NSString *sectionTitle = [self tableView:tableView titleForHeaderInSection:section];
@@ -196,7 +233,8 @@
 {
     // fixed font style. use custom view (UILabel) if you want something different
      NSManagedObject *currentRecord = [_fetchedResultsController.fetchedObjects  objectAtIndex:section];
-     return [currentRecord valueForKey:@"name"];
+     //return [currentRecord valueForKey:@"name"];
+     return [currentRecord valueForKey:@"heading"];
      
 }
 
@@ -227,16 +265,20 @@
     
     NSManagedObject *sectionBrand = [_fetchedResultsController.fetchedObjects 
                                       objectAtIndex:indexPath.section];
-    //NSLog(@"Section Object : %@",[sectionBrand mutableSetValueForKey:@"category"]);
     
-    //@TODO: ordering of this set to be consistant
-   //NSPredicate *predicate =[NSPredicate alloc] 
+    /////////////////////////////////////////////
+    // sort descriptor to maintain category order
+    NSSortDescriptor *nameDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"menuOrder"
+                                                 ascending:YES] autorelease];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:nameDescriptor];
+    
+    NSArray *sortedResult = [[[sectionBrand valueForKey:@"category"] allObjects]sortedArrayUsingDescriptors:sortDescriptors];
+    
+    //NSLog(@"\n\n\n\n SORTED RESULT ** \n\n%@\n\n",sortedResult);
+    // NSManagedObject *category = [[[sectionBrand valueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
+    //cell.textLabel.text = [category valueForKey:@"name"];
+    cell.textLabel.text = [[sortedResult objectAtIndex:indexPath.row] valueForKey:@"name"];
 
-   // NSManagedObject *category = [[[sectionBrand mutableSetValueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
-    NSManagedObject *category = [[[sectionBrand valueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = [category valueForKey:@"name"];
-    
     // custom coloring
     cell.backgroundColor = [UIColor blackColor];
     cell.textLabel.textColor = [UIColor whiteColor];
@@ -256,18 +298,25 @@
     NSManagedObject *currentRecord = [_fetchedResultsController.fetchedObjects 
                                       objectAtIndex:indexPath.section];
     detailViewController.currentBrand = [currentRecord valueForKey:@"name"];
-    detailViewController.currentCategory = [[[[currentRecord mutableSetValueForKey:@"category"]
-                                             allObjects] 
-                                             objectAtIndex:indexPath.row] 
-                                            valueForKey:@"name"];
     
+//    detailViewController.currentCategory = [[[[currentRecord mutableSetValueForKey:@"category"]
+//                                             allObjects] 
+//                                             objectAtIndex:indexPath.row] 
+//                                            valueForKey:@"name"];
+//  
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+   // NSLog ( @"You selected row: %@", cell.text);
+    detailViewController.currentCategory = cell.textLabel.text;
     detailViewController.context = self.context;
     detailViewController.wallImage = self.wallImage;
     
+    //NSLog(@"\n^^^BRANDCAtalogView push^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
+      //  self.navigationController.viewControllers, self.navigationController.navigationBar);
+    //self.navigationController.navigationBar.hidden = true;
     // detailViewController.managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
     // ...
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
+    [self.navigationController pushViewController:detailViewController animated:NO];
     [detailViewController release];
     
 }
