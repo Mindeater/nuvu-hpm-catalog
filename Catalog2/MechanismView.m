@@ -23,29 +23,15 @@
     // remove any views that already exist
     for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
     // self.view.backgroundColor = [UIColor whiteColor];
+
+    ////////////////////////////////////////////////////////////
     // the Control View is going to hold the non-image elements
-    
     controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    //controlsView.backgroundColor = [UIColor greenColor];
-    [self.view addSubview:self.controlsView];
+    [self.view addSubview:self.controlsView];   
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    
-    ///////////////////////////////////
-    //Product Label
-    UILabel *myLabel = [[UILabel alloc] 
-                        initWithFrame:CGRectMake(20,screenHeight - 250, screenWidth - 40, 100)]; 
-                       // initWithFrame:CGRectMake(20,20, 400, 100)];      
-    myLabel.text = self.productName;
-    myLabel.lineBreakMode = UILineBreakModeWordWrap;
-    myLabel.numberOfLines = 0;
-    myLabel.textColor = [UIColor whiteColor];
-    myLabel.backgroundColor = [UIColor clearColor];
-    [self.controlsView addSubview:myLabel];
-    [myLabel release];
-    
   
     
     // Mechanism Picture/s
@@ -55,12 +41,14 @@
     // note:
     //arteor 770 has AR in front of the part name which doesn't match the image
     for(NSManagedObject *mech in items){
+        /*
         NSLog(@"\n+Mech Add+ \n%@\n name: %@\nid:%@ count:%@ name: %@\n\n",
               self.categoryName,
               self.productName,
               [mech valueForKey:@"id"],
               [mech valueForKey:@"count"],
               [mech valueForKey:@"name"] );
+         */
         
         NSString *img;
         
@@ -102,7 +90,9 @@
                                 prefix,
                                 [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
         
-        NSLog(@"  - File NAme %@",imgCleaned);
+        [tmpParts appendFormat:@"%@\n",imgCleaned];
+        
+        NSLog(@"\nMechanism \n\n  - File NAme %@ \n in Directory: %@",imgCleaned,dir);
         
         // Grab the image off disk and load it up
         NSString *imageName = [[NSBundle mainBundle] 
@@ -115,8 +105,8 @@
                                ofType:@"png"];
          */
         
-        NSLog(@" FuLL image NAme:  %@",imageName);
-        [tmpParts appendFormat:@"%@\n",imageName];
+       // NSLog(@" FuLL image NAme:  %@",imageName);
+        //[tmpParts appendFormat:@"%@\n",imageName];
         
         UIImage *image = [UIImage imageWithContentsOfFile:imageName];
         UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
@@ -140,6 +130,7 @@
     }
     self.parts = tmpParts;
     [self addToolBarToView];
+    
 }
 
 #pragma mark - View lifecycle
