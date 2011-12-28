@@ -105,6 +105,25 @@
 }
 
 #pragma mark - Table view data source
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
+    switch (item) {
+        case 0: // product
+            return 60.0;
+            break;
+        case 1: // mechanism
+            return 200.0;
+            break;
+        case 2:
+            return 200.0;
+            break;
+            
+        default:
+            break;
+    }
+    return 100.0;
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -124,21 +143,42 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
     //NSLog(@"SearchresultTAble configure Cell %@",self.filteredListContents);
     NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
     switch (item) {
-        case 0:
+        case 0: // product
             cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"name"];
+            cell.imageView.image = nil;
             break;
-        case 1:
-            cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"id"];
+        case 1: // mechanism
+        {
+            NSManagedObject *part = [self.filteredListContents objectAtIndex:indexPath.row];
+            cell.textLabel.text = [part valueForKey:@"id"];
+            cell.imageView.image = [self getThumbnailForPart:part
+                                                      ofType:@"Mechanism"];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
+                                         [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"],
+                                         [[[part valueForKey:@"product"] valueForKey:@"category"] valueForKey:@"name"]];
+        }
             break;
-        case 2:
-            cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"id"];
+        case 2: // coverplate
+        {
+            NSManagedObject *part = [self.filteredListContents objectAtIndex:indexPath.row];
+            cell.textLabel.text = [part valueForKey:@"id"];
+            cell.imageView.image = [self getThumbnailForPart:part
+                                                      ofType:@"Faceplate"];
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
+                                         [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"],
+                                         [[[part valueForKey:@"product"] valueForKey:@"category"] valueForKey:@"name"]];
+        }
             break;
             
         default:
@@ -177,6 +217,8 @@
     //[self.filteredListContents removeAllObjects]; // First clear the filtered array.
 
     NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
+    
+    //@TODO: break the search on spaces and do an OR with the predicate to cover word searching
      NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
     
     if(item == 0){ 
@@ -185,13 +227,13 @@
 
     }else if(item == 1){ 
         // mechanisms
-        NSLog(@"Mechanism Search");
+        //NSLog(@"Mechanism Search");
         NSError *error = nil;
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSEntityDescription *entityMechansim = [NSEntityDescription entityForName:@"Mechanism"
                                                            inManagedObjectContext:self.context];
         [request setEntity:entityMechansim];
-        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@", searchText];
+        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@ && count = 1", searchText];
         [request setPredicate:mechPredicate];
         
          self.filteredListContents =  [self.context executeFetchRequest:request error:&error];
@@ -266,7 +308,110 @@
 
 
 #pragma mark - Table view delegate
-
+-(UIImage *)getThumbnailForPart:(NSManagedObject *)part ofType:(NSString *)type
+{
+    UIImage *found = nil;
+    NSString *brandName = [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"name"];
+    NSString *orientation = [[part valueForKey:@"product"] valueForKey:@"orientation"];
+    NSString *orientationPrefix;
+    
+    if([orientation isEqualToString:@"Horizontal"]){
+        orientationPrefix = @"h-";
+    }else if([orientation isEqualToString:@"Vertical"]){
+        orientationPrefix = [NSString stringWithString:@"v-"];
+    }else{
+        orientationPrefix = [NSString stringWithString:@""];
+    }
+    
+    //@TODO: refactor the image pathfinding
+    if([type isEqualToString:@"Mechanism"]){
+        
+        NSString *img;
+        
+       
+        
+       // float cost = 0;
+        
+        if([[part valueForKey:@"count"] isEqualToNumber:[NSNumber numberWithInt:1]]){
+            // load the image based on the id screen the Arteor 770 fields
+            if([[part valueForKey:@"name"] isEqualToString:@"Mech 2 Part #"] && [brandName isEqualToString:@"Arteor 770"]){
+                img = [[part valueForKey:@"id"] 
+                       stringByReplacingOccurrencesOfString:@"AR" withString:@""];
+            }else{
+                img = [part valueForKey:@"id"];
+            }
+            
+          //  cost += [[part valueForKey:@"price"] floatValue];
+        }else{
+            // mechanism with more than one part
+            img = [NSString stringWithFormat:@"%@-x-%@",
+                   [part valueForKey:@"count"],
+                   [[part valueForKey:@"id"]
+                    stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
+          //  cost += [[part valueForKey:@"price"] floatValue] * [[part valueForKey:@"count"]intValue];
+        }
+        
+        //self.price = [NSString stringWithFormat:@"%f",cost];
+        
+        // Build the Directory string
+        NSString *dir;
+        NSString *prefix = orientationPrefix;
+        if([[part valueForKey:@"name"] isEqualToString:@"Frame"]){
+            dir = @"Frames";
+            // remove prefix for frames
+            prefix = @"";
+        }else{
+            dir = [NSString stringWithFormat:@"%@/Mechanism",
+                   [brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
+        }
+        
+        //NSLog(@" Directory %@ \nWith Orientation: %@",dir,prefix);
+        NSString *imgCleaned = [NSString stringWithFormat:@"%@%@",
+                                prefix,
+                                [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
+        
+       // NSLog(@"  - File NAme %@",imgCleaned);
+        
+        // Grab the image off disk and load it up
+        NSString *imageName = [[NSBundle mainBundle] 
+                               pathForResource:imgCleaned
+                               ofType:@"png" 
+                               inDirectory:dir];
+        found = [UIImage imageWithContentsOfFile:imageName];
+        
+        
+        
+    }else if([type isEqualToString:@"Faceplate"]){
+        
+        /////////////////////////////////////
+        // Build the file path and image name
+        NSString *img = [part valueForKey:@"id"];
+        
+       // NSString *orientationPrefix = [NSString stringWithString:@"h-"];
+        
+        NSString *dir = [NSString stringWithFormat:@"%@/Faceplate",
+                         [brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
+        
+        NSString *imgCleaned = [NSString stringWithFormat:@"%@%@",
+                                orientationPrefix,
+                                [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
+        
+//        NSLog(@"\n\n\n CoverPlate  - File NAme :: %@\n\n\n",imgCleaned);
+        NSString *imageName = [[NSBundle mainBundle] 
+                               pathForResource:imgCleaned
+                               ofType:@"png" 
+                               inDirectory:dir];
+//        NSLog(@"\n\n\n - - - Path\n %@\nFileNAme: %@\n",imageName,dir);
+        
+        
+        /////////////////////////////////////////
+        // Grab the image off disk and load it up
+        
+        found = [UIImage imageWithContentsOfFile:imageName];
+        
+    }
+    return found;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //ProductView *detailViewController = [[ProductView alloc] init];
@@ -310,7 +455,7 @@
             [self.LINK.navigationController pushViewController:detailViewController animated:YES];
             [detailViewController release];
             */
-            NSLog(@"SEelected searched item %@",[self.filteredListContents objectAtIndex:indexPath.row]);
+            //NSLog(@"SEelected searched item %@",[self.filteredListContents objectAtIndex:indexPath.row]);
             
             break;
         }

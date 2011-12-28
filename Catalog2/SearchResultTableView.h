@@ -25,5 +25,6 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope;
 
+-(UIImage *)getThumbnailForPart:(NSManagedObject *)part ofType:(NSString *)type;
 
 @end
