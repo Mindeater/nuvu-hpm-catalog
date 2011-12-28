@@ -35,18 +35,9 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
-    ////////////////////
-    //Product Name
-    UILabel *myLabel = [[UILabel alloc] 
-                        initWithFrame:CGRectMake(20,screenHeight - 250, screenWidth - 40, 100)];      
-    myLabel.text = self.productName;
-    myLabel.textColor = [UIColor whiteColor];
-    myLabel.backgroundColor = [UIColor clearColor];
-    [self.controlsView addSubview:myLabel];
-    [myLabel release];
     
-    ////////////////////////
-    // the mechanism picture
+    ////////////////////////////////////
+    // the mechanism picture goes behind
     UIImageView *bgMech = [[UIImageView alloc] initWithImage:[items objectAtIndex:0]];
     [self.view addSubview:bgMech];
     [bgMech release];
@@ -55,6 +46,8 @@
     /////////////////////////////////////
     // Build the file path and image name
     NSString *img = [[items lastObject] valueForKey:@"id"];
+    
+    //NSLog(@"\n\nCoverplate has been passed :: \n\n\n %@",items);
   
     NSString *dir = [NSString stringWithFormat:@"%@/Faceplate",
            [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
@@ -63,16 +56,16 @@
                             self.orientationPrefix,
                             [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
     
-    //NSLog(@"  - File NAme %@",imgCleaned);
+   // NSLog(@"\nCoverPlate \n\n - File NAme %@ \nwith PAth: %@\n\n\n\n",imgCleaned,dir);
     NSString *imageName = [[NSBundle mainBundle] 
                            pathForResource:imgCleaned
                            ofType:@"png" 
                            inDirectory:dir];
-    //NSLog(@" - - - Path\n %@\n",imageName);
+    //NSLog(@"\nFacePlate added from - - - Path\n %@\n",imageName);
     
     ///////////////////////////////
     // store internals
-    self.parts = [NSString stringWithFormat:@"%@",imageName];
+    self.parts = [NSString stringWithFormat:@"%@",imgCleaned];
     self.price = [[items lastObject] valueForKey:@"price"];
     
     /////////////////////////////////////////
