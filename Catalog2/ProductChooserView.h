@@ -24,6 +24,8 @@
 	int currIndex;
 	int nextIndex;
         
+    int selectedProductIndex;
+    
     int vcIndex;
     
     PartView *vc1;
@@ -52,6 +54,8 @@
 @property (nonatomic) int prevIndex;
 @property (nonatomic) int currIndex;
 @property (nonatomic) int nextIndex;
+
+@property(nonatomic)int selectedProductIndex;
 
 @property(nonatomic)int vcIndex;
 
@@ -85,6 +89,8 @@
 -(void)returnToMainMenu;
 -(void)returnToCatalogMenu;
 -(void)returnToMechanism;
--(void)gotoCart;
+-(void)gotoCartPassBackString:(NSString *)backString;
+-(void)showOrders;
+-(void)addNewOrder;
 
 @end

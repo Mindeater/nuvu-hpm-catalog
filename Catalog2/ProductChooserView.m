@@ -13,7 +13,9 @@
 
 #import "ProductBackgroundResize.h"
 #import "AddPartToOrder.h"
+#import "AlertPrompt.h"
 
+#import "OrdersTableView.h"
 #import "OrderDetailTableView.h"
 
 @implementation ProductChooserView
@@ -25,6 +27,7 @@
 
 @synthesize vc1,vc2,vc3;
 @synthesize currIndex,prevIndex,nextIndex;
+@synthesize selectedProductIndex;
 @synthesize vcIndex;
 
 
@@ -73,7 +76,7 @@
     [fetchRequest setPredicate:predicate];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
-                              initWithKey:@"name" ascending:NO];
+                              initWithKey:@"menuOrder" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
     [fetchRequest setFetchBatchSize:20];
@@ -96,11 +99,17 @@
 
 -(void)addActivePartToCart
 {
+    // add the alert view now
+    AlertPrompt *prompt = [AlertPrompt alloc];
+	prompt = [prompt initWithTitle:@"Adding to Order" message:@"Please enter a note" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+	[prompt show];
+	[prompt release];
+    /*
     // this will have already been set when the mechanism was selected
     if(self.selectedProductName == nil){
         self.selectedProductName = [[_fetchedResultsController.fetchedObjects objectAtIndex:currIndex] valueForKey:@"name"];
     }
-    // Not adding Mechanisms on their own a the moment defaults to faceplate with mechanims
+    // Not adding Mechanisms on their own - defaults to faceplate with mechanims
     if([self.currentEntityName isEqualToString:@"Mechanism"]){
         [self.shoppingCart addMechanismsToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Mechanism"]
                                        withProductName:self.selectedProductName];
@@ -110,6 +119,23 @@
         [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]
                                     withProductName:self.selectedProductName];
     }
+     */
+}
+
+- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex != [alertView cancelButtonIndex])
+	{
+		NSString *entered = [(AlertPrompt *)alertView enteredText];
+		//label.text = [NSString stringWithFormat:@"You typed: %@", entered];
+        [self.shoppingCart addMechanismsToDefaultOrder:self.mechanismObject
+                                       withProductName:self.selectedProductName];
+        [self.shoppingCart addCommentToActiveOrderLine:entered];
+        [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]
+                                      withProductName:self.selectedProductName];
+        PartView *active = (PartView *)self.navigationController.topViewController;
+        [active updateSelectedStatus];
+	}
 }
 
 #pragma mark - object init
@@ -143,16 +169,16 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     
-//}
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-//- (void)viewDidLoad
-//{
-   // [super viewDidLoad];
+- (void)viewDidLoad
+{
+   [super viewDidLoad];
     
     
-    NSLog(@"\n^Chooser 1.^^^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
-          self.navigationItem, self.navigationController.navigationBar);
+    //NSLog(@"\n^Chooser 1.^^^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
+      //    self.navigationItem, self.navigationController.navigationBar);
     
     self.view.backgroundColor = [UIColor whiteColor];
     
@@ -209,7 +235,7 @@
     */
     // vs pushing
     [self.navigationController pushViewController:vc1 animated:NO];
-    [self.navigationController pushViewController:vc2 animated:NO];
+    [self.navigationController pushViewController:vc2 animated:YES];
     
 
     [self setMechanismsOnViewControllers];
@@ -217,8 +243,8 @@
 
     vcIndex = 2;
     
-    NSLog(@"\n^^^Chooser 2.^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
-          self.navigationController, self.navigationController.navigationBar);
+    //NSLog(@"\n^^^Chooser 2.^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
+     //     self.navigationController, self.navigationController.navigationBar);
     
     //[self.navigationController.navigationBar popNavigationItemAnimated:YES];
     
@@ -378,9 +404,11 @@
     [request setEntity:entity];
     
     NSPredicate *predicate = [NSPredicate predicateWithFormat:
-                              @"(%K == %@)",
+                              @"(%K == %@) && (%K == %@)",
                               @"product.name",
-                              self.selectedProductName];
+                              self.selectedProductName,
+                              @"product.category.name",
+                              self.currentCategory];
     //[[_fetchedResultsController.fetchedObjects objectAtIndex:index] valueForKey:@"name"]];
     [request setPredicate:predicate];
     // NSLog(@" Predicate %@",predicate);
@@ -405,6 +433,9 @@
         // get the faceplates
         [self getFaceplatesForCurrentMechanism];
         
+        // keep the mechanism counter
+        self.selectedProductIndex = currIndex;
+        
         //reset the indexes
         self.currentEntityName = @"Faceplate";
         prevIndex = [self.currentFacePlates count]-1;
@@ -417,6 +448,10 @@
         [vc1 removeObserver:self forKeyPath:@"selected"];
         [vc2 removeObserver:self forKeyPath:@"selected"];
         [vc3 removeObserver:self forKeyPath:@"selected"];
+        
+        [vc1 release];
+        [vc2 release];
+        [vc3 release];
         
         self.selectedMechanismImage = [object getMechanismImage];
         [self setFacePlatesOnViewControllers];
@@ -455,23 +490,65 @@
     // remove the top two items from the viewcontroller and get the base of the stack
     [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];  
 }
+
 -(void)returnToMechanism
 {
     //@TODO : this resets the counter - needs to return to the actual base mechanism
-    [self viewDidLoad];
+    self.currentEntityName = @"Mechanism";
+    
+    // remove the observers
+    [vc1 removeObserver:self forKeyPath:@"selected"];
+    [vc2 removeObserver:self forKeyPath:@"selected"];
+    [vc3 removeObserver:self forKeyPath:@"selected"];
+    
+    // reinitalize the mechanisms
+    self.currentEntityName = @"Mechanism";
+    
+    // set up the current Indexs
+    prevIndex = (selectedProductIndex == 0) ? [self.fetchedResultsController.fetchedObjects count] -1 : selectedProductIndex - 1;
+    currIndex = selectedProductIndex;
+    nextIndex = (selectedProductIndex >= [self.fetchedResultsController.fetchedObjects count]-1) ? 0 : selectedProductIndex + 1;
+    
+    vc1 = [[MechanismView alloc]init];
+    vc2 = [[MechanismView alloc]init];
+    vc3 = [[MechanismView alloc]init];
+    
+    vcIndex = 2;
+    
+    [self setMechanismsOnViewControllers];
+    
+    [self resetViewControllers];
+    
 }
--(void)gotoCart
+
+-(void)gotoCartPassBackString:(NSString *)backString
 {
     OrderDetailTableView *cart = [[OrderDetailTableView alloc] init];
     //OrderDetailTableView *detailViewController = [[OrderDetailTableView alloc] initWithStyle:UITableViewStyleGrouped];
     cart.context = self.context;
     //NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     cart.orderId = [self.shoppingCart getActiveOrderId];//[currentRecord valueForKey:@"uniqueId"];
+    cart.backString = backString;
     
 
     [self.navigationController pushViewController:cart animated:YES];
     [cart release];
 }
+
+-(void)showOrders
+{
+    OrdersTableView *orders = [[OrdersTableView alloc] initWithStyle:UITableViewStyleGrouped];
+    orders.context = self.context;
+    [self.navigationController pushViewController:orders animated:YES];
+    [orders release];
+}
+
+-(void)addNewOrder
+{
+    [self.shoppingCart addNewOrder];
+}
+
+
 #pragma mark - manage cycling view controllers
 
 -(void)resetViewControllers
