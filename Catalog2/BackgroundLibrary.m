@@ -11,7 +11,7 @@
 @implementation BackgroundLibrary
 
 @synthesize button1,button2,button3,button4,button5,button6,button7,button8,button9;
-@synthesize button10,button11,button12,button13,button14,button15,button16,button17;
+@synthesize button10,button11,button12,button13,button14,button15,button16,button17,button18;
 
 @synthesize selected;
 @synthesize buttonImages;
@@ -21,7 +21,7 @@
 -(void)dealloc
 {
     //self.view = nil;
-    [buttonImages release];
+    //[buttonImages release];
     [super dealloc];
 }
 
@@ -72,7 +72,8 @@
                                 @"Wallpaper_royalbrown",
                                 @"Wallpaper_stripes",
                                 @"Wallpaper_whitecaesar",
-                                @"Wallpaper_whitetiles", nil];
+                                @"Wallpaper_whitetiles",
+                                @"Wallpaper_black", nil];
     
     UIImage *img1 = [UIImage imageWithContentsOfFile:
                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:0]] ofType:@"jpg"]];
@@ -108,6 +109,8 @@
                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:15]] ofType:@"jpg"]]; 
     UIImage *img17 = [UIImage imageWithContentsOfFile:
                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:16]] ofType:@"jpg"]]; 
+    UIImage *img18 = [UIImage imageWithContentsOfFile:
+                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:17]] ofType:@"jpg"]]; 
     
        
     button1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -127,6 +130,7 @@
     button15 = [UIButton buttonWithType:UIButtonTypeCustom];
     button16 = [UIButton buttonWithType:UIButtonTypeCustom];
     button17 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button18 = [UIButton buttonWithType:UIButtonTypeCustom];
     
     button1.tag =0;
     button2.tag =1;
@@ -145,6 +149,7 @@
     button15.tag =14;
     button16.tag =15;
     button17.tag =16;
+    button18.tag =17;
 
     
     [button1 setImage:img1 forState:UIControlStateNormal];
@@ -164,6 +169,7 @@
     [button15 setImage:img15 forState:UIControlStateNormal];
     [button16 setImage:img16 forState:UIControlStateNormal];
     [button17 setImage:img17 forState:UIControlStateNormal];
+    [button18 setImage:img18 forState:UIControlStateNormal];
     
     [button1 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     [button2 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
@@ -182,10 +188,10 @@
     [button15 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     [button16 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     [button17 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
-
+    [button18 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     
     self.buttonImages = [NSArray arrayWithObjects:img1,img2,img3,img4,img5,img6,img7,img8,img9,
-                         img10,img11,img12,img13,img14,img15,img16,img17, nil];
+                         img10,img11,img12,img13,img14,img15,img16,img17,img18, nil];
     
     [self layoutButtons: [[UIApplication sharedApplication] statusBarOrientation]];
     
@@ -206,6 +212,7 @@
     [self.view addSubview:button15];
     [self.view addSubview:button16];
     [self.view addSubview:button17];
+    [self.view addSubview:button18];
 }
 
 
@@ -272,6 +279,8 @@
     //row 5
     button17.frame =  CGRectMake(startX,                         startY + buttonHeight*4+4*pad,
                                 buttonWidth, buttonHeight);
+    button18.frame =  CGRectMake(startX+ buttonWidth +pad,       startY + buttonHeight*4+4*pad,
+                                 buttonWidth, buttonHeight);
     
     
 }
@@ -287,7 +296,7 @@
     UIButton *resultButton = (UIButton *)sender;
      self.selectedImage = [UIImage imageWithContentsOfFile:
                            [[NSBundle mainBundle] pathForResource:[self.bgList objectAtIndex:resultButton.tag] ofType:@"jpg"]];
-                           
+        
     self.selected = YES;
     
     NSLog(@"Hi The Button %i",resultButton.tag);
@@ -311,23 +320,19 @@
 
 -(void)nextView:(id)sender
 {
-    NSLog(@"OK");
+    //NSLog(@"OK");
     
     UIButton *resultButton = (UIButton *)sender;
     self.selectedImage = resultButton.currentImage;
     self.selected = YES;
 }
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
 
 - (void)viewDidUnload
 {
+     NSLog(@"Unloading bg");
     [super viewDidUnload];
+   
+
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
     self.button1  = nil;
@@ -342,6 +347,12 @@
     self.button10 = nil;
     self.button11 = nil;
     self.button12 = nil;
+    self.button13 = nil;
+    self.button14 = nil;
+    self.button15 = nil;
+    self.button16 = nil;
+    self.button17 = nil;
+    self.button18 = nil;
     
 }
 
