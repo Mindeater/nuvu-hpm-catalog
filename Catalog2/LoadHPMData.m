@@ -82,18 +82,20 @@
 -(void)processFiles
 {
     int brandMenuOrder = 1;
-    int categoryMenuOrder = 1;
-    int productMenuOrder = 1;
+    //int categoryMenuOrder = 1;
+    //int productMenuOrder = 1;
     
     for (NSArray *brand in self.pListFiles) {
          
         
         NSDictionary *pListData = [self readPlist:[brand objectAtIndex:0]];
-        // insert Brand 
         
+        
+        // insert Brand 
         NSManagedObject *brandObj = [self addEntityWithValues:@"Brand":
                                          [NSDictionary dictionaryWithObjectsAndKeys:
                                           [brand objectAtIndex:1],@"name",
+                                          [brand objectAtIndex:2],@"heading",
                                           [NSNumber numberWithInt:brandMenuOrder++],@"menuOrder",
                                           nil]];
          
@@ -104,24 +106,26 @@
         // Loop categories
         NSEnumerator *enumerator = [catInBrand keyEnumerator];
         id catName;
-        categoryMenuOrder = 1;
+        //categoryMenuOrder = 1;
         while ((catName = [enumerator nextObject])) {
             
             ////////////////////////////////////
             //insert Each Category
-            
+            NSArray *catNameParts = [catName componentsSeparatedByString:@"|"];
             NSManagedObject *catObj = [self addEntityWithValues:@"Category":
                                              [NSDictionary dictionaryWithObjectsAndKeys:
-                                              catName,@"name",
+                                              //catName,@"name",
+                                              [catNameParts objectAtIndex:0],@"name",
                                               brandObj,@"brand",
-                                              [NSNumber numberWithInt:categoryMenuOrder++],@"menuOrder",
+                                              //[NSNumber numberWithInt:categoryMenuOrder++],@"menuOrder",
+                                              [NSNumber numberWithInt:[[catNameParts objectAtIndex:1] intValue]],@"menuOrder",
                                               nil]];
              NSLog(@"2. - Category INSERT : %@",catName);
             
             // Loop products
             NSEnumerator *catEnum = [[catInBrand objectForKey:catName] keyEnumerator];
             id product;
-            productMenuOrder = 1;
+           // productMenuOrder = 1;
             
             while((product = [catEnum nextObject])){
                 /////////////////////////////////////////////////////
@@ -147,14 +151,16 @@
                     orientation = @"Horizontal";
                 }
 
-                
+                NSArray *prodNameParts = [product componentsSeparatedByString:@"|"];
                 NSManagedObject *productObj = [self addEntityWithValues:@"Product":
                                            [NSDictionary dictionaryWithObjectsAndKeys:
-                                            product,     @"name",
+                                           // product,     @"name",
+                                            [prodNameParts objectAtIndex:0],@"name",
                                             brandObj,    @"brand",
                                             catObj,      @"category",
                                             orientation, @"orientation",
-                                            [NSNumber numberWithInt:productMenuOrder++],@"menuOrder",
+                                            //[NSNumber numberWithInt:productMenuOrder++],@"menuOrder",
+                                            [NSNumber numberWithInt:[[prodNameParts objectAtIndex:1] intValue]],@"menuOrder",
                                             nil]];
                  
                 NSLog(@"3. - - Product INSERT : %@",product);
@@ -255,14 +261,15 @@
 -(id)init
 {
     self.pListFiles = [NSArray arrayWithObjects:
-                        [NSArray arrayWithObjects:@"arteor-770.csv",    @"Arteor 770",nil],
-                       [NSArray arrayWithObjects:@"arteor-rd.csv",     @"Arteor RD",nil],
-                        [NSArray arrayWithObjects:@"arteor-sq.csv",     @"Arteor SQ",nil],
+                       [NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life", @"Legrand Excel Life", nil],
+                       [NSArray arrayWithObjects:@"arteor-sq.csv",    @"Arteor SQ",  @"Legrand Arteor Square", nil],
+                       [NSArray arrayWithObjects:@"arteor-rd.csv",    @"Arteor RD",  @"Legrand Arteor Round", nil],
+                       [NSArray arrayWithObjects:@"arteor-770.csv",   @"Arteor 770", @"Legrand Arteor Australian Style", nil],
+                       [NSArray arrayWithObjects:@"linea.csv",        @"Linea",      @"Linea", nil],
+                       [NSArray arrayWithObjects:@"excel.csv",        @"Excel",      @"HPM Excel", nil],
                         /*[NSArray arrayWithObjects:@"bt-light-and-tech.csv", @"BT Light and Tech",nil],
                         [NSArray arrayWithObjects:@"bt-living.csv",     @"BT Living",nil],
-                        */[NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life",nil],
-                        [NSArray arrayWithObjects:@"excel.csv",        @"Excel",nil],
-                        [NSArray arrayWithObjects:@"linea.csv",        @"Linea",nil],
+                        */
                         nil];
 
     return self;
