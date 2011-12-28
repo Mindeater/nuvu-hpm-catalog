@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface SettingsPage : UIViewController
+@interface SettingsPage : UIViewController{
+    NSString *infomationString;
+    UIImage *logoImage;
+}
+
+@property(nonatomic,retain)NSString *infomationString;
+@property(nonatomic,retain)UIImage *logoImage;
 
 @end
