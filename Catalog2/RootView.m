@@ -11,7 +11,7 @@
 //#import "BrandTableView.h"
 #import "BrandCatalogTableView.h"
 
-#import "SettingsPage.h"
+#import "AppSettingsTableView.h"
 #import "BackgroundLibrary.h"
 #import "SearchPage.h"
 #import "OrdersTableView.h"
@@ -60,29 +60,44 @@
 }
 
 #pragma mark - View lifecycle
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]//){ 
+       && [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
+        NSLog(@"Enter the movie");
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self playMovie];
+    } 
+}
 - (void)viewWillAppear:(BOOL)animated
 {
+
     [super viewWillAppear:NO];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 }
 
 
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    NSLog(@"Root - Load view");
-    // create the main view Controller
+    NSLog(@"Load View from Root View");
     //allocate the view
     self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view.backgroundColor = [UIColor blackColor];
     //self.wantsFullScreenLayout = YES;
     
+    /*
     //if([[NSUserDefaults standardUserDefaults] boolForKey:@"playMovie"]){
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]){
         [self playMovie];
     }else{ 
         [self renderInterface];
     }
+     */
 }
 
 -(void)renderInterface
@@ -90,7 +105,7 @@
 
     // background Image
     UIImage *bgPort = [UIImage imageWithContentsOfFile:
-                   [[NSBundle mainBundle] pathForResource:@"main-bg-port" ofType:@"png"]];
+                   [[NSBundle mainBundle] pathForResource:@"main-bg-port-white" ofType:@"png"]];
     bgImgPort =[[UIImageView alloc] initWithImage:bgPort];
     UIImage *bgLand = [UIImage imageWithContentsOfFile:
                        [[NSBundle mainBundle] pathForResource:@"main-bg-land" ofType:@"png"]];
@@ -257,10 +272,10 @@
     NSURL *url;
     if(YES){
         url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
-                                         pathForResource:@"ipadIntro_14Dec" ofType:@"mov"]];
+                                         pathForResource:@"ipadIntro" ofType:@"mov"]];
     }else{
         url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
-                                         pathForResource:@"iPhoneIntro_14Dec" ofType:@"mov"]];
+                                         pathForResource:@"iPhoneIntro" ofType:@"mov"]];
     }
     
     moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
@@ -333,7 +348,7 @@
 }
 -(void)showSettings
 {
-    SettingsPage *settings = [[SettingsPage alloc]init];
+    AppSettingsTableView *settings = [[AppSettingsTableView alloc]initWithStyle:UITableViewStyleGrouped ];
     [self.navigationController pushViewController:settings animated:YES];
     [settings release];
 }
@@ -386,7 +401,7 @@
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     // catch the background selection finish
-    NSLog(@"CAtch Change");
+    //NSLog(@"CAtch Change");
     [object removeObserver:self forKeyPath:@"selected"];
     BackgroundLibrary *senderType = (BackgroundLibrary *)object;
     /*
