@@ -78,6 +78,9 @@
     // rotation
     // translation
     
+    // remove current view
+    [canvas removeFromSuperview];
+    
     [self viewDidLoad];
     //[self showOverlayWithFrame:photoImage.frame];
 }
@@ -214,6 +217,9 @@
     BOOL secondPixelFound = NO;
     BOOL thirdPixelFound = NO;
     
+    BOOL fullLineTranparent = YES;
+    int transLineCount = 0;
+    
     for(int i = 0; i < [data length]; i += 4)
     {
         /*int r = i;
@@ -223,24 +229,40 @@
         
         
         // line count
-        if(colCount == width){
+        if(colCount == width){ // new line
+            
+            if(transLineCount == colCount && fullLineTranparent){
+                // whole line is empty pixels
+                transLineCount = 0;
+            }else{
+                // the line above should be used
+                topLY = lineCount-1;
+                fullLineTranparent = NO;
+            }
             lineCount++;
             colCount = 0;
         }
         colCount++;
         
+        // catch all the transparent pixels on a line
+        if(pixels[a] == 0){
+            transLineCount++;
+        }
+        
+        
         //@TODO: this logic only works if the image has 90 degree corners
         // need to allow tolerance for rounded edges
         
         // the first pixel that is not transparent gives the startpoint to crop from
-        if(pixels[a] != 0 && !firstPixelFound){
+        if(pixels[a] != 0 && !firstPixelFound ){
             topLX = colCount;
-            topLY = lineCount;
+            
             firstPixelFound = YES;
             
         }
         // after that the next transparent pixel on the same line will be the end
-        if(!secondPixelFound && firstPixelFound && pixels[a] == 0 ){
+        // ?? && colCount > topLX+30
+        if(!secondPixelFound && firstPixelFound  && pixels[a] == 0 ){
             topRX = colCount;
             secondPixelFound = YES;
             
@@ -311,46 +333,20 @@
     // product
     
     canvas = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    
-    /////////////////////
-    /////// try masking 
-    /*
-    //UIImage *maskBase = [UIImage imageNamed: @"image1.png"];
-    UIImage *maskBase =[self cleanTransparentPixelsFromImage:self.resizingImage];
-    //UIImage *imageBase = [UIImage imageNamed: @"image2.png"];
-    UIImage *imageBase = self.resizingImage;
-    
-    CGImageRef maskReference = maskBase.CGImage;
-    CGImageRef mask = CGImageMaskCreate(CGImageGetWidth(maskReference), 
-                                        CGImageGetHeight(maskReference), 
-                                        CGImageGetBitsPerComponent(maskReference),
-                                        CGImageGetBitsPerPixel(maskReference), 
-                                        CGImageGetBytesPerRow(maskReference),
-                                        CGImageGetDataProvider(maskReference), NULL, false);
-    
-    UIImage *newImage = [UIImage imageWithCGImage: CGImageCreateWithMask (imageBase.CGImage, mask)];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage: newImage]; 
-    //imageView.frame = CGRectMake(0.0f, 50.0f, 320.0f, 200.0f); 
-    [self.canvas addSubview: imageView];
-    */
-    
-    // http://www.ehow.com/how_8786373_use-cgimage-make-masks.html#ixzz1g0SXjS38
-    
-    
-    
-    
+
     ////////////////////////
-    // The image 
+    // The image
+    photoImage =[[UIImageView alloc] initWithImage:self.resizingImage];
+    /*
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    //photoImage =[[UIImageView alloc] initWithImage:self.resizingImage];
     UIImage *new = [self cleanTransparentPixelsFromImage:self.resizingImage];
     photoImage =[[UIImageView alloc] initWithImage: new];
     photoImage.frame = CGRectMake((screenWidth - new.size.width)/2,
                                   (screenHeight - new.size.height)/2 -100, 
                                   new.size.width, new.size.height);
-    
+    */
     [self.canvas addSubview:photoImage];
     
     [self.view addSubview:canvas];
@@ -426,6 +422,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+   
 }
 
 
@@ -434,9 +431,15 @@
 {
     [self dismissModalViewControllerAnimated:YES];
 }
+
 -(void)saveResized:(id)sender
 {
     [self dismissModalViewControllerAnimated:YES];
+    UIGraphicsBeginImageContext(self.view.bounds.size);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *screenshot = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    UIImageWriteToSavedPhotosAlbum(screenshot, nil, nil, nil);
 }
 
 

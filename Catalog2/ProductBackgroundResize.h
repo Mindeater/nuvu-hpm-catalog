@@ -25,7 +25,7 @@
     CAShapeLayer *_marque;
 }
 
-@property (nonatomic, retain) IBOutlet UIView *canvas;
+@property (nonatomic, retain)UIView *canvas;
 
 
 @property(nonatomic,retain)UIImage *backgroundImage;
@@ -34,6 +34,7 @@
 
 -(void)cancelResize:(id)sender;
 -(void)saveResized:(id)sender;
+-(void)resetSize:(id)sender;
 
 //-(CGContextRef)createCGContextFromCGImage:(CGImageRef)img;
 -(UIImage *)cleanTransparentPixelsFromImage:(UIImage *)anImage;
