@@ -19,6 +19,8 @@
 @synthesize categoryName;
 @synthesize selected;
 @synthesize controlsView;
+@synthesize partLabel;
+
 @synthesize orientationPrefix;
 @synthesize brandName;
 @synthesize productName;
@@ -36,7 +38,10 @@
 {
     [toolBar release];
     [currentAction release];
+    self.price = nil;
+    self.parts = nil;
     [controlsView release];
+    [partLabel release];
     [super dealloc];
 }
 
@@ -95,19 +100,7 @@
 -(void)addNavigationBar
 {    
     //////////////////////////////////
-    // Navigation Bar
-    
-    /* next and prev
-    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStylePlain target:self action:@selector(nextItem:)];          
-    self.navigationItem.rightBarButtonItem = anotherButton;
-    [anotherButton release];
-    
-    UIBarButtonItem *anotherButton2 = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStylePlain target:self action:@selector(previousItem:)];          
-    self.navigationItem.leftBarButtonItem = anotherButton2;
-    [anotherButton2 release];
-    */
-    
-    
+    // Navigation Bar buttons
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
                                    initWithTitle:@"Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(showMenuSheet:)];
     self.navigationItem.leftBarButtonItem = infoButton;
@@ -121,6 +114,9 @@
         [newOrderButton release];
     }
     
+    ////////////////////////
+    // view title
+    self.title = self.categoryName;
      
 }
 
@@ -131,6 +127,7 @@
     UIImageView *bg = [[UIImageView alloc] initWithImage:self.wallImage];
     //bg.frame = CGRectMake(0, 0, 300, 300);
     [self.controlsView addSubview:bg];
+    [self.view sendSubviewToBack:self.controlsView];
     [bg release];
     
     ///////////////////////////////////////////////
@@ -146,6 +143,19 @@
     
     //Reposition and resize the receiver
     [toolBar setFrame:CGRectMake(0, screenHeight-toolBarHeight-80, screenWidth, toolBarHeight)];
+    
+    ///////////////////////////////////////////////
+    // Label for the part
+    partLabel = [[UILabel alloc] 
+                        initWithFrame:CGRectMake(0,screenHeight-toolBarHeight-130, screenWidth, 50)];      
+   // partLabel.text = @"LABEL PlaceHolder +++++++ here ";
+    partLabel.text = self.productName;
+    partLabel.textColor = [UIColor whiteColor];
+    partLabel.backgroundColor = [UIColor blackColor];
+    partLabel.lineBreakMode = UILineBreakModeWordWrap;
+    partLabel.numberOfLines = 0;
+    partLabel.textAlignment = UITextAlignmentCenter;
+    [self.controlsView addSubview:partLabel];
     
     ///////////////////
     //Buttons
@@ -179,16 +189,8 @@
     [toolBar release];
     
     
-    
-    
     //////////////////////////////////////
     // gesture recogniser for the part
-    /*
-    UILongPressGestureRecognizer *press = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressThePart:)];
-    [self.view addGestureRecognizer:press];
-    [press release];
-    */
-    // Create gesture recognizer
     UITapGestureRecognizer *oneFingerTwoTaps = 
     [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pressThePart:)] autorelease];
     
@@ -202,11 +204,22 @@
 
 -(void)pressThePart:(id)sender
 {
+    // number format for price
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];  
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
     NSString *message = [NSString stringWithFormat:@"%@ - %@:\n%@\n%@\n%@",
-                         self.brandName,self.categoryName,self.productName,self.price,self.parts];
+                         self.brandName,
+                         self.categoryName,
+                         self.productName,
+                         //self.price,
+                         [formatter stringFromNumber: [NSNumber numberWithFloat: [self.price floatValue]]],
+                         self.parts];
     UIAlertView *notice = [[UIAlertView alloc] initWithTitle:@"Part Details" message:message delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [notice show];
+    
     [notice release];
+    [formatter release];
 }
 
 -(void)setOrientationPrefix:(NSString *)newValue
@@ -232,6 +245,7 @@
 }
 
 #pragma mark - OrderStatus
+
 -(void)updateSelectedStatus
 {
     
@@ -254,13 +268,19 @@
     [self.controlsView addSubview:orderStatusLabel];
     [orderStatusLabel release]; 
 }
+
 #pragma mark - Actions from toolbar
 
 -(void)showMenuSheet:(id)sender
 {
     self.currentAction = @"menu";
     
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Menu Choices" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalog", @"Go To Cart", nil];
+    UIActionSheet *popupQuery;
+    if([self isKindOfClass:[FacePlateView class]]){
+        popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalog", @"Mechanism", nil];
+    }else{
+        popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalog", nil];
+    }
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	//[popupQuery showInView:self.view];
     [popupQuery showFromBarButtonItem:sender animated:YES];
@@ -270,7 +290,7 @@
 -(void)addItemToCart:(id)sender
 {
     self.currentAction = @"cart";
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:@"Menu Choices" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save to Cart" otherButtonTitles: @"Go To Cart", nil];
+    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save to Cart" otherButtonTitles: @"Go To Cart", @"Show Orders", @"New Order", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	//[popupQuery showInView:self.view];
     [popupQuery showFromBarButtonItem:sender animated:YES];
@@ -289,7 +309,7 @@
             //NSLog(@"Return to Catalog");
             [self returnToCatalogMenu];
         } else if (buttonIndex == 2) {
-            NSLog(@"Go To Cart");
+            [self returnToMechanism];
         } else if (buttonIndex == 3) {
             //NSLog(@"Cancel Button Clicked");
         }
@@ -298,17 +318,24 @@
             //NSLog(@"Add Whatever is here to the cart");
             [self addToDefaultActiveOrder];
         } else if (buttonIndex == 1) {
-            NSLog(@"Go to the Cart");
+            [self gotoCart];
         } else if (buttonIndex == 2) {
-            NSLog(@"No Action from CArt");
-        } 
+            // show orders
+            [self showOrders];
+        } else if (buttonIndex == 3) {
+            // new order
+            [self addNewOrder];
+        } else if (buttonIndex == 4) {
+            // show orders
+            //cancel
+        }
     }
 }
 #pragma mark - actions for toolbar selections
 
 -(void)addToDefaultActiveOrder
 {
-    [self updateSelectedStatus];
+    //[self updateSelectedStatus];
     [self._parent addActivePartToCart];
     
 }
@@ -319,6 +346,22 @@
 -(void)returnToCatalogMenu
 {
     [self._parent returnToCatalogMenu];
+}
+-(void)returnToMechanism
+{
+    [self._parent returnToMechanism];
+}
+-(void)gotoCart
+{
+    [self._parent gotoCartPassBackString:self.title];
+}
+-(void)showOrders
+{
+    [self._parent showOrders];
+}
+-(void)addNewOrder
+{
+    [self._parent addNewOrder];
 }
 
 // don't forget Quartz.Core with this method

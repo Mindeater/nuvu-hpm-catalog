@@ -14,6 +14,8 @@
     NSString *categoryName;
     BOOL      selected;
     UIView   *controlsView;
+    UILabel *partLabel;
+    
     NSString *orientationPrefix;
     NSString *brandName;
     NSString *productName;
@@ -32,6 +34,8 @@
 @property(nonatomic,retain)NSString *categoryName;
 @property(nonatomic)BOOL selected;
 @property(nonatomic,retain)UIView *controlsView;
+@property(nonatomic,retain)UILabel *partLabel;
+
 @property(nonatomic,retain)NSString *orientationPrefix;
 @property(nonatomic,retain)NSString *brandName;
 @property(nonatomic,retain)NSString *productName;
@@ -64,7 +68,12 @@
 -(void)showMenuSheet:(id)sender;
 -(void)addItemToCart:(id)sender;
 
+
 -(void)addToDefaultActiveOrder;
 -(void)returnToMainMenu;
 -(void)returnToCatalogMenu;
+-(void)returnToMechanism;
+-(void)gotoCart;
+-(void)showOrders;
+-(void)addNewOrder;
 @end
