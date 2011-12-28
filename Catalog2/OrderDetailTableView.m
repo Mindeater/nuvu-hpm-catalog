@@ -9,7 +9,7 @@
 #import "OrderDetailTableView.h"
 #import "OrderLineViewCell.h"
 
-#import "EditOrderLineView.h"
+//#import "EditOrderLineView.h"
 
 
 @implementation OrderDetailTableView
@@ -285,9 +285,23 @@
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
         [controller setSubject:@"HPM Product Order"];
-        [controller setMessageBody:[NSString stringWithString:self.emailOrderBody]
+        
+        if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_AddContact"]){
+            [self.emailOrderBody appendFormat:@"<hr/><strong>%@ %@</strong><br/>%@<br/>p.%@<br />e.<a href=\"mailto:%@\">%@</a><br />",
+                [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_FName"],
+                [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_LName"],
+                [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_Company"],
+                [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_Phone"],
+                [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_Email"],
+                [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_Email"]
+             ];
+        }
+        [controller setMessageBody:self.emailOrderBody
                             isHTML:YES];
         
+//        [controller setMessageBody:[NSString stringWithString:self.emailOrderBody]
+//                            isHTML:YES];
+//        
         /*
         // MAKING A SCREENSHOT
         UIGraphicsBeginImageContext(self.view.frame.size);
@@ -500,6 +514,7 @@
     }
     
     [formatter release];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -518,14 +533,8 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        
-        // boundry check for last item
-        if(indexPath.row +1 >[_fetchedResultsController.fetchedObjects count]){
-            [self.context deleteObject:[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1]];
-        }else{
-            // Delete the row from the data source indexPath matches fetchedResults controller
-            [self.context deleteObject:[_fetchedResultsController objectAtIndexPath:indexPath]];
-        }
+        // the deleting row will always be one more than the OderLine inside it
+        [self.context deleteObject:[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1]];
         // Save the context.
         NSError *error;
         if (![self.context save:&error]) {
