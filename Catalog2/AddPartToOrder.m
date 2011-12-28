@@ -34,7 +34,7 @@
     
     NSPredicate *predicate = [NSPredicate 
                               predicateWithFormat:@"(active = YES)"];//,
-    //@"active"];//],[[NSNumber numberWithBool: YES] description]];
+
     [fetchRequest setPredicate:predicate];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
@@ -65,6 +65,8 @@
     return self;
 }
 
+
+#pragma mark - helpers
 -(void)setUpFetchedResultsController
 {
     NSError *error;
@@ -92,15 +94,20 @@
         
         [self.context insertObject:newEntity];
         [self.context save:&error];
-        
-        // reload the result set
-        //[[self fetchedResultsController] performFetch:&error];
+    }
+    if (![[self fetchedResultsController] performFetch:&error]) {
+        // Update to handle the error appropriately.
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
     }
 
 }
 
 -(NSString *)getActiveOrderId
 {
+    if(_fetchedResultsController == nil){
+        [self setUpFetchedResultsController];
+    }
+    
     return [[_fetchedResultsController.fetchedObjects lastObject] valueForKey:@"uniqueId"];
     
 }
@@ -118,7 +125,7 @@
     NSArray *result = [self.context executeFetchRequest:request error:&error];
     [request release];
     
-    // turn off the existing object
+    // turn off all existing orders
     for(NSManagedObject *order in result){
         [order setValue:[NSNumber numberWithBool:NO]
                  forKey:@"active"];
@@ -146,22 +153,30 @@
 
 -(void)setActiveOrderLine:(NSString *)productName
 {
-
+    NSError *error = nil;
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSArray *result;
+    
+    
+    // get an orderline that has the same product name
+    
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"OrderLine"
                                               inManagedObjectContext:self.context];
     [request setEntity:entity];
-    
+    /*
     NSPredicate *predicate= [NSPredicate predicateWithFormat:
                              @"(%K == %@)",
                              @"product", productName];
     
     [request setPredicate:predicate];
     
-    NSError *error = nil;
-    NSArray *result = [self.context executeFetchRequest:request error:&error];
+    
+    result = [self.context executeFetchRequest:request error:&error];
     
     if(![result lastObject]){
+     */
+    // Now we automatically add  a new OrderLine everytime something is added
+    if(YES){
 
         NSManagedObject *newEntity = [NSEntityDescription 
                                       insertNewObjectForEntityForName:@"OrderLine"
@@ -187,11 +202,10 @@
     self.currentOrderLine = [result lastObject];
 
     [request release];
-    
-    
 
 }
 
+#pragma mark - interface methods
 
 
 -(void)addMechanismsToDefaultOrder:(NSArray *)mechanisms withProductName:(NSString *)productName
@@ -254,6 +268,16 @@
     [self.currentOrderLine setValue: [NSNumber numberWithFloat:quantity +1]
                              forKey:@"quantity"];
      */
+    
+    [self.context save:&error];
+}
+
+-(void)addCommentToActiveOrderLine:(NSString *)comment
+{
+    NSError *error;
+    [self.currentOrderLine setValue: comment
+                             forKey:@"comment"];
+    
     
     [self.context save:&error];
 }

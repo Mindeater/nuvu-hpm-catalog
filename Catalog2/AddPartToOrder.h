@@ -25,6 +25,7 @@
 -(NSString *)getActiveOrderId;
 
 -(void)addMechanismsToDefaultOrder:(NSArray *)mechanisms withProductName:(NSString *)productName;
+-(void)addCommentToActiveOrderLine:(NSString *)comment;
 -(void)addFaceplateToDefaultOrder:(NSArray *)faceplate withProductName:(NSString *)productName;
 
 -(void)addNewOrder;
