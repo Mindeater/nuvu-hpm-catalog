@@ -174,15 +174,24 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-        /* option 1:
+        self.tableView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        self.navigationController.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        
+         //option 1:
          // force to landscape
         // First rotate the screen:
-        [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
+       // [UIApplication sharedApplication].statusBarOrientation = UIInterfaceOrientationLandscapeRight;
         // Then rotate the view and re-align it:
-        CGAffineTransform landscapeTransform = CGAffineTransformMakeRotation( DEGREES_TO_RADIANS(90) );
-        landscapeTransform = CGAffineTransformTranslate( landscapeTransform, +90.0, +90.0 );
-        [self.view setTransform:landscapeTransform];
         
+        CGAffineTransform landscapeTransform = CGAffineTransformMakeRotation( DEGREES_TO_RADIANS(90) );
+        landscapeTransform = CGAffineTransformTranslate( landscapeTransform, 90.0, 90.0 );
+        //[self.view setTransform:landscapeTransform];
+        [self.navigationController.view setTransform:landscapeTransform];
+        CGRect contentRect = CGRectMake(0, 0, 480, 320); 
+		self.navigationController.view.bounds = contentRect; 
+		[self.navigationController.view setCenter:CGPointMake(240.0f, 160.0f)];
+         
+        /*
          // option 2:
         //====================================================
 		//ROTATES VIEW TO LANDSCAPE MODE AND SETS THE STAGE SIZE
@@ -194,6 +203,25 @@
 		[window setCenter:CGPointMake(160.0f, 240.0f)];
 		//====================================================
          */
+         
+    }
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        // switch back
+        
+        
+        CGAffineTransform portraitTransform = CGAffineTransformMakeRotation( DEGREES_TO_RADIANS(0) );
+        portraitTransform = CGAffineTransformTranslate( portraitTransform, 0.0, 0.0 );
+        //[self.view setTransform:landscapeTransform];
+        [self.navigationController.view setTransform:portraitTransform];
+        CGRect contentRect = CGRectMake(0, 0, 320, 480); 
+		self.navigationController.view.bounds = contentRect; 
+		[self.navigationController.view setCenter:CGPointMake(160.0f, 240.0f)];
+        
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:YES];
          
     }
 }
@@ -245,6 +273,11 @@
     
     [self addLeftNavigationButton];
     
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        // switch to the side
+        [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
+    }
+    
 }
 
 - (void)viewDidUnload
@@ -252,6 +285,7 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+   
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -259,10 +293,7 @@
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
+
 
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -272,6 +303,9 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+    }
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
@@ -637,6 +671,7 @@
     UIGraphicsEndPDFContext();
      */
 }
+
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
