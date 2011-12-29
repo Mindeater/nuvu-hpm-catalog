@@ -41,6 +41,9 @@
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        screenWidth = screenRect.size.height;
+    }
     //CGFloat screenHeight = screenRect.size.height;
     // iphone 640 px
     //@TODO : define constants here to speed up table render
