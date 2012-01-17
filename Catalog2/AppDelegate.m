@@ -56,22 +56,28 @@
         [loader release];
     }
     
+    //////////////////////////////
+    // User Defaults
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
+        NSLog(@"FirstLaunch from AppDelegate");
+        [[NSUserDefaults standardUserDefaults] 
+         registerDefaults:[NSDictionary 
+                           dictionaryWithObjectsAndKeys:
+                            [NSNumber numberWithBool:YES],@"firstLaunch",
+                            [NSNumber numberWithBool:YES],@"ud_Movie",
+                            nil]];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+    }
     /*
-    /// Run the image check
-    CheckProductsForImages *check = [[CheckProductsForImages alloc]init];
-    check.context = self.managedObjectContext;
-    [check runCheck];
-    NSLog(@"\n-------------------\n");
+     // to check it:
+    [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"];
+    // -applicationWillTerminate:
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
     */
     
-    //MasterViewController *masterViewController = [[[MasterViewController alloc] initWithNibName:@"MasterViewController" bundle:nil] autorelease];
-    //self.navigationController = [[[UINavigationController alloc] initWithRootViewController:masterViewController] autorelease];
-    //masterViewController.managedObjectContext = self.managedObjectContext;
-    //self.window.rootViewController = self.navigationController;
-    
-    
-
-    
+    /////////////////////////////////////////
+    // Opening movie
     
     
     /////////////////////////////////////////////
@@ -93,6 +99,12 @@
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
+    //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    // reset view controllers if the movie is set play evertime
+    NSLog(@"Resigning Active");
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -108,6 +120,11 @@
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
+    NSLog(@"Application enters foreground");
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]){
+        NSLog(@"Entering ForeGround -- Pop the Nav controllers  we are here");
+        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:NO];
+    }
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
@@ -121,6 +138,9 @@
 {
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSLog(@"Terminating now");
 }
 
 - (void)saveContext
