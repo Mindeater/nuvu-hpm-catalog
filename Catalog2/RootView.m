@@ -70,7 +70,9 @@
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self playMovie];
-    } 
+    }else{
+        [self renderInterface];
+    }
 }
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -84,7 +86,6 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    NSLog(@"Load View from Root View");
     //allocate the view
     self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view.backgroundColor = [UIColor blackColor];
@@ -123,8 +124,8 @@
     ///////////////////////////
     // A default image for manipulation (empty by default)
     
-    self.choosenWall = [UIImage imageWithContentsOfFile:
-                  [[NSBundle mainBundle] pathForResource:@"Arteor_caesarstone_white" ofType:@"png"]];
+    //self.choosenWall = [UIImage imageWithContentsOfFile:
+                 // [[NSBundle mainBundle] pathForResource:@"Arteor_caesarstone_white" ofType:@"png"]];
     
     //////////////////////////////
     // main Navigation Options
@@ -333,7 +334,8 @@
     //BrandTableView *brand = [[BrandTableView alloc] initWithStyle:UITableViewStyleGrouped];
     BrandCatalogTableView *brand = [[BrandCatalogTableView alloc] initWithStyle:UITableViewStyleGrouped];
     brand.context = self.context;
-    brand.wallImage = self.choosenWall;
+    brand.wallImage = [UIImage imageWithCGImage: self.choosenWall.CGImage];
+    NSLog(@"show catalog - >background Image :: %@",self.choosenWall);
     [self.navigationController pushViewController:brand animated:YES];
     [brand release];
 }
@@ -412,6 +414,7 @@
     [imageView release];
     */
     self.choosenWall = senderType.selectedImage;
+    NSLog(@"observer - > background Image :: %@",self.choosenWall);
     // [self showOrders];
     [senderType.navigationController popViewControllerAnimated:YES];
 }
