@@ -1136,6 +1136,10 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XL770/1GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
+			<dict><key>Mechanism 2</key><string>RJ8P8C5E/1BL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>RJ8P8C5E/1BL</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
+			<dict><key>Trade Price</key><string>9.34</string></dict>
 			<dict><key>Matt Siver</key><string>XL770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
 			<dict><key>Polished Silver</key><string>XL770/1PLPS</string></dict>
@@ -1170,6 +1174,10 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XL770/2GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>5.10</string></dict>
+			<dict><key>Mechanism 2</key><string>RJ8P8C5E/1BL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>RJ8P8C5E/1BL</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
+			<dict><key>Trade Price</key><string>9.34</string></dict>
 			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
 			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
