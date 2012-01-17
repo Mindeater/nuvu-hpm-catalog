@@ -104,6 +104,7 @@
 	}
     
     self.title = @"Catalog";
+    NSLog(@"view did load -> background Image :: %@",self.wallImage);
 }
 
 - (void)viewDidUnload
@@ -309,6 +310,7 @@
     detailViewController.currentCategory = cell.textLabel.text;
     detailViewController.context = self.context;
     detailViewController.wallImage = self.wallImage;
+    NSLog(@"selected table cell - background Image :: %@",self.wallImage);
     
     //NSLog(@"\n^^^BRANDCAtalogView push^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
       //  self.navigationController.viewControllers, self.navigationController.navigationBar);
