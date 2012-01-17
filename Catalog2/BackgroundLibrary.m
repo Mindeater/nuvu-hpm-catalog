@@ -294,12 +294,12 @@
 -(void)chooseImage:(id)sender
 {
     UIButton *resultButton = (UIButton *)sender;
-     self.selectedImage = [UIImage imageWithContentsOfFile:
+     self.selectedImage = [[UIImage alloc] initWithContentsOfFile:
                            [[NSBundle mainBundle] pathForResource:[self.bgList objectAtIndex:resultButton.tag] ofType:@"jpg"]];
         
     self.selected = YES;
     
-    NSLog(@"Hi The Button %i",resultButton.tag);
+    NSLog(@"Hi The Button %i , %@",resultButton.tag,self.selectedImage);
     /*
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
