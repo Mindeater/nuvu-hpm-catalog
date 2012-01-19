@@ -20,6 +20,9 @@
 @synthesize selected;
 @synthesize controlsView;
 @synthesize partLabel;
+@synthesize countLabel;
+
+@synthesize countNum,countTotal;
 
 @synthesize orientationPrefix;
 @synthesize brandName;
@@ -42,6 +45,7 @@
     self.parts = nil;
     [controlsView release];
     [partLabel release];
+    [countLabel release];
     [super dealloc];
 }
 
@@ -72,7 +76,7 @@
 -(void)viewDidLoad
 {
     [self addNavigationBar];
-    
+    countNum = 1;
     //self.view.backgroundColor = [UIColor clearColor];
     //[self addToolBarToView];
     ///////////////////////////////////
@@ -157,6 +161,15 @@
     partLabel.textAlignment = UITextAlignmentCenter;
     [self.controlsView addSubview:partLabel];
     
+    ////////////////////////////////////////////////
+    // Label for counting
+    countLabel = [[UILabel alloc]
+                  initWithFrame:CGRectMake(0,screenHeight-toolBarHeight-180, screenWidth, 50)];
+    countLabel.text = [NSString stringWithFormat:@"%i of %i",countNum,countTotal];
+    countLabel.textAlignment = UITextAlignmentCenter;
+    countLabel.textColor = [UIColor whiteColor];
+    countLabel.backgroundColor = [UIColor blackColor];
+    [self.controlsView addSubview:countLabel];
     ///////////////////
     //Buttons
     

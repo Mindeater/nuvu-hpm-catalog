@@ -29,6 +29,10 @@
     
     UIImage *wallImage;
     
+    UILabel *countLabel;
+    int countNum;
+    int countTotal;
+    
 }
 
 @property(nonatomic,retain)NSString *categoryName;
@@ -43,6 +47,10 @@
 @property(nonatomic,retain)NSString *parts;
 
 @property(nonatomic,retain)UIImage *wallImage;
+
+@property(nonatomic,retain)UILabel *countLabel;
+@property(nonatomic)int countNum;
+@property(nonatomic)int countTotal;
 
 @property(nonatomic,retain)ProductChooserView *_parent;
 @property(nonatomic,retain)UIToolbar *toolBar;
