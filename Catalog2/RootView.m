@@ -124,8 +124,8 @@
     ///////////////////////////
     // A default image for manipulation (empty by default)
     
-    //self.choosenWall = [UIImage imageWithContentsOfFile:
-                 // [[NSBundle mainBundle] pathForResource:@"Arteor_caesarstone_white" ofType:@"png"]];
+    self.choosenWall = [UIImage imageWithContentsOfFile:
+                 [[NSBundle mainBundle] pathForResource:@"Paint_Sample_Hog_Bristle" ofType:@"jpg"]];
     
     //////////////////////////////
     // main Navigation Options
@@ -335,7 +335,7 @@
     BrandCatalogTableView *brand = [[BrandCatalogTableView alloc] initWithStyle:UITableViewStyleGrouped];
     brand.context = self.context;
     brand.wallImage = [UIImage imageWithCGImage: self.choosenWall.CGImage];
-    NSLog(@"show catalog - >background Image :: %@",self.choosenWall);
+   // NSLog(@"show catalog - >background Image :: %@",self.choosenWall);
     [self.navigationController pushViewController:brand animated:YES];
     [brand release];
 }
@@ -414,7 +414,7 @@
     [imageView release];
     */
     self.choosenWall = senderType.selectedImage;
-    NSLog(@"observer - > background Image :: %@",self.choosenWall);
+    // NSLog(@"observer - > background Image :: %@",self.choosenWall);
     // [self showOrders];
     [senderType.navigationController popViewControllerAnimated:YES];
 }
@@ -485,7 +485,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
-    NSLog(@"sent %@",info);
+    //NSLog(@"sent %@",info);
     self.choosenWall = [info objectForKey:UIImagePickerControllerOriginalImage];    
     
     if (self.popOver != nil) {
