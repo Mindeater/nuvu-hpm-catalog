@@ -261,12 +261,12 @@
 -(id)init
 {
     self.pListFiles = [NSArray arrayWithObjects:
-                       [NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life", @"Legrand Excel Life", nil],
-                       [NSArray arrayWithObjects:@"arteor-sq.csv",    @"Arteor SQ",  @"Legrand Arteor Square", nil],
-                       [NSArray arrayWithObjects:@"arteor-rd.csv",    @"Arteor RD",  @"Legrand Arteor Round", nil],
-                       [NSArray arrayWithObjects:@"arteor-770.csv",   @"Arteor 770", @"Legrand Arteor Australian Style", nil],
-                       [NSArray arrayWithObjects:@"linea.csv",        @"Linea",      @"Linea", nil],
-                       [NSArray arrayWithObjects:@"excel.csv",        @"Excel",      @"HPM Excel", nil],
+                       [NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life", @"Legrand EXCEL LIFE", nil],
+                       [NSArray arrayWithObjects:@"arteor-sq.csv",    @"Arteor SQ",  @"Legrand ARTEOR SQUARE", nil],
+                       [NSArray arrayWithObjects:@"arteor-rd.csv",    @"Arteor RD",  @"Legrand ARTEOR ROUND", nil],
+                       [NSArray arrayWithObjects:@"arteor-770.csv",   @"Arteor 770", @"Legrand ARTEOR AUSTRALIAN STYLE", nil],
+                       [NSArray arrayWithObjects:@"linea.csv",        @"Linea",      @"HPM LINEA", nil],
+                       [NSArray arrayWithObjects:@"excel.csv",        @"Excel",      @"HPM EXCEL", nil],
                         /*[NSArray arrayWithObjects:@"bt-light-and-tech.csv", @"BT Light and Tech",nil],
                         [NSArray arrayWithObjects:@"bt-living.csv",     @"BT Living",nil],
                         */
