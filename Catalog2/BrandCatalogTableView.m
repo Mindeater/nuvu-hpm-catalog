@@ -103,8 +103,7 @@
 		exit(-1);  // Fail
 	}
     
-    self.title = @"Catalog";
-    NSLog(@"view did load -> background Image :: %@",self.wallImage);
+    self.title = @"Catalogue";
 }
 
 - (void)viewDidUnload
