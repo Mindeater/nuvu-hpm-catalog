@@ -11,7 +11,7 @@
 @implementation BackgroundLibrary
 
 @synthesize button1,button2,button3,button4,button5,button6,button7,button8,button9;
-@synthesize button10,button11,button12,button13,button14,button15,button16,button17,button18;
+@synthesize button10,button11,button12,button13,button14,button15,button16,button17,button18,button19,button20;
 
 @synthesize selected;
 @synthesize buttonImages;
@@ -54,7 +54,7 @@
 
     self.title = @"Backgrounds";
     
-    //create 12 buttons and use the background images
+    //create 20 buttons and use the background images
     self.bgList = [NSArray arrayWithObjects:
                                 @"Paint_Sample_Chelsea_Green",
                                 @"Paint_Sample_Foxdale",
@@ -64,6 +64,8 @@
                                 @"Paint_Sample_Waterworks",
                                 @"Paint_Sample_whitewall",
                                 @"Paint_Sample_Woodland_Grey",
+                                @"Paint_Sample_Hog_Bristle",
+                                @"Paint_Sample_Wagon_Gold",
                                 @"Wallpaper_blacktiles",
                                 @"Wallpaper_charcoalemblem",
                                 @"Wallpaper_curvedstone",
@@ -73,7 +75,7 @@
                                 @"Wallpaper_stripes",
                                 @"Wallpaper_whitecaesar",
                                 @"Wallpaper_whitetiles",
-                                @"Wallpaper_black", nil];
+                                @"Wallpaper_royalwaves", nil];
     
     UIImage *img1 = [UIImage imageWithContentsOfFile:
                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:0]] ofType:@"jpg"]];
@@ -111,6 +113,10 @@
                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:16]] ofType:@"jpg"]]; 
     UIImage *img18 = [UIImage imageWithContentsOfFile:
                       [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:17]] ofType:@"jpg"]]; 
+    UIImage *img19 = [UIImage imageWithContentsOfFile:
+                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:18]] ofType:@"jpg"]]; 
+    UIImage *img20 = [UIImage imageWithContentsOfFile:
+                      [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%@_tmb",[bgList objectAtIndex:19]] ofType:@"jpg"]];
     
        
     button1 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -131,6 +137,8 @@
     button16 = [UIButton buttonWithType:UIButtonTypeCustom];
     button17 = [UIButton buttonWithType:UIButtonTypeCustom];
     button18 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button19 = [UIButton buttonWithType:UIButtonTypeCustom];
+    button20 = [UIButton buttonWithType:UIButtonTypeCustom];
     
     button1.tag =0;
     button2.tag =1;
@@ -150,6 +158,8 @@
     button16.tag =15;
     button17.tag =16;
     button18.tag =17;
+    button19.tag =18;
+    button20.tag =19;
 
     
     [button1 setImage:img1 forState:UIControlStateNormal];
@@ -170,6 +180,8 @@
     [button16 setImage:img16 forState:UIControlStateNormal];
     [button17 setImage:img17 forState:UIControlStateNormal];
     [button18 setImage:img18 forState:UIControlStateNormal];
+    [button19 setImage:img19 forState:UIControlStateNormal];
+    [button20 setImage:img20 forState:UIControlStateNormal];
     
     [button1 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     [button2 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
@@ -189,9 +201,11 @@
     [button16 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     [button17 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     [button18 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
+    [button19 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
+    [button20 addTarget:self action:@selector(chooseImage:) forControlEvents:UIControlEventTouchUpInside];
     
     self.buttonImages = [NSArray arrayWithObjects:img1,img2,img3,img4,img5,img6,img7,img8,img9,
-                         img10,img11,img12,img13,img14,img15,img16,img17,img18, nil];
+                         img10,img11,img12,img13,img14,img15,img16,img17,img18,img19,img20, nil];
     
     [self layoutButtons: [[UIApplication sharedApplication] statusBarOrientation]];
     
@@ -213,6 +227,8 @@
     [self.view addSubview:button16];
     [self.view addSubview:button17];
     [self.view addSubview:button18];
+    [self.view addSubview:button19];
+    [self.view addSubview:button20];
 }
 
 
@@ -281,6 +297,10 @@
                                 buttonWidth, buttonHeight);
     button18.frame =  CGRectMake(startX+ buttonWidth +pad,       startY + buttonHeight*4+4*pad,
                                  buttonWidth, buttonHeight);
+    button19.frame =  CGRectMake(startX + buttonHeight*2+2*pad,  startY + buttonHeight*4+4*pad,
+                                 buttonWidth, buttonHeight);
+    button20.frame =  CGRectMake(startX + buttonHeight*3+3*pad,  startY + buttonHeight*4+4*pad,
+                                buttonWidth, buttonHeight);
     
     
 }
@@ -299,7 +319,7 @@
         
     self.selected = YES;
     
-    NSLog(@"Hi The Button %i , %@",resultButton.tag,self.selectedImage);
+    //NSLog(@"Hi The Button %i , %@",resultButton.tag,self.selectedImage);
     /*
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -353,6 +373,8 @@
     self.button16 = nil;
     self.button17 = nil;
     self.button18 = nil;
+    self.button19 = nil;
+    self.button20 = nil;
     
 }
 

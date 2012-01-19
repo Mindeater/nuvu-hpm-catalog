@@ -27,6 +27,8 @@
     UIButton *button16;
     UIButton *button17;
     UIButton *button18;
+    UIButton *button19;
+    UIButton *button20;
     
     BOOL selected;
     UIImage *selectedImage;
@@ -52,6 +54,8 @@
 @property(nonatomic,retain)UIButton *button16;
 @property(nonatomic,retain)UIButton *button17;
 @property(nonatomic,retain)UIButton *button18;
+@property(nonatomic,retain)UIButton *button19;
+@property(nonatomic,retain)UIButton *button20;
 
 @property(nonatomic)BOOL selected;
 @property(nonatomic,retain)NSArray *buttonImages;
