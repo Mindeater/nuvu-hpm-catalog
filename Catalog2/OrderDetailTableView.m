@@ -539,7 +539,7 @@
         ///////////////////////////////////
         // sored email string
         [self.emailOrderBody 
-         appendFormat:@"<tr><td>%@</td><td>%@</td><td>%@</td><td>%@</td><td>%@</td></tr>",
+         appendFormat:@"<tr><td>%@</td><td>%@</td><td valign=\"top\">%@</td><td>%@</td><td>%@</td></tr>",
          cell.cell1.text,
          [cell.cell2.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          [cell.commentField.text  stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
@@ -767,5 +767,12 @@
     [self.tableView endUpdates];
 }
 
-
+/*
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    UITouch * touch = [touches anyObject];
+    if(touch.phase == UITouchPhaseBegan) {
+        [aTextField resignFirstResponder];
+    }
+}
+*/
 @end
