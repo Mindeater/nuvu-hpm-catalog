@@ -131,8 +131,11 @@
         [self.shoppingCart addMechanismsToDefaultOrder:self.mechanismObject
                                        withProductName:self.selectedProductName];
         [self.shoppingCart addCommentToActiveOrderLine:entered];
-        [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]
-                                      withProductName:self.selectedProductName];
+        
+        if([self.currentFacePlates count] >= 1){
+          [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"] withProductName:self.selectedProductName];  
+        }
+        
         PartView *active = (PartView *)self.navigationController.topViewController;
         [active updateSelectedStatus];
 	}
@@ -342,6 +345,11 @@
 {
     [self setViewControllerCommonProperties];
     
+    int totalMechanisms = [_fetchedResultsController.fetchedObjects count];
+    vc1.countTotal = totalMechanisms;
+    vc2.countTotal = totalMechanisms;
+    vc3.countTotal = totalMechanisms;
+    
     [vc1 drawWithItems:[self getObjToScroll:prevIndex forEntityName:@"Mechanism"]];
     [vc2 drawWithItems:[self getObjToScroll:currIndex forEntityName:@"Mechanism"]];
     [vc3 drawWithItems:[self getObjToScroll:nextIndex forEntityName:@"Mechanism"]];
@@ -357,9 +365,29 @@
     vc2 = [[FacePlateView alloc]init];
     vc3 = [[FacePlateView alloc]init];
     
+    int totalFacePlates = [self.currentFacePlates count];
+    vc1.countTotal = totalFacePlates;
+    vc2.countTotal = totalFacePlates;
+    vc3.countTotal = totalFacePlates;
+    
     [self setViewControllerCommonProperties];
     
-    if([self.currentFacePlates count] == 1){
+    if(totalFacePlates == 0 ){
+        // 4 gang horizontal has no faceplate
+        //NSLog(@"\n\nNO FACEPLATE !!\n\n");
+        vc1.productName = @"";
+        [vc1 drawWithItems:[NSArray arrayWithObjects:self.selectedMechanismImage,nil]];
+        [vc1 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
+        [vc1.view sendSubviewToBack:vc1.toolBar];
+        
+        // reset the view controller stack
+        NSMutableArray *baseViewStack = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
+        [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
+        [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
+        
+        [self.navigationController pushViewController:vc1 animated:YES];
+        
+    }else if(totalFacePlates == 1){
         
         // Excel Life has single faceplates
         vc1.productName = [[self.currentFacePlates lastObject] valueForKey:@"name"];
@@ -371,12 +399,12 @@
         NSMutableArray *baseViewStack = [NSMutableArray arrayWithArray: self.navigationController.viewControllers];
         [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
         [baseViewStack removeObjectAtIndex:[baseViewStack count]-1 ];
-        vc1.productName = [[self.currentFacePlates objectAtIndex:currIndex] valueForKey:@"name"];
+        //vc1.productName = [[self.currentFacePlates objectAtIndex:currIndex] valueForKey:@"name"];
         
         [self.navigationController pushViewController:vc1 animated:YES];
         
         
-    }else if([self.currentFacePlates count] >1 ){
+    }else if(totalFacePlates >1 ){
         
         vc1.productName = [[self.currentFacePlates objectAtIndex:prevIndex] valueForKey:@"name"];
         vc2.productName = [[self.currentFacePlates objectAtIndex:currIndex] valueForKey:@"name"];
@@ -581,16 +609,19 @@
         case 0:
             [baseViewStack addObjectsFromArray:[NSArray arrayWithObjects:vc2,vc3, nil]];
             vc3.productName = productName;
+            vc3.countNum = currIndex+1;
             [vc3 drawWithItems:[self getObjToScroll:currIndex forEntityName:self.currentEntityName]];            
             break;
         case 1:
             [baseViewStack addObjectsFromArray:[NSArray arrayWithObjects:vc3,vc1, nil]];
             vc1.productName = productName;
+            vc1.countNum = currIndex+1;
             [vc1 drawWithItems:[self getObjToScroll:currIndex forEntityName:self.currentEntityName]];            
             break;
         case 2:
             [baseViewStack addObjectsFromArray:[NSArray arrayWithObjects:vc1,vc2, nil]];
             vc2.productName = productName;
+            vc2.countNum = currIndex+1;
             [vc2 drawWithItems:[self getObjToScroll:currIndex forEntityName:self.currentEntityName]];
             break;
         default:
