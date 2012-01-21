@@ -37,10 +37,15 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
     self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view.backgroundColor = [UIColor blackColor];
-
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    /*
     ///////////////////////////////////////////////
     // ToolBar at the bottom
     UIToolbar *toolBar = [[UIToolbar alloc] init];
@@ -48,9 +53,7 @@
     toolBar.tintColor = [UIColor blackColor];
     [toolBar sizeToFit];//Set the toolbar to fit the width of the app.
     CGFloat toolBarHeight = [toolBar frame].size.height;//Caclulate the height of the toolbar
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
+    
     
     //Reposition and resize the receiver
     [toolBar setFrame:CGRectMake(0, screenHeight-toolBarHeight - 40, screenWidth, toolBarHeight)];
@@ -70,9 +73,12 @@
     [flex2 release];
     
     [toolBar release];
-    
+    //
+    /////////////////////////
+    */
     CGFloat startY = 20;
-    CGFloat textViewHeight = screenHeight - toolBarHeight - 80;
+    //CGFloat textViewHeight = screenHeight - toolBarHeight - 80;
+    CGFloat textViewHeight = screenHeight - 80;
     if(self.logoImage != nil){
         CGFloat imgViewWidth = 500;
         CGFloat startImgX = (screenWidth - imgViewWidth)/2;
