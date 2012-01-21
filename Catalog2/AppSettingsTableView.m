@@ -244,8 +244,11 @@
             break;
         case TEXT_SECTION:
         {
+            // how wide is the device ?
+            CGRect screenRect = [[UIScreen mainScreen] bounds];
+            CGFloat screenWidth = screenRect.size.width;
             // add textfield to the cell
-            UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(5, 5, 200, 21)];
+            UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(105, 5, screenWidth -200, 21)];
             textField.text = [[NSUserDefaults standardUserDefaults] 
                               stringForKey:[[[self.tableData objectAtIndex:TEXT_SECTION] 
                                         objectAtIndex:indexPath.row] objectAtIndex:1]];
@@ -253,12 +256,21 @@
             textField.tag = indexPath.row;
             textField.delegate = self;
             textField.textColor = [UIColor whiteColor];
-            cell.accessoryView = textField;
-            //[cell.accessoryView addSubview:textField];
+            //cell.accessoryView = textField;
+            [cell.contentView addSubview:textField];
+            //[cell.contentView bringSubviewToFront:textField];
             [textField release];
+            
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.textLabel.text = [[[self.tableData objectAtIndex:TEXT_SECTION] 
-                                    objectAtIndex:indexPath.row] objectAtIndex:0];
+            //cell.textLabel.text = [[[self.tableData objectAtIndex:TEXT_SECTION] 
+                                    //objectAtIndex:indexPath.row] objectAtIndex:0];
+            UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(5, 5, 100, 21)];
+            label.text = [[[self.tableData objectAtIndex:TEXT_SECTION] 
+                           objectAtIndex:indexPath.row] objectAtIndex:0];
+            label.textColor = [UIColor whiteColor];
+            label.backgroundColor = [UIColor blackColor];
+            [cell.contentView addSubview:label];
+            [label release];
         }
             break;
         case VIEW_SECTION:
