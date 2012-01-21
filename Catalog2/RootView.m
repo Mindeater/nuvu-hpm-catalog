@@ -64,9 +64,10 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]//){ 
-       && [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
-        NSLog(@"Enter the movie");
+    //if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]//){ 
+       //&& 
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
+        //NSLog(@"Enter the movie");
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self playMovie];
@@ -79,6 +80,7 @@
 
     [super viewWillAppear:NO];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
+    NSLog(@"View Will Appear");
     
 }
 
