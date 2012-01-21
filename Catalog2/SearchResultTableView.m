@@ -236,8 +236,21 @@
         NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@ && count = 1", searchText];
         [request setPredicate:mechPredicate];
         
-         self.filteredListContents =  [self.context executeFetchRequest:request error:&error];
+        //self.filteredListContents =  [self.context executeFetchRequest:request error:&error];
         
+        ////////////////////////
+        // make sure there are no duplicates returned
+        NSArray *result =  [self.context executeFetchRequest:request error:&error];
+        NSMutableSet* existingNames = [NSMutableSet set];
+        NSMutableArray* filteredArray = [NSMutableArray array];
+        for (id object in result) {
+            if (![existingNames containsObject:[object name]]) {
+                [existingNames addObject:[object name]];
+                [filteredArray addObject:object];
+            }
+        }
+        self.filteredListContents =  [NSArray arrayWithArray:filteredArray];
+         
         [request release];
         
     }else if(item == 2){ // coverplates 
@@ -327,7 +340,6 @@
     if([type isEqualToString:@"Mechanism"]){
         
         NSString *img;
-        
        
         
        // float cost = 0;
@@ -432,7 +444,7 @@
             // ...
             // Pass the selected object to the new view controller.
             
-            [self.LINK.navigationController pushViewController:detailViewController animated:YES];
+            [self.LINK.navigationController pushViewController:detailViewController animated:NO];
             [detailViewController release];
         
         }
