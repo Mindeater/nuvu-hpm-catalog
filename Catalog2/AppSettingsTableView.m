@@ -55,12 +55,12 @@
     ///////////////////////////////////////////////
     // info blocks
     self.infoStrings = [NSArray arrayWithObjects:
-                        @"Welcome to the L&H Switches & Sockets Selector App \n\nThe quick and easy tool for creating an order of electrical accessories, such as switches and powerpoints.\n\nThe App lets you compose pictures of switches and sockets from a variety of Legrand or HPM product ranges, on pre-set background colours to help you choose the best coverplate finish. Or, you can upload a photo of a wall to see exactly how the plates look in a particular environment.\n\nThe featured brands and ranges include: Legrand Excel Life, Legrand Arteor, HPM Linea, HPM Excel and BTicino Living, Light and Light Tech.\n\nOnce you have selected all the products you need and saved to the cart, the App will create a comprehensive product list, (including product codes and trade prices from HPM and Legrand ex GST), which you can then email to your local L&H electrical wholesaler, making ordering a breeze!\n\n\nPlease note: this app contains a sub-set of HPM and Legrand ranges of switches and sockets. For a comprehensive list please see the respective catalogues available online at:\nwww.legrand.com.au\nwww.hpm.com.au\n\nFor further information call 1300 369 777.\n\nHappy creating!",
-                        @"Studio NUVU 2011",
+                        @"Welcome to the L&H Selector App\n\nThe quick and easy tool for creating an order of electrical accessories, such as switches and power points.\n\nThe App lets you compose pictures of switches and sockets from a variety of Legrand or HPM product ranges, on pre-set background colours to help you choose the best cover plate finish. Or, you can take a photo of a wall to see exactly how the plates look in a particular environment.\n\nThe featured brands and ranges include: Legrand Excel Life, Legrand Arteor, HPM Linea, and HPM Excel.\n\nOnce you have selected all the products you need and saved to the cart, the App will create a comprehensive product list, (including product codes and trade prices from HPM and Legrand ex GST), which you can then email to your local L&H electrical wholesaler, making ordering a breeze!\n\nPlease note: this app contains a sub-set of HPM and Legrand ranges of switches and sockets. For a comprehensive list please see the respective catalogues available online at:\nwww.legrand.com.au\nwww.hpm.com.au\n\nFor further information call 1300 369 777.\n\nHappy creating!\n\n\nInstructions\n\nA) How to browse the catalogue?\n\n1. Go to main menu and tap the 'Product Catalogue' icon\n2. Select a brand of switches \n3. Swipe left or right through the mechanisms product list, once you like one then select cover plate at the bottom of the screen\n4. Select your choice of cover plate - you can also go back to the menu or mechanisms  by tapping the menu button at the top left of the screen to view more products\n\nB) How to create an order?\n\n1. Go to main menu and tap the 'Shopping Cart' icon\n2. Tap the plus button and name the order\n3. Go to main menu and tap the 'Product Catalogue' icon\n4. Select a brand of switches \n5. Swipe left or right through the mechanisms product list, once you like one then select a cover plate at the bottom of the screen\n6. Select your choice of cover plate - you can also go back to the menu or mechanisms  by tapping the menu button at the top left of the screen\n7. Choose 'Add to cart'  from the top right hand corner of the screen and select  'save to cart' \nIf you want to see the currently added product in the shopping cart then select 'go to cart' from the 'add to cart' button to view your current order\nIf you want to select more products to add to the cart then select the menu button to return to the catalogue\n\nC) Choosing a pre-set wall background or taking a picture of a wall.\n\nL&H selector allows you to choose a background to enable you to look at the catalogue to see how a product will look on different coloured backgrounds or you can even take a photo of your own wall to see how the product will look in your own interior.\n\nHow to select a pre-set background\n\n1. Go to main menu and select the 'Choose Wall Colour'  icon\n\n2. Select a background and then continue browsing the catalogue or creating an order as described above. The chosen wall colour will now appear as background on your product selections\n\nHow to take a photo\n\n1. Go to main menu and select 'Photograph Wall' \n2. Take a picture of your wall where a switch or power point will be installed. Select use if you are happy with the photograph\n3. Continue browsing the catalogue or creating an order as described above. The photograph will now appear as background on your product selections\n4. Once you have chosen your cover plate from the product catalogue you can then select the 'Resize and Save'  to resize the cover plate so it looks right on your photographed wall and also save it to your photo library",
+                        @"\n\n\n\tStudio NUVU 2011",
                         nil];
     
     NSArray *switches = [NSArray arrayWithObjects:
-                         [NSArray arrayWithObjects:@"Movie Plays everytime App loads:",@"ud_Movie",nil],
+                         //[NSArray arrayWithObjects:@"Movie Plays everytime App loads:",@"ud_Movie",nil],
                          [NSArray arrayWithObjects:@"Add Contact Settings to Email:",@"ud_AddContact",nil],
                          nil];
     NSArray *contact = [NSArray arrayWithObjects:
@@ -71,7 +71,7 @@
                         [NSArray arrayWithObjects:@"Company:",   @"ud_Company",nil],
                         nil];
     NSArray *about = [NSArray arrayWithObjects:
-                      @"App Usage",
+                      @"About App and Instructions",
                       @"Development and Design",
                       nil];
     
@@ -262,7 +262,6 @@
         }
             break;
         case VIEW_SECTION:
-            // this one will make a modal view
             cell.textLabel.text = [[self.tableData objectAtIndex:VIEW_SECTION] objectAtIndex:indexPath.row];
             break;
         default:
@@ -282,11 +281,11 @@
     UISwitch *switchedSwitch = (UISwitch *)sender;
     [switchedSwitch resignFirstResponder];
     
-    NSLog(@"Switched %i",switchedSwitch.tag);
+    //NSLog(@"Switched %i",switchedSwitch.tag);
     
     NSString *userSettingName = [[[self.tableData objectAtIndex:SWITCH_SECTION] 
                                   objectAtIndex:switchedSwitch.tag] objectAtIndex:1];
-    NSLog(@"Need to change : %@",userSettingName);
+    //NSLog(@"Need to change : %@",userSettingName);
     
     [[NSUserDefaults standardUserDefaults] 
      setBool: [switchedSwitch isOn]
@@ -302,10 +301,10 @@
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     [textField resignFirstResponder];
-    NSLog(@"Editing done for %i",textField.tag);
+   // NSLog(@"Editing done for %i",textField.tag);
     NSString *userSettingName = [[[self.tableData objectAtIndex:TEXT_SECTION] 
                                   objectAtIndex:textField.tag] objectAtIndex:1];
-    NSLog(@"Need to change : %@",userSettingName);
+    //NSLog(@"Need to change : %@",userSettingName);
     [[NSUserDefaults standardUserDefaults] 
      setObject:textField.text
      forKey:userSettingName];
@@ -333,7 +332,6 @@
         case VIEW_SECTION:
         {
         // this one will make a modal view
-            NSLog(@"Here we go add a modal view controller");
             SettingsPage *addController = [[SettingsPage alloc]
                                                       initWithNibName:nil bundle:nil];
             
@@ -342,7 +340,11 @@
             if(indexPath.row == 1){
                 addController.logoImage = [UIImage imageWithContentsOfFile:
                                            [[NSBundle mainBundle] pathForResource:@"nuvulogo" ofType:@"png"]];
+                // include the nuvu movie
+                
             }
+            
+            /*
             // Create the navigation controller and present it modally.
             UINavigationController *navigationController = [[UINavigationController alloc]
                                                             initWithRootViewController:addController];
@@ -352,6 +354,8 @@
             // and the root view controller is owned by the navigation controller,
             // so both objects should be released to prevent over-retention.
             [navigationController release];
+             */
+            [self.navigationController pushViewController:addController animated:YES];
             [addController release];
             
         }
