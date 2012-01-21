@@ -88,7 +88,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>883MWE_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -132,7 +132,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>883MMGN_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -254,7 +254,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>2 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>2 X 883MWE_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -298,7 +298,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>2 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>2 X 883MMGN_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -420,7 +420,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>3 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>3 X 883MWE_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -464,7 +464,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>3 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>3 X 883MMGN_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -586,7 +586,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>4 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>4 X 883MWE_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -630,7 +630,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>4 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>4 X 883MMGN_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -752,7 +752,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>5 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>5 X 883MWE_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -796,7 +796,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>5 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>5 X 883MMGN_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -918,7 +918,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>6 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>6 X 883MWE_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -962,7 +962,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>6 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>6 X 883MMGN_Arteorvert</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -1087,7 +1087,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 883MWE_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -1131,7 +1131,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/1GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 883MMGN_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -1253,7 +1253,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>2 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>2 X 883MWE_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -1297,7 +1297,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/2GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>2 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>2 X 883MMGN_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -1419,7 +1419,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>3 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>3 X 883MWE_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -1463,7 +1463,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/3GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>3 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>3 X 883MMGN_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -1585,7 +1585,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>4 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>4 X 883MWE_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -1629,7 +1629,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/4GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>4 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>4 X 883MMGN_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -1751,7 +1751,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>5 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>5 X 883MWE_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -1795,7 +1795,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/5GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>5 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>5 X 883MMGN_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>
@@ -1917,7 +1917,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
-			<dict><key>Mechanism 2</key><string>6 X 883MWE</string></dict>
+			<dict><key>Mechanism 2</key><string>6 X 883MWE_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MWE</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
@@ -1961,7 +1961,7 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>AR770/6GOMGN</string></dict>
 			<dict><key>Trade Price</key><string>5.43</string></dict>
-			<dict><key>Mechanism 2</key><string>6 X 883MMGN</string></dict>
+			<dict><key>Mechanism 2</key><string>6 X 883MMGN_Arteorhoriz</string></dict>
 			<dict><key>Mech 2 Part #</key><string>AR883MMGN</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
 			<dict><key>Trade Price</key><string>48.30</string></dict>

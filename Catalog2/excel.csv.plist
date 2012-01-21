@@ -62,7 +62,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/1GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
 			<dict><key>Mechanism 2</key><string>883MWE</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>883MWE_Excel</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>42.00</string></dict>
@@ -84,7 +84,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/1GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
 			<dict><key>Mechanism 2</key><string>883MCR</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>883MCR_Excel</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>42.00</string></dict>
@@ -106,7 +106,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/1GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>4.72</string></dict>
 			<dict><key>Mechanism 2</key><string>883MBL</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>883MBL_Excel</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>42.00</string></dict>
@@ -179,7 +179,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/2GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.10</string></dict>
 			<dict><key>Mechanism 2</key><string>2 X 883MWE</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>2 x 883MWE_Excel</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>84.00</string></dict>
@@ -201,7 +201,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/2GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>5.10</string></dict>
 			<dict><key>Mechanism 2</key><string>2 X 883MCR</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>2 x 883MCR_Excel</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>84.00</string></dict>
@@ -223,7 +223,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/2GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>5.10</string></dict>
 			<dict><key>Mechanism 2</key><string>2 X 883MBL</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>2 x 883MBL_Excel</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>84.00</string></dict>
@@ -296,7 +296,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/3GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>5.58</string></dict>
 			<dict><key>Mechanism 2</key><string>3 X 883MWE</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>3 x 883MWE_Excel</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>126.00</string></dict>
@@ -318,7 +318,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/3GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>5.58</string></dict>
 			<dict><key>Mechanism 2</key><string>3 X 883MCR</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>3 x 883MCR_Excel</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>126.00</string></dict>
@@ -340,7 +340,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/3GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>5.58</string></dict>
 			<dict><key>Mechanism 2</key><string>3 X 883MBL</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>3 x 883MBL_Excel</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>126.00</string></dict>
@@ -413,7 +413,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/4GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>9.03</string></dict>
 			<dict><key>Mechanism 2</key><string>4 X 883MWE</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>4 x 883MWE_Excel</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>168.00</string></dict>
@@ -435,7 +435,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/4GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>9.03</string></dict>
 			<dict><key>Mechanism 2</key><string>4 X 883MCR</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>4 x 883MCR_Excel</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>168.00</string></dict>
@@ -457,7 +457,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/4GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>9.03</string></dict>
 			<dict><key>Mechanism 2</key><string>4 X 883MBL</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>4 x 883MBL_Excel</string></dict>
 			<dict><key>Qty</key><string>4</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>168.00</string></dict>
@@ -530,7 +530,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/5GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
 			<dict><key>Mechanism 2</key><string>5 X 883MWE</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>5 x 883MWE_Excel</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>210.00</string></dict>
@@ -552,7 +552,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/5GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
 			<dict><key>Mechanism 2</key><string>5 X 883MCR</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>5 x 883MCR_Excel</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>210.00</string></dict>
@@ -574,7 +574,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/5GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
 			<dict><key>Mechanism 2</key><string>5 X 883MBL</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>5 x 883MBL_Excel</string></dict>
 			<dict><key>Qty</key><string>5</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>210.00</string></dict>
@@ -647,7 +647,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/6GPLWE</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
 			<dict><key>Mechanism 2</key><string>6 X 883MWE</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>6 x 883MWE_Excel</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>252.00</string></dict>
@@ -669,7 +669,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/6GPLCR</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
 			<dict><key>Mechanism 2</key><string>6 X 883MCR</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>6 x 883MCR_Excel</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>252.00</string></dict>
@@ -691,7 +691,7 @@
 			<dict><key>Mechanism 1</key><string>XL770/6GPLBL</string></dict>
 			<dict><key>Trade Price</key><string>10.05</string></dict>
 			<dict><key>Mechanism 2</key><string>6 X 883MBL</string></dict>
-			<dict><key>Mech 2 Part #</key><string>883MBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>6 x 883MBL_Excel</string></dict>
 			<dict><key>Qty</key><string>6</string></dict>
 			<dict><key>Trade Price</key><string>42.00</string></dict>
 			<dict><key>Mech 2 Price</key><string>252.00</string></dict>
@@ -1249,102 +1249,102 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400LWE</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
-			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
+			<dict><key>Matt Siver</key><string>XL770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
+			<dict><key>Polished Silver</key><string>XL770/2PLPS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stone Metal</key><string>XL770/2PLSM</string></dict>
+			<dict><key>Stone Metal</key><string>XL770/2PLSM_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Brass</key><string>XL770/2PLPB</string></dict>
+			<dict><key>Polished Brass</key><string>XL770/2PLPB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stainless Steel</key><string>XL770/2PLSS</string></dict>
+			<dict><key>Stainless Steel</key><string>XL770/2PLSS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>14.94</string></dict>
-			<dict><key>Brushed Brass</key><string>XL770/2PLBB</string></dict>
+			<dict><key>Brushed Brass</key><string>XL770/2PLBB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 		<key>EXCEL 400VA LEADING-EDGE ROTARY DIMMER CREAM|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400LCR</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
-			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
+			<dict><key>Matt Siver</key><string>XL770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
+			<dict><key>Polished Silver</key><string>XL770/2PLPS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stone Metal</key><string>XL770/2PLSM</string></dict>
+			<dict><key>Stone Metal</key><string>XL770/2PLSM_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Brass</key><string>XL770/2PLPB</string></dict>
+			<dict><key>Polished Brass</key><string>XL770/2PLPB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stainless Steel</key><string>XL770/2PLSS</string></dict>
+			<dict><key>Stainless Steel</key><string>XL770/2PLSS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>14.94</string></dict>
-			<dict><key>Brushed Brass</key><string>XL770/2PLBB</string></dict>
+			<dict><key>Brushed Brass</key><string>XL770/2PLBB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 		<key>EXCEL 400VA LEADING-EDGE ROTARY DIMMER BLACK|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400LBL</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
-			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
+			<dict><key>Matt Siver</key><string>XL770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
+			<dict><key>Polished Silver</key><string>XL770/2PLPS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stone Metal</key><string>XL770/2PLSM</string></dict>
+			<dict><key>Stone Metal</key><string>XL770/2PLSM_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Brass</key><string>XL770/2PLPB</string></dict>
+			<dict><key>Polished Brass</key><string>XL770/2PLPB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stainless Steel</key><string>XL770/2PLSS</string></dict>
+			<dict><key>Stainless Steel</key><string>XL770/2PLSS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>14.94</string></dict>
-			<dict><key>Brushed Brass</key><string>XL770/2PLBB</string></dict>
+			<dict><key>Brushed Brass</key><string>XL770/2PLBB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 		<key>EXCEL 400VA TRAILING-EDGE ROTARY DIMMER WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400TWE</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
-			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
+			<dict><key>Matt Siver</key><string>XL770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
+			<dict><key>Polished Silver</key><string>XL770/2PLPS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stone Metal</key><string>XL770/2PLSM</string></dict>
+			<dict><key>Stone Metal</key><string>XL770/2PLSM_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Brass</key><string>XL770/2PLPB</string></dict>
+			<dict><key>Polished Brass</key><string>XL770/2PLPB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stainless Steel</key><string>XL770/2PLSS</string></dict>
+			<dict><key>Stainless Steel</key><string>XL770/2PLSS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>14.94</string></dict>
-			<dict><key>Brushed Brass</key><string>XL770/2PLBB</string></dict>
+			<dict><key>Brushed Brass</key><string>XL770/2PLBB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 		<key>EXCEL 400VA TRAILING-EDGE ROTARY DIMMER CREAM|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400TCR</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
-			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
+			<dict><key>Matt Siver</key><string>XL770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
+			<dict><key>Polished Silver</key><string>XL770/2PLPS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stone Metal</key><string>XL770/2PLSM</string></dict>
+			<dict><key>Stone Metal</key><string>XL770/2PLSM_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Brass</key><string>XL770/2PLPB</string></dict>
+			<dict><key>Polished Brass</key><string>XL770/2PLPB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stainless Steel</key><string>XL770/2PLSS</string></dict>
+			<dict><key>Stainless Steel</key><string>XL770/2PLSS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>14.94</string></dict>
-			<dict><key>Brushed Brass</key><string>XL770/2PLBB</string></dict>
+			<dict><key>Brushed Brass</key><string>XL770/2PLBB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 		<key>EXCEL 400VA TRAILING-EDGE ROTARY DIMMER BLACK|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400TBL</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
-			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
+			<dict><key>Matt Siver</key><string>XL770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
+			<dict><key>Polished Silver</key><string>XL770/2PLPS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stone Metal</key><string>XL770/2PLSM</string></dict>
+			<dict><key>Stone Metal</key><string>XL770/2PLSM_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Polished Brass</key><string>XL770/2PLPB</string></dict>
+			<dict><key>Polished Brass</key><string>XL770/2PLPB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>4.39</string></dict>
-			<dict><key>Stainless Steel</key><string>XL770/2PLSS</string></dict>
+			<dict><key>Stainless Steel</key><string>XL770/2PLSS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>14.94</string></dict>
-			<dict><key>Brushed Brass</key><string>XL770/2PLBB</string></dict>
+			<dict><key>Brushed Brass</key><string>XL770/2PLBB_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>24.39</string></dict>
 		</array>
 </dict>

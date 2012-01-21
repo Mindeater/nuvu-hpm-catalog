@@ -2443,222 +2443,222 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LWE</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
+			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
+			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Yellow</key><string>LN770/2PLYE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ghost Gum</key><string>LN770/2PLLG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Orange Crush</key><string>LN770/2PLOG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Bubblegum</key><string>LN770/2PLPI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ninja Khaki</key><string>LN770/2PLKH_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Saucy Red</key><string>LN770/2PLRE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Wet Elephant</key><string>LN770/2PLDG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Midnight Dash</key><string>LN770/2PLMI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Abracadaba</key><string>LN770/2PLAU_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Asphalt</key><string>LN770/2PLAS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Yellow</key><string>LN770/2PLYE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ghost Gum</key><string>LN770/2PLLG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Orange Crush</key><string>LN770/2PLOG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Bubblegum</key><string>LN770/2PLPI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ninja Khaki</key><string>LN770/2PLKH</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Saucy Red</key><string>LN770/2PLRE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Wet Elephant</key><string>LN770/2PLDG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Midnight Dash</key><string>LN770/2PLMI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Abracadaba</key><string>LN770/2PLAU</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Asphalt</key><string>LN770/2PLAS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
+			<dict><key>Gun Metal</key><string>LN770/2PLGL_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER CREAM|5</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LCR</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
+			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
+			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Yellow</key><string>LN770/2PLYE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ghost Gum</key><string>LN770/2PLLG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Orange Crush</key><string>LN770/2PLOG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Bubblegum</key><string>LN770/2PLPI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ninja Khaki</key><string>LN770/2PLKH_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Saucy Red</key><string>LN770/2PLRE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Wet Elephant</key><string>LN770/2PLDG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Midnight Dash</key><string>LN770/2PLMI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Abracadaba</key><string>LN770/2PLAU_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Asphalt</key><string>LN770/2PLAS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Yellow</key><string>LN770/2PLYE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ghost Gum</key><string>LN770/2PLLG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Orange Crush</key><string>LN770/2PLOG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Bubblegum</key><string>LN770/2PLPI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ninja Khaki</key><string>LN770/2PLKH</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Saucy Red</key><string>LN770/2PLRE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Wet Elephant</key><string>LN770/2PLDG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Midnight Dash</key><string>LN770/2PLMI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Abracadaba</key><string>LN770/2PLAU</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Asphalt</key><string>LN770/2PLAS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
+			<dict><key>Gun Metal</key><string>LN770/2PLGL_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 		<key>LINEA 400VA LEADING-EDGE ROTARY DIMMER BLACK|6</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LBL</string></dict>
 			<dict><key>Trade Price</key><string>51.16</string></dict>
+			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
+			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Yellow</key><string>LN770/2PLYE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ghost Gum</key><string>LN770/2PLLG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Orange Crush</key><string>LN770/2PLOG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Bubblegum</key><string>LN770/2PLPI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ninja Khaki</key><string>LN770/2PLKH_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Saucy Red</key><string>LN770/2PLRE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Wet Elephant</key><string>LN770/2PLDG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Midnight Dash</key><string>LN770/2PLMI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Abracadaba</key><string>LN770/2PLAU_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Asphalt</key><string>LN770/2PLAS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Yellow</key><string>LN770/2PLYE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ghost Gum</key><string>LN770/2PLLG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Orange Crush</key><string>LN770/2PLOG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Bubblegum</key><string>LN770/2PLPI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ninja Khaki</key><string>LN770/2PLKH</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Saucy Red</key><string>LN770/2PLRE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Wet Elephant</key><string>LN770/2PLDG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Midnight Dash</key><string>LN770/2PLMI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Abracadaba</key><string>LN770/2PLAU</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Asphalt</key><string>LN770/2PLAS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
+			<dict><key>Gun Metal</key><string>LN770/2PLGL_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER WHITE|7</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TWE</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
+			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
+			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Yellow</key><string>LN770/2PLYE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ghost Gum</key><string>LN770/2PLLG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Orange Crush</key><string>LN770/2PLOG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Bubblegum</key><string>LN770/2PLPI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ninja Khaki</key><string>LN770/2PLKH_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Saucy Red</key><string>LN770/2PLRE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Wet Elephant</key><string>LN770/2PLDG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Midnight Dash</key><string>LN770/2PLMI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Abracadaba</key><string>LN770/2PLAU_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Asphalt</key><string>LN770/2PLAS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Yellow</key><string>LN770/2PLYE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ghost Gum</key><string>LN770/2PLLG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Orange Crush</key><string>LN770/2PLOG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Bubblegum</key><string>LN770/2PLPI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ninja Khaki</key><string>LN770/2PLKH</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Saucy Red</key><string>LN770/2PLRE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Wet Elephant</key><string>LN770/2PLDG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Midnight Dash</key><string>LN770/2PLMI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Abracadaba</key><string>LN770/2PLAU</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Asphalt</key><string>LN770/2PLAS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
+			<dict><key>Gun Metal</key><string>LN770/2PLGL_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER CREAM|8</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TCR</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
+			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
+			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Yellow</key><string>LN770/2PLYE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ghost Gum</key><string>LN770/2PLLG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Orange Crush</key><string>LN770/2PLOG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Bubblegum</key><string>LN770/2PLPI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ninja Khaki</key><string>LN770/2PLKH_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Saucy Red</key><string>LN770/2PLRE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Wet Elephant</key><string>LN770/2PLDG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Midnight Dash</key><string>LN770/2PLMI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Abracadaba</key><string>LN770/2PLAU_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Asphalt</key><string>LN770/2PLAS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Yellow</key><string>LN770/2PLYE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ghost Gum</key><string>LN770/2PLLG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Orange Crush</key><string>LN770/2PLOG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Bubblegum</key><string>LN770/2PLPI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ninja Khaki</key><string>LN770/2PLKH</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Saucy Red</key><string>LN770/2PLRE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Wet Elephant</key><string>LN770/2PLDG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Midnight Dash</key><string>LN770/2PLMI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Abracadaba</key><string>LN770/2PLAU</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Asphalt</key><string>LN770/2PLAS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
+			<dict><key>Gun Metal</key><string>LN770/2PLGL_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 		<key>LINEA 400VA TRAILING-EDGE ROTARY DIMMER BLACK|9</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TBL</string></dict>
 			<dict><key>Trade Price</key><string>60.30</string></dict>
+			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
+			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Yellow</key><string>LN770/2PLYE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ghost Gum</key><string>LN770/2PLLG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Orange Crush</key><string>LN770/2PLOG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Bubblegum</key><string>LN770/2PLPI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Ninja Khaki</key><string>LN770/2PLKH_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Saucy Red</key><string>LN770/2PLRE_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Wet Elephant</key><string>LN770/2PLDG_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Midnight Dash</key><string>LN770/2PLMI_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Abracadaba</key><string>LN770/2PLAU_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>9.10</string></dict>
+			<dict><key>Asphalt</key><string>LN770/2PLAS_Dimmer</string></dict>
+			<dict><key>Trade Price</key><string>7.73</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Yellow</key><string>LN770/2PLYE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ghost Gum</key><string>LN770/2PLLG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Orange Crush</key><string>LN770/2PLOG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>5 O'Clock Olive</key><string>LN770/2PLOL</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Bubblegum</key><string>LN770/2PLPI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Ninja Khaki</key><string>LN770/2PLKH</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Saucy Red</key><string>LN770/2PLRE</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Wet Elephant</key><string>LN770/2PLDG</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Cheeky Boy Blue</key><string>LN770/2PLSB</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Midnight Dash</key><string>LN770/2PLMI</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Abracadaba</key><string>LN770/2PLAU</string></dict>
-			<dict><key>Trade Price</key><string>9.10</string></dict>
-			<dict><key>Asphalt</key><string>LN770/2PLAS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
-			<dict><key>Trade Price</key><string>7.73</string></dict>
-			<dict><key>Gun Metal</key><string>LN770/2PLGL</string></dict>
+			<dict><key>Gun Metal</key><string>LN770/2PLGL_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>7.73</string></dict>
 		</array>
 </dict>
