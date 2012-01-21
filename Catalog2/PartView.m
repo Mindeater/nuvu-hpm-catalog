@@ -170,8 +170,10 @@
     countLabel.textColor = [UIColor whiteColor];
     countLabel.backgroundColor = [UIColor blackColor];
     [self.controlsView addSubview:countLabel];
+    
     ///////////////////
     //Buttons
+    
     
     UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(nextItem:)];          
     
@@ -190,8 +192,11 @@
 
     UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:self action:@selector(previousItem:)];          
     
-    [toolBar setItems:[NSArray arrayWithObjects:prevButton,flex,chooseItem,flex2,nextButton, nil]];
-
+    if(countTotal > 1){
+        [toolBar setItems:[NSArray arrayWithObjects:prevButton,flex,chooseItem,flex2,nextButton, nil]];
+    }else{
+        [toolBar setItems:[NSArray arrayWithObjects:flex,chooseItem,flex2,nil]];
+    }
     [self.controlsView addSubview:toolBar];
     [prevButton release];
     [flex release];

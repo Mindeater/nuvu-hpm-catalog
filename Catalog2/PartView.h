@@ -14,7 +14,7 @@
     NSString *categoryName;
     BOOL      selected;
     UIView   *controlsView;
-    UILabel *partLabel;
+    UILabel  *partLabel;
     
     NSString *orientationPrefix;
     NSString *brandName;
@@ -76,7 +76,7 @@
 -(void)showMenuSheet:(id)sender;
 -(void)addItemToCart:(id)sender;
 
-
+// toolbar actions
 -(void)addToDefaultActiveOrder;
 -(void)returnToMainMenu;
 -(void)returnToCatalogMenu;
