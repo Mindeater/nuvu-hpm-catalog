@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="10K549" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Brand" syncable="YES">
+        <attribute name="heading" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="menuOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="category" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="brand" inverseEntity="Category" syncable="YES"/>
         <relationship name="product" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="brand" inverseEntity="Product" syncable="YES"/>
     </entity>
     <entity name="Category" syncable="YES">
+        <attribute name="menuOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="brand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="category" inverseEntity="Brand" syncable="YES"/>
         <relationship name="product" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="category" inverseEntity="Product" syncable="YES"/>
@@ -14,7 +17,7 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="ordered" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderLine" inverseName="faceplate" inverseEntity="OrderLine" syncable="YES"/>
+        <relationship name="ordered" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderItem" inverseName="faceplate" inverseEntity="OrderItem" syncable="YES"/>
         <relationship name="product" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="faceplate" inverseEntity="Product" syncable="YES"/>
     </entity>
     <entity name="Mechanism" syncable="YES">
@@ -22,24 +25,36 @@
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="price" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
-        <relationship name="ordered" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderLine" inverseName="mechanism" inverseEntity="OrderLine" syncable="YES"/>
+        <relationship name="ordered" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderItem" inverseName="mechanism" inverseEntity="OrderItem" syncable="YES"/>
         <relationship name="product" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Product" inverseName="mechanism" inverseEntity="Product" syncable="YES"/>
     </entity>
     <entity name="Order" syncable="YES">
         <attribute name="active" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uniqueId" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="orderLine" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OrderLine" inverseName="order" inverseEntity="OrderLine" syncable="YES"/>
+        <relationship name="orderLine" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OrderLine" inverseName="order" inverseEntity="OrderLine" syncable="YES"/>
     </entity>
-    <entity name="OrderLine" syncable="YES">
+    <entity name="OrderItem" syncable="YES">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="product" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="faceplate" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Faceplate" inverseName="ordered" inverseEntity="Faceplate" syncable="YES"/>
         <relationship name="mechanism" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Mechanism" inverseName="ordered" inverseEntity="Mechanism" syncable="YES"/>
+        <relationship name="order" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="OrderLine" inverseName="items" inverseEntity="OrderLine" syncable="YES"/>
+    </entity>
+    <entity name="OrderLine" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cost" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="product" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="OrderItem" inverseName="order" inverseEntity="OrderItem" syncable="YES"/>
         <relationship name="order" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="orderLine" inverseEntity="Order" syncable="YES"/>
     </entity>
     <entity name="Product" syncable="YES">
+        <attribute name="menuOrder" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="orientation" optional="YES" attributeType="String" defaultValueString="Both" syncable="YES"/>
         <relationship name="brand" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Brand" inverseName="product" inverseEntity="Brand" syncable="YES"/>
@@ -48,11 +63,12 @@
         <relationship name="mechanism" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" destinationEntity="Mechanism" inverseName="product" inverseEntity="Mechanism" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Brand" positionX="223" positionY="36" width="128" height="90"/>
+        <element name="Brand" positionX="223" positionY="36" width="128" height="120"/>
         <element name="Category" positionX="-135" positionY="108" width="128" height="90"/>
         <element name="Faceplate" positionX="322" positionY="414" width="128" height="120"/>
         <element name="Mechanism" positionX="-108" positionY="381" width="128" height="135"/>
         <element name="Order" positionX="367" positionY="81" width="128" height="105"/>
+        <element name="OrderItem" positionX="88" positionY="360" width="128" height="150"/>
         <element name="OrderLine" positionX="349" positionY="234" width="128" height="135"/>
         <element name="Product" positionX="63" positionY="192" width="128" height="120"/>
     </elements>
