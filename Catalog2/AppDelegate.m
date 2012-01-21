@@ -37,6 +37,7 @@
     // Override point for customization after application launch.
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
     
+    ////////////////////////////////////
     /// Is there a Dataset Available ??
     // this call forces a copy of the sqlite db if one has been shipped in the App bundle
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
@@ -47,7 +48,8 @@
     NSError *error = nil;
     NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
     [request release];
-    //NSLog(@"Entity CHeck Returns %@",result);
+    
+    ////////////////////////////////////////////
     // otherwize we read the data in from pLists
     if(![result lastObject]){
         LoadHPMData *loader = [[LoadHPMData alloc]init];
@@ -69,15 +71,6 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
         
     }
-    /*
-     // to check it:
-    [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"];
-    // -applicationWillTerminate:
-    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
-    */
-    
-    /////////////////////////////////////////
-    // Opening movie
     
     
     /////////////////////////////////////////////
@@ -102,8 +95,11 @@
     //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     // reset view controllers if the movie is set play evertime
     NSLog(@"Resigning Active");
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+    if([self.navigationController.viewControllers count] == 1){
+       // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ud_Movie"];
+    }
+    //[[NSUserDefaults standardUserDefaults] synchronize];
     
 }
 
@@ -120,10 +116,10 @@
     /*
      Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
      */
-    NSLog(@"Application enters foreground");
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]){
-        NSLog(@"Entering ForeGround -- Pop the Nav controllers  we are here");
-        [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:0] animated:NO];
+    
+    // if the app has gone to back with the main interface as the ending point play the movie.
+    if([self.navigationController.viewControllers count] == 1){
+        [[self.navigationController.viewControllers objectAtIndex:0] playMovie];
     }
 }
 
@@ -140,7 +136,6 @@
     [self saveContext];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    NSLog(@"Terminating now");
 }
 
 - (void)saveContext
@@ -156,8 +151,11 @@
              
              abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
              */
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+            NSLog(@"Managed Object Context Unresolved error %@, %@", error, [error userInfo]);
+            //abort();
+            UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [dbError show];
+            [dbError release];
         } 
     }
 }
@@ -220,6 +218,7 @@
    // NSString *storePath = [documentsDirectory stringByAppendingPathComponent: @"Catalog2.sqlite"];
     NSString *storePath = [[[self applicationDocumentsDirectory] path] stringByAppendingPathComponent:@"Catalog2.sqlite"];
     NSURL *storeURL = [NSURL fileURLWithPath:storePath];
+    
     // Put down default db if it doesn't already exist
     NSFileManager *fileManager = [NSFileManager defaultManager];
     if (![fileManager fileExistsAtPath:storePath]) {
@@ -231,7 +230,7 @@
             if(![fileManager copyItemAtPath:defaultStorePath toPath:storePath error:&copyError]){
                 NSLog(@"\n*****\nERROR Copying\n\n\n %@",[copyError localizedDescription]);
             }else{
-                NSLog(@"\n\n+++\nCOPIED sqllite db");
+                //NSLog(@"\n\n+++\nCOPIED sqllite db");
             }
             
         }
@@ -266,8 +265,13 @@
          Lightweight migration will only work for a limited set of schema changes; consult "Core Data Model Versioning and Data Migration Programming Guide" for details.
          
          */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+        NSLog(@"Persistent Store Coordinator - Unresolved error %@, %@", error, [error userInfo]);
+        //abort();
+        
+        UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [dbError show];
+        [dbError release];
+        
     }    
     
     return __persistentStoreCoordinator;
