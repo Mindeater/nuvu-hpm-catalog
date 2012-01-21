@@ -232,7 +232,7 @@
         //NSLog(@" iTem TEST returns : %@",[[self.currentOrderLine valueForKey:@"items"] valueForKey:@"name"]);
         
         if([[self.currentOrderLine valueForKey:@"items"] count] < [mechanisms count]){
-           // NSLog(@"Need to add new OrderItems rather taht update the count");
+           //NSLog(@"Need to add new OrderItems rather than update the count");
         
             NSManagedObject *newEntity = [NSEntityDescription 
                                           insertNewObjectForEntityForName:@"OrderItem"
@@ -261,9 +261,10 @@
     
     // now update the current self.currentOrderLine
     cost += [[self.currentOrderLine valueForKey:@"cost"] floatValue];
+    NSLog(@"Mechanism cost %f",cost);
     [self.currentOrderLine setValue:[NSNumber numberWithFloat:cost]
                              forKey:@"cost"];
-    /* only update the quantity whaen the faceplate goes in
+    /* only update the quantity when the faceplate goes in
     float quantity = [[self.currentOrderLine valueForKey:@"quantity"] floatValue];
     [self.currentOrderLine setValue: [NSNumber numberWithFloat:quantity +1]
                              forKey:@"quantity"];
@@ -277,8 +278,6 @@
     NSError *error;
     [self.currentOrderLine setValue: comment
                              forKey:@"comment"];
-    
-    
     [self.context save:&error];
 }
 
@@ -337,7 +336,7 @@
    
     
     // now update the current self.currentOrderLine
-    
+    // NSLog(@"Faceplate update");
     cost += [[self.currentOrderLine valueForKey:@"cost"] floatValue];
     [self.currentOrderLine setValue:[NSNumber numberWithFloat:cost]
                              forKey:@"cost"];
