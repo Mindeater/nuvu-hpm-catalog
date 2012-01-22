@@ -53,7 +53,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"Search results Table View view Did Load");
     self.filteredListContents = [NSArray arrayWithObjects: nil];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -170,14 +169,17 @@
         case 2: // coverplate
         {
             NSManagedObject *part = [self.filteredListContents objectAtIndex:indexPath.row];
-            cell.textLabel.text = [part valueForKey:@"id"];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@(%@)",
+                                   [part valueForKey:@"id"],
+                                   [part valueForKey:@"name"]];
             cell.imageView.image = [self getThumbnailForPart:part
                                                       ofType:@"Faceplate"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
+            cell.detailTextLabel.text = [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"];
+            /*[NSString stringWithFormat:@"%@ %@",
                                          [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"],
-                                         [[[part valueForKey:@"product"] valueForKey:@"category"] valueForKey:@"name"]];
+                                         [[[part valueForKey:@"product"] valueForKey:@"category"] valueForKey:@"name"]];*/
         }
             break;
             
@@ -243,9 +245,11 @@
         NSArray *result =  [self.context executeFetchRequest:request error:&error];
         NSMutableSet* existingNames = [NSMutableSet set];
         NSMutableArray* filteredArray = [NSMutableArray array];
+        
         for (id object in result) {
-            if (![existingNames containsObject:[object name]]) {
-                [existingNames addObject:[object name]];
+            //NSLog(@"%@",[object valueForKey:@"id"]);
+            if (![existingNames containsObject:[object valueForKey:@"id"]]) {
+                [existingNames addObject:[object valueForKey:@"id"]];
                 [filteredArray addObject:object];
             }
         }
@@ -268,11 +272,13 @@
         NSMutableSet* existingNames = [NSMutableSet set];
         NSMutableArray* filteredArray = [NSMutableArray array];
         for (id object in result) {
-            if (![existingNames containsObject:[object name]]) {
-                [existingNames addObject:[object name]];
+            //NSLog(@"%@",[object valueForKey:@"id"]);
+            if (![existingNames containsObject:[object valueForKey:@"id"]]) {
+                [existingNames addObject:[object valueForKey:@"id"]];
                 [filteredArray addObject:object];
             }
         }
+        
         
         self.filteredListContents =  [NSArray arrayWithArray:filteredArray];
         
@@ -320,7 +326,7 @@
 }
 
 
-#pragma mark - Table view delegate
+
 -(UIImage *)getThumbnailForPart:(NSManagedObject *)part ofType:(NSString *)type
 {
     UIImage *found = nil;
@@ -424,6 +430,9 @@
     }
     return found;
 }
+
+
+#pragma mark - Table view delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //ProductView *detailViewController = [[ProductView alloc] init];
