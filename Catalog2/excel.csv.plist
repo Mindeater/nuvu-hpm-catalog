@@ -924,16 +924,22 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XL7774WE</string></dict>
 			<dict><key>Trade Price</key><string>47.98</string></dict>
+			<dict><key>Matt Siver</key><string>No-coverplate</string></dict>
+			<dict><key>Trade Price</key><string>-</string></dict>
 		</array>
 		<key>EXCEL 10A 4-GANG POWERPOINT CREAM|13</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>XL7774CR</string></dict>
 			<dict><key>Trade Price</key><string>49.90</string></dict>
+			<dict><key>Matt Siver</key><string>No-coverplate</string></dict>
+			<dict><key>Trade Price</key><string>-</string></dict>
 		</array>
 		<key>EXCEL 10A 4-GANG POWERPOINT BLACK|14</key>
 		<array>
 			<dict><key>Mechanism 1</key><string>XL7774BL</string></dict>
 			<dict><key>Trade Price</key><string>49.90</string></dict>
+			<dict><key>Matt Siver</key><string>No-coverplate</string></dict>
+			<dict><key>Trade Price</key><string>-</string></dict>
 		</array>
 		<key>EXCEL 10A 2-GANG SURGE PROTECTION POWERPOINT WHITE|15</key>
 		<array>
