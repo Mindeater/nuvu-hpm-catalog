@@ -76,9 +76,9 @@
         
         // code
         cell2 = [[UILabel alloc]init];
+        cell2.textAlignment = UITextAlignmentLeft;
         cell2.lineBreakMode = UILineBreakModeWordWrap;
         cell2.numberOfLines = 0;
-        cell2.textAlignment = UITextAlignmentCenter;
 		cell2.backgroundColor = [UIColor clearColor]; // Important to set or lines will not appear
         
         
