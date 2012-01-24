@@ -507,6 +507,7 @@
         // code
         cell.cell2.text = [parts objectAtIndex:0];//[currentRecord valueForKey:@"name"];
         cell.cell2.textAlignment = UITextAlignmentLeft;
+        [cell.cell2 sizeToFit];
         
         // comments
         //cell.commentField.placeholder = @"- - - - - - -";
