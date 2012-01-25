@@ -62,4 +62,6 @@
 -(void)moviePlayBackDidFinish:(NSNotification*)notification;
 
 -(void)renderInterface;
+
+-(CGFloat)degreesToRadians:(CGFloat)degrees;
 @end

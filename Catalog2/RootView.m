@@ -101,6 +101,14 @@
         [self renderInterface];
     }
      */
+    
+    
+    ///////////////////////////
+    // A default image for manipulation (empty by default)
+    
+    self.choosenWall = [UIImage imageWithContentsOfFile:
+                        [[NSBundle mainBundle] pathForResource:@"Paint_Sample_Hog_Bristle" ofType:@"jpg"]];
+    
 }
 
 -(void)renderInterface
@@ -122,13 +130,7 @@
     [self.view addSubview:bgImgLand];
     [self.view addSubview:bgImgPort];
     
-    
-    ///////////////////////////
-    // A default image for manipulation (empty by default)
-    
-    self.choosenWall = [UIImage imageWithContentsOfFile:
-                 [[NSBundle mainBundle] pathForResource:@"Paint_Sample_Hog_Bristle" ofType:@"jpg"]];
-    
+
     //////////////////////////////
     // main Navigation Options
     // 1. show catalog
@@ -288,6 +290,7 @@
                                                  name:MPMoviePlayerPlaybackDidFinishNotification
                                                object:moviePlayer];
     
+    
     moviePlayer.controlStyle = MPMovieControlStyleNone;
     moviePlayer.shouldAutoplay = YES;
     moviePlayer.fullscreen = YES;
@@ -297,19 +300,30 @@
     [moviePlayer setFullscreen:YES animated:YES];
     //[moviePlayer release];
     [self.view addSubview:moviePlayer.view];
-    /* This doesn't work for the movie but does if you apply it to the view
+    /* This doesn't work for the movie but does if you apply it to the view */
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-    [moviePlayer.view addGestureRecognizer:tap];
+    UIView *aView = [[UIView alloc] initWithFrame:moviePlayer.view.bounds];
+    [aView addGestureRecognizer:tap];
+    [moviePlayer.view addSubview:aView];
+    //[moviePlayer.view addGestureRecognizer:tap];
     [tap release];
-    */
     
 }
-/*
+
 - (void)handleTap:(UITapGestureRecognizer *)gesture {
-    // Do some other action as intended.
-    NSLog(@"TAPPER TAPPER TAPPER");
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self      
+                                                    name:MPMoviePlayerPlaybackDidFinishNotification
+                                                  object:moviePlayer];
+    if ([moviePlayer 
+         respondsToSelector:@selector(setFullscreen:animated:)])
+    {
+        [moviePlayer.view removeFromSuperview];
+    }
+    [moviePlayer release];
+    [self renderInterface];
 }
- */
+
 
 -(void)moviePlayBackDidFinish:(NSNotification*)notification 
 {
@@ -415,8 +429,9 @@
     [self.view sendSubviewToBack:imageView];
     [imageView release];
     */
-    self.choosenWall = senderType.selectedImage;
-    // NSLog(@"observer - > background Image :: %@",self.choosenWall);
+    NSLog(@"observer - > background Image :: %@",senderType.selectedImage);
+    self.choosenWall = [UIImage imageWithCGImage:[senderType.selectedImage CGImage]];
+    NSLog(@"observer - > background Image :: %@",self.choosenWall);
     // [self showOrders];
     [senderType.navigationController popViewControllerAnimated:YES];
 }
@@ -484,11 +499,56 @@
 }
 
 #pragma mark - UIImagePickerDelegate
+-(CGFloat)degreesToRadians:(CGFloat) degrees
+{return degrees * M_PI / 180;};
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
-    //NSLog(@"sent %@",info);
-    self.choosenWall = [info objectForKey:UIImagePickerControllerOriginalImage];    
+    NSLog(@"sent %@",info);
+    NSLog(@"\n\nOrientation %@ ",[[info objectForKey:UIImagePickerControllerMediaMetadata] objectForKey:@"Orientation"]);
+    
+    if([[[info objectForKey:UIImagePickerControllerMediaMetadata] objectForKey:@"Orientation"] intValue] == 6){    //EXIF 6
+    // fix info for original image.
+        NSLog(@"EXIF 6");
+        /*
+        self.choosenWall = [[UIImage alloc] initWithCGImage: [[info objectForKey:UIImagePickerControllerOriginalImage] CGImage]
+                                   scale: 1.0
+                             orientation: UIImageOrientationRight];
+         */
+        
+        UIImage *taken = [info objectForKey:UIImagePickerControllerOriginalImage]; 
+        
+        // calculate the size of the rotated view's containing box for our drawing space
+        UIView *rotatedViewBox = [[UIView alloc] initWithFrame:CGRectMake(0,0,taken.size.width, taken.size.height)];
+        CGAffineTransform t = CGAffineTransformMakeRotation([self degreesToRadians:90.0]);
+        rotatedViewBox.transform = t;
+        CGSize rotatedSize = rotatedViewBox.frame.size;
+        [rotatedViewBox release];
+        
+        // Create the bitmap context
+        UIGraphicsBeginImageContext(rotatedSize);
+        CGContextRef bitmap = UIGraphicsGetCurrentContext();
+        
+        // Move the origin to the middle of the image so we will rotate and scale around the center.
+        CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
+        
+        //   // Rotate the image context
+        CGContextRotateCTM(bitmap, [self degreesToRadians:90.0]);
+        
+        // Now, draw the rotated/scaled image into the context
+        CGContextScaleCTM(bitmap, 1.0, -1.0);
+        CGContextDrawImage(bitmap, CGRectMake(-taken.size.width / 2, -taken.size.height / 2, taken.size.width, taken.size.height), [taken CGImage]);
+        
+        UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        
+        self.choosenWall = newImage;
+        
+        
+    }else{
+    
+        self.choosenWall = [info objectForKey:UIImagePickerControllerOriginalImage]; 
+    }
     
     if (self.popOver != nil) {
         [self.popOver dismissPopoverAnimated:YES];
