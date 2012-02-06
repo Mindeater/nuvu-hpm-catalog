@@ -11,6 +11,8 @@
 
 //#import "EditOrderLineView.h"
 
+#import "OrderLineModal.h"
+
 
 @implementation OrderDetailTableView
 
@@ -540,7 +542,7 @@
         ///////////////////////////////////
         // sored email string
         [self.emailOrderBody 
-         appendFormat:@"<tr><td>%@</td><td>%@</td><td valign=\"top\">%@</td><td>%@</td><td>%@</td></tr>",
+         appendFormat:@"<tr><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td></tr>",
          cell.cell1.text,
          [cell.cell2.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          [cell.commentField.text  stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
@@ -681,6 +683,38 @@
     if(indexPath.row == 0 || indexPath.row == [_fetchedResultsController.fetchedObjects count] +1){
         return; 
     }
+    //NSLog(@"Index path for orderline %@, row %i",indexPath,indexPath.row);
+    NSArray *items = [[[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1] valueForKey:@"items"] allObjects]; 
+   // NSLog(@" --- %@",items);
+    
+    NSManagedObject *last;
+    if([[[items lastObject] valueForKey:@"type"] isEqualToString:@"Mechanism"]){
+        last = [[items lastObject] valueForKey:@"mechanism"];
+    }else{
+        last = [[items lastObject] valueForKey:@"faceplate"];
+    }
+    NSString *orientation = [[last valueForKey:@"product"] valueForKey:@"orientation"];
+    CGFloat width = 480;
+    CGFloat height = 700;
+     if([orientation isEqualToString:@"Horizontal"]){
+         width = 700;
+         height = 480;
+     }
+    
+    OrderLineModal *detailViewController = [[OrderLineModal alloc] initWithNibName:nil bundle:nil];
+    detailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
+    detailViewController.context = self.context;
+    detailViewController.orderLineManagedObject = [_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1];
+   // detailViewController.delegate = self;
+    detailViewController.sizeRect = CGRectMake(0, 0, width, height);
+    [self presentModalViewController:detailViewController animated:YES];
+    
+    // sets the size
+    detailViewController.view.superview.frame = CGRectMake(0, 0, width, height);//it's important to do this after 
+    detailViewController.view.superview.center = self.view.center;
+    [detailViewController release];
+
+    
     /*
     EditOrderLineView *detailViewController = [[EditOrderLineView alloc] initWithNibName:nil bundle:nil];
     detailViewController.context = self.context;
