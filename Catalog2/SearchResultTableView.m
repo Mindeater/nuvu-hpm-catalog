@@ -208,6 +208,7 @@
 	  [self.searchDisplayController.searchBar selectedScopeButtonIndex]]];
     return YES;
 }
+
 - (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
 {
    
@@ -221,6 +222,7 @@
     NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
     
     //@TODO: break the search on spaces and do an OR with the predicate to cover word searching
+    
      NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
     
     if(item == 0){ 
