@@ -326,6 +326,25 @@
     // background image
     
     UIImageView *bg = [[UIImageView alloc]initWithImage:self.backgroundImage];
+    
+    CGSize boundsSize = self.view.bounds.size;
+    CGRect frameToCenter = bg.frame;
+    
+    // center horizontally
+    if (frameToCenter.size.width < boundsSize.width)
+        frameToCenter.origin.x = (boundsSize.width - frameToCenter.size.width) / 2;
+    else
+        frameToCenter.origin.x = 0;
+    
+    // center vertically
+    if (frameToCenter.size.height < boundsSize.height)
+        frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2;
+    else
+        frameToCenter.origin.y = 0;
+    
+    bg.frame = frameToCenter;
+    
+    
     [self.view addSubview:bg];
     [bg release];
     
@@ -365,7 +384,7 @@
         _marque.bounds = CGRectMake(photoImage.frame.origin.x, photoImage.frame.origin.y, 0, 0);
         _marque.position = CGPointMake(photoImage.frame.origin.x + canvas.frame.origin.x, photoImage.frame.origin.y + canvas.frame.origin.y);
     }
-    [[self.view layer] addSublayer:_marque];
+    //[[self.view layer] addSublayer:_marque];
     
     /// Pinch to scale -yes
     UIPinchGestureRecognizer *pinchRecognizer = [[[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(scale:)] autorelease];
