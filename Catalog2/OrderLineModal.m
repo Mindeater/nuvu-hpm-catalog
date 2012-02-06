@@ -50,7 +50,7 @@
     //self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view = [[[UIView alloc] initWithFrame:self.sizeRect] autorelease];
     //self.view.frame = self.view.superview.frame;
-     NSLog(@"Starting View with %@",NSStringFromCGRect(self.view.frame));
+    // NSLog(@"Starting View with %@",NSStringFromCGRect(self.view.frame));
     ////////////////////////////////////
     // the gesture recongniser
     UITapGestureRecognizer *tapProfileImageRecognizer = [[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapped:)] autorelease];
@@ -64,11 +64,13 @@
     
     UIView *finalProduct = [[UIView alloc]initWithFrame:self.sizeRect];
     finalProduct.contentMode = UIViewContentModeScaleAspectFit;
-    UIImageView *faceplateView;
+    UIImageView *faceplateView= [[UIImageView alloc] init];
     UIImageView *mechanismView;
     
+    NSLog(@"iterating through %@",[self.orderLineManagedObject valueForKey:@"items"]); 
+    
+    
     for(NSManagedObject *part in [self.orderLineManagedObject valueForKey:@"items"]){
-        
         if([[part valueForKey:@"type"] isEqualToString:@"Mechanism"]){ // mechanisms
             
             UIImage *mechanism = [self getMechanismImage:[part valueForKey:@"mechanism"]];
@@ -78,26 +80,30 @@
             mechanismView.backgroundColor = [UIColor clearColor];
             mechanismView.contentMode = UIViewContentModeScaleAspectFit;
             [finalProduct addSubview:mechanismView];
+            if([[[part valueForKey:@"mechanism"]valueForKey:@"name"] isEqualToString:@"Frame"]){
+                [finalProduct sendSubviewToBack:mechanismView];
+            }
             [mechanismView release];
             
         }else{ // faceplate
             
             UIImage *faceplate = [self getFacePlateImage:[part valueForKey:@"faceplate"]];
-            faceplateView = [[UIImageView alloc]initWithImage:faceplate];
+            //faceplateView = [[UIImageView alloc]initWithImage:faceplate];
+            faceplateView.image = faceplate;
             faceplateView.backgroundColor = [UIColor clearColor];
             faceplateView.frame = self.sizeRect;
             faceplateView.contentMode = UIViewContentModeScaleAspectFit;
+            
             
         }
         
     }
     
     [finalProduct addSubview:faceplateView];
+    [finalProduct bringSubviewToFront:faceplateView];
+    [faceplateView release];
     
     [self.view addSubview:finalProduct];
-    
-    [faceplateView release];
-    //[mechanismView release];
     [finalProduct release];
 }
 
