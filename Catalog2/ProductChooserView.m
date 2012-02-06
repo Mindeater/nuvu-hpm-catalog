@@ -375,6 +375,7 @@
     if(totalFacePlates == 0 ){
         // 4 gang horizontal has no faceplate
         //NSLog(@"\n\nNO FACEPLATE !!\n\n");
+        // this will never happen because the data has been manipulated to put in an empty faceplate
         vc1.productName = @"";
         [vc1 drawWithItems:[NSArray arrayWithObjects:self.selectedMechanismImage,nil]];
         [vc1 addObserver:self forKeyPath:@"selected" options:NSKeyValueObservingOptionNew context:NULL];
@@ -526,8 +527,13 @@
     
     // remove the observers
     [vc1 removeObserver:self forKeyPath:@"selected"];
-    [vc2 removeObserver:self forKeyPath:@"selected"];
-    [vc3 removeObserver:self forKeyPath:@"selected"];
+    // make sure we don't try to remove observers that have not been established
+    if([self.currentFacePlates count] > 1){
+        [vc2 removeObserver:self forKeyPath:@"selected"];
+        [vc3 removeObserver:self forKeyPath:@"selected"];  
+    }
+    
+    
     
     // reinitalize the mechanisms
     self.currentEntityName = @"Mechanism";
