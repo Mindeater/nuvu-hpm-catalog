@@ -300,6 +300,7 @@
     [moviePlayer setFullscreen:YES animated:YES];
     //[moviePlayer release];
     [self.view addSubview:moviePlayer.view];
+    
     /* This doesn't work for the movie but does if you apply it to the view */
     UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
     UIView *aView = [[UIView alloc] initWithFrame:moviePlayer.view.bounds];
@@ -307,6 +308,7 @@
     [moviePlayer.view addSubview:aView];
     //[moviePlayer.view addGestureRecognizer:tap];
     [tap release];
+    [aView release];
     
 }
 
@@ -671,7 +673,7 @@
     CGColorSpaceRef colorspace = CGImageGetColorSpace(imgRef);
     context2 = CGBitmapContextCreate (bitmapData,bounds.size.width,bounds.size.height,8,bitmapBytesPerRow,
                                      colorspace,kCGImageAlphaPremultipliedLast);
-    CGColorSpaceRelease(colorspace);
+    //@TODO CGColorSpaceRelease(colorspace);
     
     if (context2 == NULL)
         // error creating context
