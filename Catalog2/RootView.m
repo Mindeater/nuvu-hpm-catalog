@@ -504,18 +504,18 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
-    NSLog(@"sent %@",info);
-    NSLog(@"\n\nOrientation %@ ",[[info objectForKey:UIImagePickerControllerMediaMetadata] objectForKey:@"Orientation"]);
+    //NSLog(@"sent %@",info);
+    //NSLog(@"\n\nOrientation %@ ",[[info objectForKey:UIImagePickerControllerMediaMetadata] objectForKey:@"Orientation"]);
     
     if([[[info objectForKey:UIImagePickerControllerMediaMetadata] objectForKey:@"Orientation"] intValue] == 6){    //EXIF 6
     // fix info for original image.
         NSLog(@"EXIF 6");
-        /*
+        /* v1 - doesn't work
         self.choosenWall = [[UIImage alloc] initWithCGImage: [[info objectForKey:UIImagePickerControllerOriginalImage] CGImage]
                                    scale: 1.0
                              orientation: UIImageOrientationRight];
          */
-        
+        /* v2 seems to scale the image
         UIImage *taken = [info objectForKey:UIImagePickerControllerOriginalImage]; 
         
         // calculate the size of the rotated view's containing box for our drawing space
@@ -532,19 +532,29 @@
         // Move the origin to the middle of the image so we will rotate and scale around the center.
         CGContextTranslateCTM(bitmap, rotatedSize.width/2, rotatedSize.height/2);
         
-        //   // Rotate the image context
+        // Rotate the image context
         CGContextRotateCTM(bitmap, [self degreesToRadians:90.0]);
         
         // Now, draw the rotated/scaled image into the context
         CGContextScaleCTM(bitmap, 1.0, -1.0);
-        CGContextDrawImage(bitmap, CGRectMake(-taken.size.width / 2, -taken.size.height / 2, taken.size.width, taken.size.height), [taken CGImage]);
+        CGContextDrawImage(bitmap, CGRectMake(-taken.size.width / 2, -taken.size.height / 2, taken.size.height, taken.size.width), [taken CGImage]);
         
         UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         
-        self.choosenWall = newImage;
         
+        self.choosenWall = [UIImage imageWithCGImage: [newImage CGImage]];
+         */
+/*        
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        CGFloat screenHeight = screenRect.size.height;
         
+        //self.choosenWall.frame = CGRectMake(0, 0, screenWidth, screenHeight);
+ */
+        
+        self.choosenWall = [self imageByRotatingImage:[info objectForKey:UIImagePickerControllerOriginalImage]
+                                 fromImageOrientation:UIImageOrientationRight];
     }else{
     
         self.choosenWall = [info objectForKey:UIImagePickerControllerOriginalImage]; 
@@ -566,4 +576,122 @@
     
 }
 
+
+-(UIImage*)imageByRotatingImage:(UIImage*)initImage fromImageOrientation:(UIImageOrientation)orientation
+{
+    CGImageRef imgRef = initImage.CGImage;
+    
+    CGFloat width = CGImageGetWidth(imgRef);
+    CGFloat height = CGImageGetHeight(imgRef);
+    
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    CGRect bounds = CGRectMake(0, 0, width, height);
+    CGSize imageSize = CGSizeMake(CGImageGetWidth(imgRef), CGImageGetHeight(imgRef));
+    CGFloat boundHeight;
+    UIImageOrientation orient = orientation;
+    switch(orient) {
+            
+        case UIImageOrientationUp: //EXIF = 1
+            return initImage;
+            break;
+            
+        case UIImageOrientationUpMirrored: //EXIF = 2
+            transform = CGAffineTransformMakeTranslation(imageSize.width, 0.0);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            break;
+            
+        case UIImageOrientationDown: //EXIF = 3
+            transform = CGAffineTransformMakeTranslation(imageSize.width, imageSize.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationDownMirrored: //EXIF = 4
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.height);
+            transform = CGAffineTransformScale(transform, 1.0, -1.0);
+            break;
+            
+        case UIImageOrientationLeftMirrored: //EXIF = 5
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, imageSize.width);
+            transform = CGAffineTransformScale(transform, -1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationLeft: //EXIF = 6
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(0.0, imageSize.width);
+            transform = CGAffineTransformRotate(transform, 3.0 * M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationRightMirrored: //EXIF = 7
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeScale(-1.0, 1.0);
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);
+            break;
+            
+        case UIImageOrientationRight: //EXIF = 8
+            boundHeight = bounds.size.height;
+            bounds.size.height = bounds.size.width;
+            bounds.size.width = boundHeight;
+            transform = CGAffineTransformMakeTranslation(imageSize.height, 0.0);
+            transform = CGAffineTransformRotate(transform, M_PI / 2.0);
+            break;
+            
+        default:
+            [NSException raise:NSInternalInconsistencyException format:@"Invalid image orientation"];
+            
+    }
+    // Create the bitmap context
+    CGContextRef    context2 = NULL;
+    void *          bitmapData;
+    int             bitmapByteCount;
+    int             bitmapBytesPerRow;
+    
+    // Declare the number of bytes per row. Each pixel in the bitmap in this
+    // example is represented by 4 bytes; 8 bits each of red, green, blue, and
+    // alpha.
+    bitmapBytesPerRow   = (bounds.size.width * 4);
+    bitmapByteCount     = (bitmapBytesPerRow * bounds.size.height);
+    bitmapData = malloc( bitmapByteCount );
+    if (bitmapData == NULL)
+    {
+        return nil;
+    }
+    
+    // Create the bitmap context. We want pre-multiplied ARGB, 8-bits
+    // per component. Regardless of what the source image format is
+    // (CMYK, Grayscale, and so on) it will be converted over to the format
+    // specified here by CGBitmapContextCreate.
+    CGColorSpaceRef colorspace = CGImageGetColorSpace(imgRef);
+    context2 = CGBitmapContextCreate (bitmapData,bounds.size.width,bounds.size.height,8,bitmapBytesPerRow,
+                                     colorspace,kCGImageAlphaPremultipliedLast);
+    CGColorSpaceRelease(colorspace);
+    
+    if (context2 == NULL)
+        // error creating context
+        return nil;
+    
+    CGContextScaleCTM(context2, -1.0, -1.0);
+    CGContextTranslateCTM(context2, -height, -width);
+    
+    CGContextConcatCTM(context2, transform);
+    
+    // Draw the image to the bitmap context. Once we draw, the memory
+    // allocated for the context for rendering will then contain the
+    // raw image data in the specified color space.
+    CGContextDrawImage(context2, CGRectMake(0,0,width, height), imgRef);
+    
+    CGImageRef imgRef2 = CGBitmapContextCreateImage(context2);
+    CGContextRelease(context2);
+    free(bitmapData);
+    UIImage * image = [UIImage imageWithCGImage:imgRef2 scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp];
+    CGImageRelease(imgRef2);
+    return image;
+}
 @end

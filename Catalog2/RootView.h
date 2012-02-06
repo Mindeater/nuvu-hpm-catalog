@@ -64,4 +64,5 @@
 -(void)renderInterface;
 
 -(CGFloat)degreesToRadians:(CGFloat)degrees;
+-(UIImage*)imageByRotatingImage:(UIImage*)initImage fromImageOrientation:(UIImageOrientation)orientation;
 @end
