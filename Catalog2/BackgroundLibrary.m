@@ -22,6 +22,7 @@
 {
     //self.view = nil;
     //[buttonImages release];
+    
     [super dealloc];
 }
 
@@ -314,8 +315,8 @@
 -(void)chooseImage:(id)sender
 {
     UIButton *resultButton = (UIButton *)sender;
-     self.selectedImage = [[UIImage alloc] initWithContentsOfFile:
-                           [[NSBundle mainBundle] pathForResource:[self.bgList objectAtIndex:resultButton.tag] ofType:@"jpg"]];
+     self.selectedImage = [[[UIImage alloc] initWithContentsOfFile:
+                           [[NSBundle mainBundle] pathForResource:[self.bgList objectAtIndex:resultButton.tag] ofType:@"jpg"]]autorelease];
         
     self.selected = YES;
     
@@ -375,6 +376,7 @@
     self.button18 = nil;
     self.button19 = nil;
     self.button20 = nil;
+    
     
 }
 
