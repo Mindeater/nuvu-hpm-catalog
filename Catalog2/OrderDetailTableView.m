@@ -21,6 +21,7 @@
 @synthesize context = _context;
 
 @synthesize orderId;
+@synthesize orderName;
 @synthesize orderTotal,quantityCount;
 @synthesize backString;
 
@@ -320,7 +321,7 @@
         // CREATING MAIL VIEW
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setSubject:@"HPM Product Order"];
+        [controller setSubject:[NSString stringWithFormat:@"HPM Product Order - %@",self.orderName]];
         
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_AddContact"]){
             [self.emailOrderBody appendFormat:@"<hr/><strong>%@ %@</strong><br/>%@<br/>p.%@<br />e.<a href=\"mailto:%@\">%@</a><br />",
@@ -543,7 +544,7 @@
         // sored email string
         [self.emailOrderBody 
          appendFormat:@"<tr><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td></tr>",
-         cell.cell1.text,
+         [cell.cell1.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          [cell.cell2.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          [cell.commentField.text  stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          cell.quantField.text,

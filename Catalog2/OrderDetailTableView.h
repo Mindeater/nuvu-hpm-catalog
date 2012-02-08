@@ -16,6 +16,7 @@
     NSManagedObjectContext *_context;
     
     NSString *orderId;
+    NSString *orderName;
     float orderTotal;
     int quantityCount;
     
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSManagedObjectContext *context;
 
 @property(nonatomic,retain)NSString *orderId;
+@property(nonatomic,retain)NSString *orderName;
 @property(nonatomic)float orderTotal;
 @property(nonatomic)int quantityCount;
 
