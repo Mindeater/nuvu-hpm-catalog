@@ -36,7 +36,7 @@
     [fetchRequest setEntity:entity];
     
     NSSortDescriptor *sort = [[NSSortDescriptor alloc] 
-                              initWithKey:@"name" ascending:NO];
+                              initWithKey:@"name" ascending:YES];
     [fetchRequest setSortDescriptors:[NSArray arrayWithObject:sort]];
     
     [fetchRequest setFetchBatchSize:20];
@@ -143,7 +143,10 @@
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);  // Fail
+		//exit(-1);  // Fail
+        UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [dbError show];
+        [dbError release];
 	}
     
     self.title = @"Orders";
@@ -273,13 +276,15 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     
     cell.backgroundColor = [UIColor blackColor];
-    cell.textLabel.textColor = [UIColor whiteColor];
+    //cell.textLabel.textColor = [UIColor whiteColor];
+    cell.textLabel.text = @"";
     
     NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     
     /////////////////////////////////
     // date under title
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    /*
+     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterShortStyle];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     
@@ -287,11 +292,13 @@
                     [[currentRecord valueForKey:@"uniqueId"] intValue]];
     cell.detailTextLabel.text = [dateFormatter stringFromDate:date]; 
     [dateFormatter release];
-    
+    */
     ///////////////////////////////////
     // title editable
     //cell.textLabel.text = [currentRecord valueForKey:@"name"];
-    
+    for(UIView *existing in cell.contentView.subviews){
+        [existing removeFromSuperview];
+    }
     UITextField *textField = [[UITextField alloc] initWithFrame:CGRectMake(5, 5, 200, 21)];
     textField.text = [currentRecord valueForKey:@"name"];
     textField.tag = indexPath.row;
@@ -351,7 +358,10 @@
               abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
               */
              NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-             abort();
+             //abort();
+             UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+             [dbError show];
+             [dbError release];
          }
          //[tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
      }   
@@ -399,6 +409,7 @@
             forKey:@"name"];
     NSError *error;
     [self.context save:&error];
+    
 }
 - (BOOL)textFieldShouldReturn:(UITextField*)textField
 {
@@ -433,6 +444,7 @@
     detailViewController.context = self.context;
     NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     detailViewController.orderId = [currentRecord valueForKey:@"uniqueId"];
+    detailViewController.orderName = [currentRecord valueForKey:@"name"];
     detailViewController.backString = @"Orders";
     
     //NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
@@ -468,11 +480,11 @@
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             break;
             
-        case NSFetchedResultsChangeUpdate:
+        case NSFetchedResultsChangeUpdate: //4
             [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
             break;
             
-        case NSFetchedResultsChangeMove:
+        case NSFetchedResultsChangeMove: // 3 
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
             // Reloading the section inserts a new row and ensures that titles are updated appropriately.
             [tableView reloadSections:[NSIndexSet indexSetWithIndex:newIndexPath.section] withRowAnimation:UITableViewRowAnimationFade];
