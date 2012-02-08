@@ -37,6 +37,8 @@
 
 @synthesize currentAction;
 
+@synthesize popupQuery;
+
 -(void)dealloc
 {
     [toolBar release];
@@ -181,7 +183,8 @@
     }
     partLabel.text = self.productName;
     partLabel.textColor = [UIColor whiteColor];
-    partLabel.backgroundColor = [UIColor blackColor];
+    //partLabel.backgroundColor = [UIColor blackColor];
+    partLabel.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
     partLabel.lineBreakMode = UILineBreakModeWordWrap;
     partLabel.numberOfLines = 0;
     partLabel.textAlignment = UITextAlignmentCenter;
@@ -194,7 +197,8 @@
     countLabel.text = [NSString stringWithFormat:@"%i of %i",countNum,countTotal];
     countLabel.textAlignment = UITextAlignmentCenter;
     countLabel.textColor = [UIColor whiteColor];
-    countLabel.backgroundColor = [UIColor blackColor];
+    //countLabel.backgroundColor = [UIColor blackColor];
+    countLabel.backgroundColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.7];
     [self.controlsView addSubview:countLabel];
     
     ///////////////////
@@ -319,26 +323,43 @@
 {
     self.currentAction = @"menu";
     
-    UIActionSheet *popupQuery;
+    if (self.popupQuery)
+    {
+        [self.popupQuery dismissWithClickedButtonIndex:self.popupQuery.cancelButtonIndex animated:YES];
+        self.popupQuery = nil;
+        
+        //return;
+    }
+    
+    //UIActionSheet *popupQuery;
     if([self isKindOfClass:[FacePlateView class]]){
-        popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalog", @"Mechanism", nil];
+        popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalogue", @"Mechanism", nil];
     }else{
-        popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalog", nil];
+        popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Return To Main Menu" otherButtonTitles:@"Return to Catalogue", nil];
     }
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	//[popupQuery showInView:self.view];
     [popupQuery showFromBarButtonItem:sender animated:YES];
-	[popupQuery release];  
+	//[popupQuery release];  
 }
 
 -(void)addItemToCart:(id)sender
 {
     self.currentAction = @"cart";
-    UIActionSheet *popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save to Cart" otherButtonTitles: @"Go To Cart", @"Show Orders", @"New Order", nil];
+    
+    if (self.popupQuery)
+    {
+        [self.popupQuery dismissWithClickedButtonIndex:self.popupQuery.cancelButtonIndex animated:YES];
+        self.popupQuery = nil;
+        
+        //return;
+    }
+    
+    popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save to Cart" otherButtonTitles: @"Go To Cart", @"Show Orders", @"New Order", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	//[popupQuery showInView:self.view];
     [popupQuery showFromBarButtonItem:sender animated:YES];
-	[popupQuery release];    
+	//[popupQuery release];    
 }
 
 

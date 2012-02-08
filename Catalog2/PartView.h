@@ -33,6 +33,8 @@
     int countNum;
     int countTotal;
     
+    UIActionSheet *popupQuery;
+    
 }
 
 @property(nonatomic,retain)NSString *categoryName;
@@ -56,6 +58,8 @@
 @property(nonatomic,retain)UIToolbar *toolBar;
 
 @property(nonatomic,retain)NSString *currentAction;
+
+@property(nonatomic,retain)UIActionSheet *popupQuery;
 
 -(void)drawWithItems:(NSArray *)items;
 -(void)chooseMe;
