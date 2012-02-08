@@ -237,7 +237,7 @@
         NSEntityDescription *entityMechansim = [NSEntityDescription entityForName:@"Mechanism"
                                                            inManagedObjectContext:self.context];
         [request setEntity:entityMechansim];
-        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@ && count = 1", searchText];
+        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@ || product.category.name CONTAINS[cd] %@ && count = 1", searchText,searchText,searchText];
         [request setPredicate:mechPredicate];
         
         //self.filteredListContents =  [self.context executeFetchRequest:request error:&error];
@@ -265,7 +265,7 @@
         NSEntityDescription *entityFaceplate = [NSEntityDescription entityForName:@"Faceplate"
                                                            inManagedObjectContext:self.context];
         [request setEntity:entityFaceplate];
-        NSPredicate * fbPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@", searchText];
+        NSPredicate * fbPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@ || name CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@", searchText,searchText,searchText];
         [request setPredicate:fbPredicate];
         
         ////////////////////////
