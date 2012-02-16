@@ -273,6 +273,7 @@
     [newOrderButton release];
     
     self.emailOrderBody = [NSMutableString string];
+    [self.emailOrderBody setString:@""];
     
     [self addLeftNavigationButton];
     
@@ -411,6 +412,9 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];  
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
+    BOOL adjustPrice = [[NSUserDefaults standardUserDefaults] boolForKey:@"ud_AddPricePercentage"];
+    
+    
     //////////////////////////////
     // count
     cell.indexRow = [NSNumber numberWithInt: indexPath.row -1];
@@ -524,11 +528,18 @@
         cell.quantField.tag = indexPath.row -1;
         cell.quantField.text = [NSString stringWithFormat:@"%@",[currentRecord valueForKey:@"quantity"]];
         cell.quantField.delegate = self;
+        
         //////////////////
-        // price
+        // Price
         
         NSNumber *theLineTotal = [NSNumber numberWithFloat:
                                         [[parts objectAtIndex:2] floatValue] * [[currentRecord valueForKey:@"quantity"] floatValue]];
+        if(adjustPrice){
+            float multiplier = [[[NSUserDefaults standardUserDefaults] stringForKey:@"ud_PricePercentage"] floatValue] /100;
+            //NSLog(@" MUltiplier -- |%f|",[[[NSUserDefaults standardUserDefaults] stringForKey:@"ud_PricePercentage"] floatValue]);
+            theLineTotal = [NSNumber numberWithFloat:[theLineTotal floatValue]+ [theLineTotal floatValue] * multiplier];
+        }
+        
         NSString *totalFormat = [formatter stringFromNumber:
                                  theLineTotal];
         
