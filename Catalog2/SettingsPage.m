@@ -7,11 +7,14 @@
 //
 
 #import "SettingsPage.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation SettingsPage
 
 @synthesize infomationString;
 @synthesize logoImage;
+@synthesize moviePlayer;
+@synthesize movieURL;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,7 +40,7 @@
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView
 {
-    //[self.navigationController setNavigationBarHidden:YES animated:NO];
+    
     self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view.backgroundColor = [UIColor blackColor];
     
@@ -79,6 +82,7 @@
     CGFloat startY = 20;
     //CGFloat textViewHeight = screenHeight - toolBarHeight - 80;
     CGFloat textViewHeight = screenHeight - 80;
+    
     if(self.logoImage != nil){
         CGFloat imgViewWidth = 500;
         CGFloat startImgX = (screenWidth - imgViewWidth)/2;
@@ -123,19 +127,68 @@
         
     }
     
-    //////////////////////////////////////////////////////
-    // textview for information
-    UITextView *info = [[UITextView alloc] initWithFrame:CGRectMake(40, startY, screenWidth - 80, textViewHeight)];
-    info.textColor = [UIColor whiteColor];
-    info.backgroundColor = [UIColor blackColor];
-    info.editable = NO;
-    info.text = self.infomationString;
-    info.font = [UIFont systemFontOfSize:16];
+    if(self.infomationString){
+        //////////////////////////////////////////////////////
+        // textview for information
+        UITextView *info = [[UITextView alloc] initWithFrame:CGRectMake(40, startY, screenWidth - 80, textViewHeight)];
+        info.textColor = [UIColor whiteColor];
+        info.backgroundColor = [UIColor blackColor];
+        info.editable = NO;
+        info.text = self.infomationString;
+        info.font = [UIFont systemFontOfSize:16];
+        
+        [self.view addSubview:info];
+        [info release];
+    }
     
-    [self.view addSubview:info];
-    [info release];
+    if(self.movieURL){
+        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:movieURL];
+        //moviePlayer = [[MPMoviePlayerViewController alloc] initWithContentURL:movieURL];
+
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(moviePlayBackDidFinish:)
+                                                     name:MPMoviePlayerPlaybackDidFinishNotification
+                                                   object:moviePlayer];
+        
+        if([self.infomationString isEqualToString:@"instructions"]){
+            NSLog(@"Instructional Movie");
+           // 
+           // moviePlayer.shouldAutoplay = YES;
+            moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
+        }else{
+            moviePlayer.controlStyle = MPMovieControlStyleNone;
+        }
+        
+       // moviePlayer.fullscreen = YES;
+        moviePlayer.view.frame = [[UIScreen mainScreen] bounds];
+        
+        
+        //[moviePlayer setFullscreen:YES animated:YES];
+        //[moviePlayer release];
+        [self.view addSubview:moviePlayer.view];
+        [moviePlayer play];
+        
+    }
     
+}
+
+-(void)moviePlayBackDidFinish:(NSNotification*)notification 
+{
     
+    //MPMoviePlayerController *moviePlayer = [notification object];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self      
+                                                    name:MPMoviePlayerPlaybackDidFinishNotification
+                                                  object:moviePlayer];
+    
+    if ([moviePlayer
+         respondsToSelector:@selector(setFullscreen:animated:)])
+    {
+        [moviePlayer.view removeFromSuperview];
+    }
+    [moviePlayer release];
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)finish
