@@ -101,7 +101,7 @@
 {
     // add the alert view now
     AlertPrompt *prompt = [AlertPrompt alloc];
-	prompt = [prompt initWithTitle:@"Adding to Order" message:@"Please enter a note" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+	prompt = [prompt initWithTitle:@"Add Comment" message:@"Please enter a note" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
 	[prompt show];
 	[prompt release];
     /*
