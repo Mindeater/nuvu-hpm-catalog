@@ -98,41 +98,50 @@
     float totalCost = 0;
     
     // are there mechanism ?
-    //NSLog(@"\nMECHANISMS : \n %@", [orderLine valueForKey:@"product"]);;
     
     for(NSManagedObject *part in [orderLine valueForKey:@"items"]){
-        //NSLog(@" - %@",[part valueForKey:@"type"]);
         
         
         if([[part valueForKey:@"type"] isEqualToString:@"Mechanism"]){
-           // NSLog(@"1. totalCount : %f",totalCost);
+
             [count appendFormat:@"%@\n",
              [[part valueForKey:@"mechanism"] valueForKey:@"count"]];
             
+            // remove suffix from part names
+            NSString *cleanName1 = [NSString stringWithFormat:@"%@",
+                        [[part valueForKey:@"name"] stringByReplacingOccurrencesOfString:@"_ded" withString:@""]];
+            
+            NSString *cleanName2 = [NSString stringWithFormat:@"%@",
+                                   [cleanName1 stringByReplacingOccurrencesOfString:@"_TV" withString:@""]];
+            
+            NSString *cleanName = [NSString stringWithFormat:@"%@",
+                                   [cleanName2 stringByReplacingOccurrencesOfString:@"_dim" withString:@""]];
             // handle mutliple parts
             if([[[part valueForKey:@"mechanism"] valueForKey:@"count"] intValue] >1){
+                
                 [mechPartDesc appendFormat:@"%ix %@\n",
                         [[[part valueForKey:@"mechanism"] valueForKey:@"count"] intValue],
-                        [part valueForKey:@"name"]];
+                        cleanName];
+                        //[part valueForKey:@"name"]];
+                
                 totalCost += [[[part valueForKey:@"mechanism"] valueForKey:@"price"] floatValue] * [[[part valueForKey:@"mechanism"] valueForKey:@"count"] floatValue];
-                //NSLog(@"2. totalCount : %f",totalCost);
-                //NSLog(@"Mechanism add - %@",mechPartDesc);
+
             }else{
-                [mechPartDesc appendFormat:@"%@\n",
-                 [part valueForKey:@"name"]];
+                
+                [mechPartDesc appendFormat:@"%@\n",cleanName];
+                
                 totalCost += [[[part valueForKey:@"mechanism"] valueForKey:@"price"] floatValue];
-               // NSLog(@"3. totalCount : %f",totalCost);
-                //NSLog(@"Mechanism add - %@",mechPartDesc);
+
             }
-            //NSLog(@"Price : %@",[[part valueForKey:@"mechanism"] valueForKey:@"price"]);
         
         }else{
-            [faceplatePartDesc appendFormat:@"\n%@\n",[part valueForKey:@"name"]];
+            NSString *cleanName = [NSString stringWithFormat:@"%@",
+                                    [[part valueForKey:@"name"] stringByReplacingOccurrencesOfString:@"_Dimmer" withString:@""]];
+            
+            [faceplatePartDesc appendFormat:@"\n%@\n",cleanName];
             
             [faceplateName appendFormat:@"\n\nCover Plate: %@",[[part valueForKey:@"faceplate"] valueForKey:@"name"]];
-            
-            //NSLog(@"CoverPlate :%@",faceplateName);
-            
+                        
             [count appendString:@"1\n"];
              
             totalCost += [[[part valueForKey:@"faceplate"] valueForKey:@"price"] floatValue];
@@ -140,7 +149,6 @@
 
     }
     // are there faceplates ?
-    //NSLog(@"\nMECHANISMS : \n %@",[orderLine valueForKey:@"faceplate"]);
     
     NSArray *values = [NSArray arrayWithObjects:
             [NSString stringWithFormat:@"%@%@",mechPartDesc,faceplatePartDesc],
