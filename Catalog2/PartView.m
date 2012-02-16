@@ -256,13 +256,20 @@
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];  
     [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     
+    float adjustedPrice = [self.price floatValue];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_AddPricePercentage"]){
+        float multiplier = [[[NSUserDefaults standardUserDefaults] stringForKey:@"ud_PricePercentage"] floatValue] /100;
+        //NSLog(@" MUltiplier -- |%f|",[[[NSUserDefaults standardUserDefaults] stringForKey:@"ud_PricePercentage"] floatValue]);
+        adjustedPrice = adjustedPrice + adjustedPrice * multiplier;
+    }
+    
     NSString *message = [NSString stringWithFormat:@"%@ - %@:\n%@\n%@\n%@",
                          self.brandName,
                          self.categoryName,
                          self.productName,
-                         //self.price,
-                         [formatter stringFromNumber: [NSNumber numberWithFloat: [self.price floatValue]]],
+                         [formatter stringFromNumber: [NSNumber numberWithFloat: adjustedPrice]],
                          self.parts];
+    
     UIAlertView *notice = [[UIAlertView alloc] initWithTitle:@"Part Details" message:message delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [notice show];
     
