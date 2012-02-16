@@ -362,8 +362,9 @@
         controller.mailComposeDelegate = self;
         [controller setSubject:[NSString stringWithFormat:@"HPM Legrand Order (%@)",self.orderName]];
         
+        NSString *footer = @"";
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_AddContact"]){
-            [self.emailOrderBody appendFormat:@"<hr/><strong>%@ %@</strong><br/>%@<br/>p.%@<br />e.<a href=\"mailto:%@\">%@</a><br />",
+            footer = [NSString stringWithFormat:@"<hr/><strong>%@ %@</strong><br/>%@<br/>p.%@<br />e.<a href=\"mailto:%@\">%@</a><br />",
                 [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_FName"],
                 [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_LName"],
                 [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_Company"],
@@ -373,10 +374,11 @@
              ];
         }
         if([title isEqualToString:@"Yes"]){
-            NSLog(@" OUT\n%@",self.emailOrderBody);
+            [emailOrderBody appendString:footer];
             [controller setMessageBody:self.emailOrderBody
                                 isHTML:YES];
         }else{
+            [emailOrderBodyNoPrice appendString:footer];
             [controller setMessageBody:self.emailOrderBodyNoPrice
                                 isHTML:YES];
         }
