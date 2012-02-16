@@ -17,4 +17,8 @@
 @property(nonatomic,retain)NSArray *tableData;
 @property(nonatomic,retain)NSArray *tableHeadings;
 @property(nonatomic,retain)NSArray *infoStrings;
+
+
+-(void)setPricingPercentage;
+
 @end

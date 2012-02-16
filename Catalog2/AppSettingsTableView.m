@@ -9,6 +9,8 @@
 #import "AppSettingsTableView.h"
 #import "SettingsPage.h"
 
+#import "AlertPrompt.h"
+
 @implementation AppSettingsTableView
 
 @synthesize tableData;
@@ -64,6 +66,7 @@
     NSArray *switches = [NSArray arrayWithObjects:
                          //[NSArray arrayWithObjects:@"Movie Plays everytime App loads:",@"ud_Movie",nil],
                          [NSArray arrayWithObjects:@"Add Contact Settings to Email:",@"ud_AddContact",nil],
+                         [NSArray arrayWithObjects:@"Price Adjustment:",@"ud_AddPricePercentage",nil],
                          nil];
     NSArray *contact = [NSArray arrayWithObjects:
                         [NSArray arrayWithObjects:@"First Name:",@"ud_FName",nil],
@@ -235,14 +238,25 @@
             
             NSString *settingName = [[[self.tableData objectAtIndex:SWITCH_SECTION] 
                                       objectAtIndex:indexPath.row] objectAtIndex:1];
+            
             if([[NSUserDefaults standardUserDefaults] boolForKey:settingName]){
                 switchview.on = YES;
             }
             cell.accessoryView = switchview;
             [switchview release];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
-            cell.textLabel.text = [[[self.tableData objectAtIndex:SWITCH_SECTION] 
+            
+            if(indexPath.row == 1){
+                cell.textLabel.text = [NSString stringWithFormat:@"%@ (%i%%)",
+                               [[[self.tableData objectAtIndex:SWITCH_SECTION] 
+                                 objectAtIndex:indexPath.row] objectAtIndex:0],
+                               [[[NSUserDefaults standardUserDefaults] stringForKey:@"ud_PricePercentage"] intValue]
+                               ];
+                
+            }else{
+                cell.textLabel.text = [[[self.tableData objectAtIndex:SWITCH_SECTION] 
                                     objectAtIndex:indexPath.row] objectAtIndex:0];
+            }
         }
             break;
         case TEXT_SECTION:
@@ -340,6 +354,11 @@
     switch (indexPath.section) {
         case SWITCH_SECTION:
             // add a switch to the cell
+            if(indexPath.row == 1){
+                // Pricing info from here ...
+                NSLog(@"Pricing INformation here please");
+                [self setPricingPercentage];
+            }
             break;
         case TEXT_SECTION:
             // add textfield to the cell
@@ -405,6 +424,33 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+}
+
+#pragma mark - pricng percentage add methods
+-(void)setPricingPercentage
+{
+    // add the alert view now
+    AlertPrompt *prompt = [AlertPrompt alloc];
+	prompt = [prompt initWithTitle:@"Price Adjustment (+/-)" message:@"Please enter a Percentage Value" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    [prompt setTextFieldStyle:UIKeyboardTypeNumberPad];
+	[prompt show];
+	[prompt release];
+}
+
+- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+	if (buttonIndex != [alertView cancelButtonIndex])
+	{
+		NSString *entered = [(AlertPrompt *)alertView enteredText];
+        
+        [[NSUserDefaults standardUserDefaults] 
+         setFloat: [entered floatValue]
+         forKey:@"ud_PricePercentage"];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self.tableView reloadData];
+        
+	}
 }
 
 @end
