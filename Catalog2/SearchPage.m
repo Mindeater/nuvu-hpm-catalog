@@ -53,7 +53,7 @@
     self.view.backgroundColor = [UIColor blackColor];
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     
-    self.title = @"Search Catalog";
+    self.title = @"Search Catalogue";
     
     ///////////////////////////////
     // create a search bar
