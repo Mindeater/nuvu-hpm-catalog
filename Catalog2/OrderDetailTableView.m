@@ -26,6 +26,7 @@
 @synthesize backString;
 
 @synthesize emailOrderBody;
+@synthesize emailOrderBodyNoPrice;
 
 -(void)dealloc
 {
@@ -267,13 +268,15 @@
     ///////////////////////////////////////
     // Email Order Button
     UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
-                                       initWithTitle:@"Email Order" style:UIBarButtonItemStyleBordered target:self action:@selector(emailOrder:)];
+                                       initWithTitle:@"Email Order" style:UIBarButtonItemStyleBordered target:self action:@selector(sendCurrentOrder:)];
     //self.navigationItem.rightBarButtonItem = newOrderButton;
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:self.editButtonItem,newOrderButton, nil];
     [newOrderButton release];
     
     self.emailOrderBody = [NSMutableString string];
     [self.emailOrderBody setString:@""];
+    self.emailOrderBodyNoPrice = [NSMutableString string];
+    [self.emailOrderBodyNoPrice setString:@""];
     
     [self addLeftNavigationButton];
     
@@ -315,14 +318,49 @@
 
 #pragma mark - sending an order  by email
 
+-(void)sendCurrentOrder:(id)sender
+{
+    // with Price or Not ?
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"Price Option"
+                                                      message:@"Include Prices in Email?"
+                                                     delegate:self
+                                            cancelButtonTitle:@"Yes"
+                                            otherButtonTitles:@"No",nil];
+    
+    [message show];
+    
+    
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([title isEqualToString:@"Yes"])
+    {
+
+    }
+    else if([title isEqualToString:@"No"])
+    {
+
+    }
+    
+    [self emailOrder:title];
+}
+
 -(void)emailOrder:(id)sender
 {
     if ([MFMailComposeViewController canSendMail]) {
+        
+         NSString *title = (NSString *)sender;
+        
+        NSLog(@"Email Order has  --- %@ ||||| %@",title,sender);
+        
         // Build an email body to send
         // CREATING MAIL VIEW
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setSubject:[NSString stringWithFormat:@"HPM Product Order - %@",self.orderName]];
+        [controller setSubject:[NSString stringWithFormat:@"HPM Legrand Order (%@)",self.orderName]];
         
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_AddContact"]){
             [self.emailOrderBody appendFormat:@"<hr/><strong>%@ %@</strong><br/>%@<br/>p.%@<br />e.<a href=\"mailto:%@\">%@</a><br />",
@@ -334,8 +372,14 @@
                 [[NSUserDefaults standardUserDefaults] stringForKey:@"ud_Email"]
              ];
         }
-        [controller setMessageBody:self.emailOrderBody
-                            isHTML:YES];
+        if([title isEqualToString:@"Yes"]){
+            NSLog(@" OUT\n%@",self.emailOrderBody);
+            [controller setMessageBody:self.emailOrderBody
+                                isHTML:YES];
+        }else{
+            [controller setMessageBody:self.emailOrderBodyNoPrice
+                                isHTML:YES];
+        }
         
 //        [controller setMessageBody:[NSString stringWithString:self.emailOrderBody]
 //                            isHTML:YES];
@@ -445,9 +489,14 @@
         cell.cell5.text = @"PRICE";
         cell.cell5.textAlignment = UITextAlignmentCenter;
         
+        //////////////////////////
+        // EMail Strings
         [self.emailOrderBody 
          appendFormat:@"<table border=\"1\"><tr><th>%@</th><th>%@</th><th>%@</th><th>%@</th><th>%@</th></tr>",
         @"Description",@"Code",@"Comments",@"Qty",@"Price"];
+        [self.emailOrderBodyNoPrice
+         appendFormat:@"<table border=\"1\"><tr><th>%@</th><th>%@</th><th>%@</th><th>%@</th></tr>",
+         @"Description",@"Code",@"Comments",@"Qty"];
         
     }else if(indexPath.row == [_fetchedResultsController.fetchedObjects count]+1){
         
@@ -472,6 +521,8 @@
         [self.emailOrderBody 
          appendFormat:@"<tr><th>%@</th><th>%@</th><th colspan=\"2\">%@</th><th>%@</th></tr></table>",
          @"",@"",@"TOTAL:",cell.cell5.text];
+        [self.emailOrderBodyNoPrice 
+         appendFormat:@"</table>"];
         
     }else{
         //////////////////////////////////
@@ -552,14 +603,21 @@
         quantityCount += [[currentRecord valueForKey:@"quantity"] intValue];
         
         ///////////////////////////////////
-        // sored email string
+        // stored email string
         [self.emailOrderBody 
          appendFormat:@"<tr><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td></tr>",
          [cell.cell1.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          [cell.cell2.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          [cell.commentField.text  stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
          cell.quantField.text,
-         cell.cell5.text];        
+         cell.cell5.text];
+        
+        [self.emailOrderBodyNoPrice 
+         appendFormat:@"<tr><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td><td valign=\"top\">%@</td></tr>",
+         [cell.cell1.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
+         [cell.cell2.text stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
+         [cell.commentField.text  stringByReplacingOccurrencesOfString:@"\n" withString:@"<br />"],
+         cell.quantField.text]; 
     }
     
     [formatter release];
@@ -673,19 +731,7 @@
         }
 }
         
--(void)sendCurrentOrder
-{
-    //http://stackoverflow.com/questions/6750126/create-pdf-file-from-uitableview
-    /*
-    if (!UIGraphicsBeginPDFContextToFile(newFilePath, page, metaData )) {
-        NSLog(@"error creating PDF context");
-        return;
-    }
-    UIGraphicsBeginPDFPage();
-    // ???[self.tableView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIGraphicsEndPDFContext();
-     */
-}
+
 
 #pragma mark - Table view delegate
 
