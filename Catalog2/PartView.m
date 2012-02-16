@@ -115,7 +115,7 @@
     // this guy only gets added for faceplates
     if([self isKindOfClass:[FacePlateView class]]){
         UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
-                                           initWithTitle:@"Add to Cart" style:UIBarButtonItemStyleBordered target:self action:@selector(addItemToCart:)];
+                                           initWithTitle:@"Order" style:UIBarButtonItemStyleBordered target:self action:@selector(addItemToCart:)];
         self.navigationItem.rightBarButtonItem = newOrderButton;
         [newOrderButton release];
     }
@@ -131,7 +131,7 @@
     ///////////////////////////////
     // passed background image
     UIImageView *bg = [[UIImageView alloc] initWithImage:self.wallImage];
-    NSLog(@"\n\nimage Size \nwidth:%f - height:%f",self.wallImage.size.width,self.wallImage.size.height);
+    //NSLog(@"\n\nimage Size \nwidth:%f - height:%f",self.wallImage.size.width,self.wallImage.size.height);
     
     //bg.frame = CGRectMake(0, 0, 300, 300);
     bg.contentMode = UIViewContentModeScaleAspectFit;
@@ -169,7 +169,7 @@
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-    NSLog(@"\nSCREEN SIZE \nwidth:%f height:%f",screenWidth,screenHeight);
+   // NSLog(@"\nSCREEN SIZE \nwidth:%f height:%f",screenWidth,screenHeight);
     //Reposition and resize the receiver
     [toolBar setFrame:CGRectMake(0, screenHeight-toolBarHeight-80, screenWidth, toolBarHeight)];
     
@@ -355,7 +355,7 @@
         //return;
     }
     
-    popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Save to Cart" otherButtonTitles: @"Go To Cart", @"Show Orders", @"New Order", nil];
+    popupQuery = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Add To Order" otherButtonTitles: @"Go To Current Order", @"View All Orders", @"New Order", nil];
 	popupQuery.actionSheetStyle = UIActionSheetStyleBlackOpaque;
 	//[popupQuery showInView:self.view];
     [popupQuery showFromBarButtonItem:sender animated:YES];
