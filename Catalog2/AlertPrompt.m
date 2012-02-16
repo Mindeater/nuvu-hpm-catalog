@@ -24,6 +24,7 @@
     {
         UITextField *theTextField = [[UITextField alloc] initWithFrame:CGRectMake(12.0, 45.0, 260.0, 25.0)]; 
         [theTextField setBackgroundColor:[UIColor whiteColor]]; 
+        
         [self addSubview:theTextField];
         self.textField = theTextField;
         [theTextField release];
@@ -31,6 +32,10 @@
         [self setTransform:translate];
     }
     return self;
+}
+-(void)setTextFieldStyle:(UIKeyboardType)type
+{
+    textField.keyboardType = type;
 }
 - (void)show
 {
