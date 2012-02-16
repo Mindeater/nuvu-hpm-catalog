@@ -445,7 +445,7 @@
     NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     detailViewController.orderId = [currentRecord valueForKey:@"uniqueId"];
     detailViewController.orderName = [currentRecord valueForKey:@"name"];
-    detailViewController.backString = @"Orders";
+    detailViewController.backString = @"Return to Orders";
     
     //NSManagedObject *currentRecord = [_fetchedResultsController objectAtIndexPath:indexPath];
     //detailViewController.currentBrand = [currentRecord valueForKey:@"name"];
