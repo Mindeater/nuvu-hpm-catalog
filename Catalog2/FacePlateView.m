@@ -28,13 +28,16 @@
     
     ////////////////////////////////////////////////////////////
     // the Control View is going to hold the non-image elements
-    controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [self.view addSubview:self.controlsView];
+    if(!controlsView){
+        controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    }
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
     
+    controlsView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
+    [self.view addSubview:self.controlsView];
     
     ////////////////////////////////////
     // the mechanism picture goes behind
@@ -49,7 +52,6 @@
         // Build the file path and image name
         NSString *img = [[items lastObject] valueForKey:@"id"];
         
-        //NSLog(@"\n\nCoverplate has been passed :: \n\n\n %@",items);
       
         NSString *dir = [NSString stringWithFormat:@"%@/Faceplate",
                [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
@@ -67,7 +69,7 @@
         
         ///////////////////////////////
         // store internals
-        self.parts = [NSString stringWithFormat:@"%@",imgCleaned];
+        self.parts = [NSString stringWithFormat:@"%@",img];
         self.price = [[items lastObject] valueForKey:@"price"];
         
         /////////////////////////////////////////
