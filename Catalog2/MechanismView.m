@@ -29,7 +29,7 @@
     if(!controlsView){
         controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
     }
-    controlsView.backgroundColor = [UIColor yellowColor];      
+   // controlsView.backgroundColor = [UIColor yellowColor];      
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
