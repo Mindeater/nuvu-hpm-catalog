@@ -26,14 +26,19 @@
 
     ////////////////////////////////////////////////////////////
     // the Control View is going to hold the non-image elements
-    controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
-    [self.view addSubview:self.controlsView];   
+    if(!controlsView){
+        controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+    }
+    controlsView.backgroundColor = [UIColor yellowColor];      
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
   
-    
+    controlsView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
+    [self.view addSubview:self.controlsView]; 
+   
+    ///////////////////////
     // Mechanism Picture/s
     
     float cost = 0;
@@ -73,6 +78,8 @@
         
         self.price = [NSString stringWithFormat:@"%f",cost];
         
+        [tmpParts appendFormat:@"%@\n",img];
+        
         // Build the Directory string
         NSString *dir;
         NSString *prefix = self.orientationPrefix;
@@ -85,28 +92,17 @@
                                       [self.brandName stringByReplacingOccurrencesOfString:@" " withString:@""]];
         }
         
-        //NSLog(@" Directory %@ \nWith Orientation: %@",dir,prefix);
         NSString *imgCleaned = [NSString stringWithFormat:@"%@%@",
                                 prefix,
                                 [img stringByReplacingOccurrencesOfString:@"/" withString:@"-"]];
         
-        [tmpParts appendFormat:@"%@\n",imgCleaned];
         
-        NSLog(@"\nMechanism \n\n  - File NAme %@ \n in Directory: %@",imgCleaned,dir);
-        
+                
         // Grab the image off disk and load it up
         NSString *imageName = [[NSBundle mainBundle] 
                           pathForResource:imgCleaned
                           ofType:@"png" 
                           inDirectory:dir];
-        /*
-        NSString *imageName = [[NSBundle mainBundle] 
-                               pathForResource:imgWithSubFolder
-                               ofType:@"png"];
-         */
-        
-       // NSLog(@" FuLL image NAme:  %@",imageName);
-        //[tmpParts appendFormat:@"%@\n",imageName];
         
         UIImage *image = [UIImage imageWithContentsOfFile:imageName];
         UIImageView *nextImage = [[UIImageView alloc] initWithImage:image];
