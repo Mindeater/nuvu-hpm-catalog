@@ -79,6 +79,8 @@
 {
     [self addNavigationBar];
     countNum = 1;
+    
+    //self.view.backgroundColor = [UIColor redColor];
     //self.view.backgroundColor = [UIColor clearColor];
     //[self addToolBarToView];
     ///////////////////////////////////
@@ -123,38 +125,28 @@
     ////////////////////////
     // view title
     self.title = self.categoryName;
-     
+    
+    
 }
 
 -(void)addToolBarToView
 {    
+    ///////////////////////
+    // reusable heights
+    CGFloat textBoxHeight = 30;
+    // With Personal Hotspot enabled, it returns 40, and returns 20 otherwise
+    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = self.view.frame.size.height -20;//screenRect.size.height;
+    CGFloat fontSize = 12;
+    
     ///////////////////////////////
     // passed background image
     UIImageView *bg = [[UIImageView alloc] initWithImage:self.wallImage];
     //NSLog(@"\n\nimage Size \nwidth:%f - height:%f",self.wallImage.size.width,self.wallImage.size.height);
     
-    //bg.frame = CGRectMake(0, 0, 300, 300);
-    bg.contentMode = UIViewContentModeScaleAspectFit;
-    
-    
-    CGSize boundsSize = self.controlsView.bounds.size;
-    CGRect frameToCenter = bg.frame;
-    
-    // center horizontally
-    if (frameToCenter.size.width < boundsSize.width)
-        frameToCenter.origin.x = (boundsSize.width - frameToCenter.size.width) / 2;
-    else
-        frameToCenter.origin.x = 0;
-    
-    // center vertically
-    if (frameToCenter.size.height < boundsSize.height)
-        frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2;
-    else
-        frameToCenter.origin.y = 0;
-    
-    bg.frame = frameToCenter;
-    
-    
+    bg.frame = CGRectMake(0, 0, 1000, 1000); // this is the size of the in built bg's
     [self.controlsView addSubview:bg];
     [self.view sendSubviewToBack:self.controlsView];
     [bg release];
@@ -165,22 +157,36 @@
     toolBar.barStyle = UIBarStyleDefault;
     toolBar.tintColor = [UIColor blackColor];
     [toolBar sizeToFit];//Set the toolbar to fit the width of the app.
-    CGFloat toolBarHeight = [toolBar frame].size.height;//Caclulate the height of the toolbar
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
-   // NSLog(@"\nSCREEN SIZE \nwidth:%f height:%f",screenWidth,screenHeight);
-    //Reposition and resize the receiver
-    [toolBar setFrame:CGRectMake(0, screenHeight-toolBarHeight-80, screenWidth, toolBarHeight)];
     
+    CGFloat toolBarHeight = [toolBar frame].size.height;//Caclulate the height of the toolbar
+
+   // NSLog(@"\nSCREEN SIZE \nwidth:%f height:%f",screenWidth,screenHeight);
+    
+    /*
+    
+    NSLog(@"\nSCREEN SIZE \nwidth:%f height:%f \n statusBarHeight:%f tooBarHeight:%f",screenWidth,screenHeight, statusBarHeight,toolBarHeight);
+
+    NSLog(@"frame.origin.x: %f", self.view.frame.origin.x);
+    NSLog(@"frame.origin.y: %f", self.view.frame.origin.y);
+    NSLog(@"frame.size.width: %f", self.view.frame.size.width);
+    NSLog(@"frame.size.height: %f", self.view.frame.size.height);
+    */
+    
+    toolBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin);
+
+    //Reposition and resize the toolBar
+    [toolBar setFrame:CGRectMake(0, screenHeight-statusBarHeight-toolBarHeight, screenWidth, toolBarHeight)];
+
+
     ///////////////////////////////////////////////
-    // Label for the part
+    // Labels for the part
     partLabel = [[UILabel alloc] 
-                        initWithFrame:CGRectMake(0,screenHeight-toolBarHeight-130, screenWidth, 50)];      
+                        initWithFrame:CGRectMake(0,screenHeight-statusBarHeight-toolBarHeight-textBoxHeight, screenWidth, textBoxHeight)];      
    // partLabel.text = @"LABEL PlaceHolder +++++++ here ";
     if([self.parts isEqualToString:@"h-No-coverplate"]){
         self.productName = @"No Coverplate Available";
     }
+    partLabel.font = [UIFont systemFontOfSize:fontSize];
     partLabel.text = self.productName;
     partLabel.textColor = [UIColor whiteColor];
     //partLabel.backgroundColor = [UIColor blackColor];
@@ -193,7 +199,8 @@
     ////////////////////////////////////////////////
     // Label for counting
     countLabel = [[UILabel alloc]
-                  initWithFrame:CGRectMake(0,screenHeight-toolBarHeight-180, screenWidth, 50)];
+                  initWithFrame:CGRectMake(0,screenHeight-statusBarHeight-toolBarHeight-textBoxHeight*2, screenWidth, textBoxHeight)];
+    countLabel.font = [UIFont systemFontOfSize:fontSize];
     countLabel.text = [NSString stringWithFormat:@"%i of %i",countNum,countTotal];
     countLabel.textAlignment = UITextAlignmentCenter;
     countLabel.textColor = [UIColor whiteColor];
