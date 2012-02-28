@@ -33,6 +33,9 @@
     int countNum;
     int countTotal;
     
+    CGFloat adjustImageFrameHeightFactor;
+    CGFloat adjustImagePositionY;
+    
     UIActionSheet *popupQuery;
     
 }
@@ -53,6 +56,9 @@
 @property(nonatomic,retain)UILabel *countLabel;
 @property(nonatomic)int countNum;
 @property(nonatomic)int countTotal;
+
+@property(nonatomic)CGFloat adjustImageFrameHeightFactor;
+@property(nonatomic)CGFloat adjustImagePositionY;
 
 @property(nonatomic,retain)ProductChooserView *_parent;
 @property(nonatomic,retain)UIToolbar *toolBar;

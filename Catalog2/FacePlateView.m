@@ -87,8 +87,8 @@
         float iWidth = screenWidth * 0.8;
         float iHeight = screenHeight * 0.8;
         float sX = (screenWidth -iWidth)/2.0;
-        float sY = (screenHeight - iHeight)/2.0 - 60;
-        nextImage.frame = CGRectMake(sX, sY, iWidth, iHeight- 100.0);
+        float sY = (screenHeight - iHeight)/2.0 - adjustImagePositionY;
+        nextImage.frame = CGRectMake(sX, sY, iWidth, iHeight- adjustImageFrameHeightFactor);
         
         [self.view addSubview:nextImage];
         [nextImage release];

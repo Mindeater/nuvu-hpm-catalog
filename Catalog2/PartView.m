@@ -22,6 +22,9 @@
 @synthesize partLabel;
 @synthesize countLabel;
 
+@synthesize adjustImagePositionY;
+@synthesize adjustImageFrameHeightFactor;
+
 @synthesize countNum,countTotal;
 
 @synthesize orientationPrefix;
@@ -67,9 +70,11 @@
     self = [super init];
     if (self) {
         // Custom initialization
-        
         controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
         self.currentAction = @"";
+        
+        adjustImagePositionY = 60.0;
+        adjustImageFrameHeightFactor = 60.0;
     }
     return self;
 }
@@ -140,6 +145,13 @@
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = self.view.frame.size.height -20;//screenRect.size.height;
     CGFloat fontSize = 12;
+    /*
+    NSLog(@"\n\n\n VIEW - Called AddToolBar\n x: %f, y: %f, w: %f, y: %f",
+          self.view.frame.origin.x,
+          self.view.frame.origin.y,
+          self.view.frame.size.width,
+          self.view.frame.size.height);
+     */
     
     ///////////////////////////////
     // passed background image
