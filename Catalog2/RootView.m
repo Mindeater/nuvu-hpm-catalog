@@ -229,9 +229,9 @@
     float buttonHeight = 150;
     
     if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
-        pad = 10;
-        buttonWidth = 80;
-        buttonHeight = 80;
+        pad = 6;
+        buttonWidth = 96;
+        buttonHeight = 96;
     }
     float startX = (screenWidth - (3 * buttonWidth + pad * 2))/2;
     float startY = (screenHeight -(2 * buttonHeight+pad))/2;
@@ -511,7 +511,7 @@
     
     if([[[info objectForKey:UIImagePickerControllerMediaMetadata] objectForKey:@"Orientation"] intValue] == 6){    //EXIF 6
     // fix info for original image.
-        NSLog(@"EXIF 6");
+        //NSLog(@"EXIF 6");
         /* v1 - doesn't work
         self.choosenWall = [[UIImage alloc] initWithCGImage: [[info objectForKey:UIImagePickerControllerOriginalImage] CGImage]
                                    scale: 1.0
