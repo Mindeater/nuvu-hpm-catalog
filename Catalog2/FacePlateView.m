@@ -23,6 +23,8 @@
 
 -(void)drawWithItems:(NSArray *)items
 {
+    // the frame gets shortened somewhere so this makes sure it's the right size
+    self.view.frame = [[UIScreen mainScreen] applicationFrame];
     // remove any views that already exist
     for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
     
@@ -45,9 +47,9 @@
     [self.view addSubview:bgMech];
     [bgMech release];
     
-    NSLog(@" Part view Draw %i",[items count]);
+    //NSLog(@" Part view Draw %i",[items count]);
     if([items count] >1){
-        NSLog(@" looking for coverplate to draw");
+       // NSLog(@" looking for coverplate to draw");
         /////////////////////////////////////
         // Build the file path and image name
         NSString *img = [[items lastObject] valueForKey:@"id"];
