@@ -139,8 +139,11 @@
     ///////////////////////
     // reusable heights
     CGFloat textBoxHeight = 30;
-    // With Personal Hotspot enabled, it returns 40, and returns 20 otherwise
-    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
+    // supposed to - With Personal Hotspot enabled, it returns 40, and returns 20 otherwise
+    // but doesn't !!
+    CGFloat statusBarHeight = 20.0; //[[UIApplication sharedApplication] statusBarFrame].size.height;
+    
+    NSLog(@"\n\nTOOL bar Height : %f\n\n",statusBarHeight);
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = self.view.frame.size.height -20;//screenRect.size.height;
