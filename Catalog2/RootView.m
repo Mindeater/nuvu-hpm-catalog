@@ -118,16 +118,18 @@
     UIImage *bgPort = [UIImage imageWithContentsOfFile:
                    [[NSBundle mainBundle] pathForResource:@"main-bg-port-white" ofType:@"png"]];
     bgImgPort =[[UIImageView alloc] initWithImage:bgPort];
-    UIImage *bgLand = [UIImage imageWithContentsOfFile:
+   /* UIImage *bgLand = [UIImage imageWithContentsOfFile:
                        [[NSBundle mainBundle] pathForResource:@"main-bg-land" ofType:@"png"]];
-    bgImgLand =[[UIImageView alloc] initWithImage:bgLand];
+    bgImgLand =[[UIImageView alloc] initWithImage:bgLand];*/
+    
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = screenRect.size.height;
-
-    bgImgLand.frame = CGRectMake(0, -40, screenHeight, screenWidth);
+    
+    //bgImgLand.frame = CGRectMake(0, -40, screenHeight, screenWidth);
+    bgImgPort.frame = CGRectMake(0, -40, screenWidth, screenHeight);
     //bgImg.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-    [self.view addSubview:bgImgLand];
+    //[self.view addSubview:bgImgLand];
     [self.view addSubview:bgImgPort];
     
 
