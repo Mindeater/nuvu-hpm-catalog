@@ -15,8 +15,10 @@
 #import "AlertPrompt.h"
 
 @implementation AlertPrompt
+
 @synthesize textField;
 @synthesize enteredText;
+
 - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okayButtonTitle
 {
     
@@ -28,8 +30,9 @@
         [self addSubview:theTextField];
         self.textField = theTextField;
         [theTextField release];
-        CGAffineTransform translate = CGAffineTransformMakeTranslation(0.0, 130.0); 
-        [self setTransform:translate];
+        // this moves the box up a bit - nice on the iPAd but clips the dialog on the iphone
+        //CGAffineTransform translate = CGAffineTransformMakeTranslation(0.0, 130.0); 
+        //[self setTransform:translate];
     }
     return self;
 }
@@ -40,6 +43,7 @@
 - (void)show
 {
     [textField becomeFirstResponder];
+    NSLog(@"Presenting Alert Prompt");
     [super show];
 }
 - (NSString *)enteredText
