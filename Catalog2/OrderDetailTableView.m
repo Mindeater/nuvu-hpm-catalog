@@ -337,7 +337,7 @@
     
     [message show];
     
-    
+    [message release];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
