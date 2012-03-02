@@ -762,27 +762,43 @@
         last = [[items lastObject] valueForKey:@"faceplate"];
     }
     NSString *orientation = [[last valueForKey:@"product"] valueForKey:@"orientation"];
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    
+    // default to iPad vertical
     CGFloat width = 480;
     CGFloat height = 700;
-     if([orientation isEqualToString:@"Horizontal"]){
-         width = 700;
-         height = 480;
-     }
+    if([orientation isEqualToString:@"Horizontal"]){
+        width = 700;
+        height = 480;
+    }
     
+    // create a detail view contoller for the iPhone
     OrderLineModal *detailViewController = [[OrderLineModal alloc] initWithNibName:nil bundle:nil];
     detailViewController.modalPresentationStyle = UIModalPresentationFormSheet;
     detailViewController.context = self.context;
     detailViewController.orderLineManagedObject = [_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1];
-   // detailViewController.delegate = self;
-    detailViewController.sizeRect = CGRectMake(0, 0, width, height);
+    
+    // allow for a smaller centered version for the iPhone
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        width = screenWidth * 0.8;
+        height = screenHeight * 0.8;
+
+       detailViewController.sizeRect = CGRectMake((screenWidth - width)/2, (screenHeight - height)/2, width, height);
+        
+    }else{
+    
+        detailViewController.sizeRect = CGRectMake(0, 0, width, height);
+       
+    }
     [self presentModalViewController:detailViewController animated:YES];
     
     // sets the size
     detailViewController.view.superview.frame = CGRectMake(0, 0, width, height);//it's important to do this after 
     detailViewController.view.superview.center = self.view.center;
     [detailViewController release];
-
-    
     /*
     EditOrderLineView *detailViewController = [[EditOrderLineView alloc] initWithNibName:nil bundle:nil];
     detailViewController.context = self.context;
