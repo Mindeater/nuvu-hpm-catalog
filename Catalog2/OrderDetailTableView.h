@@ -31,6 +31,8 @@
     
     NSMutableString *emailOrderBody;
     NSMutableString *emailOrderBodyNoPrice;
+    
+    NSString *editingText;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -45,6 +47,8 @@
 
 @property(nonatomic,retain)NSMutableString *emailOrderBody;
 @property(nonatomic,retain)NSMutableString *emailOrderBodyNoPrice;
+
+@property(nonatomic,retain)NSString *editingText;
 
 -(NSArray *)getPartsFromOrderLine:(NSManagedObject *)orderLine;
 -(void)updateComment:(NSString *)comment atIndexRow:(NSInteger)indexRow;
