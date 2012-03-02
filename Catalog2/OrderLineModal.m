@@ -37,7 +37,7 @@
 }
 
 -(void)tapped:(id)sender {
-    NSLog(@"TAPPED");
+   // NSLog(@"TAPPED");
     [self dismissModalViewControllerAnimated:YES];
 }
 
@@ -49,6 +49,7 @@
 {
     //self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view = [[[UIView alloc] initWithFrame:self.sizeRect] autorelease];
+    //self.view.backgroundColor = [UIColor redColor];
     //self.view.frame = self.view.superview.frame;
     // NSLog(@"Starting View with %@",NSStringFromCGRect(self.view.frame));
     ////////////////////////////////////
@@ -62,12 +63,14 @@
     //////////////////////////////////////////////////////
     // get the images for the parts and load them onscreen
     
-    UIView *finalProduct = [[UIView alloc]initWithFrame:self.sizeRect];
+   // UIView *finalProduct = [[UIView alloc]initWithFrame:self.sizeRect];
+    UIView *finalProduct = [[UIView alloc]init];
     finalProduct.contentMode = UIViewContentModeScaleAspectFit;
+    finalProduct.backgroundColor = [UIColor yellowColor];
     UIImageView *faceplateView= [[UIImageView alloc] init];
     UIImageView *mechanismView;
     
-    NSLog(@"iterating through %@",[self.orderLineManagedObject valueForKey:@"items"]); 
+   // NSLog(@"iterating through %@",[self.orderLineManagedObject valueForKey:@"items"]); 
     
     
     for(NSManagedObject *part in [self.orderLineManagedObject valueForKey:@"items"]){
@@ -104,6 +107,7 @@
     [faceplateView release];
     
     [self.view addSubview:finalProduct];
+    
     [finalProduct release];
 }
 
