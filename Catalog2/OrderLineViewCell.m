@@ -49,8 +49,8 @@
     //@TODO : define constants here to speed up table render
     cell1Width = screenWidth * .30;//desc .18;    //128.0;//code    20%
     cell2Width = screenWidth * .18;//code .30;    //160.0;//desc    25%
-    cell3Width = screenWidth * .06;//quant .30;   //192.0;//comment 30%
-    cell4Width = screenWidth * .30;//comment .06;  //64.0;//quant   10%
+    cell3Width = screenWidth * .08;//.06;//quant .30;   //192.0;//comment 30%
+    cell4Width = screenWidth * .28;//.30;//comment .06;  //64.0;//quant   10%
     cell5Width = screenWidth * .16;//96.0;//price   15%
     cellHeight = 140; //screenHeight/12;
     
@@ -85,7 +85,7 @@
         // quant
         quantField = [[UITextField alloc] init];
         quantField.backgroundColor = [UIColor clearColor]; 
-        [quantField setKeyboardType:UIKeyboardTypeNumberPad];
+        //[quantField setKeyboardType:UIKeyboardTypeNumberPad];
         quantField.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
         quantField.textAlignment = UITextAlignmentCenter;
         
