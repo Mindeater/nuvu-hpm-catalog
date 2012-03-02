@@ -18,6 +18,7 @@
 
 @synthesize textField;
 @synthesize enteredText;
+@synthesize tag;
 
 - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okayButtonTitle
 {
@@ -31,8 +32,9 @@
         self.textField = theTextField;
         [theTextField release];
         // this moves the box up a bit - nice on the iPAd but clips the dialog on the iphone
-        //CGAffineTransform translate = CGAffineTransformMakeTranslation(0.0, 130.0); 
-        //[self setTransform:translate];
+        
+        CGAffineTransform translate = CGAffineTransformMakeTranslation(0.0, 10.0); 
+        [self setTransform:translate];
     }
     return self;
 }
@@ -43,7 +45,7 @@
 - (void)show
 {
     [textField becomeFirstResponder];
-    NSLog(@"Presenting Alert Prompt");
+   // NSLog(@"Presenting Alert Prompt");
     [super show];
 }
 - (NSString *)enteredText

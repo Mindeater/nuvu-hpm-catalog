@@ -18,9 +18,13 @@
 {
     UITextField *textField;
     
+    NSInteger tag;
+    
 }
 @property (nonatomic, retain) UITextField *textField;
 @property (readonly) NSString *enteredText;
+@property(nonatomic)NSInteger tag;
+
 - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle okButtonTitle:(NSString *)okButtonTitle;
 -(void)setTextFieldStyle:(UIKeyboardType)type;
 @end
