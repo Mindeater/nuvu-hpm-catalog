@@ -13,6 +13,8 @@
 
 #import "OrderLineModal.h"
 
+#import "AlertPrompt.h"
+
 
 @implementation OrderDetailTableView
 
@@ -27,6 +29,8 @@
 
 @synthesize emailOrderBody;
 @synthesize emailOrderBodyNoPrice;
+
+@synthesize editingText;
 
 -(void)dealloc
 {
@@ -244,6 +248,7 @@
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    editingText = @"";
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -324,6 +329,54 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - respond to the UIAlerts
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    
+    if([editingText isEqualToString:@""])
+    {
+        [self emailOrder:title];
+        
+    }else if([editingText isEqualToString:@"quantity"]){
+        if([title isEqualToString:@"OK"]){
+           
+            NSString *entered = [(AlertPrompt *)alertView enteredText];
+            NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:alertView.tag];
+            
+            // make sure it is 1 or more
+            int enteredNumber = [entered intValue];
+            if(enteredNumber == 0){
+                enteredNumber = 1;
+            }
+            
+            [curr setValue:[NSNumber numberWithInt:enteredNumber]
+                    forKey:@"quantity"];
+            NSError *error;
+            [self.context save:&error];
+            
+            editingText = @"";
+            
+        }
+    }else if([editingText isEqualToString:@"comment"]){
+        if([title isEqualToString:@"OK"]){
+            NSString *entered = [(AlertPrompt *)alertView enteredText];
+            
+            NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:alertView.tag];
+            [curr setValue:entered
+                    forKey:@"comment"];
+            NSError *error;
+            [self.context save:&error];
+            
+            editingText = @"";
+            
+        }
+    }
+    
+    
+}
+
 #pragma mark - sending an order  by email
 
 -(void)sendCurrentOrder:(id)sender
@@ -336,25 +389,10 @@
                                             otherButtonTitles:@"No",nil];
     
     [message show];
-    
     [message release];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    
-    if([title isEqualToString:@"Yes"])
-    {
 
-    }
-    else if([title isEqualToString:@"No"])
-    {
-
-    }
-    
-    [self emailOrder:title];
-}
 
 -(void)emailOrder:(id)sender
 {
@@ -362,7 +400,7 @@
         
          NSString *title = (NSString *)sender;
         
-        NSLog(@"Email Order has  --- %@ ||||| %@",title,sender);
+       // NSLog(@"Email Order has  --- %@ ||||| %@",title,sender);
         
         // Build an email body to send
         // CREATING MAIL VIEW
@@ -450,6 +488,43 @@
     return [sectionInfo numberOfObjects]+2;
     //return [_fetchedResultsController.fetchedObjects count] +2;
 }
+
+
+
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        // the deleting row will always be one more than the OderLine inside it
+        [self.context deleteObject:[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1]];
+        // Save the context.
+        NSError *error;
+        if (![self.context save:&error]) {
+            /*
+             Replace this implementation with code to handle the error appropriately.
+             
+             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
+             */
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }   
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
+
+#pragma mark - Create the cell
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -588,6 +663,7 @@
         //cell.cell3.text = [NSString stringWithFormat:@"%@",[currentRecord valueForKey:@"quantity"]]; //@"2";
         cell.quantField.tag = indexPath.row -1;
         cell.quantField.text = [NSString stringWithFormat:@"%@",[currentRecord valueForKey:@"quantity"]];
+        //cell.quantField.keyboardType = UIKeyboardTypeNumberPad;
         cell.quantField.delegate = self;
         
         //////////////////
@@ -636,40 +712,39 @@
 }
 
 
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+#pragma mark - UITextField delegates
+
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    NSLog(@" - TextField - ");
+    
+    editingText = @"quantity";
+    AlertPrompt *prompt = [AlertPrompt alloc];
+	prompt = [prompt initWithTitle:@"Change Quantity" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    prompt.tag = textField.tag;
+    prompt.textField.text = textField.text;
+    
+	[prompt show];
+	[prompt release];
+    
+    return NO;
 }
 
-
-
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+-(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        // the deleting row will always be one more than the OderLine inside it
-        [self.context deleteObject:[_fetchedResultsController.fetchedObjects objectAtIndex:indexPath.row -1]];
-        // Save the context.
-        NSError *error;
-        if (![self.context save:&error]) {
-            /*
-             Replace this implementation with code to handle the error appropriately.
-             
-             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
-             */
-            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
-        }
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    // move the tableviewcell to the top
+    NSIndexPath *myIndexPath = [NSIndexPath indexPathForRow:textField.tag inSection:0];//[NSIndexPath indexPathWithIndex:textField.tag +1];
+    NSLog(@"Index PAth %@",myIndexPath);
+     [self.tableView scrollToRowAtIndexPath:myIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    // now move it down to allow for the bar
+    //[self.tableView m
+    /*
+    // this actually moves the whole tableview !!
+    float yOffset = 44.0f; // Change this how much you want!
+    self.tableView.frame =  CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y + yOffset, self.tableView.frame.size.width, self.tableView.frame.size.height);
+     */
+    
 }
-
-#pragma mark - text delegates
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
     [textField resignFirstResponder];
@@ -693,6 +768,21 @@
     return YES;
 }
 
+#pragma mark - UITextView delegate
+
+-(BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    editingText = @"comment";
+    AlertPrompt *prompt = [AlertPrompt alloc];
+	prompt = [prompt initWithTitle:@"Change Comment" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    prompt.tag = textView.tag;
+    prompt.textField.text = textView.text;
+    
+	[prompt show];
+	[prompt release];
+    
+    return NO;
+}
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     //NSLog(@" Catch the textView finished editing %i",textView.tag);
@@ -703,6 +793,12 @@
     [self.context save:&error];
 }
 
+
+- (BOOL)textViewShouldReturn:(UITextField*)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
 #pragma mark - NavBar Choices
 
 -(void)addLeftNavigationButton
