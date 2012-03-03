@@ -908,6 +908,7 @@
         height = screenHeight * 0.8;
 
        detailViewController.sizeRect = CGRectMake((screenWidth - width)/2, (screenHeight - height)/2, width, height);
+        detailViewController.view.backgroundColor = [UIColor whiteColor];
         
     }else{
     
