@@ -100,10 +100,13 @@
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);  // Fail
+		//exit(-1);  // Fail
+        UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [dbError show];
+        [dbError release];
 	}
     
-    self.title = @"Catalogue";
+    self.title = @"Catalogue - Switches and Sockets";
 }
 
 - (void)viewDidUnload
@@ -309,7 +312,7 @@
     detailViewController.currentCategory = cell.textLabel.text;
     detailViewController.context = self.context;
     detailViewController.wallImage = self.wallImage;
-    NSLog(@"selected table cell - background Image :: %@",self.wallImage);
+    //NSLog(@"selected table cell - background Image :: %@",self.wallImage);
     
     //NSLog(@"\n^^^BRANDCAtalogView push^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
       //  self.navigationController.viewControllers, self.navigationController.navigationBar);

@@ -260,7 +260,10 @@
 	if (![[self fetchedResultsController] performFetch:&error]) {
 		// Update to handle the error appropriately.
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-		exit(-1);  // Fail
+		//exit(-1);  // Fail
+        UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [dbError show];
+        [dbError release];
 	}
     orderTotal = 0;
     quantityCount = 0;
@@ -517,7 +520,10 @@
              abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. If it is not possible to recover from the error, display an alert panel that instructs the user to quit the application by pressing the Home button.
              */
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-            abort();
+            //abort();
+            UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [dbError show];
+            [dbError release];
         }
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
@@ -752,7 +758,6 @@
 {
     // move the tableviewcell to the top
     NSIndexPath *myIndexPath = [NSIndexPath indexPathForRow:textField.tag inSection:0];//[NSIndexPath indexPathWithIndex:textField.tag +1];
-    NSLog(@"Index PAth %@",myIndexPath);
      [self.tableView scrollToRowAtIndexPath:myIndexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
     // now move it down to allow for the bar
     //[self.tableView m

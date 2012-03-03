@@ -63,7 +63,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);
+    /*NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);*/
     //if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]//){ 
        //&& 
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
@@ -80,7 +80,7 @@
 
     [super viewWillAppear:NO];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
-    NSLog(@"View Will Appear");
+    //NSLog(@"View Will Appear");
     
 }
 
@@ -415,6 +415,8 @@
 
 }
 */
+
+#pragma mark - events from backgrounds
 -(void)setBackgroundImageFromLibrary
 {
     
@@ -433,9 +435,9 @@
     [self.view sendSubviewToBack:imageView];
     [imageView release];
     */
-    NSLog(@"observer - > background Image :: %@",senderType.selectedImage);
+    //NSLog(@"observer - > background Image :: %@",senderType.selectedImage);
     self.choosenWall = [UIImage imageWithCGImage:[senderType.selectedImage CGImage]];
-    NSLog(@"observer - > background Image :: %@",self.choosenWall);
+    //NSLog(@"observer - > background Image :: %@",self.choosenWall);
     // [self showOrders];
     [senderType.navigationController popViewControllerAnimated:YES];
 }
@@ -473,7 +475,7 @@
          [imagePicker setCameraOverlayView:headsUpView];
          */
     } else {
-        NSLog(@"Camera not available.");
+        //NSLog(@"Camera not available.");
         //return;
         imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary; 
         //UIImagePickerControllerSourceTypeSavedPhotosAlbum;  
@@ -497,9 +499,7 @@
         //[self.navigationController pushViewController:imagePicker animated:YES];
         //[imagePicker release];
     }
-    
-   
-    
+        
 }
 
 #pragma mark - UIImagePickerDelegate
@@ -567,7 +567,7 @@
     if (self.popOver != nil) {
         [self.popOver dismissPopoverAnimated:YES];
     } 
-    
+   // NSLog(@"Ready to release the Image picker");
     /*
     ImageManipulator *imgManip = [[ImageManipulator alloc]init];
     imgManip.title = @"Go WIld";
@@ -576,6 +576,7 @@
     [self.navigationController pushViewController:imgManip animated:YES];
     [imgManip release];
     */
+    [picker dismissModalViewControllerAnimated:YES];
     [picker release];
     
 }

@@ -350,7 +350,7 @@
 
 - (void)viewDidUnload
 {
-     NSLog(@"Unloading bg");
+    // NSLog(@"Unloading bg");
     [super viewDidUnload];
    
 

@@ -71,7 +71,7 @@
 -(void)checkMechanismImages
 {
     for(NSManagedObject *product in self.fetchedResultsController.fetchedObjects){
-        NSLog(@"Mech %@",[product valueForKey:@"name"]);
+       // NSLog(@"Mech %@",[product valueForKey:@"name"]);
         NSString *currentBrand = [[product valueForKey:@"brand"]
                                              valueForKey:@"name"];
         NSString *currentCategory = [[product valueForKey:@"category"]
@@ -83,7 +83,7 @@
         NSEntityDescription *entity = [NSEntityDescription entityForName:@"Mechanism"
                                                   inManagedObjectContext:_context];
         [request setEntity:entity];
-        NSLog(@"Product check +++");
+        //NSLog(@"Product check +++");
         
         NSPredicate *predicate= [NSPredicate predicateWithFormat:
                                  @"(%K == %@)",
@@ -156,10 +156,10 @@
                                           img,
                                           dir,
                                           imgCleaned] ];
-            NSLog(@" FuLL image NAme:  %@",imageName);
+            //NSLog(@" FuLL image NAme:  %@",imageName);
             self.missingMech++;
         }else{
-            NSLog(@"HAppy CAmper");
+            //NSLog(@"HAppy CAmper");
         
         }
         self.mechCount++;
@@ -200,6 +200,9 @@
         {
             // Deal with error...
             NSLog(@"Error Returned from the fetchRequest ");
+            UIAlertView *dbError = [[UIAlertView alloc] initWithTitle:@"Error" message:@"Internal Data storage Error.\n Please end this application with the home button\nIf you are seeing this error again please reinstall the application." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+            [dbError show];
+            [dbError release];
         }
         
         [self getFacePlateImagePaths:result :currentBrand :currentCategory :currentOrientation];        
@@ -232,7 +235,7 @@
                                          img,
                                          dir,
                                          imgCleaned] ];
-            NSLog(@" - - - Path\n %@\n",imageName);
+            //NSLog(@" - - - Path\n %@\n",imageName);
             self.missingFaceplates++;
         }
         self.facePlateCount++;

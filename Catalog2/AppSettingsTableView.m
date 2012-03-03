@@ -358,7 +358,7 @@
             // add a switch to the cell
             if(indexPath.row == 1){
                 // Pricing info from here ...
-                NSLog(@"Pricing INformation here please");
+               // NSLog(@"Pricing INformation here please");
                 [self setPricingPercentage];
             }
             break;

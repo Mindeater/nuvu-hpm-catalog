@@ -261,7 +261,7 @@
     
     // now update the current self.currentOrderLine
     cost += [[self.currentOrderLine valueForKey:@"cost"] floatValue];
-    NSLog(@"Mechanism cost %f",cost);
+    //NSLog(@"Mechanism cost %f",cost);
     [self.currentOrderLine setValue:[NSNumber numberWithFloat:cost]
                              forKey:@"cost"];
     /* only update the quantity when the faceplate goes in

@@ -143,11 +143,13 @@
     // but doesn't !!
     CGFloat statusBarHeight = 20.0; //[[UIApplication sharedApplication] statusBarFrame].size.height;
     
-    NSLog(@"\n\nTOOL bar Height : %f\n\n",statusBarHeight);
+   // NSLog(@"\n\nTOOL bar Height : %f\n\n",statusBarHeight);
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
     CGFloat screenHeight = self.view.frame.size.height -20;//screenRect.size.height;
     CGFloat fontSize = 12;
+    
+     //NSLog(@"Screen  :\nwidth:%f - height:%f",screenWidth,screenHeight);
     /*
     NSLog(@"\n\n\n VIEW - Called AddToolBar\n x: %f, y: %f, w: %f, y: %f",
           self.view.frame.origin.x,
@@ -159,9 +161,23 @@
     ///////////////////////////////
     // passed background image
     UIImageView *bg = [[UIImageView alloc] initWithImage:self.wallImage];
-    //NSLog(@"\n\nimage Size \nwidth:%f - height:%f",self.wallImage.size.width,self.wallImage.size.height);
-    
-    bg.frame = CGRectMake(0, 0, 1000, 1000); // this is the size of the in built bg's
+   // NSLog(@"\n\nPartView image Size \nwidth:%f - height:%f",self.wallImage.size.width,self.wallImage.size.height);
+     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+         // for iPad
+         
+         bg.frame = CGRectMake(0, 0, self.wallImage.size.width, self.wallImage.size.height); 
+     }else{
+         if(self.wallImage.size.width == self.wallImage.size.height){
+             // this is a built in one
+             CGFloat newWidth = self.wallImage.size.width / self.wallImage.size.height *screenHeight;
+              bg.frame = CGRectMake(0, 0, newWidth, screenHeight); 
+        // NSLog(@"Resized to :\nwidth:%f - height:%f",newWidth,screenHeight);
+         }else{
+         // original height / original width x new width = new height
+             CGFloat newHeight = self.wallImage.size.height / self.wallImage.size.width * screenWidth;
+             bg.frame = CGRectMake(0, 0, screenWidth, newHeight); 
+         }
+     }
     [self.controlsView addSubview:bg];
     [self.view sendSubviewToBack:self.controlsView];
     [bg release];

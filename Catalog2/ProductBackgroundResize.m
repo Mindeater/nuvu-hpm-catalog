@@ -148,7 +148,7 @@
 }
 
 -(void)tapped:(id)sender {
-    NSLog(@"TAPPED");
+    //NSLog(@"TAPPED");
     _marque.hidden = YES;
 }
 
@@ -270,7 +270,7 @@
         // after that anytime the pixel next to the start one is transparent we should be at the end.
         if(firstPixelFound && secondPixelFound && !thirdPixelFound && pixels[a] == 0 && colCount == topLX +1){
             botLY = lineCount;
-            NSLog(@"Got bottom point");
+           // NSLog(@"Got bottom point");
             thirdPixelFound = YES;
         }
         // modify the image pixels
@@ -327,6 +327,26 @@
     
     UIImageView *bg = [[UIImageView alloc]initWithImage:self.backgroundImage];
     
+    if (UI_USER_INTERFACE_IDIOM() != UIUserInterfaceIdiomPad) {
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        CGFloat screenHeight = self.view.frame.size.height;
+        // original height / original width x new width = new height
+        
+        
+        if(self.backgroundImage.size.width == self.backgroundImage.size.height){
+            // this is a built in one
+            CGFloat newWidth = self.backgroundImage.size.width / self.backgroundImage.size.height *screenHeight;
+            bg.frame = CGRectMake(0, 0, newWidth, screenHeight); 
+            // NSLog(@"Resized to :\nwidth:%f - height:%f",newWidth,screenHeight);
+        }else{
+            // original height / original width x new width = new height
+            CGFloat newHeight = self.backgroundImage.size.height / self.backgroundImage.size.width * screenWidth;
+            bg.frame = CGRectMake(0, 0, screenWidth, newHeight); 
+        }
+    }
+    
+    /*
     CGSize boundsSize = self.view.bounds.size;
     CGRect frameToCenter = bg.frame;
     
@@ -343,7 +363,7 @@
         frameToCenter.origin.y = 0;
     
     bg.frame = frameToCenter;
-    
+    */
     
     [self.view addSubview:bg];
     [bg release];

@@ -152,7 +152,7 @@
                                                    object:moviePlayer];
         
         if([self.infomationString isEqualToString:@"instructions"]){
-            NSLog(@"Instructional Movie");
+           // NSLog(@"Instructional Movie");
            // 
            // moviePlayer.shouldAutoplay = YES;
             moviePlayer.controlStyle = MPMovieControlStyleFullscreen;
@@ -162,6 +162,13 @@
         
        // moviePlayer.fullscreen = YES;
         moviePlayer.view.frame = [[UIScreen mainScreen] bounds];
+        /*if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+           moviePlayer.view.frame = [[UIScreen mainScreen] bounds]; 
+        }else{
+            CGFloat movieWidth = 786 *0.6;
+            CGFloat movieHieght = 1024 *0.6;
+            moviePlayer.view.frame = CGRectMake(-movieWidth*.2, -movieHieght*.2, movieWidth, movieHieght);
+        }*/
         
         
         //[moviePlayer setFullscreen:YES animated:YES];

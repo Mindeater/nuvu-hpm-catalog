@@ -61,7 +61,7 @@
     //////////////////////////////
     // User Defaults
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
-        NSLog(@"FirstLaunch from AppDelegate");
+       // NSLog(@"FirstLaunch from AppDelegate");
         [[NSUserDefaults standardUserDefaults] 
          registerDefaults:[NSDictionary 
                            dictionaryWithObjectsAndKeys:
@@ -94,7 +94,7 @@
      */
     //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     // reset view controllers if the movie is set play evertime
-    NSLog(@"Resigning Active");
+    //NSLog(@"Resigning Active");
     //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     if([self.navigationController.viewControllers count] == 1){
        // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ud_Movie"];
