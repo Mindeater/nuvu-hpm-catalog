@@ -31,6 +31,7 @@
 @synthesize emailOrderBodyNoPrice;
 
 @synthesize editingText;
+@synthesize editPrompt;
 
 -(void)dealloc
 {
@@ -665,6 +666,8 @@
         cell.quantField.text = [NSString stringWithFormat:@"%@",[currentRecord valueForKey:@"quantity"]];
         //cell.quantField.keyboardType = UIKeyboardTypeNumberPad;
         cell.quantField.delegate = self;
+        cell.quantField.frame = CGRectMake(cell.quantField.frame.origin.x, cell.quantField.frame.origin.y +5, cell.quantField.frame.size.width, cell.cellHeight);
+        //NSLog(@" FRAME HEIGHT : %f",cell.cellHeight);
         
         //////////////////
         // Price
@@ -716,9 +719,24 @@
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    NSLog(@" - TextField - ");
+    //NSLog(@" - TextField - ");
     
     editingText = @"quantity";
+    
+    if( editPrompt == nil){
+        editPrompt = [AlertPrompt alloc];
+    }else{
+        [editPrompt release];
+        editPrompt = [AlertPrompt alloc];
+    }
+    
+    editPrompt = [editPrompt initWithTitle:@"Change Quantity" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    editPrompt.tag = textField.tag;
+    editPrompt.textField.text = textField.text;
+    
+	[editPrompt show];
+    /*
+    
     AlertPrompt *prompt = [AlertPrompt alloc];
 	prompt = [prompt initWithTitle:@"Change Quantity" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
     prompt.tag = textField.tag;
@@ -726,7 +744,7 @@
     
 	[prompt show];
 	[prompt release];
-    
+    */
     return NO;
 }
 
@@ -773,13 +791,19 @@
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
     editingText = @"comment";
-    AlertPrompt *prompt = [AlertPrompt alloc];
-	prompt = [prompt initWithTitle:@"Change Comment" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
-    prompt.tag = textView.tag;
-    prompt.textField.text = textView.text;
     
-	[prompt show];
-	[prompt release];
+    if( editPrompt == nil){
+        editPrompt = [AlertPrompt alloc];
+    }else{
+        [editPrompt release];
+        editPrompt = [AlertPrompt alloc];
+    }
+	editPrompt = [editPrompt initWithTitle:@"Change Comment" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    editPrompt.tag = textView.tag;
+    editPrompt.textField.text = textView.text;
+    
+	[editPrompt show];
+	//[prompt release];
     
     return NO;
 }
@@ -799,6 +823,7 @@
     [textField resignFirstResponder];
     return YES;
 }
+
 #pragma mark - NavBar Choices
 
 -(void)addLeftNavigationButton

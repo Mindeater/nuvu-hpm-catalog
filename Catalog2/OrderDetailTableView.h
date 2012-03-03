@@ -11,6 +11,7 @@
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
 
+@class AlertPrompt;
 @interface OrderDetailTableView : UITableViewController <
                                     NSFetchedResultsControllerDelegate,
                                     UITextViewDelegate,
@@ -33,6 +34,8 @@
     NSMutableString *emailOrderBodyNoPrice;
     
     NSString *editingText;
+    
+    AlertPrompt *editPrompt;
 }
 
 @property (nonatomic, retain) NSFetchedResultsController *fetchedResultsController;
@@ -49,6 +52,7 @@
 @property(nonatomic,retain)NSMutableString *emailOrderBodyNoPrice;
 
 @property(nonatomic,retain)NSString *editingText;
+@property(nonatomic,retain)AlertPrompt *editPrompt;
 
 -(NSArray *)getPartsFromOrderLine:(NSManagedObject *)orderLine;
 -(void)updateComment:(NSString *)comment atIndexRow:(NSInteger)indexRow;
