@@ -88,6 +88,7 @@
         //[quantField setKeyboardType:UIKeyboardTypeNumberPad];
         quantField.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
         quantField.textAlignment = UITextAlignmentCenter;
+        quantField.contentVerticalAlignment = UIControlContentVerticalAlignmentTop;
         
         
         commentField = [[UITextView alloc]init];
