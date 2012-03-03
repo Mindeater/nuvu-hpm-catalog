@@ -261,6 +261,7 @@
             break;
         case TEXT_SECTION:
         {
+            cell.accessoryView = nil;
             // how wide is the device ?
             CGRect screenRect = [[UIScreen mainScreen] bounds];
             CGFloat screenWidth = screenRect.size.width;
@@ -291,6 +292,7 @@
         }
             break;
         case VIEW_SECTION:
+            cell.accessoryView = nil;
             cell.textLabel.text = [[self.tableData objectAtIndex:VIEW_SECTION] objectAtIndex:indexPath.row];
             break;
         default:
@@ -392,7 +394,7 @@
             if(indexPath.row == 2){
                 addController.infomationString = [self.infoStrings objectAtIndex:indexPath.row];
                 addController.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
-                                                                 pathForResource:@"ipadInstructions2" ofType:@"mov"]];
+                                                                 pathForResource:@"ipadInstructions_Feb21" ofType:@"mov"]];
                 UINavigationController *navigationController = [[UINavigationController alloc]
                                                                 initWithRootViewController:addController];
                 [self presentModalViewController:navigationController animated:YES];
