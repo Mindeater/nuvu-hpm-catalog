@@ -359,10 +359,8 @@
                     forKey:@"quantity"];
             NSError *error;
             [self.context save:&error];
-            
-            editingText = @"";
-            
         }
+        editingText = @"";
     }else if([editingText isEqualToString:@"comment"]){
         if([title isEqualToString:@"OK"]){
             NSString *entered = [(AlertPrompt *)alertView enteredText];
@@ -372,10 +370,9 @@
                     forKey:@"comment"];
             NSError *error;
             [self.context save:&error];
-            
-            editingText = @"";
-            
         }
+        
+        editingText = @"";
     }
     
     
@@ -410,7 +407,7 @@
         // CREATING MAIL VIEW
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
-        [controller setSubject:[NSString stringWithFormat:@"HPM Legrand Order (%@)",self.orderName]];
+        [controller setSubject:[NSString stringWithFormat:@"HPM Legrand Order (%@)",self.title]];
         
         NSString *footer = @"";
         if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_AddContact"]){
@@ -795,11 +792,14 @@
 
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
-    editingText = @"comment";
+    if([editingText isEqualToString:@"comment"]) return NO;
     
+    editingText = @"comment";
+    NSLog(@"Edit comment called");
     if( editPrompt == nil){
         editPrompt = [AlertPrompt alloc];
     }else{
+        
         [editPrompt release];
         editPrompt = [AlertPrompt alloc];
     }
@@ -811,6 +811,9 @@
 	//[prompt release];
     
     return NO;
+}
+-(void)textViewDidBeginEditing:(UITextField *)textField{
+    NSLog(@"TextField did bigoin");
 }
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
@@ -825,6 +828,7 @@
 
 - (BOOL)textViewShouldReturn:(UITextField*)textField
 {
+    NSLog(@"TEXT Field should return");
     [textField resignFirstResponder];
     return YES;
 }

@@ -11,7 +11,8 @@
 #import "RootView.h"
 
 
-#import "CheckProductsForImages.h"
+//#import "CheckProductsForImages.h"
+//#import "FlurryAnalytics.h"
 
 @implementation AppDelegate
 
@@ -31,8 +32,13 @@
     [super dealloc];
 }
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
+    //[FlurryAnalytics startSession:@"8LBWW5P4BZN62SC7GQRA"];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
@@ -83,6 +89,9 @@
     self.window.rootViewController = self.navigationController;
     self.window.backgroundColor = [UIColor blackColor];
     [self.window makeKeyAndVisible];
+    
+    //[FlurryAnalytics logAllPageViews:self.navigationController];
+    
     return YES;
 }
 

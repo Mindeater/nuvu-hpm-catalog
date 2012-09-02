@@ -8,6 +8,8 @@
 
 #import <SenTestingKit/SenTestingKit.h>
 
-@interface Catalog2Tests : SenTestCase
+@interface Catalog2Tests : SenTestCase{
+    
+}
 
 @end

@@ -69,7 +69,7 @@
         <element name="Mechanism" positionX="-108" positionY="381" width="128" height="135"/>
         <element name="Order" positionX="367" positionY="81" width="128" height="105"/>
         <element name="OrderItem" positionX="88" positionY="360" width="128" height="150"/>
-        <element name="OrderLine" positionX="349" positionY="234" width="128" height="135"/>
+        <element name="OrderLine" positionX="349" positionY="234" width="128" height="165"/>
         <element name="Product" positionX="63" positionY="192" width="128" height="120"/>
     </elements>
 </model>

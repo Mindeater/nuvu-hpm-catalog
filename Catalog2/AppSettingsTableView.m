@@ -394,7 +394,7 @@
             if(indexPath.row == 2){
                 addController.infomationString = [self.infoStrings objectAtIndex:indexPath.row];
                 addController.movieURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
-                                                                 pathForResource:@"ipadInstructions_Feb21" ofType:@"mov"]];
+                                                                 pathForResource:@"AppInstructionVideo_4MArch" ofType:@"mov"]];
                 UINavigationController *navigationController = [[UINavigationController alloc]
                                                                 initWithRootViewController:addController];
                 [self presentModalViewController:navigationController animated:YES];
