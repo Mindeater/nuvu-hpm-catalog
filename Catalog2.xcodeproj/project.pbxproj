@@ -17,12 +17,6 @@
 		580579CB148DB962004C92F4 /* AddPartToOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 580579CA148DB962004C92F4 /* AddPartToOrder.m */; };
 		5821D1C81474AAF1004187E0 /* PartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5821D1C71474AAF1004187E0 /* PartView.m */; };
 		5821D1CE1474FE13004187E0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5821D1CD1474FE13004187E0 /* QuartzCore.framework */; };
-		58509B4B14ED1A5C00509C50 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58509B4514ED1A5C00509C50 /* arteor-770.csv.plist */; };
-		58509B4C14ED1A5C00509C50 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58509B4614ED1A5C00509C50 /* arteor-rd.csv.plist */; };
-		58509B4D14ED1A5C00509C50 /* arteor-sq.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58509B4714ED1A5C00509C50 /* arteor-sq.csv.plist */; };
-		58509B4E14ED1A5C00509C50 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58509B4814ED1A5C00509C50 /* excel-life.csv.plist */; };
-		58509B4F14ED1A5C00509C50 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58509B4914ED1A5C00509C50 /* excel.csv.plist */; };
-		58509B5014ED1A5C00509C50 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58509B4A14ED1A5C00509C50 /* linea.csv.plist */; };
 		58509B5414EE2D4D00509C50 /* cart-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 58509B5314EE2D4D00509C50 /* cart-btn.png */; };
 		585107AA14936DDF005BF016 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585107A914936DDF005BF016 /* MessageUI.framework */; };
 		586E4AE7146CC88300A7C857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AE6146CC88300A7C857 /* UIKit.framework */; };
@@ -41,7 +35,6 @@
 		586E4B12146CC88300A7C857 /* Catalog2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4B11146CC88300A7C857 /* Catalog2Tests.m */; };
 		586E4B1F146CC8D700A7C857 /* LoadHPMData.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4B1E146CC8D700A7C857 /* LoadHPMData.m */; };
 		586E4BDA146EA32700A7C857 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4BD9146EA32700A7C857 /* RootView.m */; };
-		586E4BDC146EA6BC00A7C857 /* _template.plist in Resources */ = {isa = PBXBuildFile; fileRef = 586E4BDB146EA6BC00A7C857 /* _template.plist */; };
 		586E4C05146F9D3B00A7C857 /* MechanismView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4C04146F9D3B00A7C857 /* MechanismView.m */; };
 		586E4C0B146F9D9C00A7C857 /* FacePlateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4C0A146F9D9C00A7C857 /* FacePlateView.m */; };
 		5885CD5B14CDA122007001C2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5885CD5414CDA122007001C2 /* Icon-72.png */; };
@@ -67,7 +60,6 @@
 		58A435E214DFE7E600AB8191 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
 		58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
-		58A6958815046CDF00424595 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58A6958715046CDF00424595 /* Catalog2.sqlite */; };
 		58CD95D5149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */; };
 		58CD95D6149A075B009E89EB /* Paint_Sample_Foxdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */; };
 		58CD95D7149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C6149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg */; };
@@ -104,6 +96,15 @@
 		58E01B43149D89350016C7F9 /* Wallpaper_whitetiles_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B32149D89350016C7F9 /* Wallpaper_whitetiles_tmb.jpg */; };
 		58E01B71149FF6D20016C7F9 /* AlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01B70149FF6D20016C7F9 /* AlertPrompt.m */; };
 		58E01B9C14A149D00016C7F9 /* AppSettingsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01B9B14A149D00016C7F9 /* AppSettingsTableView.m */; };
+		58E4D537160FF62200F17869 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D52F160FF62200F17869 /* arteor-770.csv.plist */; };
+		58E4D538160FF62200F17869 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D530160FF62200F17869 /* arteor-rd.csv.plist */; };
+		58E4D539160FF62200F17869 /* arteor-sq.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D531160FF62200F17869 /* arteor-sq.csv.plist */; };
+		58E4D53A160FF62200F17869 /* bt-lighttech.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D532160FF62200F17869 /* bt-lighttech.csv.plist */; };
+		58E4D53B160FF62200F17869 /* bt-living.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D533160FF62200F17869 /* bt-living.csv.plist */; };
+		58E4D53C160FF62200F17869 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D534160FF62200F17869 /* excel-life.csv.plist */; };
+		58E4D53D160FF62200F17869 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D535160FF62200F17869 /* excel.csv.plist */; };
+		58E4D53E160FF62200F17869 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D536160FF62200F17869 /* linea.csv.plist */; };
+		58E4D542160FFB6700F17869 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D541160FFB6700F17869 /* Catalog2.sqlite */; };
 		58E76F67147BB0A6002D6504 /* BrandCatalogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F66147BB0A6002D6504 /* BrandCatalogTableView.m */; };
 		58E76F94147E6203002D6504 /* CheckProductsForImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F93147E6203002D6504 /* CheckProductsForImages.m */; };
 		58E8EFD2147687C60098ADC7 /* BackgroundLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8EFD1147687C60098ADC7 /* BackgroundLibrary.m */; };
@@ -164,12 +165,6 @@
 		5821D1C61474AAF0004187E0 /* PartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartView.h; sourceTree = "<group>"; };
 		5821D1C71474AAF1004187E0 /* PartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartView.m; sourceTree = "<group>"; };
 		5821D1CD1474FE13004187E0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		58509B4514ED1A5C00509C50 /* arteor-770.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-770.csv.plist"; sourceTree = "<group>"; };
-		58509B4614ED1A5C00509C50 /* arteor-rd.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-rd.csv.plist"; sourceTree = "<group>"; };
-		58509B4714ED1A5C00509C50 /* arteor-sq.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-sq.csv.plist"; sourceTree = "<group>"; };
-		58509B4814ED1A5C00509C50 /* excel-life.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "excel-life.csv.plist"; sourceTree = "<group>"; };
-		58509B4914ED1A5C00509C50 /* excel.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = excel.csv.plist; sourceTree = "<group>"; };
-		58509B4A14ED1A5C00509C50 /* linea.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = linea.csv.plist; sourceTree = "<group>"; };
 		58509B5314EE2D4D00509C50 /* cart-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart-btn.png"; sourceTree = "<group>"; };
 		585107A914936DDF005BF016 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		586E4AE2146CC88300A7C857 /* Catalog2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalog2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +189,6 @@
 		586E4B1E146CC8D700A7C857 /* LoadHPMData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadHPMData.m; sourceTree = "<group>"; };
 		586E4BD8146EA32700A7C857 /* RootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootView.h; sourceTree = "<group>"; };
 		586E4BD9146EA32700A7C857 /* RootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootView.m; sourceTree = "<group>"; };
-		586E4BDB146EA6BC00A7C857 /* _template.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _template.plist; sourceTree = "<group>"; };
 		586E4C03146F9D3B00A7C857 /* MechanismView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MechanismView.h; sourceTree = "<group>"; };
 		586E4C04146F9D3B00A7C857 /* MechanismView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MechanismView.m; sourceTree = "<group>"; };
 		586E4C09146F9D9C00A7C857 /* FacePlateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePlateView.h; sourceTree = "<group>"; };
@@ -223,7 +217,6 @@
 		58A435DB14DFE7E600AB8191 /* Linea */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linea; sourceTree = "<group>"; };
 		58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NuvuDevLogo2.mov; sourceTree = "<group>"; };
 		58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AppInstructionVideo_4MArch.mov; sourceTree = "<group>"; };
-		58A6958715046CDF00424595 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Chelsea_Green.jpg; sourceTree = "<group>"; };
 		58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Foxdale.jpg; sourceTree = "<group>"; };
 		58CD95C6149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Hog_Bristle_Half.jpg; sourceTree = "<group>"; };
@@ -262,6 +255,15 @@
 		58E01B70149FF6D20016C7F9 /* AlertPrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertPrompt.m; sourceTree = "<group>"; };
 		58E01B9A14A149D00016C7F9 /* AppSettingsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsTableView.h; sourceTree = "<group>"; };
 		58E01B9B14A149D00016C7F9 /* AppSettingsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsTableView.m; sourceTree = "<group>"; };
+		58E4D52F160FF62200F17869 /* arteor-770.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-770.csv.plist"; sourceTree = "<group>"; };
+		58E4D530160FF62200F17869 /* arteor-rd.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-rd.csv.plist"; sourceTree = "<group>"; };
+		58E4D531160FF62200F17869 /* arteor-sq.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-sq.csv.plist"; sourceTree = "<group>"; };
+		58E4D532160FF62200F17869 /* bt-lighttech.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bt-lighttech.csv.plist"; sourceTree = "<group>"; };
+		58E4D533160FF62200F17869 /* bt-living.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bt-living.csv.plist"; sourceTree = "<group>"; };
+		58E4D534160FF62200F17869 /* excel-life.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "excel-life.csv.plist"; sourceTree = "<group>"; };
+		58E4D535160FF62200F17869 /* excel.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = excel.csv.plist; sourceTree = "<group>"; };
+		58E4D536160FF62200F17869 /* linea.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = linea.csv.plist; sourceTree = "<group>"; };
+		58E4D541160FFB6700F17869 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58E76F65147BB0A6002D6504 /* BrandCatalogTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandCatalogTableView.h; sourceTree = "<group>"; };
 		58E76F66147BB0A6002D6504 /* BrandCatalogTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandCatalogTableView.m; sourceTree = "<group>"; };
 		58E76F92147E6203002D6504 /* CheckProductsForImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckProductsForImages.h; sourceTree = "<group>"; };
@@ -430,13 +432,14 @@
 		586E4B1B146CC88E00A7C857 /* pLists */ = {
 			isa = PBXGroup;
 			children = (
-				58509B4514ED1A5C00509C50 /* arteor-770.csv.plist */,
-				58509B4614ED1A5C00509C50 /* arteor-rd.csv.plist */,
-				58509B4714ED1A5C00509C50 /* arteor-sq.csv.plist */,
-				58509B4814ED1A5C00509C50 /* excel-life.csv.plist */,
-				58509B4914ED1A5C00509C50 /* excel.csv.plist */,
-				58509B4A14ED1A5C00509C50 /* linea.csv.plist */,
-				586E4BDB146EA6BC00A7C857 /* _template.plist */,
+				58E4D52F160FF62200F17869 /* arteor-770.csv.plist */,
+				58E4D530160FF62200F17869 /* arteor-rd.csv.plist */,
+				58E4D531160FF62200F17869 /* arteor-sq.csv.plist */,
+				58E4D532160FF62200F17869 /* bt-lighttech.csv.plist */,
+				58E4D533160FF62200F17869 /* bt-living.csv.plist */,
+				58E4D534160FF62200F17869 /* excel-life.csv.plist */,
+				58E4D535160FF62200F17869 /* excel.csv.plist */,
+				58E4D536160FF62200F17869 /* linea.csv.plist */,
 			);
 			name = pLists;
 			sourceTree = "<group>";
@@ -444,7 +447,7 @@
 		586E4B1C146CC89B00A7C857 /* import */ = {
 			isa = PBXGroup;
 			children = (
-				58A6958715046CDF00424595 /* Catalog2.sqlite */,
+				58E4D541160FFB6700F17869 /* Catalog2.sqlite */,
 				586E4B1D146CC8D700A7C857 /* LoadHPMData.h */,
 				586E4B1E146CC8D700A7C857 /* LoadHPMData.m */,
 				58E76F92147E6203002D6504 /* CheckProductsForImages.h */,
@@ -668,7 +671,7 @@
 		586E4AD9146CC88200A7C857 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Mindeater Web Services";
 			};
 			buildConfigurationList = 586E4ADC146CC88200A7C857 /* Build configuration list for PBXProject "Catalog2" */;
@@ -695,7 +698,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				586E4AF3146CC88300A7C857 /* InfoPlist.strings in Resources */,
-				586E4BDC146EA6BC00A7C857 /* _template.plist in Resources */,
 				580579AE148D9A73004C92F4 /* bg-btn.png in Resources */,
 				580579B0148D9A73004C92F4 /* catalog-btn.png in Resources */,
 				580579B1148D9A73004C92F4 /* photo-btn.png in Resources */,
@@ -753,15 +755,17 @@
 				5885CD6014CDA122007001C2 /* Icon@2x.png in Resources */,
 				5885CD6114CDA122007001C2 /* iTunesArtWork in Resources */,
 				58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */,
-				58509B4B14ED1A5C00509C50 /* arteor-770.csv.plist in Resources */,
-				58509B4C14ED1A5C00509C50 /* arteor-rd.csv.plist in Resources */,
-				58509B4D14ED1A5C00509C50 /* arteor-sq.csv.plist in Resources */,
-				58509B4E14ED1A5C00509C50 /* excel-life.csv.plist in Resources */,
-				58509B4F14ED1A5C00509C50 /* excel.csv.plist in Resources */,
-				58509B5014ED1A5C00509C50 /* linea.csv.plist in Resources */,
 				58509B5414EE2D4D00509C50 /* cart-btn.png in Resources */,
 				58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */,
-				58A6958815046CDF00424595 /* Catalog2.sqlite in Resources */,
+				58E4D537160FF62200F17869 /* arteor-770.csv.plist in Resources */,
+				58E4D538160FF62200F17869 /* arteor-rd.csv.plist in Resources */,
+				58E4D539160FF62200F17869 /* arteor-sq.csv.plist in Resources */,
+				58E4D53A160FF62200F17869 /* bt-lighttech.csv.plist in Resources */,
+				58E4D53B160FF62200F17869 /* bt-living.csv.plist in Resources */,
+				58E4D53C160FF62200F17869 /* excel-life.csv.plist in Resources */,
+				58E4D53D160FF62200F17869 /* excel.csv.plist in Resources */,
+				58E4D53E160FF62200F17869 /* linea.csv.plist in Resources */,
+				58E4D542160FFB6700F17869 /* Catalog2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,6 +884,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -905,6 +910,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Studio Nuvu Pty Ltd";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_THUMB_SUPPORT = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -927,6 +933,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Studio Nuvu Pty Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Catalog2/Catalog2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
@@ -947,6 +954,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Studio Nuvu Pty Ltd";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Catalog2/Catalog2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
@@ -970,6 +978,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Catalog2Tests/Catalog2Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -987,6 +996,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
+				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Catalog2Tests/Catalog2Tests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
