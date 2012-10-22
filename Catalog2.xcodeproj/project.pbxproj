@@ -59,6 +59,7 @@
 		58A435E114DFE7E600AB8191 /* Frames in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DA14DFE7E600AB8191 /* Frames */; };
 		58A435E214DFE7E600AB8191 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
+		58A606A0162D0E39004F8088 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58A6069F162D0E39004F8088 /* Catalog2.sqlite */; };
 		58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
 		58CD95D5149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */; };
 		58CD95D6149A075B009E89EB /* Paint_Sample_Foxdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */; };
@@ -104,7 +105,6 @@
 		58E4D53C160FF62200F17869 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D534160FF62200F17869 /* excel-life.csv.plist */; };
 		58E4D53D160FF62200F17869 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D535160FF62200F17869 /* excel.csv.plist */; };
 		58E4D53E160FF62200F17869 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D536160FF62200F17869 /* linea.csv.plist */; };
-		58E4D542160FFB6700F17869 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D541160FFB6700F17869 /* Catalog2.sqlite */; };
 		58E76F67147BB0A6002D6504 /* BrandCatalogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F66147BB0A6002D6504 /* BrandCatalogTableView.m */; };
 		58E76F94147E6203002D6504 /* CheckProductsForImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F93147E6203002D6504 /* CheckProductsForImages.m */; };
 		58E8EFD2147687C60098ADC7 /* BackgroundLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8EFD1147687C60098ADC7 /* BackgroundLibrary.m */; };
@@ -216,6 +216,7 @@
 		58A435DA14DFE7E600AB8191 /* Frames */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Frames; sourceTree = "<group>"; };
 		58A435DB14DFE7E600AB8191 /* Linea */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linea; sourceTree = "<group>"; };
 		58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NuvuDevLogo2.mov; sourceTree = "<group>"; };
+		58A6069F162D0E39004F8088 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AppInstructionVideo_4MArch.mov; sourceTree = "<group>"; };
 		58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Chelsea_Green.jpg; sourceTree = "<group>"; };
 		58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Foxdale.jpg; sourceTree = "<group>"; };
@@ -263,7 +264,6 @@
 		58E4D534160FF62200F17869 /* excel-life.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "excel-life.csv.plist"; sourceTree = "<group>"; };
 		58E4D535160FF62200F17869 /* excel.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = excel.csv.plist; sourceTree = "<group>"; };
 		58E4D536160FF62200F17869 /* linea.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = linea.csv.plist; sourceTree = "<group>"; };
-		58E4D541160FFB6700F17869 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58E76F65147BB0A6002D6504 /* BrandCatalogTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandCatalogTableView.h; sourceTree = "<group>"; };
 		58E76F66147BB0A6002D6504 /* BrandCatalogTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandCatalogTableView.m; sourceTree = "<group>"; };
 		58E76F92147E6203002D6504 /* CheckProductsForImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckProductsForImages.h; sourceTree = "<group>"; };
@@ -447,7 +447,7 @@
 		586E4B1C146CC89B00A7C857 /* import */ = {
 			isa = PBXGroup;
 			children = (
-				58E4D541160FFB6700F17869 /* Catalog2.sqlite */,
+				58A6069F162D0E39004F8088 /* Catalog2.sqlite */,
 				586E4B1D146CC8D700A7C857 /* LoadHPMData.h */,
 				586E4B1E146CC8D700A7C857 /* LoadHPMData.m */,
 				58E76F92147E6203002D6504 /* CheckProductsForImages.h */,
@@ -765,7 +765,7 @@
 				58E4D53C160FF62200F17869 /* excel-life.csv.plist in Resources */,
 				58E4D53D160FF62200F17869 /* excel.csv.plist in Resources */,
 				58E4D53E160FF62200F17869 /* linea.csv.plist in Resources */,
-				58E4D542160FFB6700F17869 /* Catalog2.sqlite in Resources */,
+				58A606A0162D0E39004F8088 /* Catalog2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
