@@ -78,7 +78,11 @@
     NSArray *about = [NSArray arrayWithObjects:
                       @"About App",
                       @"Development and Design",
+#ifdef LNHVERSION
+#else
                       @"Instructions",
+#endif
+                     
                       nil];
     
     self.tableData = [NSArray arrayWithObjects:switches,contact,about, nil];

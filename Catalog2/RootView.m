@@ -113,14 +113,20 @@
 
 -(void)renderInterface
 {
-
     // background Image
+#ifdef LNHVERSION
     UIImage *bgPort = [UIImage imageWithContentsOfFile:
-                   [[NSBundle mainBundle] pathForResource:@"main-bg-port-white" ofType:@"png"]];
+                       [[NSBundle mainBundle] pathForResource:@"main-bg-port-Catalog3" ofType:@"png"]];
+#else
+    UIImage *bgPort = [UIImage imageWithContentsOfFile:
+                       [[NSBundle mainBundle] pathForResource:@"main-bg-port-white" ofType:@"png"]];
+#endif
+
     bgImgPort =[[UIImageView alloc] initWithImage:bgPort];
    /* UIImage *bgLand = [UIImage imageWithContentsOfFile:
-                       [[NSBundle mainBundle] pathForResource:@"main-bg-land" ofType:@"png"]];
+                        [[NSBundle mainBundle] pathForResource:@"main-bg-land" ofType:@"png"]];
     bgImgLand =[[UIImageView alloc] initWithImage:bgLand];*/
+
     
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -277,13 +283,30 @@
     /////////////////////////////////////////////
     // Play movie
     NSURL *url;
+    
+#ifdef LNHVERSION
     if(YES){
-        url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
-                                         pathForResource:@"ipadIntro" ofType:@"mov"]];
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                      pathForResource:@"Catalog3-iPad" ofType:@"mov"]];
     }else{
-        url = [NSURL fileURLWithPath:[[NSBundle mainBundle] 
-                                         pathForResource:@"iPhoneIntro" ofType:@"mov"]];
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                      pathForResource:@"Catalog3-iPhone" ofType:@"mov"]];
     }
+    
+#else
+    if(YES){
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                      pathForResource:@"ipadIntro" ofType:@"mov"]];
+    }else{
+        url = [NSURL fileURLWithPath:[[NSBundle mainBundle]
+                                      pathForResource:@"iPhoneIntro" ofType:@"mov"]];
+    }
+    
+#endif
+    
+    
+    
+    
     
     moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:url];
     
