@@ -88,7 +88,7 @@
         //  NSDate *date  = [NSDate dateWithTimeIntervalSince1970:NSTimeIntervalSince1970];
         [newEntity setValue:@"New Order" forKey:@"name"];
         [newEntity setValue:
-         [NSString stringWithFormat:@"%d", [[NSProcessInfo processInfo] globallyUniqueString]]
+         [NSString stringWithFormat:@"%@", [[NSProcessInfo processInfo] globallyUniqueString]]
                      forKey:@"uniqueId"];
         [newEntity setValue:[NSNumber numberWithBool:YES] forKey:@"active"];
         
@@ -186,7 +186,7 @@
                      forKey:@"name"];
         [newEntity setValue:productName
                      forKey:@"product"];
-        [newEntity setValue: [NSString stringWithFormat:@"%d", NSTimeIntervalSince1970]
+        [newEntity setValue: [NSString stringWithFormat:@"%f", NSTimeIntervalSince1970]
                      forKey:@"time"];
         
         [newEntity setValue:[self.fetchedResultsController.fetchedObjects lastObject] forKey:@"order"];
@@ -241,7 +241,7 @@
             //  NSDate *date  = [NSDate dateWithTimeIntervalSince1970:NSTimeIntervalSince1970];
             [newEntity setValue:[mech valueForKey:@"id"]
                          forKey:@"name"];
-            [newEntity setValue:[NSString stringWithFormat:@"%d", NSTimeIntervalSince1970]
+            [newEntity setValue:[NSString stringWithFormat:@"%f", NSTimeIntervalSince1970]
                          forKey:@"time"];
             [newEntity setValue:productName 
                          forKey:@"product"];
@@ -316,7 +316,7 @@
         //  NSDate *date  = [NSDate dateWithTimeIntervalSince1970:NSTimeIntervalSince1970];
         [newEntity setValue:[[faceplate lastObject] valueForKey:@"id"]
                      forKey:@"name"];
-        [newEntity setValue:[NSString stringWithFormat:@"%d", NSTimeIntervalSince1970]
+        [newEntity setValue:[NSString stringWithFormat:@"%f", NSTimeIntervalSince1970]
                      forKey:@"time"];
         [newEntity setValue:productName 
                      forKey:@"product"];

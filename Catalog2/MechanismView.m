@@ -65,7 +65,7 @@
     //arteor 770 has AR in front of the part name which doesn't match the image
     for(NSManagedObject *mech in items){
         /*
-        NSLog(@"\n+Mech Add+ \n%@\n name: %@\nid:%@ count:%@ name: %@\n\n",
+        NSLog(@"\n+Mech Add+ \nCategory Name: %@\n Product NAme: %@\nMech id:%@\nMech count:%@\nMech name: %@\n\n",
               self.categoryName,
               self.productName,
               [mech valueForKey:@"id"],
@@ -76,21 +76,39 @@
         NSString *img;
         
         if([[mech valueForKey:@"count"] isEqualToNumber:[NSNumber numberWithInt:1]]){
-            // load the image based on the id screen the Arteor 770 fields
+            // load the image based on the id
+            // screen the Arteor 770 fields
             if([[mech valueForKey:@"name"] isEqualToString:@"Mech 2 Part #"] && [self.brandName isEqualToString:@"Arteor 770"]){
                 img = [[mech valueForKey:@"id"] 
                    stringByReplacingOccurrencesOfString:@"AR" withString:@""];
             }else{
                 img = [mech valueForKey:@"id"];
+                
             }
             
             cost += [[mech valueForKey:@"price"] floatValue];
         }else{
             // mechanism with more than one part
-            img = [NSString stringWithFormat:@"%@-x-%@",
-                             [mech valueForKey:@"count"],
-                             [[mech valueForKey:@"id"]
-                              stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
+            
+            // catch the Dedicated Plate mechanisms which have different images
+           /* NSLog(@"[[[[[[ - %u v %u",
+                  [[mech valueForKey:@"name"] rangeOfString:@"EXCEL LIFE DEDICATED PLATE"].location,
+                  NSNotFound);
+            */
+            if([self.productName rangeOfString:@"EXCEL LIFE DEDICATED PLATE"].location == NSNotFound){
+                img = [NSString stringWithFormat:@"%@-x-%@",
+                       [mech valueForKey:@"count"],
+                       [[mech valueForKey:@"id"]
+                        stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
+                
+            }else{
+                img = [NSString stringWithFormat:@"%@-x-%@_ded",
+                       [mech valueForKey:@"count"],
+                       [[mech valueForKey:@"id"]
+                        stringByReplacingOccurrencesOfString:@"AR" withString:@""]];
+                //NSLog(@"CAUGHT DEdicateed item\n***\n");
+            }
+            
             cost += [[mech valueForKey:@"price"] floatValue] * [[mech valueForKey:@"count"]intValue];
         }
         

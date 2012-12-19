@@ -11,8 +11,6 @@
 		30B751ACFF68A63977572EDB /* main-bg-port-Catalog3.png in Resources */ = {isa = PBXBuildFile; fileRef = 30B75663A7BBA792E9C048B9 /* main-bg-port-Catalog3.png */; };
 		30B75230742E6D269BB7BC75 /* Catalog3-iPad.mov in Resources */ = {isa = PBXBuildFile; fileRef = 30B751CE2C5B47943C229996 /* Catalog3-iPad.mov */; };
 		30B753EF847D305C7A16EA58 /* Catalog3-iPhone.mov in Resources */ = {isa = PBXBuildFile; fileRef = 30B75ABCB3B1B067248D868A /* Catalog3-iPhone.mov */; };
-		30B75775D51EF42637A2B849 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 30B754DCA53531801D3560B5 /* Catalog2.sqlite */; };
-		30B75F931378BCE2B48C0C44 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 30B754DCA53531801D3560B5 /* Catalog2.sqlite */; };
 		58057979148C8580004C92F4 /* ProductBackgroundResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 58057978148C8580004C92F4 /* ProductBackgroundResize.m */; };
 		580579AE148D9A73004C92F4 /* bg-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579A8148D9A73004C92F4 /* bg-btn.png */; };
 		580579B0148D9A73004C92F4 /* catalog-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579AA148D9A73004C92F4 /* catalog-btn.png */; };
@@ -21,6 +19,9 @@
 		580579B3148D9A73004C92F4 /* setting-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579AD148D9A73004C92F4 /* setting-btn.png */; };
 		580579BB148DA332004C92F4 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580579BA148DA332004C92F4 /* MediaPlayer.framework */; };
 		580579CB148DB962004C92F4 /* AddPartToOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 580579CA148DB962004C92F4 /* AddPartToOrder.m */; };
+		581A261716813FF600E616FC /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 581A261616813FF600E616FC /* Catalog2.sqlite */; };
+		581A261816813FF600E616FC /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 581A261616813FF600E616FC /* Catalog2.sqlite */; };
+		581A261916813FF600E616FC /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 581A261616813FF600E616FC /* Catalog2.sqlite */; };
 		5821D1C81474AAF1004187E0 /* PartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5821D1C71474AAF1004187E0 /* PartView.m */; };
 		5821D1CE1474FE13004187E0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5821D1CD1474FE13004187E0 /* QuartzCore.framework */; };
 		58509B5414EE2D4D00509C50 /* cart-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 58509B5314EE2D4D00509C50 /* cart-btn.png */; };
@@ -65,7 +66,6 @@
 		58A435E114DFE7E600AB8191 /* Frames in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DA14DFE7E600AB8191 /* Frames */; };
 		58A435E214DFE7E600AB8191 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
-		58A606A0162D0E39004F8088 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58A6069F162D0E39004F8088 /* Catalog2.sqlite */; };
 		58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
 		58CD95D5149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */; };
 		58CD95D6149A075B009E89EB /* Paint_Sample_Foxdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */; };
@@ -111,6 +111,8 @@
 		58E4D53C160FF62200F17869 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D534160FF62200F17869 /* excel-life.csv.plist */; };
 		58E4D53D160FF62200F17869 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D535160FF62200F17869 /* excel.csv.plist */; };
 		58E4D53E160FF62200F17869 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58E4D536160FF62200F17869 /* linea.csv.plist */; };
+		58E67D3516758E620011FD4C /* UpdatePricesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E67D3416758E620011FD4C /* UpdatePricesView.m */; };
+		58E67D3616758E620011FD4C /* UpdatePricesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E67D3416758E620011FD4C /* UpdatePricesView.m */; };
 		58E76F67147BB0A6002D6504 /* BrandCatalogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F66147BB0A6002D6504 /* BrandCatalogTableView.m */; };
 		58E76F94147E6203002D6504 /* CheckProductsForImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F93147E6203002D6504 /* CheckProductsForImages.m */; };
 		58E8EFD2147687C60098ADC7 /* BackgroundLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8EFD1147687C60098ADC7 /* BackgroundLibrary.m */; };
@@ -282,7 +284,6 @@
 /* Begin PBXFileReference section */
 		30B751BAEC0C3B2DD737D56F /* hpm-icons */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = folder; path = "hpm-icons"; sourceTree = "<group>"; };
 		30B751CE2C5B47943C229996 /* Catalog3-iPad.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Catalog3-iPad.mov"; sourceTree = "<group>"; };
-		30B754DCA53531801D3560B5 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file.sqlite; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		30B75663A7BBA792E9C048B9 /* main-bg-port-Catalog3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-bg-port-Catalog3.png"; sourceTree = "<group>"; };
 		30B75ABCB3B1B067248D868A /* Catalog3-iPhone.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Catalog3-iPhone.mov"; sourceTree = "<group>"; };
 		58057977148C8580004C92F4 /* ProductBackgroundResize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductBackgroundResize.h; sourceTree = "<group>"; };
@@ -295,6 +296,7 @@
 		580579BA148DA332004C92F4 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		580579C9148DB961004C92F4 /* AddPartToOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPartToOrder.h; sourceTree = "<group>"; };
 		580579CA148DB962004C92F4 /* AddPartToOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPartToOrder.m; sourceTree = "<group>"; };
+		581A261616813FF600E616FC /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		5821D1C61474AAF0004187E0 /* PartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartView.h; sourceTree = "<group>"; };
 		5821D1C71474AAF1004187E0 /* PartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartView.m; sourceTree = "<group>"; };
 		5821D1CD1474FE13004187E0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -349,7 +351,6 @@
 		58A435DA14DFE7E600AB8191 /* Frames */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Frames; sourceTree = "<group>"; };
 		58A435DB14DFE7E600AB8191 /* Linea */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linea; sourceTree = "<group>"; };
 		58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NuvuDevLogo2.mov; sourceTree = "<group>"; };
-		58A6069F162D0E39004F8088 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AppInstructionVideo_4MArch.mov; sourceTree = "<group>"; };
 		58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Chelsea_Green.jpg; sourceTree = "<group>"; };
 		58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Foxdale.jpg; sourceTree = "<group>"; };
@@ -397,6 +398,8 @@
 		58E4D534160FF62200F17869 /* excel-life.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "excel-life.csv.plist"; sourceTree = "<group>"; };
 		58E4D535160FF62200F17869 /* excel.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = excel.csv.plist; sourceTree = "<group>"; };
 		58E4D536160FF62200F17869 /* linea.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = linea.csv.plist; sourceTree = "<group>"; };
+		58E67D3316758E620011FD4C /* UpdatePricesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePricesView.h; sourceTree = "<group>"; };
+		58E67D3416758E620011FD4C /* UpdatePricesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdatePricesView.m; sourceTree = "<group>"; };
 		58E76F65147BB0A6002D6504 /* BrandCatalogTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrandCatalogTableView.h; sourceTree = "<group>"; };
 		58E76F66147BB0A6002D6504 /* BrandCatalogTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrandCatalogTableView.m; sourceTree = "<group>"; };
 		58E76F92147E6203002D6504 /* CheckProductsForImages.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckProductsForImages.h; sourceTree = "<group>"; };
@@ -599,15 +602,13 @@
 		586E4B1C146CC89B00A7C857 /* import */ = {
 			isa = PBXGroup;
 			children = (
-<<<<<<< HEAD
-				58A6069F162D0E39004F8088 /* Catalog2.sqlite */,
-=======
->>>>>>> e1dc3ba5cfbc666c453168bf9eba2efa3dbbf4f6
+				581A261616813FF600E616FC /* Catalog2.sqlite */,
 				586E4B1D146CC8D700A7C857 /* LoadHPMData.h */,
 				586E4B1E146CC8D700A7C857 /* LoadHPMData.m */,
 				58E76F92147E6203002D6504 /* CheckProductsForImages.h */,
 				58E76F93147E6203002D6504 /* CheckProductsForImages.m */,
-				30B754DCA53531801D3560B5 /* Catalog2.sqlite */,
+				58E67D3316758E620011FD4C /* UpdatePricesView.h */,
+				58E67D3416758E620011FD4C /* UpdatePricesView.m */,
 			);
 			name = import;
 			sourceTree = "<group>";
@@ -856,7 +857,7 @@
 		586E4AD9146CC88200A7C857 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Mindeater Web Services";
 			};
 			buildConfigurationList = 586E4ADC146CC88200A7C857 /* Build configuration list for PBXProject "Catalog2" */;
@@ -951,11 +952,7 @@
 				58E4D53C160FF62200F17869 /* excel-life.csv.plist in Resources */,
 				58E4D53D160FF62200F17869 /* excel.csv.plist in Resources */,
 				58E4D53E160FF62200F17869 /* linea.csv.plist in Resources */,
-<<<<<<< HEAD
-				58A606A0162D0E39004F8088 /* Catalog2.sqlite in Resources */,
-=======
-				30B75775D51EF42637A2B849 /* Catalog2.sqlite in Resources */,
->>>>>>> e1dc3ba5cfbc666c453168bf9eba2efa3dbbf4f6
+				581A261716813FF600E616FC /* Catalog2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,6 +961,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				586E4B0F146CC88300A7C857 /* InfoPlist.strings in Resources */,
+				581A261816813FF600E616FC /* Catalog2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,9 +1039,9 @@
 				AE58166D162B49B000C24710 /* linea.csv.plist in Resources */,
 				30B75230742E6D269BB7BC75 /* Catalog3-iPad.mov in Resources */,
 				30B753EF847D305C7A16EA58 /* Catalog3-iPhone.mov in Resources */,
-				30B75F931378BCE2B48C0C44 /* Catalog2.sqlite in Resources */,
 				30B750C1DB5ACB420BA33FAD /* hpm-icons in Resources */,
 				30B751ACFF68A63977572EDB /* main-bg-port-Catalog3.png in Resources */,
+				581A261916813FF600E616FC /* Catalog2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1094,6 +1092,7 @@
 				58E01B71149FF6D20016C7F9 /* AlertPrompt.m in Sources */,
 				58E01B9C14A149D00016C7F9 /* AppSettingsTableView.m in Sources */,
 				58A435CB14DA331400AB8191 /* OrderLineModal.m in Sources */,
+				58E67D3516758E620011FD4C /* UpdatePricesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1133,6 +1132,7 @@
 				AE58161E162B49B000C24710 /* AlertPrompt.m in Sources */,
 				AE58161F162B49B000C24710 /* AppSettingsTableView.m in Sources */,
 				AE581620162B49B000C24710 /* OrderLineModal.m in Sources */,
+				58E67D3616758E620011FD4C /* UpdatePricesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1174,8 +1174,8 @@
 					armv7,
 					armv6,
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1192,6 +1192,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1205,8 +1207,8 @@
 					armv7,
 					armv6,
 				);
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_THUMB_SUPPORT = NO;
@@ -1216,6 +1218,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1226,14 +1230,13 @@
 		586E4B16146CC88300A7C857 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
-					LNHVERSION,
 				);
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Catalog2/Catalog2-Info.plist";
@@ -1243,6 +1246,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1250,11 +1255,11 @@
 		586E4B17146CC88300A7C857 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = LNHVERSION;
+				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_THUMB_SUPPORT = NO;
 				INFOPLIST_FILE = "Catalog2/Catalog2-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -1263,6 +1268,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1306,8 +1313,8 @@
 		AE581678162B49B000C24710 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1323,7 +1330,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog2 copy";
-				PROVISIONING_PROFILE = "8505A8B2-D53D-4F6A-9660-F011DB0884EC";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1331,8 +1339,8 @@
 		AE581679162B49B000C24710 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = LNHVERSION;
@@ -1344,7 +1352,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog2 copy";
-				PROVISIONING_PROFILE = "8505A8B2-D53D-4F6A-9660-F011DB0884EC";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

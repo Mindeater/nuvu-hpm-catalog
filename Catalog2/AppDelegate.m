@@ -56,13 +56,28 @@
     [request release];
     
     ////////////////////////////////////////////
-    // otherwize we read the data in from pLists
+    // DEVELOPMENT CODE ONLY
+    // Read the data in from pLists and create the sqlite DB
+    // this should not happen on a live device 
     if(![result lastObject]){
         LoadHPMData *loader = [[LoadHPMData alloc]init];
         loader.context = self.managedObjectContext; 
         [loader processFiles];
         [loader release];
     }
+    
+    ////////////////////////////////////////
+    // Update the database with new values ?
+    /*
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]){
+        [[NSUserDefaults standardUserDefaults]
+         registerDefaults:[NSDictionary
+                           dictionaryWithObjectsAndKeys:
+                           [NSNumber numberWithBool:YES],@"UpdatePrices",
+                           nil]];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    */
     
     //////////////////////////////
     // User Defaults
@@ -73,6 +88,7 @@
                            dictionaryWithObjectsAndKeys:
                             [NSNumber numberWithBool:YES],@"firstLaunch",
                             [NSNumber numberWithBool:YES],@"ud_Movie",
+                            [NSNumber numberWithBool:NO],@"UpdatePrices",
                             nil]];
         [[NSUserDefaults standardUserDefaults] synchronize];
         

@@ -16,6 +16,8 @@
 #import "SearchPage.h"
 #import "OrdersTableView.h"
 
+#import "UpdatePricesView.h"
+
 @implementation RootView
 
 @synthesize context;
@@ -64,8 +66,24 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     /*NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);*/
-    //if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]//){ 
-       //&& 
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]){
+        
+        // run the update
+        UpdatePricesView *update = [[UpdatePricesView alloc]init];
+        update.context = self.context;
+        update.modalPresentationStyle = UIModalPresentationFullScreen;
+        
+        UINavigationController *popUp = [[UINavigationController alloc] initWithRootViewController:update];
+        popUp.navigationBarHidden = YES;
+        [self presentViewController:popUp animated:YES completion:nil];
+        
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [update release];
+        [popUp release];
+        
+    }
+    
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
         //NSLog(@"Enter the movie");
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];

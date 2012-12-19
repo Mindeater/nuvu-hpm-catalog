@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "586E4AE1146CC88300A7C857"
-               BuildableName = "Catalog2.app"
-               BlueprintName = "Catalog2"
+               BlueprintIdentifier = "AE581607162B49B000C24710"
+               BuildableName = "Catalog2 copy.app"
+               BlueprintName = "Catalog3"
                ReferencedContainer = "container:Catalog2.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -24,27 +24,17 @@
    </BuildAction>
    <TestAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "586E4B01146CC88300A7C857"
-               BuildableName = "Catalog2Tests.octest"
-               BlueprintName = "Catalog2Tests"
-               ReferencedContainer = "container:Catalog2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "586E4AE1146CC88300A7C857"
-            BuildableName = "Catalog2.app"
-            BlueprintName = "Catalog2"
+            BlueprintIdentifier = "AE581607162B49B000C24710"
+            BuildableName = "Catalog2 copy.app"
+            BlueprintName = "Catalog3"
             ReferencedContainer = "container:Catalog2.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,18 +51,13 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "586E4AE1146CC88300A7C857"
-            BuildableName = "Catalog2.app"
-            BlueprintName = "Catalog2"
+            BlueprintIdentifier = "AE581607162B49B000C24710"
+            BuildableName = "Catalog2 copy.app"
+            BlueprintName = "Catalog3"
             ReferencedContainer = "container:Catalog2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
-         <AdditionalOption
-            key = "NSZombieEnabled"
-            value = "YES"
-            isEnabled = "YES">
-         </AdditionalOption>
       </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
@@ -84,9 +69,9 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "586E4AE1146CC88300A7C857"
-            BuildableName = "Catalog2.app"
-            BlueprintName = "Catalog2"
+            BlueprintIdentifier = "AE581607162B49B000C24710"
+            BuildableName = "Catalog2 copy.app"
+            BlueprintName = "Catalog3"
             ReferencedContainer = "container:Catalog2.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

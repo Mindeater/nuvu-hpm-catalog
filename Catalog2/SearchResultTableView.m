@@ -342,9 +342,9 @@
     if([orientation isEqualToString:@"Horizontal"]){
         orientationPrefix = @"h-";
     }else if([orientation isEqualToString:@"Vertical"]){
-        orientationPrefix = [NSString stringWithString:@"v-"];
+        orientationPrefix = @"v-";
     }else{
-        orientationPrefix = [NSString stringWithString:@""];
+        orientationPrefix = @"";
     }
     
     //@TODO: refactor the image pathfinding
