@@ -33,8 +33,17 @@
 -(void)runCheck;
 -(void)checkMechanismImages;
 -(void)checkFaceplateImages;
--(void)getMechanismImagePaths:(NSArray *)mechanisms:(NSString *)brand:(NSString *)category:(NSString *)orientation;
--(void)getFacePlateImagePaths:(NSArray *)faceplates:(NSString *)brand:(NSString *)category:(NSString *)orientation;
+
+-(void)getMechanismImagePaths:(NSArray *)mechanisms
+                     forBrand:(NSString *)brand
+                  andCategory:(NSString *)category
+              withOrientation:(NSString *)orientation;
+
+-(void)getFacePlateImagePaths:(NSArray *)faceplates
+                     forBrand:(NSString *)brand
+                  andCategory:(NSString *)category
+              withOrientation:(NSString *)orientation;
+
 -(void)logPathCheck:(NSDictionary *)pathMap;
 -(NSString *)getOrientationPrefix:(NSString *)value;
 @end

@@ -99,13 +99,18 @@
             // Deal with error...
             NSLog(@"Error Returned from the fetchRequest ");
         }
-       [self getMechanismImagePaths:result :currentBrand :currentCategory :currentOrientation];
+        
+        [self getMechanismImagePaths:result forBrand:currentBrand andCategory:currentCategory withOrientation:currentOrientation];
         
         self.productCount++;
     }
 }
--(void)getMechanismImagePaths:(NSArray *)mechanisms:(NSString *)brand:(NSString *)category:(NSString *)orientation
-{    
+-(void)getMechanismImagePaths:(NSArray *)mechanisms
+                     forBrand:(NSString *)brand
+                  andCategory:(NSString *)category
+              withOrientation:(NSString *)orientation
+
+{
     for(NSManagedObject *mech in mechanisms){
         NSString *img;
         
@@ -205,12 +210,15 @@
             [dbError release];
         }
         
-        [self getFacePlateImagePaths:result :currentBrand :currentCategory :currentOrientation];        
+        [self getFacePlateImagePaths:result forBrand:currentBrand andCategory:currentCategory withOrientation:currentOrientation];
         
     }
 }
 
--(void)getFacePlateImagePaths:(NSArray *)faceplates:(NSString *)brand:(NSString *)category:(NSString *)orientation
+-(void)getFacePlateImagePaths:(NSArray *)faceplates
+                     forBrand:(NSString *)brand
+                  andCategory:(NSString *)category
+              withOrientation:(NSString *)orientation
 {
     for(NSManagedObject *faceplate in faceplates){
         NSString *img = [faceplate valueForKey:@"id"];

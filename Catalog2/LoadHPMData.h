@@ -24,5 +24,5 @@
 -(NSDictionary *)readPlist:(NSString *)pListName;
 
 
--(NSManagedObject *)addEntityWithValues:(NSString*)entity:(NSDictionary *)keyValues;
+-(NSManagedObject *)addEntity:(NSString*)entity withValues:(NSDictionary *)keyValues;
 @end

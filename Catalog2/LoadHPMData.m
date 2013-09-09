@@ -21,7 +21,7 @@
     [super dealloc];
 }
 
--(NSManagedObject *)addEntityWithValues:(NSString*)entity:(NSDictionary *)keyValues
+-(NSManagedObject *)addEntity:(NSString*)entity withValues:(NSDictionary *)keyValues
 {
     NSError *error = nil;
     // does the entity already exist ??
@@ -92,7 +92,7 @@
         
         
         // insert Brand 
-        NSManagedObject *brandObj = [self addEntityWithValues:@"Brand":
+        NSManagedObject *brandObj = [self addEntity:@"Brand" withValues:
                                          [NSDictionary dictionaryWithObjectsAndKeys:
                                           [brand objectAtIndex:1],@"name",
                                           [brand objectAtIndex:2],@"heading",
@@ -112,8 +112,8 @@
             ////////////////////////////////////
             //insert Each Category
             NSArray *catNameParts = [catName componentsSeparatedByString:@"|"];
-            NSManagedObject *catObj = [self addEntityWithValues:@"Category":
-                                             [NSDictionary dictionaryWithObjectsAndKeys:
+            NSManagedObject *catObj = [self addEntity:@"Category"
+                                           withValues:[NSDictionary dictionaryWithObjectsAndKeys:
                                               //catName,@"name",
                                               [catNameParts objectAtIndex:0],@"name",
                                               brandObj,@"brand",
@@ -153,8 +153,8 @@
                 }
 
                 NSArray *prodNameParts = [product componentsSeparatedByString:@"|"];
-                NSManagedObject *productObj = [self addEntityWithValues:@"Product":
-                                           [NSDictionary dictionaryWithObjectsAndKeys:
+                NSManagedObject *productObj = [self addEntity:@"Product"
+                                                   withValues:[NSDictionary dictionaryWithObjectsAndKeys:
                                            // product,     @"name",
                                             [prodNameParts objectAtIndex:0],@"name",
                                             brandObj,    @"brand",
@@ -191,8 +191,8 @@
                                // NSLog(@"%@",heading);
                                 
                                // NSManagedObject *mechObj = 
-                                [self addEntityWithValues:@"Mechanism":
-                                                               [NSDictionary dictionaryWithObjectsAndKeys:
+                                [self addEntity:@"Mechanism"
+                                     withValues:[NSDictionary dictionaryWithObjectsAndKeys:
                                                                 heading,                 @"name",
                                                                 [NSNumber numberWithDouble:[nextValue doubleValue]], @"price",
                                                                 [NSNumber numberWithInt:1],         @"count",
@@ -217,8 +217,8 @@
                             NSLog(@"5. -  - - - Mechanism %@ price %@ quan %@",value,price,nextValue);
                             
                             //NSManagedObject *mechObj = 
-                            [self addEntityWithValues:@"Mechanism":
-                                                        [NSDictionary dictionaryWithObjectsAndKeys:
+                            [self addEntity:@"Mechanism"
+                                 withValues:[NSDictionary dictionaryWithObjectsAndKeys:
                                                          heading,@"name",
                                                          [NSNumber numberWithDouble:[price doubleValue]],@"price",
                                                          [NSNumber numberWithInt:[nextValue intValue]],@"count",
@@ -237,8 +237,8 @@
                                 NSLog(@"6. - - - - - Plate %@ price %@",value,nextValue);
                                 
                                // NSManagedObject *plateObj = 
-                                [self addEntityWithValues:@"Faceplate":
-                                                            [NSDictionary dictionaryWithObjectsAndKeys:
+                                [self addEntity:@"Faceplate"
+                                     withValues:[NSDictionary dictionaryWithObjectsAndKeys:
                                                              heading,@"name",
                                                              [NSNumber numberWithDouble:[nextValue doubleValue]],@"price",
                                                              value,@"id",
