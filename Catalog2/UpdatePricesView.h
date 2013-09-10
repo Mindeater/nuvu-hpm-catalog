@@ -21,7 +21,7 @@
 }
 
 @property(nonatomic)BOOL verbose;
-@property(nonatomic, retain)UITextField *output;
+@property(nonatomic,retain)UITextField *output;
 @property(nonatomic,retain)UILabel *status;
 @property(nonatomic,retain)NSArray *pLists;
 

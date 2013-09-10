@@ -20,6 +20,12 @@ static NSString * const kSeperator = @"|";
 @synthesize pLists;
 @synthesize context = _context;
 
+-(void)dealloc
+{
+    
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,12 +37,14 @@ static NSString * const kSeperator = @"|";
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    //[super viewDidLoad];
     
-    self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
+    self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]] autorelease];
+
     self.view.backgroundColor = [UIColor blackColor];
     // Message
-    UILabel *message = [[UILabel alloc]initWithFrame:CGRectMake(0,100,self.view.bounds.size.width,100)];
+    UILabel *message = [[UILabel alloc] init];
+    message.frame = CGRectMake(0,100,self.view.bounds.size.width,100);
     message.adjustsFontSizeToFitWidth = YES;
     message.text = @"Application Update in Progress ...";
     message.textAlignment = UITextAlignmentCenter;
@@ -46,7 +54,8 @@ static NSString * const kSeperator = @"|";
     [self.view addSubview:message];
     [message release];
     
-    self.status = [[UILabel alloc]initWithFrame:CGRectMake(0,200,self.view.bounds.size.width,100)];
+    self.status = [[[UILabel alloc] init] autorelease];
+    status.frame = CGRectMake(0,200,self.view.bounds.size.width,100);
     status.adjustsFontSizeToFitWidth = YES;
     status.text = @"";
     status.textAlignment = UITextAlignmentCenter;
@@ -54,23 +63,24 @@ static NSString * const kSeperator = @"|";
     status.backgroundColor = [UIColor blackColor];
     status.font = [UIFont boldSystemFontOfSize:(24.0)];
     [self.view addSubview:status];
+
     
     
     if(!self.verbose){
         self.verbose = YES;
-        self.output = [[UITextField alloc] initWithFrame:CGRectMake(10, 200,
+        self.output = [[[UITextField alloc] initWithFrame:CGRectMake(10, 200,
                                                                     self.view.bounds.size.width -20,
-                                                                    self.view.bounds.size.height - 200)];
+                                                                    self.view.bounds.size.height - 200)] autorelease];
     }else{
         
     }
     
     /// Activity Indicator
-    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    UIActivityIndicatorView *activityIndicator = [[[UIActivityIndicatorView alloc]
+                                                  initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge] autorelease];
     activityIndicator.center = CGPointMake(self.view.bounds.size.width /2, self.view.bounds.size.height /2);
     [self.view addSubview:activityIndicator];
     [activityIndicator startAnimating];
-    [activityIndicator release];
 	// Do any additional setup after loading the view.
     
     LoadHPMData *dataloader = [[LoadHPMData alloc]init];
