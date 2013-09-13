@@ -59,6 +59,7 @@
 		58853C3317E16BBF00B90959 /* Catalog3-iPhone.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3117E16BBF00B90959 /* Catalog3-iPhone.mov */; };
 		58853C3917E1815700B90959 /* hpm-icons in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3817E1815600B90959 /* hpm-icons */; };
 		58853C3B17E1A26100B90959 /* main-bg-port-Catalog3.png in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3A17E1A26100B90959 /* main-bg-port-Catalog3.png */; };
+		58853C3C17E29E3D00B90959 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5864135917DDAF8B00B92D78 /* Default-568h@2x.png */; };
 		5885CD5B14CDA122007001C2 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 5885CD5414CDA122007001C2 /* Icon-72.png */; };
 		5885CD5C14CDA122007001C2 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 5885CD5514CDA122007001C2 /* Icon-Small-50.png */; };
 		5885CD5D14CDA122007001C2 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 5885CD5614CDA122007001C2 /* Icon-Small.png */; };
@@ -1028,6 +1029,7 @@
 				58853C3217E16BBF00B90959 /* Catalog3-iPad.mov in Resources */,
 				58853C3317E16BBF00B90959 /* Catalog3-iPhone.mov in Resources */,
 				58853C3B17E1A26100B90959 /* main-bg-port-Catalog3.png in Resources */,
+				58853C3C17E29E3D00B90959 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
