@@ -319,11 +319,11 @@
 {
     // retain the passed value
     if([newValue isEqualToString:@"Horizontal"]){
-        orientationPrefix = [[NSString stringWithString:@"h-"] retain];
+        orientationPrefix = [@"h-" retain];
     }else if([newValue isEqualToString:@"Vertical"]){
-        orientationPrefix = [[NSString stringWithString:@"v-"] retain];
+        orientationPrefix = [@"v-" retain];
     }else{
-        orientationPrefix = [[NSString stringWithString:@""] retain];
+        orientationPrefix = [@"" retain];
     }
     //NSLog(@" Now is %@\n\n",orientationPrefix);
 }

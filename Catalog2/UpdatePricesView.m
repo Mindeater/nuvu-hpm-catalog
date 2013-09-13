@@ -227,9 +227,6 @@ static NSString * const kSeperator = @"|";
                 
             }//end parts loop
             
-            
-            
-            
         }// end products loop
     }
     
@@ -276,6 +273,8 @@ static NSString * const kSeperator = @"|";
             self.output.text = [self.output.text stringByAppendingFormat:@"%@ updated from %@ to %f\n",
                                 entityName,[retrived valueForKey:@"price"],value];
         }
+    }else{
+        // INsert Required
     }
     /*
     // 1. create a fetch request

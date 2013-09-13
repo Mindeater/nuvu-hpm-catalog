@@ -66,9 +66,9 @@
         [loader release];
     }
     
-    ////////////////////////////////////////
-    // Update the database with new values ?
-    /*
+    //////////////////////////////////////////////////////
+    // If there has never been an update make sure it runs
+    
     if(![[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]){
         [[NSUserDefaults standardUserDefaults]
          registerDefaults:[NSDictionary
@@ -77,7 +77,19 @@
                            nil]];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
-    */
+    
+    //////////////////////////////////////////////////////
+    // If there is no version number set it now
+    
+    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"version"]){
+        [[NSUserDefaults standardUserDefaults]
+         registerDefaults:[NSDictionary
+                           dictionaryWithObjectsAndKeys:
+                           [NSNumber numberWithFloat:1.2f],@"version",
+                           nil]];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
     
     //////////////////////////////
     // User Defaults
@@ -89,6 +101,7 @@
                             [NSNumber numberWithBool:YES],@"firstLaunch",
                             [NSNumber numberWithBool:YES],@"ud_Movie",
                             [NSNumber numberWithBool:NO],@"UpdatePrices",
+                            [NSNumber numberWithFloat:1.3f],@"version",
                             nil]];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
@@ -109,6 +122,15 @@
     //[FlurryAnalytics logAllPageViews:self.navigationController];
     
     return YES;
+}
+
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+//    UINavigationController *navigationController = (UINavigationController *)self.window.rootViewController;
+//    [navigationController shouldAutorotate];
+//    [navigationController preferredInterfaceOrientationForPresentation];
+//    return UIInterfaceOrientationMaskAll;
+    return UIInterfaceOrientationMaskPortrait;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

@@ -66,7 +66,9 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     /*NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);*/
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]){
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]
+       || [[[NSUserDefaults standardUserDefaults] stringForKey:@"version"] isEqualToString:@"1.2"]
+       ){
         
         // run the update
         UpdatePricesView *update = [[UpdatePricesView alloc]init];
@@ -78,6 +80,7 @@
         [self presentViewController:popUp animated:YES completion:nil];
         
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
+        [[NSUserDefaults standardUserDefaults] setFloat:1.3f forKey:@"version"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [update release];
         [popUp release];
@@ -109,16 +112,6 @@
     //allocate the view
     self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]]autorelease];
     self.view.backgroundColor = [UIColor blackColor];
-    //self.wantsFullScreenLayout = YES;
-    
-    /*
-    //if([[NSUserDefaults standardUserDefaults] boolForKey:@"playMovie"]){
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"]){
-        [self playMovie];
-    }else{ 
-        [self renderInterface];
-    }
-     */
     
     
     ///////////////////////////
@@ -279,8 +272,31 @@
 
 - (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
 {
-    [self layoutButtons:toInterfaceOrientation];
+    //[self layoutButtons:toInterfaceOrientation];
     
+}
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+-(NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+-(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    if (interfaceOrientation == UIInterfaceOrientationPortrait) {    // Or whatever orientation it will be presented in.
+        return YES;
+    }
+    return NO;
 }
 
 - (void)viewDidUnload
@@ -482,14 +498,6 @@
     // [self showOrders];
     [senderType.navigationController popViewControllerAnimated:YES];
 }
-
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-
 
 
 #pragma mark - TAke a picture

@@ -5,22 +5,22 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>HPM Selector</string>
+	<string>HPM Legrand Selector</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-    <key>CFBundleIconFile</key>
-    <string></string>
+	<key>CFBundleIconFile</key>
+	<string></string>
 	<key>CFBundleIconFiles</key>
 	<array>
-        <string>hpm-icons/Icon.png</string>
-        <string>hpm-icons/Icon@2x.png</string>
-        <string>hpm-icons/Icon-72.png</string>
-        <string>hpm-icons/Icon-Small-50.png</string>
-        <string>hpm-icons/Icon-Small.png</string>
-        <string>hpm-icons/Icon-Small@2x.png</string>
-        <string>hpm-icons/iTunesArtwork.png</string>
-        <string>hpm-icons/iTunesArtwork@2x.png</string>
-        </array>
+		<string>hpm-icons/Icon.png</string>
+		<string>hpm-icons/Icon@2x.png</string>
+		<string>hpm-icons/Icon-72.png</string>
+		<string>hpm-icons/Icon-Small-50.png</string>
+		<string>hpm-icons/Icon-Small.png</string>
+		<string>hpm-icons/Icon-Small@2x.png</string>
+		<string>hpm-icons/iTunesArtwork.png</string>
+		<string>hpm-icons/iTunesArtwork@2x.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.mindeater.Catalog3</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -44,9 +44,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
