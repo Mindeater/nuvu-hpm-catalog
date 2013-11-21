@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B483FEF7-C6C6-4650-86CE-91DE6E18EC7C</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Catalog2</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F445A10E-A83F-44A7-BA8E-3E0F87F3ABBF</key>
+		<string>https://github.com/Mindeater/nuvu-hpm-catalog.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Catalog2.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F445A10E-A83F-44A7-BA8E-3E0F87F3ABBF</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Mindeater/nuvu-hpm-catalog.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F445A10E-A83F-44A7-BA8E-3E0F87F3ABBF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F445A10E-A83F-44A7-BA8E-3E0F87F3ABBF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>_HPM_catalog</string>
+		</dict>
+	</array>
+</dict>
+</plist>
