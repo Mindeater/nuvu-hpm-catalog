@@ -55,6 +55,10 @@
     
     self.title = @"Search Catalogue";
     
+    if ( [self respondsToSelector:@selector(edgesForExtendedLayout)]) {
+        self.edgesForExtendedLayout = UIRectEdgeLeft | UIRectEdgeBottom | UIRectEdgeRight;
+    }
+
     ///////////////////////////////
     // create a search bar
     searchBar = [[UISearchBar alloc] init];
@@ -90,13 +94,13 @@
 }
 
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-*/
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//}
+
 
 - (void)viewDidUnload
 {
