@@ -19,6 +19,7 @@
 @synthesize fetchedResultsController;
 @synthesize filteredListContents;
 @synthesize LINK;
+@synthesize currentSearchTerms;
 
 -(void)dealloc
 {
@@ -54,6 +55,7 @@
 {
     [super viewDidLoad];
     self.filteredListContents = [NSArray arrayWithObjects: nil];
+    self.currentSearchTerms = [NSMutableArray arrayWithCapacity:1];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
@@ -149,17 +151,19 @@
     }
     
     // Configure the cell...
-    //NSLog(@"SearchresultTAble configure Cell %@",self.filteredListContents);
+    NSString *resultString;
     NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
     switch (item) {
         case 0: // product
-            cell.textLabel.text = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"name"];
+            resultString = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"name"];
             cell.imageView.image = nil;
+            cell.detailTextLabel.text = [[[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"category"] valueForKey:@"name"];
             break;
+        
         case 1: // mechanism
         {
             NSManagedObject *part = [self.filteredListContents objectAtIndex:indexPath.row];
-            cell.textLabel.text = [part valueForKey:@"id"];
+            resultString = [part valueForKey:@"id"];
             cell.imageView.image = [self getThumbnailForPart:part
                                                       ofType:@"Mechanism"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -172,7 +176,7 @@
         case 2: // coverplate
         {
             NSManagedObject *part = [self.filteredListContents objectAtIndex:indexPath.row];
-            cell.textLabel.text = [NSString stringWithFormat:@"%@(%@)",
+            resultString = [NSString stringWithFormat:@"%@(%@)",
                                    [part valueForKey:@"id"],
                                    [part valueForKey:@"name"]];
             cell.imageView.image = [self getThumbnailForPart:part
@@ -187,11 +191,35 @@
             break;
             
         default:
+            resultString = @"";
             break;
     }
     
+    if( YES) // [cell.textLabel respondsToSelector:@selector(setAttributedString:)])
+    {
+    // highlight the search parts of the Label
+    
+        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:resultString];
+        [attrString beginEditing];
+        for(NSString *term in self.currentSearchTerms)
+        {
+            NSRange termRange = [resultString rangeOfString:term options:NSCaseInsensitiveSearch];
+            [attrString addAttribute: NSBackgroundColorAttributeName
+                               value:[UIColor yellowColor]
+                               range:termRange];
+        }
+        [attrString endEditing];
+        [cell.textLabel setAttributedText:attrString];
+    
+    }else{
+        cell.textLabel.text = resultString;
+    }
+    
+    
+    
     return cell;
 }
+
 
 
 #pragma mark - Search results delegate
@@ -225,25 +253,45 @@
     NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
     
     //@TODO: break the search on spaces and do an OR with the predicate to cover word searching
-    
-     NSPredicate * predicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", searchText];
-    
-    if(item == 0){ 
-        // products
-        self.filteredListContents = [[[self fetchedResultsController] fetchedObjects] filteredArrayUsingPredicate:predicate];
+    // Use NSCompoundPredicate -orPredicateWithSubpredicates:
 
-    }else if(item == 1){ 
-        // mechanisms
-        //NSLog(@"Mechanism Search");
+    
+    //Strip white space from front and back
+    NSString *thisSearch = [searchText stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+
+    [self.currentSearchTerms removeAllObjects];
+    [self.currentSearchTerms addObjectsFromArray:[thisSearch componentsSeparatedByString:@" "]];
+    
+    
+    if(item == 0) // products
+    {
+        
+//        NSPredicate *productPredicate = [NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", thisSearch];
+        
+        NSMutableArray *subPredicates = [[NSMutableArray alloc] init];
+        for(NSString *term in  self.currentSearchTerms)
+        {
+            [subPredicates addObject:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", term]];
+        }
+        NSPredicate *productPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
+        
+        self.filteredListContents = [[[self fetchedResultsController] fetchedObjects] filteredArrayUsingPredicate:productPredicate];
+
+    }
+    else if(item == 1) // mechanisms
+    {
+        
         NSError *error = nil;
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSEntityDescription *entityMechansim = [NSEntityDescription entityForName:@"Mechanism"
                                                            inManagedObjectContext:self.context];
         [request setEntity:entityMechansim];
-        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@ || product.category.name CONTAINS[cd] %@ && count = 1", searchText,searchText,searchText];
+        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:
+                                       @"id CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@ || product.category.name CONTAINS[cd] %@ && count = 1",
+                                       thisSearch,
+                                       thisSearch,
+                                       thisSearch];
         [request setPredicate:mechPredicate];
-        
-        //self.filteredListContents =  [self.context executeFetchRequest:request error:&error];
         
         ////////////////////////
         // make sure there are no duplicates returned
@@ -252,7 +300,6 @@
         NSMutableArray* filteredArray = [NSMutableArray array];
         
         for (id object in result) {
-            //NSLog(@"%@",[object valueForKey:@"id"]);
             if (![existingNames containsObject:[object valueForKey:@"id"]]) {
                 [existingNames addObject:[object valueForKey:@"id"]];
                 [filteredArray addObject:object];
@@ -262,13 +309,19 @@
          
         [request release];
         
-    }else if(item == 2){ // coverplates 
+    }
+    else if(item == 2) // coverplates
+    {
         NSError *error = nil;
         NSFetchRequest *request = [[NSFetchRequest alloc] init];
         NSEntityDescription *entityFaceplate = [NSEntityDescription entityForName:@"Faceplate"
                                                            inManagedObjectContext:self.context];
         [request setEntity:entityFaceplate];
-        NSPredicate * fbPredicate = [NSPredicate predicateWithFormat:@"id CONTAINS[cd] %@ || name CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@", searchText,searchText,searchText];
+        NSPredicate * fbPredicate = [NSPredicate predicateWithFormat:
+                                     @"id CONTAINS[cd] %@ || name CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@",
+                                     thisSearch,
+                                     thisSearch,
+                                     thisSearch];
         [request setPredicate:fbPredicate];
         
         ////////////////////////
@@ -283,7 +336,6 @@
                 [filteredArray addObject:object];
             }
         }
-        
         
         self.filteredListContents =  [NSArray arrayWithArray:filteredArray];
         
