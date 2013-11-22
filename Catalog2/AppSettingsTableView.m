@@ -9,7 +9,7 @@
 #import "AppSettingsTableView.h"
 #import "SettingsPage.h"
 
-#import "AlertPrompt.h"
+#import "CollectInfoAlertView.h"
 
 @implementation AppSettingsTableView
 
@@ -435,28 +435,57 @@
 #pragma mark - pricng percentage add methods
 -(void)setPricingPercentage
 {
+    
+    
     // add the alert view now
-    AlertPrompt *prompt = [AlertPrompt alloc];
+    CollectInfoAlertView *prompt = [CollectInfoAlertView alloc];
 	prompt = [prompt initWithTitle:@"Price Adjustment (+/-)" message:@"Please enter a Percentage Value" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
     [prompt setTextFieldStyle:UIKeyboardTypeNumberPad];
-	[prompt show];
+    [prompt addObserver:self forKeyPath:@"buttonIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+    prompt.modalPresentationStyle = UIModalPresentationFormSheet;
+    prompt.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:prompt animated:YES completion:nil];
+    prompt.view.superview.bounds = CGRectMake(0, 0, 300, 200);
+	//[prompt show];
 	[prompt release];
 }
 
-- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
 {
-	if (buttonIndex != [alertView cancelButtonIndex])
-	{
-		NSString *entered = [(AlertPrompt *)alertView enteredText];
-        
-        [[NSUserDefaults standardUserDefaults] 
+    [object removeObserver:self forKeyPath:@"buttonIndex"];
+    if([[change objectForKey:@"new"] integerValue] == 1)
+    {
+        NSString *entered = [(CollectInfoAlertView *)object enteredText];
+        [[NSUserDefaults standardUserDefaults]
          setFloat: [entered floatValue]
          forKey:@"ud_PricePercentage"];
         
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self.tableView reloadData];
-        
-	}
+
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
+
+//- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
+//{
+//	if (buttonIndex != [alertView cancelButtonIndex])
+//	{
+//		NSString *entered = [(AlertPrompt *)alertView enteredText];
+//        
+//        [[NSUserDefaults standardUserDefaults] 
+//         setFloat: [entered floatValue]
+//         forKey:@"ud_PricePercentage"];
+//        
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//        [self.tableView reloadData];
+//
+//	}
+//}
 
 @end
