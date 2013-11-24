@@ -83,6 +83,8 @@
 		58A435E214DFE7E600AB8191 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
 		58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
+		58C691EC183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
+		58C691ED183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
 		58CD95D5149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */; };
 		58CD95D6149A075B009E89EB /* Paint_Sample_Foxdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */; };
 		58CD95D7149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C6149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg */; };
@@ -117,7 +119,6 @@
 		58E01B41149D89350016C7F9 /* Wallpaper_stripes_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B30149D89350016C7F9 /* Wallpaper_stripes_tmb.jpg */; };
 		58E01B42149D89350016C7F9 /* Wallpaper_whitecaesar_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B31149D89350016C7F9 /* Wallpaper_whitecaesar_tmb.jpg */; };
 		58E01B43149D89350016C7F9 /* Wallpaper_whitetiles_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B32149D89350016C7F9 /* Wallpaper_whitetiles_tmb.jpg */; };
-		58E01B71149FF6D20016C7F9 /* AlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01B70149FF6D20016C7F9 /* AlertPrompt.m */; };
 		58E01B9C14A149D00016C7F9 /* AppSettingsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01B9B14A149D00016C7F9 /* AppSettingsTableView.m */; };
 		58E67D3516758E620011FD4C /* UpdatePricesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E67D3416758E620011FD4C /* UpdatePricesView.m */; };
 		58E67D3616758E620011FD4C /* UpdatePricesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E67D3416758E620011FD4C /* UpdatePricesView.m */; };
@@ -157,7 +158,6 @@
 		AE58161B162B49B000C24710 /* ProductChooserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F0575D148870E900DD7941 /* ProductChooserView.m */; };
 		AE58161C162B49B000C24710 /* ProductBackgroundResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 58057978148C8580004C92F4 /* ProductBackgroundResize.m */; };
 		AE58161D162B49B000C24710 /* AddPartToOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 580579CA148DB962004C92F4 /* AddPartToOrder.m */; };
-		AE58161E162B49B000C24710 /* AlertPrompt.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01B70149FF6D20016C7F9 /* AlertPrompt.m */; };
 		AE58161F162B49B000C24710 /* AppSettingsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01B9B14A149D00016C7F9 /* AppSettingsTableView.m */; };
 		AE581620162B49B000C24710 /* OrderLineModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A435CA14DA331400AB8191 /* OrderLineModal.m */; };
 		AE581622162B49B000C24710 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585107A914936DDF005BF016 /* MessageUI.framework */; };
@@ -354,6 +354,8 @@
 		58A435DB14DFE7E600AB8191 /* Linea */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linea; sourceTree = "<group>"; };
 		58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NuvuDevLogo2.mov; sourceTree = "<group>"; };
 		58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AppInstructionVideo_4MArch.mov; sourceTree = "<group>"; };
+		58C691EA183E2FC7002FEA8A /* CollectInfoAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectInfoAlertView.h; sourceTree = "<group>"; };
+		58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectInfoAlertView.m; sourceTree = "<group>"; };
 		58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Chelsea_Green.jpg; sourceTree = "<group>"; };
 		58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Foxdale.jpg; sourceTree = "<group>"; };
 		58CD95C6149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Hog_Bristle_Half.jpg; sourceTree = "<group>"; };
@@ -388,8 +390,6 @@
 		58E01B30149D89350016C7F9 /* Wallpaper_stripes_tmb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wallpaper_stripes_tmb.jpg; sourceTree = "<group>"; };
 		58E01B31149D89350016C7F9 /* Wallpaper_whitecaesar_tmb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wallpaper_whitecaesar_tmb.jpg; sourceTree = "<group>"; };
 		58E01B32149D89350016C7F9 /* Wallpaper_whitetiles_tmb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Wallpaper_whitetiles_tmb.jpg; sourceTree = "<group>"; };
-		58E01B6F149FF6D20016C7F9 /* AlertPrompt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertPrompt.h; sourceTree = "<group>"; };
-		58E01B70149FF6D20016C7F9 /* AlertPrompt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertPrompt.m; sourceTree = "<group>"; };
 		58E01B9A14A149D00016C7F9 /* AppSettingsTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsTableView.h; sourceTree = "<group>"; };
 		58E01B9B14A149D00016C7F9 /* AppSettingsTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsTableView.m; sourceTree = "<group>"; };
 		58E67D3316758E620011FD4C /* UpdatePricesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdatePricesView.h; sourceTree = "<group>"; };
@@ -611,8 +611,6 @@
 		586E4B20146CD03300A7C857 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				58E01B6F149FF6D20016C7F9 /* AlertPrompt.h */,
-				58E01B70149FF6D20016C7F9 /* AlertPrompt.m */,
 				58E8F02B1477C81C0098ADC7 /* Orders */,
 				586E4BD8146EA32700A7C857 /* RootView.h */,
 				586E4BD9146EA32700A7C857 /* RootView.m */,
@@ -696,6 +694,8 @@
 			children = (
 				58E8F0281477BF260098ADC7 /* RoundedRectView.h */,
 				58E8F0291477BF260098ADC7 /* RoundedRectView.m */,
+				58C691EA183E2FC7002FEA8A /* CollectInfoAlertView.h */,
+				58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */,
 			);
 			name = helpers;
 			sourceTree = "<group>";
@@ -854,6 +854,14 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Mindeater Web Services";
+				TargetAttributes = {
+					586E4AE1146CC88300A7C857 = {
+						DevelopmentTeam = P4S82J6V69;
+					};
+					AE581607162B49B000C24710 = {
+						DevelopmentTeam = P4S82J6V69;
+					};
+				};
 			};
 			buildConfigurationList = 586E4ADC146CC88200A7C857 /* Build configuration list for PBXProject "Catalog2" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1060,6 +1068,7 @@
 				586E4AF9146CC88300A7C857 /* AppDelegate.m in Sources */,
 				586E4AFC146CC88300A7C857 /* Catalog2.xcdatamodeld in Sources */,
 				586E4B1F146CC8D700A7C857 /* LoadHPMData.m in Sources */,
+				58C691EC183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */,
 				586E4BDA146EA32700A7C857 /* RootView.m in Sources */,
 				586E4C05146F9D3B00A7C857 /* MechanismView.m in Sources */,
 				586E4C0B146F9D9C00A7C857 /* FacePlateView.m in Sources */,
@@ -1077,7 +1086,6 @@
 				58F0575E148870EA00DD7941 /* ProductChooserView.m in Sources */,
 				58057979148C8580004C92F4 /* ProductBackgroundResize.m in Sources */,
 				580579CB148DB962004C92F4 /* AddPartToOrder.m in Sources */,
-				58E01B71149FF6D20016C7F9 /* AlertPrompt.m in Sources */,
 				58E01B9C14A149D00016C7F9 /* AppSettingsTableView.m in Sources */,
 				58A435CB14DA331400AB8191 /* OrderLineModal.m in Sources */,
 				58E67D3516758E620011FD4C /* UpdatePricesView.m in Sources */,
@@ -1100,6 +1108,7 @@
 				AE58160A162B49B000C24710 /* AppDelegate.m in Sources */,
 				AE58160B162B49B000C24710 /* Catalog2.xcdatamodeld in Sources */,
 				AE58160C162B49B000C24710 /* LoadHPMData.m in Sources */,
+				58C691ED183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */,
 				AE58160D162B49B000C24710 /* RootView.m in Sources */,
 				AE58160E162B49B000C24710 /* MechanismView.m in Sources */,
 				AE58160F162B49B000C24710 /* FacePlateView.m in Sources */,
@@ -1117,7 +1126,6 @@
 				AE58161B162B49B000C24710 /* ProductChooserView.m in Sources */,
 				AE58161C162B49B000C24710 /* ProductBackgroundResize.m in Sources */,
 				AE58161D162B49B000C24710 /* AddPartToOrder.m in Sources */,
-				AE58161E162B49B000C24710 /* AlertPrompt.m in Sources */,
 				AE58161F162B49B000C24710 /* AppSettingsTableView.m in Sources */,
 				AE581620162B49B000C24710 /* OrderLineModal.m in Sources */,
 				58E67D3616758E620011FD4C /* UpdatePricesView.m in Sources */,
@@ -1230,7 +1238,7 @@
 		586E4B16146CC88300A7C857 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
@@ -1246,7 +1254,7 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90E0888C-A5FC-4402-A101-AC8D62C09CDE";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1255,7 +1263,7 @@
 		586E4B17146CC88300A7C857 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
@@ -1268,7 +1276,7 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "90E0888C-A5FC-4402-A101-AC8D62C09CDE";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1313,7 +1321,7 @@
 		AE581678162B49B000C24710 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1341,7 +1349,7 @@
 		AE581679162B49B000C24710 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";

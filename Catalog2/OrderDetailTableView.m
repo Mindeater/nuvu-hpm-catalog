@@ -10,10 +10,11 @@
 #import "OrderLineViewCell.h"
 
 //#import "EditOrderLineView.h"
+#import "CollectInfoAlertView.h"
 
 #import "OrderLineModal.h"
 
-#import "AlertPrompt.h"
+#import "CollectInfoAlertView.h"
 
 
 @implementation OrderDetailTableView
@@ -333,51 +334,6 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark - respond to the UIAlerts
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
-    
-    if([editingText isEqualToString:@""])
-    {
-        [self emailOrder:title];
-        
-    }else if([editingText isEqualToString:@"quantity"]){
-        if([title isEqualToString:@"OK"]){
-           
-            NSString *entered = [(AlertPrompt *)alertView enteredText];
-            NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:alertView.tag];
-            
-            // make sure it is 1 or more
-            int enteredNumber = [entered intValue];
-            if(enteredNumber == 0){
-                enteredNumber = 1;
-            }
-            
-            [curr setValue:[NSNumber numberWithInt:enteredNumber]
-                    forKey:@"quantity"];
-            NSError *error;
-            [self.context save:&error];
-        }
-        editingText = @"";
-    }else if([editingText isEqualToString:@"comment"]){
-        if([title isEqualToString:@"OK"]){
-            NSString *entered = [(AlertPrompt *)alertView enteredText];
-            
-            NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:alertView.tag];
-            [curr setValue:entered
-                    forKey:@"comment"];
-            NSError *error;
-            [self.context save:&error];
-        }
-        
-        editingText = @"";
-    }
-    
-    
-}
-
 #pragma mark - sending an order  by email
 
 -(void)sendCurrentOrder:(id)sender
@@ -399,11 +355,8 @@
 {
     if ([MFMailComposeViewController canSendMail]) {
         
-         NSString *title = (NSString *)sender;
+        NSString *title = (NSString *)sender;
         
-       // NSLog(@"Email Order has  --- %@ ||||| %@",title,sender);
-        
-        // Build an email body to send
         // CREATING MAIL VIEW
         MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
         controller.mailComposeDelegate = self;
@@ -470,10 +423,6 @@
     }
     
     return 150;
-    /*
-     CGSize size = [str sizeWithFont:[UIFont fontWithName:@"Georgia-Bold" size:18.0] constrainedToSize:CGSizeMake(240.0, 480.0) lineBreakMode:UILineBreakModeWordWrap];
-     return size.height + 20;
-     */
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -717,27 +666,73 @@
     return cell;
 }
 
+#pragma mark - respond to the UIAlerts
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    //    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+    //
+    //    if([editingText isEqualToString:@""])
+    //    {
+    //        [self emailOrder:title];
+    //
+    //    }else if([editingText isEqualToString:@"quantity"]){
+    //        if([title isEqualToString:@"OK"]){
+    //
+    //            NSString *entered = [(AlertPrompt *)alertView enteredText];
+    //            NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:alertView.tag];
+    //
+    //            // make sure it is 1 or more
+    //            int enteredNumber = [entered intValue];
+    //            if(enteredNumber == 0){
+    //                enteredNumber = 1;
+    //            }
+    //
+    //            [curr setValue:[NSNumber numberWithInt:enteredNumber]
+    //                    forKey:@"quantity"];
+    //            NSError *error;
+    //            [self.context save:&error];
+    //        }
+    //        editingText = @"";
+    //    }else if([editingText isEqualToString:@"comment"]){
+    //        if([title isEqualToString:@"OK"]){
+    //            NSString *entered = [(AlertPrompt *)alertView enteredText];
+    //
+    //            NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:alertView.tag];
+    //            [curr setValue:entered
+    //                    forKey:@"comment"];
+    //            NSError *error;
+    //            [self.context save:&error];
+    //        }
+    //        
+    //        editingText = @"";
+    //    }
+    
+    
+}
 
 #pragma mark - UITextField delegates
+
+#pragma mark Quantity Changes
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     //NSLog(@" - TextField - ");
     
     editingText = @"quantity";
-    
-    if( editPrompt == nil){
-        editPrompt = [AlertPrompt alloc];
-    }else{
-        [editPrompt release];
-        editPrompt = [AlertPrompt alloc];
-    }
-    
-    editPrompt = [editPrompt initWithTitle:@"Change Quantity" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
-    editPrompt.tag = textField.tag;
-    editPrompt.textField.text = textField.text;
-    
-	[editPrompt show];
+//    
+//    if( editPrompt == nil){
+//        editPrompt = [AlertPrompt alloc];
+//    }else{
+//        [editPrompt release];
+//        editPrompt = [AlertPrompt alloc];
+//    }
+//    
+//    editPrompt = [editPrompt initWithTitle:@"Change Quantity" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+//    editPrompt.tag = textField.tag;
+//    editPrompt.textField.text = textField.text;
+//    
+//	[editPrompt show];
     /*
     
     AlertPrompt *prompt = [AlertPrompt alloc];
@@ -748,7 +743,64 @@
 	[prompt show];
 	[prompt release];
     */
+    
+    
+    // add the alert view now
+    CollectInfoAlertView *prompt = [CollectInfoAlertView alloc];
+	prompt = [prompt initWithTitle:@"Change Quantity" message:@"Please enter Value" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    [prompt setTextFieldStyle:UIKeyboardTypeNumberPad];
+    prompt.tag = textField.tag;
+    prompt.entry_txt.text = textField.text;
+    [prompt addObserver:self forKeyPath:@"buttonIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+    prompt.modalPresentationStyle = UIModalPresentationFormSheet;
+    prompt.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:prompt animated:YES completion:nil];
+    prompt.view.superview.bounds = CGRectMake(0, 0, 300, 200);
+	//[prompt show];
+	[prompt release];
+    
     return NO;
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    
+    [object removeObserver:self forKeyPath:@"buttonIndex"];
+
+    if([[change objectForKey:@"new"] integerValue] == 1)
+    {
+        NSString *entered = [(CollectInfoAlertView *)object enteredText];
+        int tag = [(CollectInfoAlertView *)object tag];
+        NSManagedObject *curr = [_fetchedResultsController.fetchedObjects objectAtIndex:tag];
+        
+        if([editingText isEqualToString:@"quantity"])
+        {
+            // make sure it is 1 or more
+            int enteredNumber = [entered intValue];
+            if(enteredNumber == 0){
+                enteredNumber = 1;
+            }
+
+            [curr setValue:[NSNumber numberWithInt:enteredNumber]
+                 forKey:@"quantity"];
+            
+        }else if([editingText isEqualToString:@"comment"]){
+            [curr setValue:entered
+                    forKey:@"comment"];
+        
+        }
+
+        editingText = @"";
+        NSError *error =nil;
+        [self.context save:&error];
+        
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
@@ -763,6 +815,7 @@
     float yOffset = 44.0f; // Change this how much you want!
     self.tableView.frame =  CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y + yOffset, self.tableView.frame.size.width, self.tableView.frame.size.height);
      */
+    
     
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField
@@ -795,26 +848,42 @@
     if([editingText isEqualToString:@"comment"]) return NO;
     
     editingText = @"comment";
-    NSLog(@"Edit comment called");
-    if( editPrompt == nil){
-        editPrompt = [AlertPrompt alloc];
-    }else{
-        
-        [editPrompt release];
-        editPrompt = [AlertPrompt alloc];
-    }
-	editPrompt = [editPrompt initWithTitle:@"Change Comment" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
-    editPrompt.tag = textView.tag;
-    editPrompt.textField.text = textView.text;
-    
-	[editPrompt show];
+//    NSLog(@"Edit comment called");
+//    if( editPrompt == nil){
+//        editPrompt = [AlertPrompt alloc];
+//    }else{
+//        
+//        [editPrompt release];
+//        editPrompt = [AlertPrompt alloc];
+//    }
+//	editPrompt = [editPrompt initWithTitle:@"Change Comment" message:@"\n\n" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+//    editPrompt.tag = textView.tag;
+//    editPrompt.textField.text = textView.text;
+//    
+//	[editPrompt show];
 	//[prompt release];
+    
+    CollectInfoAlertView *prompt = [CollectInfoAlertView alloc];
+	prompt = [prompt initWithTitle:@"Change Quantity" message:@"Please enter Value" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    [prompt setTextFieldStyle:UIKeyboardTypeNumberPad];
+    prompt.tag = textView.tag;
+    prompt.entry_txt.text = textView.text;
+    [prompt addObserver:self forKeyPath:@"buttonIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+    prompt.modalPresentationStyle = UIModalPresentationFormSheet;
+    prompt.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:prompt animated:YES completion:nil];
+    prompt.view.superview.bounds = CGRectMake(0, 0, 300, 200);
+	//[prompt show];
+	[prompt release];
     
     return NO;
 }
+
 -(void)textViewDidBeginEditing:(UITextField *)textField{
-    NSLog(@"TextField did bigoin");
+   // NSLog(@"TextField did bigoin");
 }
+
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     //NSLog(@" Catch the textView finished editing %i",textView.tag);

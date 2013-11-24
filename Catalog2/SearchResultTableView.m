@@ -152,12 +152,14 @@
     
     // Configure the cell...
     NSString *resultString;
+    NSString *detailString;
     NSInteger item = self.LINK.searchDisplayController.searchBar.selectedScopeButtonIndex;
     switch (item) {
         case 0: // product
             resultString = [[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"name"];
             cell.imageView.image = nil;
             cell.detailTextLabel.text = [[[self.filteredListContents objectAtIndex:indexPath.row] valueForKey:@"category"] valueForKey:@"name"];
+            detailString = nil;
             break;
         
         case 1: // mechanism
@@ -168,7 +170,7 @@
                                                       ofType:@"Mechanism"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",
+            detailString = [NSString stringWithFormat:@"%@, %@",
                                          [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"],
                                          [[[part valueForKey:@"product"] valueForKey:@"category"] valueForKey:@"name"]];
         }
@@ -176,50 +178,69 @@
         case 2: // coverplate
         {
             NSManagedObject *part = [self.filteredListContents objectAtIndex:indexPath.row];
-            resultString = [NSString stringWithFormat:@"%@(%@)",
+            resultString = [NSString stringWithFormat:@"%@ (%@)",
                                    [part valueForKey:@"id"],
                                    [part valueForKey:@"name"]];
             cell.imageView.image = [self getThumbnailForPart:part
                                                       ofType:@"Faceplate"];
             cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-            cell.detailTextLabel.text = [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"];
-            /*[NSString stringWithFormat:@"%@ %@",
-                                         [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"],
-                                         [[[part valueForKey:@"product"] valueForKey:@"category"] valueForKey:@"name"]];*/
+            detailString = [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"];
+            // The Category Name is not part of the search so it's not required to be displayed
+//            detailString = [NSString stringWithFormat:@"%@, %@",
+//                                         [[[part valueForKey:@"product"] valueForKey:@"brand"] valueForKey:@"heading"],
+//                                         [[[part valueForKey:@"product"] valueForKey:@"category"] valueForKey:@"name"]];
         }
             break;
             
         default:
             resultString = @"";
+            detailString = @"";
             break;
     }
     
-    if( YES) // [cell.textLabel respondsToSelector:@selector(setAttributedString:)])
-    {
     // highlight the search parts of the Label
-    
-        NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:resultString];
-        [attrString beginEditing];
-        for(NSString *term in self.currentSearchTerms)
-        {
-            NSRange termRange = [resultString rangeOfString:term options:NSCaseInsensitiveSearch];
-            [attrString addAttribute: NSBackgroundColorAttributeName
-                               value:[UIColor yellowColor]
-                               range:termRange];
-        }
-        [attrString endEditing];
-        [cell.textLabel setAttributedText:attrString];
-    
-    }else{
-        cell.textLabel.text = resultString;
+    if(resultString != nil){
+        [self getSearchTermsHighlightedStringForString:resultString in:cell.textLabel];
     }
     
+    if(detailString != nil){
+        [self getSearchTermsHighlightedStringForString:detailString in:cell.detailTextLabel];
+    }
+    
+//
+//    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:resultString];
+//    [attrString beginEditing];
+//    for(NSString *term in self.currentSearchTerms)
+//    {
+//        NSRange termRange = [resultString rangeOfString:term options:NSCaseInsensitiveSearch];
+//        [attrString addAttribute: NSBackgroundColorAttributeName
+//                           value:[UIColor yellowColor]
+//                           range:termRange];
+//    }
+//    [attrString endEditing];
+//    [cell.textLabel setAttributedText:attrString];
+    
+//        cell.textLabel.text = resultString;
     
     
     return cell;
 }
 
+-(void)getSearchTermsHighlightedStringForString:(NSString *)resultString in:(UILabel *)label
+{
+    NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:resultString];
+    [attrString beginEditing];
+    for(NSString *term in self.currentSearchTerms)
+    {
+        NSRange termRange = [resultString rangeOfString:term options:NSCaseInsensitiveSearch];
+        [attrString addAttribute: NSBackgroundColorAttributeName
+                           value:[UIColor yellowColor]
+                           range:termRange];
+    }
+    [attrString endEditing];
+    [label setAttributedText:attrString];
+}
 
 
 #pragma mark - Search results delegate
@@ -286,11 +307,23 @@
         NSEntityDescription *entityMechansim = [NSEntityDescription entityForName:@"Mechanism"
                                                            inManagedObjectContext:self.context];
         [request setEntity:entityMechansim];
-        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:
-                                       @"id CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@ || product.category.name CONTAINS[cd] %@ && count = 1",
-                                       thisSearch,
-                                       thisSearch,
-                                       thisSearch];
+        
+        NSMutableArray *subPredicates = [[NSMutableArray alloc] init];
+        for(NSString *term in  self.currentSearchTerms)
+        {
+            [subPredicates addObject:[NSPredicate predicateWithFormat:
+                                      @"id CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@ || product.category.name CONTAINS[cd] %@ && count = 1",
+                                      term,
+                                      term,
+                                      term]];
+        }
+        NSPredicate *mechPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
+        
+//        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:
+//                                       @"id CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@ || product.category.name CONTAINS[cd] %@ && count = 1",
+//                                       thisSearch,
+//                                       thisSearch,
+//                                       thisSearch];
         [request setPredicate:mechPredicate];
         
         ////////////////////////
@@ -317,20 +350,32 @@
         NSEntityDescription *entityFaceplate = [NSEntityDescription entityForName:@"Faceplate"
                                                            inManagedObjectContext:self.context];
         [request setEntity:entityFaceplate];
-        NSPredicate * fbPredicate = [NSPredicate predicateWithFormat:
-                                     @"id CONTAINS[cd] %@ || name CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@",
-                                     thisSearch,
-                                     thisSearch,
-                                     thisSearch];
-        [request setPredicate:fbPredicate];
+        
+        NSMutableArray *subPredicates = [[NSMutableArray alloc] init];
+        for(NSString *term in  self.currentSearchTerms)
+        {
+            [subPredicates addObject:[NSPredicate predicateWithFormat:
+                                      @"id CONTAINS[cd] %@ || name CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@",
+                                      term,
+                                      term,
+                                      term]];
+        }
+        NSPredicate *coverplatePredicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
+        
+//        NSPredicate * coverplatePredicate = [NSPredicate predicateWithFormat:
+//                                     @"id CONTAINS[cd] %@ || name CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@",
+//                                     thisSearch,
+//                                     thisSearch,
+//                                     thisSearch];
+        [request setPredicate:coverplatePredicate];
         
         ////////////////////////
         // make sure there are no duplicates returned
+        // TODO -
         NSArray *result =  [self.context executeFetchRequest:request error:&error];
         NSMutableSet* existingNames = [NSMutableSet set];
         NSMutableArray* filteredArray = [NSMutableArray array];
         for (id object in result) {
-            //NSLog(@"%@",[object valueForKey:@"id"]);
             if (![existingNames containsObject:[object valueForKey:@"id"]]) {
                 [existingNames addObject:[object valueForKey:@"id"]];
                 [filteredArray addObject:object];

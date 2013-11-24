@@ -16,6 +16,7 @@
 @property(nonatomic)CGFloat buttonIndex;
 @property(nonatomic, retain)UIButton *cancel_btn;
 @property(nonatomic, retain)UIButton *ok_btn;
+@property(nonatomic)CGFloat tag;
 
 
 

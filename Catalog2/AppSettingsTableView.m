@@ -472,20 +472,5 @@
     [self dismissModalViewControllerAnimated:YES];
 }
 
-//- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
-//{
-//	if (buttonIndex != [alertView cancelButtonIndex])
-//	{
-//		NSString *entered = [(AlertPrompt *)alertView enteredText];
-//        
-//        [[NSUserDefaults standardUserDefaults] 
-//         setFloat: [entered floatValue]
-//         forKey:@"ud_PricePercentage"];
-//        
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//        [self.tableView reloadData];
-//
-//	}
-//}
 
 @end

@@ -350,6 +350,7 @@
 {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
+    
     ///////////////////////////////////
     //OrderStatus
     UILabel *orderStatusLabel = [[UILabel alloc] 
@@ -359,7 +360,8 @@
     orderStatusLabel.textColor = [UIColor whiteColor];
     orderStatusLabel.backgroundColor = [UIColor clearColor];
     [self.controlsView addSubview:orderStatusLabel];
-    [orderStatusLabel release]; 
+    [orderStatusLabel release];
+    
 }
 
 #pragma mark - Actions from toolbar

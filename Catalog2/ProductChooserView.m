@@ -13,7 +13,7 @@
 
 #import "ProductBackgroundResize.h"
 #import "AddPartToOrder.h"
-#import "AlertPrompt.h"
+#import "CollectInfoAlertView.h"
 
 #import "OrdersTableView.h"
 #import "OrderDetailTableView.h"
@@ -97,49 +97,25 @@
     
 }
 
+
+#pragma mark - Shopping Cart
+
 -(void)addActivePartToCart
 {
     // add the alert view now
-    AlertPrompt *prompt = [AlertPrompt alloc];
-	prompt = [prompt initWithTitle:@"Add Comment" message:@"Please enter a note" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
-	[prompt show];
+    CollectInfoAlertView *prompt = [CollectInfoAlertView alloc];
+	prompt = [prompt initWithTitle:@"Add Product to Order" message:@"Please enter a note" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    [prompt setTextFieldStyle:UIKeyboardTypeNumberPad];
+    [prompt addObserver:self forKeyPath:@"buttonIndex" options:NSKeyValueObservingOptionNew context:nil];
+    
+    prompt.modalPresentationStyle = UIModalPresentationFormSheet;
+    prompt.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:prompt animated:YES completion:nil];
+    prompt.view.superview.bounds = CGRectMake(0, 0, 300, 200);
 	[prompt release];
-    /*
-    // this will have already been set when the mechanism was selected
-    if(self.selectedProductName == nil){
-        self.selectedProductName = [[_fetchedResultsController.fetchedObjects objectAtIndex:currIndex] valueForKey:@"name"];
-    }
-    // Not adding Mechanisms on their own - defaults to faceplate with mechanims
-    if([self.currentEntityName isEqualToString:@"Mechanism"]){
-        [self.shoppingCart addMechanismsToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Mechanism"]
-                                       withProductName:self.selectedProductName];
-    }else{
-        [self.shoppingCart addMechanismsToDefaultOrder:self.mechanismObject
-                                       withProductName:self.selectedProductName];
-        [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]
-                                    withProductName:self.selectedProductName];
-    }
-     */
+    
 }
 
-- (void)alertView:(UIAlertView *)alertView willDismissWithButtonIndex:(NSInteger)buttonIndex
-{
-	if (buttonIndex != [alertView cancelButtonIndex])
-	{
-		NSString *entered = [(AlertPrompt *)alertView enteredText];
-		//label.text = [NSString stringWithFormat:@"You typed: %@", entered];
-        [self.shoppingCart addMechanismsToDefaultOrder:self.mechanismObject
-                                       withProductName:self.selectedProductName];
-        [self.shoppingCart addCommentToActiveOrderLine:entered];
-        
-        if([self.currentFacePlates count] >= 1){
-          [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"] withProductName:self.selectedProductName];  
-        }
-        
-        PartView *active = (PartView *)self.navigationController.topViewController;
-        [active updateSelectedStatus];
-	}
-}
 
 #pragma mark - object init
 
@@ -454,11 +430,34 @@
     //@TODO: There may be only one of these faceplates returned
 }
 
-#pragma mark - selection handling
+
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
         
+    
+    if([keyPath isEqualToString:@"buttonIndex"])
+    {
+        [object removeObserver:self forKeyPath:@"buttonIndex"];
+        
+        if([[change objectForKey:@"new"] integerValue] == 1)
+        {
+            NSString *entered = [(CollectInfoAlertView *)object enteredText];
+            [self.shoppingCart addMechanismsToDefaultOrder:self.mechanismObject
+                                           withProductName:self.selectedProductName];
+            [self.shoppingCart addCommentToActiveOrderLine:entered];
+            
+            if([self.currentFacePlates count] >= 1){
+                [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"] withProductName:self.selectedProductName];
+            }
+            
+            PartView *active = (PartView *)self.navigationController.topViewController;
+            [active updateSelectedStatus];
+        }
+        [self dismissModalViewControllerAnimated:YES];
+        return;
+    }
+    
     if([self.currentEntityName isEqualToString:@"Mechanism"]){
         
         // this can also be set when a mechanism is added to the cart
@@ -513,6 +512,8 @@
         
     }
 }
+
+#pragma mark - selection handling
 
 -(void)returnToMainMenu
 {
