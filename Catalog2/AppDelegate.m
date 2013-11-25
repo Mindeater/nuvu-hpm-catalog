@@ -46,19 +46,22 @@
     ////////////////////////////////////
     /// Is there a Dataset Available ??
     // this call forces a copy of the sqlite db if one has been shipped in the App bundle
+   
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Brand"
                                               inManagedObjectContext:self.managedObjectContext];
     [request setEntity:entity];
     
     NSError *error = nil;
-    NSArray *result = [self.managedObjectContext executeFetchRequest:request error:&error];
+    NSArray *result = [self.managedObjectContext executeFetchRequest:request
+                                                               error:&error];
     [request release];
     
     ////////////////////////////////////////////
     // DEVELOPMENT CODE ONLY
     // Read the data in from pLists and create the sqlite DB
-    // this should not happen on a live device 
+    // !! This should not happen on a live device
+    
     if(![result lastObject]){
         LoadHPMData *loader = [[LoadHPMData alloc]init];
         loader.context = self.managedObjectContext; 
@@ -69,42 +72,59 @@
     //////////////////////////////////////////////////////
     // If there has never been an update make sure it runs
     
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]){
+    if( [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"] &&
+       ! [[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"])
+    {
         [[NSUserDefaults standardUserDefaults]
          registerDefaults:[NSDictionary
                            dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:YES],@"UpdatePrices",
-                           nil]];
+                           [NSNumber numberWithBool:YES], @"UpdatePrices",
+                           nil] ];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
     //////////////////////////////////////////////////////
     // If there is no version number set it now
+    // the app has been running and this is the first time it's been updated
     
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"version"]){
-        [[NSUserDefaults standardUserDefaults]
-         registerDefaults:[NSDictionary
-                           dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithFloat:1.2f],@"version",
-                           nil]];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
+//    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"version"]){
+//        [[NSUserDefaults standardUserDefaults]
+//         registerDefaults:[NSDictionary
+//                           dictionaryWithObjectsAndKeys:
+//                           [NSNumber numberWithFloat:1.2f],@"version",
+//                           nil]];
+//        [[NSUserDefaults standardUserDefaults] synchronize];
+//    }
     
     
-    //////////////////////////////
-    // User Defaults
-    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
-       // NSLog(@"FirstLaunch from AppDelegate");
-        [[NSUserDefaults standardUserDefaults] 
-         registerDefaults:[NSDictionary 
-                           dictionaryWithObjectsAndKeys:
-                            [NSNumber numberWithBool:YES],@"firstLaunch",
-                            [NSNumber numberWithBool:YES],@"ud_Movie",
-                            [NSNumber numberWithBool:NO],@"UpdatePrices",
-                            [NSNumber numberWithFloat:1.3f],@"version",
-                            nil]];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        
+    ////////////////////////////////////////////////////////
+    // User Defaults if they have never been set
+    // this means the standard sqlite db will be used
+    
+    // firstLaunch will be YES after the App runs once
+    
+    if( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
+//        [[NSUserDefaults standardUserDefaults]
+//         registerDefaults:[NSDictionary 
+//                           dictionaryWithObjectsAndKeys:
+//                            [NSNumber numberWithBool:NO],   @"firstLaunch",
+//                            [NSNumber numberWithBool:YES],  @"playMovie",
+//                            [NSNumber numberWithBool:YES],  @"ud_Movie",
+//                            [NSNumber numberWithBool:NO],   @"UpdatePrices",
+//                            [NSNumber numberWithFloat:1.4f],@"version",
+//                            nil]];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playMovie"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ud_Movie"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
+        [[NSUserDefaults standardUserDefaults] setFloat:1.4f forKey:@"version"];
+
+
+        if([[NSUserDefaults standardUserDefaults] synchronize])
+        {
+            NSLog(@"SYNCHED NSUserDefaults");
+        }
     }
     
     
@@ -139,10 +159,6 @@
      Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
      Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
      */
-    //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
-    // reset view controllers if the movie is set play evertime
-    //NSLog(@"Resigning Active");
-    //[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     if([self.navigationController.viewControllers count] == 1){
        // [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ud_Movie"];
     }

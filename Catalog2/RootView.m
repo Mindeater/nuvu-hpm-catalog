@@ -66,10 +66,8 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     /*NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);*/
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]
-       || [[[NSUserDefaults standardUserDefaults] stringForKey:@"version"] isEqualToString:@"1.2"]
-       ){
-        
+    if( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]) // never been updated
+    {
         // run the update
         UpdatePricesView *update = [[UpdatePricesView alloc]init];
         update.context = self.context;
@@ -79,17 +77,17 @@
         popUp.navigationBarHidden = YES;
         [self presentViewController:popUp animated:YES completion:nil];
         
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
-        [[NSUserDefaults standardUserDefaults] setFloat:1.3f forKey:@"version"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UpdatePrices"];
+        [[NSUserDefaults standardUserDefaults] setFloat:1.4f forKey:@"version"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [update release];
         [popUp release];
         
     }
     
-    if([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
-        //NSLog(@"Enter the movie");
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"playMovie"])
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"playMovie"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [self playMovie];
     }else{
