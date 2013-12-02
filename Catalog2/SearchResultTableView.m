@@ -11,6 +11,7 @@
 #import "ProductChooserView.h"
 #import "SearchPage.h"
 #import "MechanismView.h"
+#import <CoreText/CoreText.h>
 
 
 @implementation SearchResultTableView
@@ -227,16 +228,48 @@
     return cell;
 }
 
+#define SYSTEM_VERSION_EQUAL_TO(v)                  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedSame)
+#define SYSTEM_VERSION_GREATER_THAN(v)              ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedDescending)
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN(v)                 ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
+#define SYSTEM_VERSION_LESS_THAN_OR_EQUAL_TO(v)     ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedDescending)
+
 -(void)getSearchTermsHighlightedStringForString:(NSString *)resultString in:(UILabel *)label
 {
+    if (SYSTEM_VERSION_LESS_THAN(@"6.0")) {
+        // code here
+        [label setText:resultString];
+        return;
+    }
     NSMutableAttributedString *attrString = [[NSMutableAttributedString alloc] initWithString:resultString];
     [attrString beginEditing];
     for(NSString *term in self.currentSearchTerms)
     {
         NSRange termRange = [resultString rangeOfString:term options:NSCaseInsensitiveSearch];
-        [attrString addAttribute: NSBackgroundColorAttributeName
-                           value:[UIColor yellowColor]
-                           range:termRange];
+        if (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"6.0")) {
+            // code here
+            [attrString addAttribute: NSBackgroundColorAttributeName
+                               value:[UIColor yellowColor]
+                               range:termRange];
+        }else{
+
+            // TODO : handle string hightlights pre iOS 6
+//            CFStringRef string =  (CFStringRef) resultString;
+//            CFMutableAttributedStringRef attrString = CFAttributedStringCreateMutable(kCFAllocatorDefault, 0);
+//            CFAttributedStringReplaceString (attrString,CFRangeMake(0, 0), string);
+//            
+//            /*
+//             Note: we could have created CFAttributedStringRef which is non mutable, then we would have to give all its
+//             attributes right when we create it. We can change them if we use mutable form of CFAttributeString.
+//             */
+//            
+//            CFAttributedStringSetAttribute(attrString,
+//                                           CFRangeMake(0, 20),
+//                                           kCTForegroundColorAttributeName,
+//                                           [UIColor yellowColor].CGColor);
+        }
+        
+        
     }
     [attrString endEditing];
     [label setAttributedText:attrString];

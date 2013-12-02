@@ -108,7 +108,7 @@
     [self.view addSubview:self.subheading];
     
     self.entry_txt.frame = CGRectMake(5, 95, 290, 40);
-    self.entry_txt.backgroundColor = [UIColor grayColor];
+    self.entry_txt.backgroundColor = [UIColor lightGrayColor];
     [self.view addSubview:self.entry_txt];
     
     self.cancel_btn.frame = CGRectMake(5, 155, 140, 40);
@@ -121,6 +121,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.entry_txt becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning

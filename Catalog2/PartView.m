@@ -83,10 +83,15 @@
 -(void)viewDidLoad
 {
     [self addNavigationBar];
+    // deal with iOS 7 layout issues
+    if([self respondsToSelector:@selector(edgesForExtendedLayout)])
+    {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
     countNum = 1;
     
     //self.view.backgroundColor = [UIColor redColor];
-    //self.view.backgroundColor = [UIColor clearColor];
+    self.view.backgroundColor = [UIColor clearColor];
     //[self addToolBarToView];
     ///////////////////////////////////
     // Gesture recognisers
@@ -99,7 +104,8 @@
     [self.view addGestureRecognizer:swipeGestureRecognizer];
     [swipeGestureRecognizer release];
     
-    //-- please note that Apple does not respect the contract in their header file for the direction property. Sadly only one direction can be used per gesture recogniser
+    //-- please note that Apple does not respect the contract in their header
+    // file for the direction property. Sadly only one direction can be used per gesture recogniser
     swipeGestureRecognizer = [[UISwipeGestureRecognizer alloc] 
                               initWithTarget:self
                               action:@selector(nextItem:)];
@@ -115,14 +121,20 @@
     //////////////////////////////////
     // Navigation Bar buttons
     UIBarButtonItem *infoButton = [[UIBarButtonItem alloc]
-                                   initWithTitle:@"Menu" style:UIBarButtonItemStyleBordered target:self action:@selector(showMenuSheet:)];
+                                   initWithTitle:@"Menu"
+                                   style:UIBarButtonItemStyleBordered
+                                   target:self
+                                   action:@selector(showMenuSheet:)];
+    
     self.navigationItem.leftBarButtonItem = infoButton;
     [infoButton release];
     
-    // this guy only gets added for faceplates
+    // faceplates have an order button on the right
     if([self isKindOfClass:[FacePlateView class]]){
         UIBarButtonItem *newOrderButton = [[UIBarButtonItem alloc]
-                                           initWithTitle:@"Order" style:UIBarButtonItemStyleBordered target:self action:@selector(addItemToCart:)];
+                                           initWithTitle:@"Order" style:UIBarButtonItemStyleBordered
+                                           target:self
+                                           action:@selector(addItemToCart:)];
         self.navigationItem.rightBarButtonItem = newOrderButton;
         [newOrderButton release];
     }
@@ -141,30 +153,21 @@
     CGFloat textBoxHeight = 30;
     // supposed to - With Personal Hotspot enabled, it returns 40, and returns 20 otherwise
     // but doesn't !!
-    CGFloat statusBarHeight = 20.0; //[[UIApplication sharedApplication] statusBarFrame].size.height;
+    CGFloat statusBarHeight = [[UIApplication sharedApplication] statusBarFrame].size.height;
     
    // NSLog(@"\n\nTOOL bar Height : %f\n\n",statusBarHeight);
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = self.view.frame.size.height -20;//screenRect.size.height;
+    CGFloat screenHeight = self.view.frame.size.height - statusBarHeight;
     CGFloat fontSize = 12;
-    
-     //NSLog(@"Screen  :\nwidth:%f - height:%f",screenWidth,screenHeight);
-    /*
-    NSLog(@"\n\n\n VIEW - Called AddToolBar\n x: %f, y: %f, w: %f, y: %f",
-          self.view.frame.origin.x,
-          self.view.frame.origin.y,
-          self.view.frame.size.width,
-          self.view.frame.size.height);
-     */
     
     ///////////////////////////////
     // passed background image
+   
     UIImageView *bg = [[UIImageView alloc] initWithImage:self.wallImage];
    // NSLog(@"\n\nPartView image Size \nwidth:%f - height:%f",self.wallImage.size.width,self.wallImage.size.height);
      if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
          // for iPad
-         
          bg.frame = CGRectMake(0, 0, self.wallImage.size.width, self.wallImage.size.height); 
      }else{
          if(self.wallImage.size.width == self.wallImage.size.height){
@@ -194,13 +197,7 @@
    // NSLog(@"\nSCREEN SIZE \nwidth:%f height:%f",screenWidth,screenHeight);
     
     /*
-    
     NSLog(@"\nSCREEN SIZE \nwidth:%f height:%f \n statusBarHeight:%f tooBarHeight:%f",screenWidth,screenHeight, statusBarHeight,toolBarHeight);
-
-    NSLog(@"frame.origin.x: %f", self.view.frame.origin.x);
-    NSLog(@"frame.origin.y: %f", self.view.frame.origin.y);
-    NSLog(@"frame.size.width: %f", self.view.frame.size.width);
-    NSLog(@"frame.size.height: %f", self.view.frame.size.height);
     */
     
     toolBar.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin);
@@ -242,7 +239,6 @@
     ///////////////////
     //Buttons
     
-    
     UIBarButtonItem *nextButton = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(nextItem:)];          
     
     UIBarButtonItem	*flex = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
@@ -251,14 +247,25 @@
     // button to choose item
     UIBarButtonItem *chooseItem;
     if([self isKindOfClass:[FacePlateView class]]){
-        chooseItem = [[UIBarButtonItem alloc] initWithTitle:@"Resize and Save" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseMe)];
+        chooseItem = [[UIBarButtonItem alloc] initWithTitle:@"Resize and Save"
+                                                      style:UIBarButtonItemStyleBordered
+                                                     target:self
+                                                     action:@selector(chooseMe)];
     }else{
-        chooseItem = [[UIBarButtonItem alloc] initWithTitle:@"Choose Cover Plate" style:UIBarButtonItemStyleBordered target:self action:@selector(chooseMe)];
+        chooseItem = [[UIBarButtonItem alloc] initWithTitle:@"Choose Cover Plate"
+                                                      style:UIBarButtonItemStyleBordered
+                                                     target:self
+                                                     action:@selector(chooseMe)];
     }
     
-    UIBarButtonItem	*flex2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+    UIBarButtonItem	*flex2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace
+                                                                           target:nil
+                                                                           action:nil];
 
-    UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous" style:UIBarButtonItemStyleBordered target:self action:@selector(previousItem:)];          
+    UIBarButtonItem *prevButton = [[UIBarButtonItem alloc] initWithTitle:@"Previous"
+                                                                   style:UIBarButtonItemStyleBordered
+                                                                  target:self
+                                                                  action:@selector(previousItem:)];
     
     if(countTotal > 1){
         [toolBar setItems:[NSArray arrayWithObjects:prevButton,flex,chooseItem,flex2,nextButton, nil]];

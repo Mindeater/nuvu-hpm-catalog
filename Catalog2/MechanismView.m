@@ -22,13 +22,8 @@
 {
     // the frame gets shortened somewhere so this makes sure it's the right size
     self.view.frame = [[UIScreen mainScreen] applicationFrame];
-    /*
-    NSLog(@"\n\n\n START\n x: %f, y: %f, w: %f, y: %f",
-          self.view.frame.origin.x,
-          self.view.frame.origin.y,
-          self.view.frame.size.width,
-          self.view.frame.size.height);
-     */
+    //self.view.backgroundColor = [UIColor redColor];
+    
     // remove any views that already exist
     for (UIView *view in [self.view subviews]) { [view removeFromSuperview]; }
     // self.view.backgroundColor = [UIColor whiteColor];
@@ -37,6 +32,7 @@
     // the Control View is going to hold the non-image elements
     if(!controlsView){
         controlsView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
+        controlsView.backgroundColor = [UIColor greenColor];
 
     }
    // controlsView.backgroundColor = [UIColor yellowColor];      
@@ -46,7 +42,7 @@
     CGFloat screenHeight = screenRect.size.height;
 
     controlsView.frame = CGRectMake(0, 0, screenWidth, screenHeight);
-    [self.view addSubview:self.controlsView]; 
+    [self.view addSubview:self.controlsView];
     
     /*
     NSLog(@" x: %f, y: %f, w: %f, y: %f \n END\n",
@@ -54,7 +50,8 @@
           controlsView.frame.origin.y,
           controlsView.frame.size.width,
           controlsView.frame.size.height);
-     */
+    */
+    
    
     ///////////////////////
     // Mechanism Picture/s

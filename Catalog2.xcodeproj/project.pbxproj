@@ -21,22 +21,6 @@
 		58509B5414EE2D4D00509C50 /* cart-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 58509B5314EE2D4D00509C50 /* cart-btn.png */; };
 		585107AA14936DDF005BF016 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585107A914936DDF005BF016 /* MessageUI.framework */; };
 		5864135A17DDAF8B00B92D78 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5864135917DDAF8B00B92D78 /* Default-568h@2x.png */; };
-		5864137517DFC72D00B92D78 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864136D17DFC72D00B92D78 /* arteor-770.csv.plist */; };
-		5864137617DFC72D00B92D78 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864136D17DFC72D00B92D78 /* arteor-770.csv.plist */; };
-		5864137717DFC72D00B92D78 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864136E17DFC72D00B92D78 /* arteor-rd.csv.plist */; };
-		5864137817DFC72D00B92D78 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864136E17DFC72D00B92D78 /* arteor-rd.csv.plist */; };
-		5864137917DFC72D00B92D78 /* arteor-sq.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864136F17DFC72D00B92D78 /* arteor-sq.csv.plist */; };
-		5864137A17DFC72D00B92D78 /* arteor-sq.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864136F17DFC72D00B92D78 /* arteor-sq.csv.plist */; };
-		5864137B17DFC72D00B92D78 /* bt-lighttech.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864137017DFC72D00B92D78 /* bt-lighttech.csv.plist */; };
-		5864137C17DFC72D00B92D78 /* bt-lighttech.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864137017DFC72D00B92D78 /* bt-lighttech.csv.plist */; };
-		5864137D17DFC72D00B92D78 /* bt-living.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864137117DFC72D00B92D78 /* bt-living.csv.plist */; };
-		5864137E17DFC72D00B92D78 /* bt-living.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864137117DFC72D00B92D78 /* bt-living.csv.plist */; };
-		5864138617DFCD3B00B92D78 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864138517DFCD3B00B92D78 /* excel-life.csv.plist */; };
-		5864138717DFCD3B00B92D78 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864138517DFCD3B00B92D78 /* excel-life.csv.plist */; };
-		5864138917DFD15000B92D78 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864138817DFD15000B92D78 /* excel.csv.plist */; };
-		5864138A17DFD15000B92D78 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864138817DFD15000B92D78 /* excel.csv.plist */; };
-		5864138C17DFD3A100B92D78 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864138B17DFD3A100B92D78 /* linea.csv.plist */; };
-		5864138D17DFD3A100B92D78 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5864138B17DFD3A100B92D78 /* linea.csv.plist */; };
 		586E4AE7146CC88300A7C857 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AE6146CC88300A7C857 /* UIKit.framework */; };
 		586E4AE9146CC88300A7C857 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AE8146CC88300A7C857 /* Foundation.framework */; };
 		586E4AEB146CC88300A7C857 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AEA146CC88300A7C857 /* CoreGraphics.framework */; };
@@ -54,8 +38,6 @@
 		586E4BDA146EA32700A7C857 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4BD9146EA32700A7C857 /* RootView.m */; };
 		586E4C05146F9D3B00A7C857 /* MechanismView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4C04146F9D3B00A7C857 /* MechanismView.m */; };
 		586E4C0B146F9D9C00A7C857 /* FacePlateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4C0A146F9D9C00A7C857 /* FacePlateView.m */; };
-		58853C2E17E16AFE00B90959 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58853C2D17E16AFE00B90959 /* Catalog2.sqlite */; };
-		58853C2F17E16AFE00B90959 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58853C2D17E16AFE00B90959 /* Catalog2.sqlite */; };
 		58853C3217E16BBF00B90959 /* Catalog3-iPad.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3017E16BBF00B90959 /* Catalog3-iPad.mov */; };
 		58853C3317E16BBF00B90959 /* Catalog3-iPhone.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3117E16BBF00B90959 /* Catalog3-iPhone.mov */; };
 		58853C3917E1815700B90959 /* hpm-icons in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3817E1815600B90959 /* hpm-icons */; };
@@ -83,6 +65,24 @@
 		58A435E214DFE7E600AB8191 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
 		58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
+		58B181C01842B55B00C58815 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B81842B55B00C58815 /* arteor-770.csv.plist */; };
+		58B181C11842B55B00C58815 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B81842B55B00C58815 /* arteor-770.csv.plist */; };
+		58B181C21842B55B00C58815 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B91842B55B00C58815 /* arteor-rd.csv.plist */; };
+		58B181C31842B55B00C58815 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B91842B55B00C58815 /* arteor-rd.csv.plist */; };
+		58B181C41842B55B00C58815 /* arteor-sq.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BA1842B55B00C58815 /* arteor-sq.csv.plist */; };
+		58B181C51842B55B00C58815 /* arteor-sq.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BA1842B55B00C58815 /* arteor-sq.csv.plist */; };
+		58B181C61842B55B00C58815 /* bt-lighttech.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BB1842B55B00C58815 /* bt-lighttech.csv.plist */; };
+		58B181C71842B55B00C58815 /* bt-lighttech.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BB1842B55B00C58815 /* bt-lighttech.csv.plist */; };
+		58B181C81842B55B00C58815 /* bt-living.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BC1842B55B00C58815 /* bt-living.csv.plist */; };
+		58B181C91842B55B00C58815 /* bt-living.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BC1842B55B00C58815 /* bt-living.csv.plist */; };
+		58B181CA1842B55B00C58815 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BD1842B55B00C58815 /* excel-life.csv.plist */; };
+		58B181CB1842B55B00C58815 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BD1842B55B00C58815 /* excel-life.csv.plist */; };
+		58B181CC1842B55B00C58815 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BE1842B55B00C58815 /* excel.csv.plist */; };
+		58B181CD1842B55B00C58815 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BE1842B55B00C58815 /* excel.csv.plist */; };
+		58B181CE1842B55B00C58815 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BF1842B55B00C58815 /* linea.csv.plist */; };
+		58B181CF1842B55B00C58815 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BF1842B55B00C58815 /* linea.csv.plist */; };
+		58B181D11842CEB100C58815 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58B181D01842CEB100C58815 /* Catalog2.sqlite */; };
+		58B181D21842CEB100C58815 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58B181D01842CEB100C58815 /* Catalog2.sqlite */; };
 		58C691EC183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
 		58C691ED183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
 		58CD95D5149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */; };
@@ -292,14 +292,6 @@
 		58509B5314EE2D4D00509C50 /* cart-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart-btn.png"; sourceTree = "<group>"; };
 		585107A914936DDF005BF016 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5864135917DDAF8B00B92D78 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		5864136D17DFC72D00B92D78 /* arteor-770.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-770.csv.plist"; sourceTree = "<group>"; };
-		5864136E17DFC72D00B92D78 /* arteor-rd.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-rd.csv.plist"; sourceTree = "<group>"; };
-		5864136F17DFC72D00B92D78 /* arteor-sq.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-sq.csv.plist"; sourceTree = "<group>"; };
-		5864137017DFC72D00B92D78 /* bt-lighttech.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bt-lighttech.csv.plist"; sourceTree = "<group>"; };
-		5864137117DFC72D00B92D78 /* bt-living.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bt-living.csv.plist"; sourceTree = "<group>"; };
-		5864138517DFCD3B00B92D78 /* excel-life.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "excel-life.csv.plist"; sourceTree = "<group>"; };
-		5864138817DFD15000B92D78 /* excel.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = excel.csv.plist; sourceTree = "<group>"; };
-		5864138B17DFD3A100B92D78 /* linea.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = linea.csv.plist; sourceTree = "<group>"; };
 		586E4AE2146CC88300A7C857 /* Catalog2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalog2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586E4AE6146CC88300A7C857 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		586E4AE8146CC88300A7C857 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -326,7 +318,6 @@
 		586E4C04146F9D3B00A7C857 /* MechanismView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MechanismView.m; sourceTree = "<group>"; };
 		586E4C09146F9D9C00A7C857 /* FacePlateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacePlateView.h; sourceTree = "<group>"; };
 		586E4C0A146F9D9C00A7C857 /* FacePlateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacePlateView.m; sourceTree = "<group>"; };
-		58853C2D17E16AFE00B90959 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58853C3017E16BBF00B90959 /* Catalog3-iPad.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Catalog3-iPad.mov"; sourceTree = "<group>"; };
 		58853C3117E16BBF00B90959 /* Catalog3-iPhone.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = "Catalog3-iPhone.mov"; sourceTree = "<group>"; };
 		58853C3817E1815600B90959 /* hpm-icons */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "hpm-icons"; sourceTree = "<group>"; };
@@ -354,6 +345,15 @@
 		58A435DB14DFE7E600AB8191 /* Linea */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linea; sourceTree = "<group>"; };
 		58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NuvuDevLogo2.mov; sourceTree = "<group>"; };
 		58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AppInstructionVideo_4MArch.mov; sourceTree = "<group>"; };
+		58B181B81842B55B00C58815 /* arteor-770.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-770.csv.plist"; sourceTree = "<group>"; };
+		58B181B91842B55B00C58815 /* arteor-rd.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-rd.csv.plist"; sourceTree = "<group>"; };
+		58B181BA1842B55B00C58815 /* arteor-sq.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-sq.csv.plist"; sourceTree = "<group>"; };
+		58B181BB1842B55B00C58815 /* bt-lighttech.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bt-lighttech.csv.plist"; sourceTree = "<group>"; };
+		58B181BC1842B55B00C58815 /* bt-living.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "bt-living.csv.plist"; sourceTree = "<group>"; };
+		58B181BD1842B55B00C58815 /* excel-life.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "excel-life.csv.plist"; sourceTree = "<group>"; };
+		58B181BE1842B55B00C58815 /* excel.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = excel.csv.plist; sourceTree = "<group>"; };
+		58B181BF1842B55B00C58815 /* linea.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = linea.csv.plist; sourceTree = "<group>"; };
+		58B181D01842CEB100C58815 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58C691EA183E2FC7002FEA8A /* CollectInfoAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectInfoAlertView.h; sourceTree = "<group>"; };
 		58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectInfoAlertView.m; sourceTree = "<group>"; };
 		58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Chelsea_Green.jpg; sourceTree = "<group>"; };
@@ -582,14 +582,14 @@
 		586E4B1B146CC88E00A7C857 /* pLists */ = {
 			isa = PBXGroup;
 			children = (
-				5864138B17DFD3A100B92D78 /* linea.csv.plist */,
-				5864138817DFD15000B92D78 /* excel.csv.plist */,
-				5864138517DFCD3B00B92D78 /* excel-life.csv.plist */,
-				5864136D17DFC72D00B92D78 /* arteor-770.csv.plist */,
-				5864136E17DFC72D00B92D78 /* arteor-rd.csv.plist */,
-				5864136F17DFC72D00B92D78 /* arteor-sq.csv.plist */,
-				5864137017DFC72D00B92D78 /* bt-lighttech.csv.plist */,
-				5864137117DFC72D00B92D78 /* bt-living.csv.plist */,
+				58B181B81842B55B00C58815 /* arteor-770.csv.plist */,
+				58B181B91842B55B00C58815 /* arteor-rd.csv.plist */,
+				58B181BA1842B55B00C58815 /* arteor-sq.csv.plist */,
+				58B181BB1842B55B00C58815 /* bt-lighttech.csv.plist */,
+				58B181BC1842B55B00C58815 /* bt-living.csv.plist */,
+				58B181BD1842B55B00C58815 /* excel-life.csv.plist */,
+				58B181BE1842B55B00C58815 /* excel.csv.plist */,
+				58B181BF1842B55B00C58815 /* linea.csv.plist */,
 			);
 			name = pLists;
 			sourceTree = "<group>";
@@ -597,7 +597,7 @@
 		586E4B1C146CC89B00A7C857 /* import */ = {
 			isa = PBXGroup;
 			children = (
-				58853C2D17E16AFE00B90959 /* Catalog2.sqlite */,
+				58B181D01842CEB100C58815 /* Catalog2.sqlite */,
 				586E4B1D146CC8D700A7C857 /* LoadHPMData.h */,
 				586E4B1E146CC8D700A7C857 /* LoadHPMData.m */,
 				58E76F92147E6203002D6504 /* CheckProductsForImages.h */,
@@ -892,12 +892,14 @@
 				580579B1148D9A73004C92F4 /* photo-btn.png in Resources */,
 				580579B2148D9A73004C92F4 /* search-btn.png in Resources */,
 				580579B3148D9A73004C92F4 /* setting-btn.png in Resources */,
+				58B181C41842B55B00C58815 /* arteor-sq.csv.plist in Resources */,
 				58CD95D5149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg in Resources */,
 				58CD95D6149A075B009E89EB /* Paint_Sample_Foxdale.jpg in Resources */,
 				58CD95D7149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */,
 				58CD95D8149A075B009E89EB /* Paint_Sample_Pollywaffle.jpg in Resources */,
 				58CD95D9149A075B009E89EB /* Paint_Sample_Rapid_Fire.jpg in Resources */,
 				58CD95DA149A075B009E89EB /* Paint_Sample_Waterworks.jpg in Resources */,
+				58B181CC1842B55B00C58815 /* excel.csv.plist in Resources */,
 				58CD95DB149A075B009E89EB /* Paint_Sample_whitewall.jpg in Resources */,
 				58CD95DC149A075B009E89EB /* Paint_Sample_Woodland_Grey.jpg in Resources */,
 				58CD95DD149A075B009E89EB /* Wallpaper_blacktiles.jpg in Resources */,
@@ -907,10 +909,13 @@
 				58CD95E1149A075B009E89EB /* Wallpaper_lightcaesar.jpg in Resources */,
 				58CD95E2149A075B009E89EB /* Wallpaper_royalbrown.jpg in Resources */,
 				58CD95E3149A075B009E89EB /* Wallpaper_stripes.jpg in Resources */,
+				58B181CA1842B55B00C58815 /* excel-life.csv.plist in Resources */,
 				58CD95E4149A075B009E89EB /* Wallpaper_whitecaesar.jpg in Resources */,
 				58CD95E5149A075B009E89EB /* Wallpaper_whitetiles.jpg in Resources */,
 				58E01B33149D89350016C7F9 /* Paint_Sample_Chelsea_Green_tmb.jpg in Resources */,
 				58E01B34149D89350016C7F9 /* Paint_Sample_Foxdale_tmb.jpg in Resources */,
+				58B181C21842B55B00C58815 /* arteor-rd.csv.plist in Resources */,
+				58B181D11842CEB100C58815 /* Catalog2.sqlite in Resources */,
 				58E01B35149D89350016C7F9 /* Paint_Sample_Hog_Bristle_Half_tmb.jpg in Resources */,
 				58E01B36149D89350016C7F9 /* Paint_Sample_Pollywaffle_tmb.jpg in Resources */,
 				58E01B37149D89350016C7F9 /* Paint_Sample_Rapid_Fire_tmb.jpg in Resources */,
@@ -921,14 +926,18 @@
 				58E01B3C149D89350016C7F9 /* Wallpaper_charcoalemblem_tmb.jpg in Resources */,
 				58E01B3D149D89350016C7F9 /* Wallpaper_curvedstone_tmb.jpg in Resources */,
 				58E01B3E149D89350016C7F9 /* Wallpaper_graphitecaesar_tmb.jpg in Resources */,
+				58B181C01842B55B00C58815 /* arteor-770.csv.plist in Resources */,
 				58E01B3F149D89350016C7F9 /* Wallpaper_lightcaesar_tmb.jpg in Resources */,
 				58E01B40149D89350016C7F9 /* Wallpaper_royalbrown_tmb.jpg in Resources */,
+				58B181C61842B55B00C58815 /* bt-lighttech.csv.plist in Resources */,
 				58E01B41149D89350016C7F9 /* Wallpaper_stripes_tmb.jpg in Resources */,
 				58E01B42149D89350016C7F9 /* Wallpaper_whitecaesar_tmb.jpg in Resources */,
 				58E01B43149D89350016C7F9 /* Wallpaper_whitetiles_tmb.jpg in Resources */,
+				58B181C81842B55B00C58815 /* bt-living.csv.plist in Resources */,
 				58E9422914A1C26E00589B43 /* ipadIntro.mov in Resources */,
 				58E9422A14A1C26E00589B43 /* iPhoneIntro.mov in Resources */,
 				58E9422D14A1D2FF00589B43 /* main-bg-port-white.png in Resources */,
+				58B181CE1842B55B00C58815 /* linea.csv.plist in Resources */,
 				58E9426114A1FC2800589B43 /* nuvulogo.png in Resources */,
 				5896F95714C8273D00C23665 /* Wallpaper_royalwaves_tmb.jpg in Resources */,
 				5896F95814C8273D00C23665 /* Wallpaper_royalwaves.jpg in Resources */,
@@ -947,15 +956,6 @@
 				58509B5414EE2D4D00509C50 /* cart-btn.png in Resources */,
 				58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */,
 				5864135A17DDAF8B00B92D78 /* Default-568h@2x.png in Resources */,
-				5864137517DFC72D00B92D78 /* arteor-770.csv.plist in Resources */,
-				5864137717DFC72D00B92D78 /* arteor-rd.csv.plist in Resources */,
-				5864137917DFC72D00B92D78 /* arteor-sq.csv.plist in Resources */,
-				5864137B17DFC72D00B92D78 /* bt-lighttech.csv.plist in Resources */,
-				5864137D17DFC72D00B92D78 /* bt-living.csv.plist in Resources */,
-				5864138617DFCD3B00B92D78 /* excel-life.csv.plist in Resources */,
-				5864138917DFD15000B92D78 /* excel.csv.plist in Resources */,
-				5864138C17DFD3A100B92D78 /* linea.csv.plist in Resources */,
-				58853C2E17E16AFE00B90959 /* Catalog2.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -971,13 +971,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58B181CF1842B55B00C58815 /* linea.csv.plist in Resources */,
 				58853C3917E1815700B90959 /* hpm-icons in Resources */,
 				AE58162A162B49B000C24710 /* InfoPlist.strings in Resources */,
+				58B181CB1842B55B00C58815 /* excel-life.csv.plist in Resources */,
 				AE58162B162B49B000C24710 /* bg-btn.png in Resources */,
 				AE58162C162B49B000C24710 /* catalog-btn.png in Resources */,
 				AE58162D162B49B000C24710 /* photo-btn.png in Resources */,
 				AE58162E162B49B000C24710 /* search-btn.png in Resources */,
 				AE58162F162B49B000C24710 /* setting-btn.png in Resources */,
+				58B181CD1842B55B00C58815 /* excel.csv.plist in Resources */,
 				AE581630162B49B000C24710 /* Paint_Sample_Chelsea_Green.jpg in Resources */,
 				AE581631162B49B000C24710 /* Paint_Sample_Foxdale.jpg in Resources */,
 				AE581632162B49B000C24710 /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */,
@@ -986,7 +989,10 @@
 				AE581635162B49B000C24710 /* Paint_Sample_Waterworks.jpg in Resources */,
 				AE581636162B49B000C24710 /* Paint_Sample_whitewall.jpg in Resources */,
 				AE581637162B49B000C24710 /* Paint_Sample_Woodland_Grey.jpg in Resources */,
+				58B181C31842B55B00C58815 /* arteor-rd.csv.plist in Resources */,
+				58B181D21842CEB100C58815 /* Catalog2.sqlite in Resources */,
 				AE581638162B49B000C24710 /* Wallpaper_blacktiles.jpg in Resources */,
+				58B181C11842B55B00C58815 /* arteor-770.csv.plist in Resources */,
 				AE581639162B49B000C24710 /* Wallpaper_charcoalemblem.jpg in Resources */,
 				AE58163A162B49B000C24710 /* Wallpaper_curvedstone.jpg in Resources */,
 				AE58163B162B49B000C24710 /* Wallpaper_graphitecaesar.jpg in Resources */,
@@ -998,6 +1004,7 @@
 				AE581641162B49B000C24710 /* Paint_Sample_Chelsea_Green_tmb.jpg in Resources */,
 				AE581642162B49B000C24710 /* Paint_Sample_Foxdale_tmb.jpg in Resources */,
 				AE581643162B49B000C24710 /* Paint_Sample_Hog_Bristle_Half_tmb.jpg in Resources */,
+				58B181C51842B55B00C58815 /* arteor-sq.csv.plist in Resources */,
 				AE581644162B49B000C24710 /* Paint_Sample_Pollywaffle_tmb.jpg in Resources */,
 				AE581645162B49B000C24710 /* Paint_Sample_Rapid_Fire_tmb.jpg in Resources */,
 				AE581646162B49B000C24710 /* Paint_Sample_Waterworks_tmb.jpg in Resources */,
@@ -1019,24 +1026,17 @@
 				AE581656162B49B000C24710 /* Wallpaper_royalwaves_tmb.jpg in Resources */,
 				AE581657162B49B000C24710 /* Wallpaper_royalwaves.jpg in Resources */,
 				AE581658162B49B000C24710 /* Paint_Sample_Wagon_Gold_tmb.jpg in Resources */,
+				58B181C91842B55B00C58815 /* bt-living.csv.plist in Resources */,
 				AE581659162B49B000C24710 /* Paint_Sample_Wagon_Gold.jpg in Resources */,
 				AE58165A162B49B000C24710 /* Paint_Sample_Hog_Bristle.jpg in Resources */,
 				AE58165B162B49B000C24710 /* Paint_Sample_Hog_Bristle_tmb.jpg in Resources */,
 				AE581663162B49B000C24710 /* NuvuDevLogo2.mov in Resources */,
 				AE581664162B49B000C24710 /* cart-btn.png in Resources */,
 				AE581665162B49B000C24710 /* AppInstructionVideo_4MArch.mov in Resources */,
-				5864137617DFC72D00B92D78 /* arteor-770.csv.plist in Resources */,
-				5864137817DFC72D00B92D78 /* arteor-rd.csv.plist in Resources */,
-				5864137A17DFC72D00B92D78 /* arteor-sq.csv.plist in Resources */,
-				5864137C17DFC72D00B92D78 /* bt-lighttech.csv.plist in Resources */,
-				5864137E17DFC72D00B92D78 /* bt-living.csv.plist in Resources */,
-				5864138717DFCD3B00B92D78 /* excel-life.csv.plist in Resources */,
-				5864138A17DFD15000B92D78 /* excel.csv.plist in Resources */,
-				5864138D17DFD3A100B92D78 /* linea.csv.plist in Resources */,
-				58853C2F17E16AFE00B90959 /* Catalog2.sqlite in Resources */,
 				58853C3217E16BBF00B90959 /* Catalog3-iPad.mov in Resources */,
 				58853C3317E16BBF00B90959 /* Catalog3-iPhone.mov in Resources */,
 				58853C3C17E29E3D00B90959 /* Default-568h@2x.png in Resources */,
+				58B181C71842B55B00C58815 /* bt-lighttech.csv.plist in Resources */,
 				5803D68517E6C79B00BFF719 /* main-bg-port-Catalog3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1238,8 +1238,8 @@
 		586E4B16146CC88300A7C857 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1254,8 +1254,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1263,8 +1263,8 @@
 		586E4B17146CC88300A7C857 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "";
@@ -1276,8 +1276,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1323,7 +1323,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1339,9 +1339,9 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog2 copy";
-				PROVISIONING_PROFILE = "EE6F2B4A-8CD2-4B1E-9CDB-2B53A1D0623E";
-				"PROVISIONING_PROFILE[sdk=*]" = "EE6F2B4A-8CD2-4B1E-9CDB-2B53A1D0623E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1349,8 +1349,8 @@
 		AE581679162B49B000C24710 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = LNHVERSION;
@@ -1362,8 +1362,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog2 copy";
-				PROVISIONING_PROFILE = "EE6F2B4A-8CD2-4B1E-9CDB-2B53A1D0623E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

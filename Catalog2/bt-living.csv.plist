@@ -9,238 +9,238 @@
 		<key>LIVING 16A 1-GANG 3-MOD SWITCH|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>L4003/2</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4003/2</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>6.40</string></dict>
-			<dict><key>Mech 1 Price</key><string>6.40</string></dict>
+			<dict><key>Trade Price</key><string>6.85</string></dict>
+			<dict><key>Mech 1 Price</key><string>6.85</string></dict>
 			<dict><key>Mechanism 2</key><string>L4950</string></dict>
-			<dict><key>Trade Price</key><string>1.36</string></dict>
+			<dict><key>Trade Price</key><string>1.46</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
 		<key>LIVING 16A 2-GANG 3-MOD SWITCH|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>2 X L4003</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4003</string></dict>
 			<dict><key>Qty</key><string>2</string></dict>
-			<dict><key>Trade Price</key><string>6.40</string></dict>
-			<dict><key>Mech 1 Price</key><string>12.80</string></dict>
+			<dict><key>Trade Price</key><string>6.85</string></dict>
+			<dict><key>Mech 1 Price</key><string>13.70</string></dict>
 			<dict><key>Mechanism 2</key><string>L4950</string></dict>
-			<dict><key>Trade Price</key><string>1.36</string></dict>
+			<dict><key>Trade Price</key><string>1.46</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
 		<key>LIVING 16A 3-GANG 3-MOD SWITCH|3</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>3 X L4003</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4003</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>6.40</string></dict>
-			<dict><key>Mech 1 Price</key><string>19.20</string></dict>
+			<dict><key>Trade Price</key><string>6.85</string></dict>
+			<dict><key>Mech 1 Price</key><string>20.55</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
@@ -250,240 +250,240 @@
 		<key>LIVING 10A 1-GANG 3-MOD POWERPOINT|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>L4132</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4132</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>14.07</string></dict>
-			<dict><key>Mech 1 Price</key><string>14.07</string></dict>
+			<dict><key>Trade Price</key><string>15.05</string></dict>
+			<dict><key>Mech 1 Price</key><string>15.05</string></dict>
 			<dict><key>Mechanism 2</key><string>L4003</string></dict>
-			<dict><key>Trade Price</key><string>6.40</string></dict>
+			<dict><key>Trade Price</key><string>6.85</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
 		<key>LIVING 10A 1-GANG 3-MOD AUTOSWITCHED POWERPOINT|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>L4132</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4132</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>14.07</string></dict>
-			<dict><key>Mech 1 Price</key><string>14.07</string></dict>
+			<dict><key>Trade Price</key><string>15.05</string></dict>
+			<dict><key>Mech 1 Price</key><string>15.05</string></dict>
 			<dict><key>Mechanism 2</key><string>L4950</string></dict>
-			<dict><key>Trade Price</key><string>1.36</string></dict>
+			<dict><key>Trade Price</key><string>1.46</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
 		<key>LIVING 15A 1-GANG 2-MOD AUTOSWITCHED POWERPOINT|3</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>L4133</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4133</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>22.02</string></dict>
-			<dict><key>Mech 1 Price</key><string>22.02</string></dict>
+			<dict><key>Trade Price</key><string>23.56</string></dict>
+			<dict><key>Mech 1 Price</key><string>23.56</string></dict>
 			<dict><key>Mechanism 2</key><string>L4950</string></dict>
-			<dict><key>Trade Price</key><string>1.36</string></dict>
+			<dict><key>Trade Price</key><string>1.46</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
@@ -492,74 +492,74 @@
 			<dict><key>Mechanism 1</key><string>L4134</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4134</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>20.67</string></dict>
-			<dict><key>Mech 1 Price</key><string>20.67</string></dict>
+			<dict><key>Trade Price</key><string>31.01</string></dict>
+			<dict><key>Mech 1 Price</key><string>31.01</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4804AL</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>DARK STEEL</key><string>L4804AC</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4804BO</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4804TC</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4804AT</string></dict>
 			<dict><key>Trade Price</key><string>16.94</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4804BT</string></dict>
 			<dict><key>Trade Price</key><string>16.94</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4804VT</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4804OT</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4804BA</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4804NR</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>SOLID RED</key><string>L4804RD</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4804BD</string></dict>
 			<dict><key>Trade Price</key><string>16.94</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4804GT</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4804TR</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4804VR</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>METRO BLUE</key><string>L4804BU</string></dict>
 			<dict><key>Trade Price</key><string>16.94</string></dict>
 			<dict><key>NATIVE</key><string>L4804NA</string></dict>
-			<dict><key>Trade Price</key><string>21.46</string></dict>
+			<dict><key>Trade Price</key><string>22.96</string></dict>
 			<dict><key>BAKELITE</key><string>L4804BK</string></dict>
-			<dict><key>Trade Price</key><string>21.46</string></dict>
+			<dict><key>Trade Price</key><string>22.96</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4804ACS</string></dict>
-			<dict><key>Trade Price</key><string>21.46</string></dict>
+			<dict><key>Trade Price</key><string>25.75</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4804OS</string></dict>
-			<dict><key>Trade Price</key><string>39.52</string></dict>
+			<dict><key>Trade Price</key><string>42.29</string></dict>
 			<dict><key>GRAPHITE</key><string>L4804GF</string></dict>
-			<dict><key>Trade Price</key><string>21.46</string></dict>
+			<dict><key>Trade Price</key><string>22.96</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4804GFN</string></dict>
-			<dict><key>Trade Price</key><string>21.46</string></dict>
+			<dict><key>Trade Price</key><string>22.96</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4804GFT</string></dict>
-			<dict><key>Trade Price</key><string>21.46</string></dict>
+			<dict><key>Trade Price</key><string>22.96</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4804CR</string></dict>
-			<dict><key>Trade Price</key><string>30.48</string></dict>
+			<dict><key>Trade Price</key><string>32.61</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4804OR</string></dict>
-			<dict><key>Trade Price</key><string>30.48</string></dict>
+			<dict><key>Trade Price</key><string>32.61</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4804NN</string></dict>
-			<dict><key>Trade Price</key><string>30.48</string></dict>
+			<dict><key>Trade Price</key><string>32.61</string></dict>
 			<dict><key>WHITE</key><string>L4804PB</string></dict>
-			<dict><key>Trade Price</key><string>7.91</string></dict>
+			<dict><key>Trade Price</key><string>8.46</string></dict>
 			<dict><key>DARK STEEL</key><string>L4804PA</string></dict>
 			<dict><key>Trade Price</key><string>16.94</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4804AC</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4804BA</string></dict>
-			<dict><key>Trade Price</key><string>16.94</string></dict>
+			<dict><key>Trade Price</key><string>18.13</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4804LCA</string></dict>
-			<dict><key>Trade Price</key><string>45.17</string></dict>
+			<dict><key>Trade Price</key><string>48.33</string></dict>
 			<dict><key>MAHOGANY</key><string>L4804LMG</string></dict>
 			<dict><key>Trade Price</key><string>45.17</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4804LNC</string></dict>
-			<dict><key>Trade Price</key><string>45.17</string></dict>
+			<dict><key>Trade Price</key><string>48.33</string></dict>
 			<dict><key>BRIAR</key><string>L4804LRN</string></dict>
 			<dict><key>Trade Price</key><string>45.17</string></dict>
 		</array>
@@ -569,78 +569,78 @@
 		<key>LIVING 3-GANG F TO F TV OUTLET|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>3 X L4269F</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4269F</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>12.78</string></dict>
-			<dict><key>Mech 1 Price</key><string>38.34</string></dict>
+			<dict><key>Trade Price</key><string>13.67</string></dict>
+			<dict><key>Mech 1 Price</key><string>41.01</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
@@ -650,78 +650,78 @@
 		<key>LIVING 3-GANG 3-MOD CAT-5E RJ45 PHONE / DATA SOCKET|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>3 X L4279C5E</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4279C5E</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>21.89</string></dict>
-			<dict><key>Mech 1 Price</key><string>65.67</string></dict>
+			<dict><key>Trade Price</key><string>22.96</string></dict>
+			<dict><key>Mech 1 Price</key><string>68.88</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
@@ -731,312 +731,312 @@
 		<key>LIVING 3-GANG 3-MOD USB A FEMALE SOCKET|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>3 X L4269USB</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4269USB</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>44.26</string></dict>
-			<dict><key>Mech 1 Price</key><string>132.78</string></dict>
+			<dict><key>Trade Price</key><string>47.36</string></dict>
+			<dict><key>Mech 1 Price</key><string>142.08</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
 		<key>LIVING 3-GANG 3-MOD RGB (RED/GREEN/BLUE) SOCKET|2</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>3 X L4269RGB</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4269RGB</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>50.36</string></dict>
-			<dict><key>Mech 1 Price</key><string>151.08</string></dict>
+			<dict><key>Trade Price</key><string>53.89</string></dict>
+			<dict><key>Mech 1 Price</key><string>161.67</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
 		<key>LIVING 3-GANG 3-MOD VGA OUTLET|3</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>3 X L4269VGA</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4269VGA</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>44.60</string></dict>
-			<dict><key>Mech 1 Price</key><string>133.80</string></dict>
+			<dict><key>Trade Price</key><string>47.72</string></dict>
+			<dict><key>Mech 1 Price</key><string>143.16</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
 		<key>LIVING 3-GANG 3-MOD HDMI OUTLET|4</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>3 X L4269HDMI</string></dict>
 			<dict><key>Mech 1 Part #</key><string>L4269HDMI</string></dict>
 			<dict><key>Qty</key><string>3</string></dict>
-			<dict><key>Trade Price</key><string>54.99</string></dict>
-			<dict><key>Mech 1 Price</key><string>164.97</string></dict>
+			<dict><key>Trade Price</key><string>58.84</string></dict>
+			<dict><key>Mech 1 Price</key><string>176.52</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>
@@ -1046,80 +1046,80 @@
 		<key>LIVING 2-GANG 3-MOD 400VA ELECTRONIC-LOAD PUSH BUTTON DIMMER|1</key>
 		<array>
 			<dict><key>Frame</key><string>L4703AS</string></dict>
-			<dict><key>Trade Price</key><string>4.04</string></dict>
+			<dict><key>Trade Price</key><string>4.32</string></dict>
 			<dict><key>Mechanism 1</key><string>N4407</string></dict>
 			<dict><key>Mech 1 Part #</key><string>N4407</string></dict>
 			<dict><key>Qty</key><string>1</string></dict>
-			<dict><key>Trade Price</key><string>95.16</string></dict>
-			<dict><key>Mech 1 Price</key><string>95.16</string></dict>
+			<dict><key>Trade Price</key><string>101.82</string></dict>
+			<dict><key>Mech 1 Price</key><string>101.82</string></dict>
 			<dict><key>Mechanism 2</key><string>L4950</string></dict>
-			<dict><key>Trade Price</key><string>1.36</string></dict>
+			<dict><key>Trade Price</key><string>1.46</string></dict>
 			<dict><key>LIGHT ALUMINIUM</key><string>L4803AL</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>BRONZE OXIDE</key><string>L4803BO</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>LIGHT TITANIUM</key><string>L4803TC</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>METALIC AMARANTH</key><string>L4803AT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC BLUE</key><string>L4803BT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC GREEN</key><string>L4803VT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METALIC OCHRE</key><string>L4803OT</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLACK</key><string>L4803NR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID RED</key><string>L4803RD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID BLUE</key><string>L4803BD</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SCOOTER YELLOW</key><string>L4803GT</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>TERRACOTTA</key><string>L4803TR</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>GRUG STORE GREEN</key><string>L4803VR</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>METRO BLUE</key><string>L4803BU</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>NATIVE</key><string>L4803NA</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BAKELITE</key><string>L4803BK</string></dict>
 			<dict><key>Trade Price</key><string>19.30</string></dict>
 			<dict><key>BRUSHED STEEL</key><string>L4803ACS</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>SATIN FINISH GOLD</key><string>L4803OS</string></dict>
-			<dict><key>Trade Price</key><string>35.56</string></dict>
+			<dict><key>Trade Price</key><string>38.05</string></dict>
 			<dict><key>GRAPHITE</key><string>L4803GF</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BLACK GRAPHITE</key><string>L4803GFN</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>TITANIUM GRAPHITE</key><string>L4803GFT</string></dict>
-			<dict><key>Trade Price</key><string>19.30</string></dict>
+			<dict><key>Trade Price</key><string>20.65</string></dict>
 			<dict><key>BRIGHT CHROME</key><string>L4803CR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>TRUE GOLD</key><string>L4803OR</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>BLACK NICKEL</key><string>L4803NN</string></dict>
-			<dict><key>Trade Price</key><string>27.44</string></dict>
+			<dict><key>Trade Price</key><string>29.36</string></dict>
 			<dict><key>WHITE</key><string>L4803PB</string></dict>
-			<dict><key>Trade Price</key><string>7.11</string></dict>
+			<dict><key>Trade Price</key><string>7.61</string></dict>
 			<dict><key>DARK STEEL</key><string>L4803PA</string></dict>
 			<dict><key>Trade Price</key><string>15.24</string></dict>
 			<dict><key>DARK STEEL 2</key><string>L4803AC</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>SOLID WHITE</key><string>L4803BA</string></dict>
-			<dict><key>Trade Price</key><string>15.24</string></dict>
+			<dict><key>Trade Price</key><string>16.31</string></dict>
 			<dict><key>AMERICAN CHERRY WOOD</key><string>L4803LCA</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>MAHOGANY</key><string>L4803LMG</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>EUROPEAN WALNUT</key><string>L4803LNC</string></dict>
-			<dict><key>Trade Price</key><string>40.65</string></dict>
+			<dict><key>Trade Price</key><string>43.50</string></dict>
 			<dict><key>BRIAR</key><string>L4803LRN</string></dict>
 			<dict><key>Trade Price</key><string>40.65</string></dict>
 		</array>

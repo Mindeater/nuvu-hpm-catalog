@@ -159,7 +159,7 @@
     //NSLog(@"\n^Chooser 1.^^^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
       //    self.navigationItem, self.navigationController.navigationBar);
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor redColor];
     
     
     /////////////////////////////
