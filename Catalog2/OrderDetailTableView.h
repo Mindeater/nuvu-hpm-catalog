@@ -46,6 +46,11 @@
 @property(nonatomic)float orderTotal;
 @property(nonatomic)int quantityCount;
 
+// Deal with the NZ part name Mappings
+#ifdef NZVERSION
+@property(nonatomic,retain)NSDictionary *nz_map;
+#endif
+
 @property(nonatomic,retain)NSString *backString;
 
 @property(nonatomic,retain)NSMutableString *emailOrderBody;

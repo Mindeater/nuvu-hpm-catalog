@@ -28,6 +28,11 @@
 @synthesize orderTotal,quantityCount;
 @synthesize backString;
 
+// Deal with the NZ part name Mappings
+#ifdef NZVERSION
+@synthesize nz_map;
+#endif
+
 @synthesize emailOrderBody;
 @synthesize emailOrderBodyNoPrice;
 
@@ -103,7 +108,6 @@
     NSMutableString *count = [NSMutableString stringWithString:@""];
     float totalCost = 0;
     
-    // are there mechanism ?
     
     for(NSManagedObject *part in [orderLine valueForKey:@"items"]){
         
@@ -113,6 +117,15 @@
             [count appendFormat:@"%@\n",
              [[part valueForKey:@"mechanism"] valueForKey:@"count"]];
             
+// Deal with the NZ part name Mappings
+#ifdef NZVERSION
+            NSString *mapped_name = [self.nz_map objectForKey:[part valueForKey:@"name"]];
+            if([mapped_name length] > 0)
+            {
+                [part setValue:mapped_name forKey:@"name"];
+            }
+            
+#endif
             // remove suffix from part names
             NSString *cleanName1 = [NSString stringWithFormat:@"%@",
                         [[part valueForKey:@"name"] stringByReplacingOccurrencesOfString:@"_ded" withString:@""]];
@@ -122,6 +135,8 @@
             
             NSString *cleanName = [NSString stringWithFormat:@"%@",
                                    [cleanName2 stringByReplacingOccurrencesOfString:@"_dim" withString:@""]];
+            
+
             // handle mutliple parts
             if([[[part valueForKey:@"mechanism"] valueForKey:@"count"] intValue] >1){
                 
@@ -139,6 +154,8 @@
                 totalCost += [[[part valueForKey:@"mechanism"] valueForKey:@"price"] floatValue];
 
             }
+            
+
         
         }else{
             NSString *cleanName = [NSString stringWithFormat:@"%@",
@@ -154,14 +171,14 @@
         }
 
     }
-    // are there faceplates ?
     
     NSArray *values = [NSArray arrayWithObjects:
-            [NSString stringWithFormat:@"%@%@",mechPartDesc,faceplatePartDesc],
-            count,
-            [NSNumber numberWithFloat:totalCost],
-            [NSString stringWithString:faceplateName],
-            nil];
+                [NSString stringWithFormat:@"%@%@",mechPartDesc,faceplatePartDesc],
+                count,
+                [NSNumber numberWithFloat:totalCost],
+                [NSString stringWithString:faceplateName],
+                nil];
+    
     [mechPartDesc release];
     [faceplatePartDesc release];
     [faceplateName release];
@@ -302,6 +319,13 @@
         // switch to the side
         [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
     }
+    
+// Deal with the NZ part name Mappings
+#ifdef NZVERSION
+    self.nz_map = [NSDictionary dictionaryWithContentsOfFile:
+                   [[NSBundle mainBundle] pathForResource:@"nz_map" ofType:@"plist"] ];
+    
+#endif
     
 }
 
@@ -670,6 +694,13 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
+    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
+
+    if([editingText isEqualToString:@""])
+    {
+        [self emailOrder:title];
+
+    }
     //    NSString *title = [alertView buttonTitleAtIndex:buttonIndex];
     //
     //    if([editingText isEqualToString:@""])
