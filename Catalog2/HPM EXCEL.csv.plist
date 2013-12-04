@@ -1286,8 +1286,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XLP450PWEWE</string></dict>
 			<dict><key>Trade Price</key><string>9.18</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 450PMWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>450PMWE</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>125.00</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Siver</key><string>XL770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>3.87</string></dict>
 			<dict><key>Polished Silver</key><string>XL770/1PLPS</string></dict>
@@ -1307,8 +1310,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XLP450PBLBL</string></dict>
 			<dict><key>Trade Price</key><string>9.18</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 450PMBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>450PMBL</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>125.00</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Siver</key><string>XL770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>3.87</string></dict>
 			<dict><key>Polished Silver</key><string>XL770/1PLPS</string></dict>
@@ -1348,8 +1354,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400LBL</string></dict>
 			<dict><key>Trade Price</key><string>29.40</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 450LMBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>450LMBL</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>3.87</string></dict>
 			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>
@@ -1389,8 +1398,10 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>XL400TBL</string></dict>
 			<dict><key>Trade Price</key><string>29.40</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 400TMBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>400TMBL</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Siver</key><string>XL770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>3.87</string></dict>
 			<dict><key>Polished Silver</key><string>XL770/2PLPS</string></dict>

@@ -2250,8 +2250,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2RJ2EWE</string></dict>
 			<dict><key>Trade Price</key><string>9.52</string></dict>
+			<dict><key>Mechanism 2</key><string>2 X RJ8P8C5E/1</string></dict>
+			<dict><key>Mech 2 Part #</key><string>RJ8P8C5E/1</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>18.86</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
@@ -2291,8 +2294,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2RJ2ECR</string></dict>
 			<dict><key>Trade Price</key><string>9.52</string></dict>
+			<dict><key>Mechanism 2</key><string>2 X RJ8P8C5E/1CR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>RJ8P8C5E/1CR</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>18.86</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
@@ -2332,8 +2338,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN770/2RJ2EBL</string></dict>
 			<dict><key>Trade Price</key><string>9.52</string></dict>
+			<dict><key>Mechanism 2</key><string>2 X RJ8P8C5E/1BL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>RJ8P8C5E/1BL</string></dict>
+			<dict><key>Qty</key><string>2</string></dict>
 			<dict><key>Trade Price</key><string>18.86</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA</string></dict>
@@ -2376,8 +2385,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN450PWE</string></dict>
 			<dict><key>Trade Price</key><string>9.52</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 450PMWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>450PMWE</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>125.00</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/1PLVA</string></dict>
@@ -2417,8 +2429,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN450PCR</string></dict>
 			<dict><key>Trade Price</key><string>9.52</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 450PMCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>450PMCR</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>125.00</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/1PLVA</string></dict>
@@ -2458,8 +2473,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN450PBL</string></dict>
 			<dict><key>Trade Price</key><string>9.52</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 450PMBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>450PMBL</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>125.00</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/1PLMS</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/1PLVA</string></dict>
@@ -2499,8 +2517,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LWE</string></dict>
 			<dict><key>Trade Price</key><string>32.57</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 400LMWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>400LMWE</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
@@ -2540,8 +2561,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LCR</string></dict>
 			<dict><key>Trade Price</key><string>32.57</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 400LMCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>400LMCR</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
@@ -2581,8 +2605,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400LBL</string></dict>
 			<dict><key>Trade Price</key><string>32.57</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 400LMBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>400LMBL</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
@@ -2622,8 +2649,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TWE</string></dict>
 			<dict><key>Trade Price</key><string>32.57</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 400TMWE</string></dict>
+			<dict><key>Mech 2 Part #</key><string>400TMWE</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
@@ -2663,8 +2693,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TCR</string></dict>
 			<dict><key>Trade Price</key><string>32.57</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 400TMCR</string></dict>
+			<dict><key>Mech 2 Part #</key><string>400TMCR</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
@@ -2704,8 +2737,11 @@
 		<array>
 			<dict><key>Mechanism 1</key><string>LN400TBL</string></dict>
 			<dict><key>Trade Price</key><string>32.57</string></dict>
+			<dict><key>Mechanism 2</key><string>1 X 400TMBL</string></dict>
+			<dict><key>Mech 2 Part #</key><string>400TMBL</string></dict>
+			<dict><key>Qty</key><string>1</string></dict>
 			<dict><key>Trade Price</key><string>85.85</string></dict>
-			<dict><key>Mech 2 Price</key><string>#VALUE!</string></dict>
+			<dict><key>Mech 2 Price</key><string>#NAME?</string></dict>
 			<dict><key>Matt Silver</key><string>LN770/2PLMS_Dimmer</string></dict>
 			<dict><key>Trade Price</key><string>17.01</string></dict>
 			<dict><key>Vanilla</key><string>LN770/2PLVA_Dimmer</string></dict>
