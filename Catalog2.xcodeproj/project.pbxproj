@@ -65,6 +65,12 @@
 		58A435E214DFE7E600AB8191 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
 		58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
+		58AB8A26184EBFE5009568DD /* HPM EXCEL.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A20184EBFE5009568DD /* HPM EXCEL.csv.plist */; };
+		58AB8A27184EBFE5009568DD /* HPM LINEA.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A21184EBFE5009568DD /* HPM LINEA.csv.plist */; };
+		58AB8A28184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A22184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist */; };
+		58AB8A29184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A23184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist */; };
+		58AB8A2A184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A24184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist */; };
+		58AB8A2B184EBFE5009568DD /* Legrand EXCEL LIFE.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A25184EBFE5009568DD /* Legrand EXCEL LIFE.csv.plist */; };
 		58B181C01842B55B00C58815 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B81842B55B00C58815 /* arteor-770.csv.plist */; };
 		58B181C11842B55B00C58815 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B81842B55B00C58815 /* arteor-770.csv.plist */; };
 		58B181C21842B55B00C58815 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B91842B55B00C58815 /* arteor-rd.csv.plist */; };
@@ -85,6 +91,112 @@
 		58B181D21842CEB100C58815 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58B181D01842CEB100C58815 /* Catalog2.sqlite */; };
 		58C691EC183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
 		58C691ED183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
+		58CCE2F9184E9C4600AA75E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4AF4146CC88300A7C857 /* main.m */; };
+		58CCE2FA184E9C4600AA75E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4AF8146CC88300A7C857 /* AppDelegate.m */; };
+		58CCE2FB184E9C4600AA75E2 /* Catalog2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 586E4AFA146CC88300A7C857 /* Catalog2.xcdatamodeld */; };
+		58CCE2FC184E9C4600AA75E2 /* LoadHPMData.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4B1E146CC8D700A7C857 /* LoadHPMData.m */; };
+		58CCE2FD184E9C4600AA75E2 /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
+		58CCE2FE184E9C4600AA75E2 /* RootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4BD9146EA32700A7C857 /* RootView.m */; };
+		58CCE2FF184E9C4600AA75E2 /* MechanismView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4C04146F9D3B00A7C857 /* MechanismView.m */; };
+		58CCE300184E9C4600AA75E2 /* FacePlateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4C0A146F9D9C00A7C857 /* FacePlateView.m */; };
+		58CCE301184E9C4600AA75E2 /* PartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5821D1C71474AAF1004187E0 /* PartView.m */; };
+		58CCE302184E9C4600AA75E2 /* SettingsPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F3A6EA14761B40003C70A4 /* SettingsPage.m */; };
+		58CCE303184E9C4600AA75E2 /* BackgroundLibrary.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8EFD1147687C60098ADC7 /* BackgroundLibrary.m */; };
+		58CCE304184E9C4600AA75E2 /* SearchPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8F00A147722150098ADC7 /* SearchPage.m */; };
+		58CCE305184E9C4700AA75E2 /* SearchResultTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8F00D147724460098ADC7 /* SearchResultTableView.m */; };
+		58CCE306184E9C4700AA75E2 /* RoundedRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8F0291477BF260098ADC7 /* RoundedRectView.m */; };
+		58CCE307184E9C4700AA75E2 /* OrdersTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E8F02D1477C87C0098ADC7 /* OrdersTableView.m */; };
+		58CCE308184E9C4700AA75E2 /* BrandCatalogTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F66147BB0A6002D6504 /* BrandCatalogTableView.m */; };
+		58CCE309184E9C4700AA75E2 /* CheckProductsForImages.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E76F93147E6203002D6504 /* CheckProductsForImages.m */; };
+		58CCE30A184E9C4700AA75E2 /* OrderLineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD6BC51483992000D54F80 /* OrderLineViewCell.m */; };
+		58CCE30B184E9C4700AA75E2 /* OrderDetailTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58FD6BC814839C2600D54F80 /* OrderDetailTableView.m */; };
+		58CCE30C184E9C4700AA75E2 /* ProductChooserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58F0575D148870E900DD7941 /* ProductChooserView.m */; };
+		58CCE30D184E9C4700AA75E2 /* ProductBackgroundResize.m in Sources */ = {isa = PBXBuildFile; fileRef = 58057978148C8580004C92F4 /* ProductBackgroundResize.m */; };
+		58CCE30E184E9C4700AA75E2 /* AddPartToOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 580579CA148DB962004C92F4 /* AddPartToOrder.m */; };
+		58CCE30F184E9C4700AA75E2 /* AppSettingsTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E01B9B14A149D00016C7F9 /* AppSettingsTableView.m */; };
+		58CCE310184E9C4700AA75E2 /* OrderLineModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A435CA14DA331400AB8191 /* OrderLineModal.m */; };
+		58CCE311184E9C4700AA75E2 /* UpdatePricesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58E67D3416758E620011FD4C /* UpdatePricesView.m */; };
+		58CCE313184E9C4700AA75E2 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585107A914936DDF005BF016 /* MessageUI.framework */; };
+		58CCE314184E9C4700AA75E2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580579BA148DA332004C92F4 /* MediaPlayer.framework */; };
+		58CCE315184E9C4700AA75E2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5821D1CD1474FE13004187E0 /* QuartzCore.framework */; };
+		58CCE316184E9C4700AA75E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AE6146CC88300A7C857 /* UIKit.framework */; };
+		58CCE317184E9C4700AA75E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AE8146CC88300A7C857 /* Foundation.framework */; };
+		58CCE318184E9C4700AA75E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AEA146CC88300A7C857 /* CoreGraphics.framework */; };
+		58CCE319184E9C4700AA75E2 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586E4AEC146CC88300A7C857 /* CoreData.framework */; };
+		58CCE31B184E9C4700AA75E2 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BF1842B55B00C58815 /* linea.csv.plist */; };
+		58CCE31C184E9C4700AA75E2 /* hpm-icons in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3817E1815600B90959 /* hpm-icons */; };
+		58CCE31D184E9C4700AA75E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 586E4AF1146CC88300A7C857 /* InfoPlist.strings */; };
+		58CCE31E184E9C4700AA75E2 /* excel-life.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BD1842B55B00C58815 /* excel-life.csv.plist */; };
+		58CCE31F184E9C4700AA75E2 /* bg-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579A8148D9A73004C92F4 /* bg-btn.png */; };
+		58CCE320184E9C4700AA75E2 /* catalog-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579AA148D9A73004C92F4 /* catalog-btn.png */; };
+		58CCE321184E9C4700AA75E2 /* photo-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579AB148D9A73004C92F4 /* photo-btn.png */; };
+		58CCE322184E9C4700AA75E2 /* search-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579AC148D9A73004C92F4 /* search-btn.png */; };
+		58CCE323184E9C4700AA75E2 /* setting-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 580579AD148D9A73004C92F4 /* setting-btn.png */; };
+		58CCE324184E9C4700AA75E2 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BE1842B55B00C58815 /* excel.csv.plist */; };
+		58CCE325184E9C4700AA75E2 /* Paint_Sample_Chelsea_Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */; };
+		58CCE326184E9C4700AA75E2 /* Paint_Sample_Foxdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */; };
+		58CCE327184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C6149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg */; };
+		58CCE328184E9C4700AA75E2 /* Paint_Sample_Pollywaffle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C7149A075B009E89EB /* Paint_Sample_Pollywaffle.jpg */; };
+		58CCE329184E9C4700AA75E2 /* Paint_Sample_Rapid_Fire.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C8149A075B009E89EB /* Paint_Sample_Rapid_Fire.jpg */; };
+		58CCE32A184E9C4700AA75E2 /* Paint_Sample_Waterworks.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C9149A075B009E89EB /* Paint_Sample_Waterworks.jpg */; };
+		58CCE32B184E9C4700AA75E2 /* Paint_Sample_whitewall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CA149A075B009E89EB /* Paint_Sample_whitewall.jpg */; };
+		58CCE32C184E9C4700AA75E2 /* Paint_Sample_Woodland_Grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CB149A075B009E89EB /* Paint_Sample_Woodland_Grey.jpg */; };
+		58CCE32D184E9C4700AA75E2 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B91842B55B00C58815 /* arteor-rd.csv.plist */; };
+		58CCE32E184E9C4700AA75E2 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58B181D01842CEB100C58815 /* Catalog2.sqlite */; };
+		58CCE32F184E9C4700AA75E2 /* Wallpaper_blacktiles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CC149A075B009E89EB /* Wallpaper_blacktiles.jpg */; };
+		58CCE330184E9C4700AA75E2 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B81842B55B00C58815 /* arteor-770.csv.plist */; };
+		58CCE331184E9C4700AA75E2 /* Wallpaper_charcoalemblem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CD149A075B009E89EB /* Wallpaper_charcoalemblem.jpg */; };
+		58CCE332184E9C4700AA75E2 /* Wallpaper_curvedstone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CE149A075B009E89EB /* Wallpaper_curvedstone.jpg */; };
+		58CCE333184E9C4700AA75E2 /* Wallpaper_graphitecaesar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CF149A075B009E89EB /* Wallpaper_graphitecaesar.jpg */; };
+		58CCE334184E9C4700AA75E2 /* Wallpaper_lightcaesar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95D0149A075B009E89EB /* Wallpaper_lightcaesar.jpg */; };
+		58CCE335184E9C4700AA75E2 /* Wallpaper_royalbrown.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95D1149A075B009E89EB /* Wallpaper_royalbrown.jpg */; };
+		58CCE336184E9C4700AA75E2 /* Wallpaper_stripes.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95D2149A075B009E89EB /* Wallpaper_stripes.jpg */; };
+		58CCE337184E9C4700AA75E2 /* Wallpaper_whitecaesar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95D3149A075B009E89EB /* Wallpaper_whitecaesar.jpg */; };
+		58CCE338184E9C4700AA75E2 /* Wallpaper_whitetiles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95D4149A075B009E89EB /* Wallpaper_whitetiles.jpg */; };
+		58CCE339184E9C4700AA75E2 /* Paint_Sample_Chelsea_Green_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B22149D89350016C7F9 /* Paint_Sample_Chelsea_Green_tmb.jpg */; };
+		58CCE33A184E9C4700AA75E2 /* Paint_Sample_Foxdale_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B23149D89350016C7F9 /* Paint_Sample_Foxdale_tmb.jpg */; };
+		58CCE33B184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_Half_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B24149D89350016C7F9 /* Paint_Sample_Hog_Bristle_Half_tmb.jpg */; };
+		58CCE33C184E9C4700AA75E2 /* arteor-sq.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BA1842B55B00C58815 /* arteor-sq.csv.plist */; };
+		58CCE33D184E9C4700AA75E2 /* Paint_Sample_Pollywaffle_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B25149D89350016C7F9 /* Paint_Sample_Pollywaffle_tmb.jpg */; };
+		58CCE33E184E9C4700AA75E2 /* Paint_Sample_Rapid_Fire_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B26149D89350016C7F9 /* Paint_Sample_Rapid_Fire_tmb.jpg */; };
+		58CCE33F184E9C4700AA75E2 /* Paint_Sample_Waterworks_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B27149D89350016C7F9 /* Paint_Sample_Waterworks_tmb.jpg */; };
+		58CCE340184E9C4700AA75E2 /* Paint_Sample_whitewall_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B28149D89350016C7F9 /* Paint_Sample_whitewall_tmb.jpg */; };
+		58CCE341184E9C4700AA75E2 /* Paint_Sample_Woodland_Grey_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B29149D89350016C7F9 /* Paint_Sample_Woodland_Grey_tmb.jpg */; };
+		58CCE342184E9C4700AA75E2 /* Wallpaper_blacktiles_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B2A149D89350016C7F9 /* Wallpaper_blacktiles_tmb.jpg */; };
+		58CCE343184E9C4700AA75E2 /* Wallpaper_charcoalemblem_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B2B149D89350016C7F9 /* Wallpaper_charcoalemblem_tmb.jpg */; };
+		58CCE344184E9C4700AA75E2 /* Wallpaper_curvedstone_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B2C149D89350016C7F9 /* Wallpaper_curvedstone_tmb.jpg */; };
+		58CCE345184E9C4700AA75E2 /* Wallpaper_graphitecaesar_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B2D149D89350016C7F9 /* Wallpaper_graphitecaesar_tmb.jpg */; };
+		58CCE346184E9C4700AA75E2 /* Wallpaper_lightcaesar_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B2E149D89350016C7F9 /* Wallpaper_lightcaesar_tmb.jpg */; };
+		58CCE347184E9C4700AA75E2 /* Wallpaper_royalbrown_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B2F149D89350016C7F9 /* Wallpaper_royalbrown_tmb.jpg */; };
+		58CCE348184E9C4700AA75E2 /* Wallpaper_stripes_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B30149D89350016C7F9 /* Wallpaper_stripes_tmb.jpg */; };
+		58CCE349184E9C4700AA75E2 /* Wallpaper_whitecaesar_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B31149D89350016C7F9 /* Wallpaper_whitecaesar_tmb.jpg */; };
+		58CCE34A184E9C4700AA75E2 /* Wallpaper_whitetiles_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58E01B32149D89350016C7F9 /* Wallpaper_whitetiles_tmb.jpg */; };
+		58CCE34B184E9C4700AA75E2 /* ipadIntro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58E9422714A1C26E00589B43 /* ipadIntro.mov */; };
+		58CCE34C184E9C4700AA75E2 /* iPhoneIntro.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58E9422814A1C26E00589B43 /* iPhoneIntro.mov */; };
+		58CCE34D184E9C4700AA75E2 /* main-bg-port-white.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E9422C14A1D2FF00589B43 /* main-bg-port-white.png */; };
+		58CCE34E184E9C4700AA75E2 /* nuvulogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 58E9426014A1FC2800589B43 /* nuvulogo.png */; };
+		58CCE34F184E9C4700AA75E2 /* Wallpaper_royalwaves_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F95514C8273D00C23665 /* Wallpaper_royalwaves_tmb.jpg */; };
+		58CCE350184E9C4700AA75E2 /* Wallpaper_royalwaves.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F95614C8273D00C23665 /* Wallpaper_royalwaves.jpg */; };
+		58CCE351184E9C4700AA75E2 /* Paint_Sample_Wagon_Gold_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F95C14C8275000C23665 /* Paint_Sample_Wagon_Gold_tmb.jpg */; };
+		58CCE352184E9C4700AA75E2 /* bt-living.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BC1842B55B00C58815 /* bt-living.csv.plist */; };
+		58CCE353184E9C4700AA75E2 /* Paint_Sample_Wagon_Gold.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F96214C8283400C23665 /* Paint_Sample_Wagon_Gold.jpg */; };
+		58CCE354184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F96514C828A100C23665 /* Paint_Sample_Hog_Bristle.jpg */; };
+		58CCE355184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F96714C82B0F00C23665 /* Paint_Sample_Hog_Bristle_tmb.jpg */; };
+		58CCE356184E9C4700AA75E2 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
+		58CCE357184E9C4700AA75E2 /* cart-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 58509B5314EE2D4D00509C50 /* cart-btn.png */; };
+		58CCE358184E9C4700AA75E2 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
+		58CCE359184E9C4700AA75E2 /* Catalog3-iPad.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3017E16BBF00B90959 /* Catalog3-iPad.mov */; };
+		58CCE35A184E9C4700AA75E2 /* Catalog3-iPhone.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58853C3117E16BBF00B90959 /* Catalog3-iPhone.mov */; };
+		58CCE35B184E9C4700AA75E2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5864135917DDAF8B00B92D78 /* Default-568h@2x.png */; };
+		58CCE35C184E9C4700AA75E2 /* bt-lighttech.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BB1842B55B00C58815 /* bt-lighttech.csv.plist */; };
+		58CCE35D184E9C4700AA75E2 /* main-bg-port-Catalog3.png in Resources */ = {isa = PBXBuildFile; fileRef = 5803D68417E6C79B00BFF719 /* main-bg-port-Catalog3.png */; };
+		58CCE35F184E9C4700AA75E2 /* Arteor770 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435D514DFE7E500AB8191 /* Arteor770 */; };
+		58CCE360184E9C4700AA75E2 /* ArteorRD in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435D614DFE7E500AB8191 /* ArteorRD */; };
+		58CCE361184E9C4700AA75E2 /* ArteorSQ in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435D714DFE7E500AB8191 /* ArteorSQ */; };
+		58CCE362184E9C4700AA75E2 /* Excel in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435D814DFE7E600AB8191 /* Excel */; };
+		58CCE363184E9C4700AA75E2 /* ExcelLife in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435D914DFE7E600AB8191 /* ExcelLife */; };
+		58CCE364184E9C4700AA75E2 /* Frames in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DA14DFE7E600AB8191 /* Frames */; };
+		58CCE365184E9C4700AA75E2 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58CD95D5149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */; };
 		58CD95D6149A075B009E89EB /* Paint_Sample_Foxdale.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */; };
 		58CD95D7149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95C6149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg */; };
@@ -256,6 +368,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58CCE35E184E9C4700AA75E2 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				58CCE35F184E9C4700AA75E2 /* Arteor770 in CopyFiles */,
+				58CCE360184E9C4700AA75E2 /* ArteorRD in CopyFiles */,
+				58CCE361184E9C4700AA75E2 /* ArteorSQ in CopyFiles */,
+				58CCE362184E9C4700AA75E2 /* Excel in CopyFiles */,
+				58CCE363184E9C4700AA75E2 /* ExcelLife in CopyFiles */,
+				58CCE364184E9C4700AA75E2 /* Frames in CopyFiles */,
+				58CCE365184E9C4700AA75E2 /* Linea in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE58166F162B49B000C24710 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -345,6 +473,12 @@
 		58A435DB14DFE7E600AB8191 /* Linea */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linea; sourceTree = "<group>"; };
 		58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NuvuDevLogo2.mov; sourceTree = "<group>"; };
 		58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AppInstructionVideo_4MArch.mov; sourceTree = "<group>"; };
+		58AB8A20184EBFE5009568DD /* HPM EXCEL.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPM EXCEL.csv.plist"; sourceTree = "<group>"; };
+		58AB8A21184EBFE5009568DD /* HPM LINEA.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPM LINEA.csv.plist"; sourceTree = "<group>"; };
+		58AB8A22184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Legrand ARTEOR AUSTRALIAN STYLE.csv.plist"; sourceTree = "<group>"; };
+		58AB8A23184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Legrand ARTEOR ROUND.csv.plist"; sourceTree = "<group>"; };
+		58AB8A24184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Legrand ARTEOR SQUARE.csv.plist"; sourceTree = "<group>"; };
+		58AB8A25184EBFE5009568DD /* Legrand EXCEL LIFE.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Legrand EXCEL LIFE.csv.plist"; sourceTree = "<group>"; };
 		58B181B81842B55B00C58815 /* arteor-770.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-770.csv.plist"; sourceTree = "<group>"; };
 		58B181B91842B55B00C58815 /* arteor-rd.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-rd.csv.plist"; sourceTree = "<group>"; };
 		58B181BA1842B55B00C58815 /* arteor-sq.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "arteor-sq.csv.plist"; sourceTree = "<group>"; };
@@ -356,6 +490,8 @@
 		58B181D01842CEB100C58815 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58C691EA183E2FC7002FEA8A /* CollectInfoAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectInfoAlertView.h; sourceTree = "<group>"; };
 		58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectInfoAlertView.m; sourceTree = "<group>"; };
+		58CCE369184E9C4700AA75E2 /* Catalog3 copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catalog3 copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58CCE36A184E9C4700AA75E2 /* Catalog4-NZ-info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Catalog4-NZ-info.plist"; path = "/Users/amccoy/Documents/NUVU/_HPM_catalog/Catalog4-NZ-info.plist"; sourceTree = "<absolute>"; };
 		58CD95C4149A075B009E89EB /* Paint_Sample_Chelsea_Green.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Chelsea_Green.jpg; sourceTree = "<group>"; };
 		58CD95C5149A075B009E89EB /* Paint_Sample_Foxdale.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Foxdale.jpg; sourceTree = "<group>"; };
 		58CD95C6149A075B009E89EB /* Paint_Sample_Hog_Bristle_Half.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Hog_Bristle_Half.jpg; sourceTree = "<group>"; };
@@ -450,6 +586,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58CCE312184E9C4700AA75E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58CCE313184E9C4700AA75E2 /* MessageUI.framework in Frameworks */,
+				58CCE314184E9C4700AA75E2 /* MediaPlayer.framework in Frameworks */,
+				58CCE315184E9C4700AA75E2 /* QuartzCore.framework in Frameworks */,
+				58CCE316184E9C4700AA75E2 /* UIKit.framework in Frameworks */,
+				58CCE317184E9C4700AA75E2 /* Foundation.framework in Frameworks */,
+				58CCE318184E9C4700AA75E2 /* CoreGraphics.framework in Frameworks */,
+				58CCE319184E9C4700AA75E2 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AE581621162B49B000C24710 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -498,6 +648,7 @@
 				586E4B0A146CC88300A7C857 /* Catalog2Tests */,
 				586E4AE5146CC88300A7C857 /* Frameworks */,
 				586E4AE3146CC88300A7C857 /* Products */,
+				58CCE36A184E9C4700AA75E2 /* Catalog4-NZ-info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -507,6 +658,7 @@
 				586E4AE2146CC88300A7C857 /* Catalog2.app */,
 				586E4B02146CC88300A7C857 /* Catalog2Tests.octest */,
 				AE58167A162B49B000C24710 /* Catalog2 copy.app */,
+				58CCE369184E9C4700AA75E2 /* Catalog3 copy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -582,6 +734,7 @@
 		586E4B1B146CC88E00A7C857 /* pLists */ = {
 			isa = PBXGroup;
 			children = (
+				58AB8A1F184EBFC8009568DD /* NZLists */,
 				58B181B81842B55B00C58815 /* arteor-770.csv.plist */,
 				58B181B91842B55B00C58815 /* arteor-rd.csv.plist */,
 				58B181BA1842B55B00C58815 /* arteor-sq.csv.plist */,
@@ -643,6 +796,19 @@
 			children = (
 			);
 			name = Flurry;
+			sourceTree = "<group>";
+		};
+		58AB8A1F184EBFC8009568DD /* NZLists */ = {
+			isa = PBXGroup;
+			children = (
+				58AB8A20184EBFE5009568DD /* HPM EXCEL.csv.plist */,
+				58AB8A21184EBFE5009568DD /* HPM LINEA.csv.plist */,
+				58AB8A22184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist */,
+				58AB8A23184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist */,
+				58AB8A24184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist */,
+				58AB8A25184EBFE5009568DD /* Legrand EXCEL LIFE.csv.plist */,
+			);
+			name = NZLists;
 			sourceTree = "<group>";
 		};
 		58E8F008147721EF0098ADC7 /* Search */ = {
@@ -828,6 +994,24 @@
 			productReference = 586E4B02146CC88300A7C857 /* Catalog2Tests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
+		58CCE2F7184E9C4600AA75E2 /* Catalog4-NZ */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58CCE366184E9C4700AA75E2 /* Build configuration list for PBXNativeTarget "Catalog4-NZ" */;
+			buildPhases = (
+				58CCE2F8184E9C4600AA75E2 /* Sources */,
+				58CCE312184E9C4700AA75E2 /* Frameworks */,
+				58CCE31A184E9C4700AA75E2 /* Resources */,
+				58CCE35E184E9C4700AA75E2 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Catalog4-NZ";
+			productName = Catalog2;
+			productReference = 58CCE369184E9C4700AA75E2 /* Catalog3 copy.app */;
+			productType = "com.apple.product-type.application";
+		};
 		AE581607162B49B000C24710 /* Catalog3 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AE581677162B49B000C24710 /* Build configuration list for PBXNativeTarget "Catalog3" */;
@@ -878,6 +1062,7 @@
 				586E4AE1146CC88300A7C857 /* Catalog2 */,
 				586E4B01146CC88300A7C857 /* Catalog2Tests */,
 				AE581607162B49B000C24710 /* Catalog3 */,
+				58CCE2F7184E9C4600AA75E2 /* Catalog4-NZ */,
 			);
 		};
 /* End PBXProject section */
@@ -964,6 +1149,86 @@
 			buildActionMask = 2147483647;
 			files = (
 				586E4B0F146CC88300A7C857 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58CCE31A184E9C4700AA75E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58CCE31B184E9C4700AA75E2 /* linea.csv.plist in Resources */,
+				58CCE31C184E9C4700AA75E2 /* hpm-icons in Resources */,
+				58CCE31D184E9C4700AA75E2 /* InfoPlist.strings in Resources */,
+				58CCE31E184E9C4700AA75E2 /* excel-life.csv.plist in Resources */,
+				58CCE31F184E9C4700AA75E2 /* bg-btn.png in Resources */,
+				58CCE320184E9C4700AA75E2 /* catalog-btn.png in Resources */,
+				58CCE321184E9C4700AA75E2 /* photo-btn.png in Resources */,
+				58CCE322184E9C4700AA75E2 /* search-btn.png in Resources */,
+				58CCE323184E9C4700AA75E2 /* setting-btn.png in Resources */,
+				58CCE324184E9C4700AA75E2 /* excel.csv.plist in Resources */,
+				58CCE325184E9C4700AA75E2 /* Paint_Sample_Chelsea_Green.jpg in Resources */,
+				58CCE326184E9C4700AA75E2 /* Paint_Sample_Foxdale.jpg in Resources */,
+				58CCE327184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */,
+				58CCE328184E9C4700AA75E2 /* Paint_Sample_Pollywaffle.jpg in Resources */,
+				58CCE329184E9C4700AA75E2 /* Paint_Sample_Rapid_Fire.jpg in Resources */,
+				58CCE32A184E9C4700AA75E2 /* Paint_Sample_Waterworks.jpg in Resources */,
+				58CCE32B184E9C4700AA75E2 /* Paint_Sample_whitewall.jpg in Resources */,
+				58CCE32C184E9C4700AA75E2 /* Paint_Sample_Woodland_Grey.jpg in Resources */,
+				58AB8A28184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist in Resources */,
+				58CCE32D184E9C4700AA75E2 /* arteor-rd.csv.plist in Resources */,
+				58CCE32E184E9C4700AA75E2 /* Catalog2.sqlite in Resources */,
+				58CCE32F184E9C4700AA75E2 /* Wallpaper_blacktiles.jpg in Resources */,
+				58CCE330184E9C4700AA75E2 /* arteor-770.csv.plist in Resources */,
+				58CCE331184E9C4700AA75E2 /* Wallpaper_charcoalemblem.jpg in Resources */,
+				58CCE332184E9C4700AA75E2 /* Wallpaper_curvedstone.jpg in Resources */,
+				58CCE333184E9C4700AA75E2 /* Wallpaper_graphitecaesar.jpg in Resources */,
+				58AB8A26184EBFE5009568DD /* HPM EXCEL.csv.plist in Resources */,
+				58CCE334184E9C4700AA75E2 /* Wallpaper_lightcaesar.jpg in Resources */,
+				58CCE335184E9C4700AA75E2 /* Wallpaper_royalbrown.jpg in Resources */,
+				58CCE336184E9C4700AA75E2 /* Wallpaper_stripes.jpg in Resources */,
+				58CCE337184E9C4700AA75E2 /* Wallpaper_whitecaesar.jpg in Resources */,
+				58CCE338184E9C4700AA75E2 /* Wallpaper_whitetiles.jpg in Resources */,
+				58CCE339184E9C4700AA75E2 /* Paint_Sample_Chelsea_Green_tmb.jpg in Resources */,
+				58CCE33A184E9C4700AA75E2 /* Paint_Sample_Foxdale_tmb.jpg in Resources */,
+				58CCE33B184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_Half_tmb.jpg in Resources */,
+				58CCE33C184E9C4700AA75E2 /* arteor-sq.csv.plist in Resources */,
+				58CCE33D184E9C4700AA75E2 /* Paint_Sample_Pollywaffle_tmb.jpg in Resources */,
+				58CCE33E184E9C4700AA75E2 /* Paint_Sample_Rapid_Fire_tmb.jpg in Resources */,
+				58CCE33F184E9C4700AA75E2 /* Paint_Sample_Waterworks_tmb.jpg in Resources */,
+				58CCE340184E9C4700AA75E2 /* Paint_Sample_whitewall_tmb.jpg in Resources */,
+				58CCE341184E9C4700AA75E2 /* Paint_Sample_Woodland_Grey_tmb.jpg in Resources */,
+				58CCE342184E9C4700AA75E2 /* Wallpaper_blacktiles_tmb.jpg in Resources */,
+				58CCE343184E9C4700AA75E2 /* Wallpaper_charcoalemblem_tmb.jpg in Resources */,
+				58CCE344184E9C4700AA75E2 /* Wallpaper_curvedstone_tmb.jpg in Resources */,
+				58CCE345184E9C4700AA75E2 /* Wallpaper_graphitecaesar_tmb.jpg in Resources */,
+				58AB8A29184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist in Resources */,
+				58CCE346184E9C4700AA75E2 /* Wallpaper_lightcaesar_tmb.jpg in Resources */,
+				58CCE347184E9C4700AA75E2 /* Wallpaper_royalbrown_tmb.jpg in Resources */,
+				58CCE348184E9C4700AA75E2 /* Wallpaper_stripes_tmb.jpg in Resources */,
+				58CCE349184E9C4700AA75E2 /* Wallpaper_whitecaesar_tmb.jpg in Resources */,
+				58CCE34A184E9C4700AA75E2 /* Wallpaper_whitetiles_tmb.jpg in Resources */,
+				58CCE34B184E9C4700AA75E2 /* ipadIntro.mov in Resources */,
+				58CCE34C184E9C4700AA75E2 /* iPhoneIntro.mov in Resources */,
+				58CCE34D184E9C4700AA75E2 /* main-bg-port-white.png in Resources */,
+				58CCE34E184E9C4700AA75E2 /* nuvulogo.png in Resources */,
+				58CCE34F184E9C4700AA75E2 /* Wallpaper_royalwaves_tmb.jpg in Resources */,
+				58CCE350184E9C4700AA75E2 /* Wallpaper_royalwaves.jpg in Resources */,
+				58CCE351184E9C4700AA75E2 /* Paint_Sample_Wagon_Gold_tmb.jpg in Resources */,
+				58CCE352184E9C4700AA75E2 /* bt-living.csv.plist in Resources */,
+				58AB8A2B184EBFE5009568DD /* Legrand EXCEL LIFE.csv.plist in Resources */,
+				58CCE353184E9C4700AA75E2 /* Paint_Sample_Wagon_Gold.jpg in Resources */,
+				58AB8A27184EBFE5009568DD /* HPM LINEA.csv.plist in Resources */,
+				58CCE354184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle.jpg in Resources */,
+				58CCE355184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_tmb.jpg in Resources */,
+				58CCE356184E9C4700AA75E2 /* NuvuDevLogo2.mov in Resources */,
+				58CCE357184E9C4700AA75E2 /* cart-btn.png in Resources */,
+				58CCE358184E9C4700AA75E2 /* AppInstructionVideo_4MArch.mov in Resources */,
+				58CCE359184E9C4700AA75E2 /* Catalog3-iPad.mov in Resources */,
+				58CCE35A184E9C4700AA75E2 /* Catalog3-iPhone.mov in Resources */,
+				58CCE35B184E9C4700AA75E2 /* Default-568h@2x.png in Resources */,
+				58CCE35C184E9C4700AA75E2 /* bt-lighttech.csv.plist in Resources */,
+				58AB8A2A184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist in Resources */,
+				58CCE35D184E9C4700AA75E2 /* main-bg-port-Catalog3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1097,6 +1362,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				586E4B12146CC88300A7C857 /* Catalog2Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		58CCE2F8184E9C4600AA75E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58CCE2F9184E9C4600AA75E2 /* main.m in Sources */,
+				58CCE2FA184E9C4600AA75E2 /* AppDelegate.m in Sources */,
+				58CCE2FB184E9C4600AA75E2 /* Catalog2.xcdatamodeld in Sources */,
+				58CCE2FC184E9C4600AA75E2 /* LoadHPMData.m in Sources */,
+				58CCE2FD184E9C4600AA75E2 /* CollectInfoAlertView.m in Sources */,
+				58CCE2FE184E9C4600AA75E2 /* RootView.m in Sources */,
+				58CCE2FF184E9C4600AA75E2 /* MechanismView.m in Sources */,
+				58CCE300184E9C4600AA75E2 /* FacePlateView.m in Sources */,
+				58CCE301184E9C4600AA75E2 /* PartView.m in Sources */,
+				58CCE302184E9C4600AA75E2 /* SettingsPage.m in Sources */,
+				58CCE303184E9C4600AA75E2 /* BackgroundLibrary.m in Sources */,
+				58CCE304184E9C4600AA75E2 /* SearchPage.m in Sources */,
+				58CCE305184E9C4700AA75E2 /* SearchResultTableView.m in Sources */,
+				58CCE306184E9C4700AA75E2 /* RoundedRectView.m in Sources */,
+				58CCE307184E9C4700AA75E2 /* OrdersTableView.m in Sources */,
+				58CCE308184E9C4700AA75E2 /* BrandCatalogTableView.m in Sources */,
+				58CCE309184E9C4700AA75E2 /* CheckProductsForImages.m in Sources */,
+				58CCE30A184E9C4700AA75E2 /* OrderLineViewCell.m in Sources */,
+				58CCE30B184E9C4700AA75E2 /* OrderDetailTableView.m in Sources */,
+				58CCE30C184E9C4700AA75E2 /* ProductChooserView.m in Sources */,
+				58CCE30D184E9C4700AA75E2 /* ProductBackgroundResize.m in Sources */,
+				58CCE30E184E9C4700AA75E2 /* AddPartToOrder.m in Sources */,
+				58CCE30F184E9C4700AA75E2 /* AppSettingsTableView.m in Sources */,
+				58CCE310184E9C4700AA75E2 /* OrderLineModal.m in Sources */,
+				58CCE311184E9C4700AA75E2 /* UpdatePricesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1318,6 +1615,60 @@
 			};
 			name = Release;
 		};
+		58CCE367184E9C4700AA75E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+					LNHVERSION,
+					NZVERSION,
+				);
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "Catalog4-NZ-info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Catalog2\"",
+				);
+				PRODUCT_NAME = "Catalog3 copy";
+				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		58CCE368184E9C4700AA75E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sidharth  Shukla (5UWXN6M27Y)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Catalog2/Catalog2-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					LNHVERSION,
+					NZVERSION,
+				);
+				GCC_THUMB_SUPPORT = NO;
+				INFOPLIST_FILE = "Catalog4-NZ-info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/Catalog2\"",
+				);
+				PRODUCT_NAME = "Catalog3 copy";
+				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
 		AE581678162B49B000C24710 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1394,6 +1745,15 @@
 			buildConfigurations = (
 				586E4B19146CC88300A7C857 /* Debug */,
 				586E4B1A146CC88300A7C857 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58CCE366184E9C4700AA75E2 /* Build configuration list for PBXNativeTarget "Catalog4-NZ" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58CCE367184E9C4700AA75E2 /* Debug */,
+				58CCE368184E9C4700AA75E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

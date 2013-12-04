@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>HPM Legrand Selector</string>
+	<string>HPM Legrand Selector NZ</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
@@ -22,7 +22,7 @@
 		<string>hpm-icons/iTunesArtwork@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.mindeater.Catalog3</string>
+	<string>com.mindeater.Catalog4-NZ</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

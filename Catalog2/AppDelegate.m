@@ -21,6 +21,7 @@
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize navigationController = _navigationController;
+@synthesize sqlite_db_name = _sqlite_db_name;
 
 - (void)dealloc
 {
@@ -42,6 +43,13 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     application.statusBarStyle = UIStatusBarStyleBlackOpaque;
+    
+    // Which version are we ??
+#ifdef NZVERSION
+    _sqlite_db_name = @"Catalog2-NZ";
+#else
+    _sqlite_db_name = @"Catalog2";
+#endif
     
     ////////////////////////////////////
     /// Is there a Dataset Available ??
@@ -72,14 +80,9 @@
     //////////////////////////////////////////////////////
     // If there has never been an update make sure it runs
     
-    if( [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"] &&
-       ! [[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"])
+
+    if( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"])
     {
-        [[NSUserDefaults standardUserDefaults]
-         registerDefaults:[NSDictionary
-                           dictionaryWithObjectsAndKeys:
-                           [NSNumber numberWithBool:YES], @"UpdatePrices",
-                           nil] ];
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
@@ -255,6 +258,8 @@
     {
         return __managedObjectModel;
     }
+
+    
     NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"Catalog2" withExtension:@"momd"];
     __managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return __managedObjectModel;
@@ -276,24 +281,29 @@
     ////////////////////////////////////////////////////////
     // copy the shipped sqlite db to the documents directory
     //
-   // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES); 
-    //NSString *documentsDirectory = [paths objectAtIndex:0];
-   // NSString *storePath = [documentsDirectory stringByAppendingPathComponent: @"Catalog2.sqlite"];
-    NSString *storePath = [[[self applicationDocumentsDirectory] path] stringByAppendingPathComponent:@"Catalog2.sqlite"];
+    
+    // 1. Get the default DB path
+    NSString *storePath = [[[self applicationDocumentsDirectory] path]
+                           stringByAppendingPathComponent:@"Catalog2.sqlite"];
     NSURL *storeURL = [NSURL fileURLWithPath:storePath];
     
-    // Put down default db if it doesn't already exist
+    // 2. See if it is already there
     NSFileManager *fileManager = [NSFileManager defaultManager];
-    if (![fileManager fileExistsAtPath:storePath]) {
-        NSString *defaultStorePath = [[NSBundle mainBundle] 
-                                      pathForResource:@"Catalog2" ofType:@"sqlite"];
-       // NSLog(@"\n\n---\nStore path : %@",storePath);
-        if (defaultStorePath) {
+    if (![fileManager fileExistsAtPath:storePath])
+    {
+        // 3. Get the shipped one
+        NSString *shippedStorePath = [[NSBundle mainBundle]
+                                      pathForResource:_sqlite_db_name ofType:@"sqlite"];
+        
+        // 4. Replace it with our Shipped DB if there is one
+        if (shippedStorePath) {
             NSError *copyError = nil;
-            if(![fileManager copyItemAtPath:defaultStorePath toPath:storePath error:&copyError]){
+//            if(![fileManager copyItemAtPath:shippedStorePath toPath:storePath error:&copyError])
+            if(![fileManager moveItemAtPath:shippedStorePath toPath:storePath error:&copyError])
+            {
                 NSLog(@"\n*****\nERROR Copying\n\n\n %@",[copyError localizedDescription]);
             }else{
-                //NSLog(@"\n\n+++\nCOPIED sqllite db");
+                NSLog(@"\n\n+++\nCOPIED sqllite db");
             }
             
         }
@@ -303,7 +313,11 @@
     
     NSError *error = nil;
     __persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
-    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error])
+    if (![__persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType
+                                                    configuration:nil
+                                                              URL:storeURL
+                                                          options:nil
+                                                            error:&error])
     {
         /*
          Replace this implementation with code to handle the error appropriately.

@@ -16,6 +16,8 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (readonly, nonatomic)NSString *sqlite_db_name;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

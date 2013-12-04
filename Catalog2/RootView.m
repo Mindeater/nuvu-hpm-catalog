@@ -66,7 +66,7 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     /*NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);*/
-    if( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]) // never been updated
+    if([[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]) // never been updated
     {
         // run the update
         UpdatePricesView *update = [[UpdatePricesView alloc]init];

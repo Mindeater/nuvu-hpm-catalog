@@ -261,6 +261,21 @@
 
 -(id)init
 {
+    
+#ifdef NZVERSION
+    self.pListFiles = [NSArray arrayWithObjects:
+                       [NSArray arrayWithObjects:@"Legrand EXCEL LIFE.csv", @"Excel Life", @"Legrand EXCEL LIFE", nil],
+                       [NSArray arrayWithObjects:@"Legrand ARTEOR SQUARE.csv", @"Arteor SQ",  @"Legrand ARTEOR SQUARE", nil],
+                       [NSArray arrayWithObjects:@"Legrand ARTEOR ROUND.csv", @"Arteor RD",  @"Legrand ARTEOR ROUND", nil],
+                       [NSArray arrayWithObjects:@"Legrand ARTEOR AUSTRALIAN STYLE.csv", @"Arteor 770", @"Legrand ARTEOR AUSTRALIAN STYLE", nil],
+                       [NSArray arrayWithObjects:@"HPM LINEA.csv", @"Linea",      @"HPM LINEA", nil],
+                       [NSArray arrayWithObjects:@"HPM EXCEL.csv", @"Excel",      @"HPM EXCEL", nil],
+                       /*[NSArray arrayWithObjects:@"bt-light-and-tech.csv", @"BT Light and Tech",nil],
+                        [NSArray arrayWithObjects:@"bt-living.csv",     @"BT Living",nil],
+                        */
+                       nil];
+
+#else
     self.pListFiles = [NSArray arrayWithObjects:
                        [NSArray arrayWithObjects:@"excel-life.csv",   @"Excel Life", @"Legrand EXCEL LIFE", nil],
                        [NSArray arrayWithObjects:@"arteor-sq.csv",    @"Arteor SQ",  @"Legrand ARTEOR SQUARE", nil],
@@ -268,10 +283,13 @@
                        [NSArray arrayWithObjects:@"arteor-770.csv",   @"Arteor 770", @"Legrand ARTEOR AUSTRALIAN STYLE", nil],
                        [NSArray arrayWithObjects:@"linea.csv",        @"Linea",      @"HPM LINEA", nil],
                        [NSArray arrayWithObjects:@"excel.csv",        @"Excel",      @"HPM EXCEL", nil],
-                        /*[NSArray arrayWithObjects:@"bt-light-and-tech.csv", @"BT Light and Tech",nil],
+                       /*[NSArray arrayWithObjects:@"bt-light-and-tech.csv", @"BT Light and Tech",nil],
                         [NSArray arrayWithObjects:@"bt-living.csv",     @"BT Living",nil],
                         */
-                        nil];
+                       nil];
+#endif
+    
+
 
     return self;
 }

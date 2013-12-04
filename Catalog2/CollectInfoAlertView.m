@@ -19,6 +19,7 @@
 @synthesize subheading;
 @synthesize entry_txt;
 @synthesize buttonIndex;
+@synthesize numberEntry;
 
 - (void)dealloc
 {
@@ -42,6 +43,7 @@
     if (self) {
         // Custom initialization
         self.buttonIndex =-1;
+        self.numberEntry = NO;
     }
     return self;
 }

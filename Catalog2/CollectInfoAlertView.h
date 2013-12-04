@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CollectInfoAlertView : UIViewController
+@interface CollectInfoAlertView : UIViewController <UITextFieldDelegate>
 
 @property(nonatomic,retain)UILabel *heading;
 @property(nonatomic,retain)UILabel *subheading;
@@ -17,6 +17,7 @@
 @property(nonatomic, retain)UIButton *cancel_btn;
 @property(nonatomic, retain)UIButton *ok_btn;
 @property(nonatomic)CGFloat tag;
+@property(nonatomic)BOOL numberEntry;
 
 
 
