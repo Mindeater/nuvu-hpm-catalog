@@ -10,5 +10,10 @@
 #import "PartView.h"
 
 @interface MechanismView : PartView
-    
+
+// Deal with the NZ part name Mappings
+#ifdef NZVERSION
+@property(nonatomic,retain)NSDictionary *nz_map;
+#endif
+
 @end

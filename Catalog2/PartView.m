@@ -307,7 +307,7 @@
         //NSLog(@" MUltiplier -- |%f|",[[[NSUserDefaults standardUserDefaults] stringForKey:@"ud_PricePercentage"] floatValue]);
         adjustedPrice = adjustedPrice + adjustedPrice * multiplier;
     }
-    
+
     NSString *message = [NSString stringWithFormat:@"%@ - %@:\n%@\n%@\n%@",
                          self.brandName,
                          self.categoryName,

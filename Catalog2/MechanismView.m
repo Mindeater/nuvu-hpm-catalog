@@ -10,6 +10,10 @@
 
 @implementation MechanismView
 
+// Deal with the NZ part name Mappings
+#ifdef NZVERSION
+@synthesize nz_map;
+#endif
 
 -(void)dealloc
 {
@@ -111,7 +115,19 @@
         
         self.price = [NSString stringWithFormat:@"%f",cost];
         
+        // Deal with the NZ part name Mappings
+#ifdef NZVERSION
+        NSString *mapped_name = [self.nz_map objectForKey:img];
+        if([mapped_name length] > 0)
+        {
+            [tmpParts appendFormat:@"%@\n",mapped_name];
+        }else{
+            [tmpParts appendFormat:@"%@\n",img];
+        }
+#else
         [tmpParts appendFormat:@"%@\n",img];
+#endif
+        
         
         // Build the Directory string
         NSString *dir;
@@ -191,7 +207,14 @@
     [view setBackgroundColor:[UIColor blueColor]];
     self.view = view;
     [view release];
-    */    
+    */
+    
+// Deal with the NZ part name Mappings
+#ifdef NZVERSION
+    self.nz_map = [NSDictionary dictionaryWithContentsOfFile:
+                   [[NSBundle mainBundle] pathForResource:@"nz_map" ofType:@"plist"] ];
+    
+#endif
 }
 
 
