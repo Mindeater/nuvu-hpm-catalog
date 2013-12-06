@@ -13,6 +13,7 @@
 @property(nonatomic,retain)UILabel *heading;
 @property(nonatomic,retain)UILabel *subheading;
 @property(nonatomic, retain)UITextField *entry_txt;
+@property(nonatomic, retain)UITextField *qty_txt;
 @property(nonatomic)CGFloat buttonIndex;
 @property(nonatomic, retain)UIButton *cancel_btn;
 @property(nonatomic, retain)UIButton *ok_btn;
@@ -29,6 +30,7 @@
 
 -(void)setTextFieldStyle:(UIKeyboardType)type;
 - (NSString *)enteredText;
+- (NSString *)enteredCount;
 
 -(void)buttonHit:(id)sender;
 
