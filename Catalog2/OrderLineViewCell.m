@@ -7,6 +7,7 @@
 //
 
 #import "OrderLineViewCell.h"
+#import "OrderLineDrawingView.h"
 /*
 #define cell1Width 80
 #define cell2Width 80
@@ -94,6 +95,7 @@
         commentField = [[UITextView alloc]init];
         commentField.backgroundColor = [UIColor clearColor];//yellowColor];
        // commentField.textAlignment = UITextAlignmentLeft;
+        commentField.backgroundColor = [UIColor clearColor];
         commentField.font = cell1.font;//[UIFont fontWithName:@"Helvetica" size:12.0];
         
         
@@ -131,6 +133,11 @@
         [self addSubview:quantField];
         [self addSubview:commentField];
         [self addSubview:cell5];
+        self.backgroundView = [[OrderLineDrawingView alloc]initWithFrame:self.contentView.bounds];
+        OrderLineDrawingView *bg = (OrderLineDrawingView *)self.backgroundView;
+        bg.parent = self;
+        bg.backgroundColor = [UIColor clearColor];
+
        
     }
     return self;
@@ -157,54 +164,55 @@
     }
 }
 
-- (void)drawRect:(CGRect)rect
-{
-    CGContextRef context = UIGraphicsGetCurrentContext();
-	CGContextSetStrokeColorWithColor(context, lineColor.CGColor);       
-    
-	// CGContextSetLineWidth: The default line width is 1 unit. When stroked, the line straddles the path, with half of the total width on either side.
-	// Therefore, a 1 pixel vertical line will not draw crisply unless it is offest by 0.5. This problem does not seem to affect horizontal lines.
-	CGContextSetLineWidth(context, 1.0);
-    
-	// Add the vertical lines
-    if(!bottomCell){
-        CGContextMoveToPoint(context, cell1Width+0.5, 0);
-        CGContextAddLineToPoint(context, cell1Width+0.5, rect.size.height);
-        
-        CGContextMoveToPoint(context, cell1Width+cell2Width+0.5, 0);
-        CGContextAddLineToPoint(context, cell1Width+cell2Width+0.5, rect.size.height);
-    }
-
-    CGContextMoveToPoint(context, cell1Width+cell2Width+cell3Width+0.5, 0);
-    CGContextAddLineToPoint(context, cell1Width+cell2Width+cell3Width+0.5, rect.size.height);
-
-    CGContextMoveToPoint(context, cell1Width+cell2Width+cell3Width+cell4Width+0.5, 0);
-	CGContextAddLineToPoint(context, cell1Width+cell2Width+cell3Width+cell4Width+0.5, rect.size.height);
-    
-    //////////////////
-	// Add bottom line
-	CGContextMoveToPoint(context, 0, rect.size.height);
-	CGContextAddLineToPoint(context, rect.size.width, rect.size.height-0.5);
-	
-	// If this is the topmost cell in the table, draw the line bottom
-	if (topCell)
-	{
-		// bottom
-        CGContextMoveToPoint(context, 0, rect.size.height);
-        CGContextAddLineToPoint(context, rect.size.width, rect.size.height-0.5);
-        
-	}
-    
-    if(bottomCell){
-        // top
-        //CGContextMoveToPoint(context, 0, 0);
-		//CGContextAddLineToPoint(context, rect.size.width, 0);
-    }
-	
-	// Draw the lines
-	CGContextStrokePath(context); 
-}
-
+//- (void)drawRect:(CGRect)rect
+//{
+//
+//    CGContextRef context = UIGraphicsGetCurrentContext();
+//	CGContextSetStrokeColorWithColor(context, [UIColor blackColor].CGColor);
+//    
+//	// CGContextSetLineWidth: The default line width is 1 unit. When stroked, the line straddles the path, with half of the total width on either side.
+//	// Therefore, a 1 pixel vertical line will not draw crisply unless it is offest by 0.5. This problem does not seem to affect horizontal lines.
+//	CGContextSetLineWidth(context, 1.0);
+//    
+//	// Add the vertical lines
+//    if(!bottomCell){
+//        CGContextMoveToPoint(context, cell1Width+0.5, 0);
+//        CGContextAddLineToPoint(context, cell1Width+0.5, rect.size.height);
+//        
+//        CGContextMoveToPoint(context, cell1Width+cell2Width+0.5, 0);
+//        CGContextAddLineToPoint(context, cell1Width+cell2Width+0.5, rect.size.height);
+//    }
+//
+//    CGContextMoveToPoint(context, cell1Width+cell2Width+cell3Width+0.5, 0);
+//    CGContextAddLineToPoint(context, cell1Width+cell2Width+cell3Width+0.5, rect.size.height);
+//
+//    CGContextMoveToPoint(context, cell1Width+cell2Width+cell3Width+cell4Width+0.5, 0);
+//	CGContextAddLineToPoint(context, cell1Width+cell2Width+cell3Width+cell4Width+0.5, rect.size.height);
+//    
+//    //////////////////
+//	// Add bottom line
+//	CGContextMoveToPoint(context, 0, rect.size.height);
+//	CGContextAddLineToPoint(context, rect.size.width, rect.size.height-0.5);
+//	
+//	// If this is the topmost cell in the table, draw the line bottom
+//	if (topCell)
+//	{
+//		// bottom
+//        CGContextMoveToPoint(context, 0, rect.size.height);
+//        CGContextAddLineToPoint(context, rect.size.width, rect.size.height-0.5);
+//        
+//	}
+//    
+//    if(bottomCell){
+//        // top
+//        //CGContextMoveToPoint(context, 0, 0);
+//		//CGContextAddLineToPoint(context, rect.size.width, 0);
+//    }
+//	
+//	// Draw the lines
+//	CGContextStrokePath(context); 
+//}
+//
 - (void)setTopCell:(BOOL)newTopCell
 {
 	topCell = newTopCell;

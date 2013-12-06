@@ -542,7 +542,7 @@
         cell.commentField.text =@"COMMENTS";
         cell.commentField.userInteractionEnabled = NO;
         cell.commentField.textAlignment = UITextAlignmentCenter;
-        cell.commentField.contentInset = UIEdgeInsetsMake(10,100,0,0);
+        cell.commentField.contentInset = UIEdgeInsetsMake(10,50,0,0);
 
         cell.quantField.text =@"QTY";
         cell.quantField.enabled = NO;
@@ -576,7 +576,7 @@
         cell.commentField.text =@"TOTAL:";
         cell.commentField.userInteractionEnabled = NO;
         cell.commentField.textAlignment = UITextAlignmentCenter;
-        cell.commentField.contentInset = UIEdgeInsetsMake(10,100,0,0);
+        cell.commentField.contentInset = UIEdgeInsetsMake(10,50,0,0);
         
         cell.cell5.text = [formatter stringFromNumber:[NSNumber numberWithFloat:orderTotal]];
         

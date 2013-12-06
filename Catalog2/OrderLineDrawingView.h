@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class OrderLineViewCell;
 @interface OrderLineDrawingView : UIView
 
+@property(nonatomic, retain)OrderLineViewCell *parent;
 @end
