@@ -80,54 +80,21 @@
     //////////////////////////////////////////////////////
     // If there has never been an update make sure it runs
     
+    NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
+    
+    NSNumber *alreadyStartedOnVersion = [[NSUserDefaults standardUserDefaults] objectForKey:appFirstStartOfVersionKey];
+    if(!alreadyStartedOnVersion || [alreadyStartedOnVersion boolValue] == NO) {
+        // first start of the current version
+#ifdef NZVERSION
+#else
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UpdatePrices"];
+#endif
 
-    if( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"])
-    {
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    
-    //////////////////////////////////////////////////////
-    // If there is no version number set it now
-    // the app has been running and this is the first time it's been updated
-    
-//    if(![[NSUserDefaults standardUserDefaults] boolForKey:@"version"]){
-//        [[NSUserDefaults standardUserDefaults]
-//         registerDefaults:[NSDictionary
-//                           dictionaryWithObjectsAndKeys:
-//                           [NSNumber numberWithFloat:1.2f],@"version",
-//                           nil]];
-//        [[NSUserDefaults standardUserDefaults] synchronize];
-//    }
-    
-    
-    ////////////////////////////////////////////////////////
-    // User Defaults if they have never been set
-    // this means the standard sqlite db will be used
-    
-    // firstLaunch will be YES after the App runs once
-    
-    if( ! [[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]){
-//        [[NSUserDefaults standardUserDefaults]
-//         registerDefaults:[NSDictionary 
-//                           dictionaryWithObjectsAndKeys:
-//                            [NSNumber numberWithBool:NO],   @"firstLaunch",
-//                            [NSNumber numberWithBool:YES],  @"playMovie",
-//                            [NSNumber numberWithBool:YES],  @"ud_Movie",
-//                            [NSNumber numberWithBool:NO],   @"UpdatePrices",
-//                            [NSNumber numberWithFloat:1.4f],@"version",
-//                            nil]];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playMovie"];
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ud_Movie"];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
-        [[NSUserDefaults standardUserDefaults] setFloat:1.4f forKey:@"version"];
-
-
-        if([[NSUserDefaults standardUserDefaults] synchronize])
-        {
-            NSLog(@"SYNCHED NSUserDefaults");
-        }
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:appFirstStartOfVersionKey];
+        
+        [[NSUserDefaults standardUserDefaults] synchronize];
     }
     
     
@@ -303,7 +270,7 @@
             {
                 NSLog(@"\n*****\nERROR Copying\n\n\n %@",[copyError localizedDescription]);
             }else{
-                NSLog(@"\n\n+++\nCOPIED sqllite db");
+                NSLog(@"\n\n+++\nCOPIED sqllite db\n %@",shippedStorePath);
             }
             
         }

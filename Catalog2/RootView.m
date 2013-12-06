@@ -65,7 +65,7 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    /*NSLog(@"Appearing View \n %i : %i",[[NSUserDefaults standardUserDefaults] boolForKey:@"ud_Movie"],[[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]);*/
+
     if([[NSUserDefaults standardUserDefaults] boolForKey:@"UpdatePrices"]) // never been updated
     {
         // run the update
@@ -77,8 +77,7 @@
         popUp.navigationBarHidden = YES;
         [self presentViewController:popUp animated:YES completion:nil];
         
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UpdatePrices"];
-        [[NSUserDefaults standardUserDefaults] setFloat:1.4f forKey:@"version"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"UpdatePrices"];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [update release];
         [popUp release];
