@@ -333,10 +333,7 @@
 
     }
     
-   
-    
     // now update the current self.currentOrderLine
-    // NSLog(@"Faceplate update");
     cost += [[self.currentOrderLine valueForKey:@"cost"] floatValue];
     [self.currentOrderLine setValue:[NSNumber numberWithFloat:cost]
                              forKey:@"cost"];
@@ -345,6 +342,19 @@
                              forKey:@"quantity"];
     
     
+    [self.context save:&error];
+}
+
+-(void)setProductCount:(int)count
+{
+    float cost = [[self.currentOrderLine valueForKey:@"cost"] floatValue];
+    
+    [self.currentOrderLine setValue:[NSNumber numberWithFloat:(cost * count)]
+                             forKey:@"cost"];
+    [self.currentOrderLine setValue: [NSNumber numberWithInt:count]
+                             forKey:@"quantity"];
+    
+    NSError *error = nil;
     [self.context save:&error];
 }
 

@@ -29,4 +29,5 @@
 -(void)addFaceplateToDefaultOrder:(NSArray *)faceplate withProductName:(NSString *)productName;
 
 -(void)addNewOrder;
+-(void)setProductCount:(int)count;
 @end
