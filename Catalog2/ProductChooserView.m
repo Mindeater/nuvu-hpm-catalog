@@ -104,14 +104,25 @@
 {
     // add the alert view now
     CollectInfoAlertView *prompt = [CollectInfoAlertView alloc];
-	prompt = [prompt initWithTitle:@"Add Product to Order" message:@"Please enter a note" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+    prompt = [prompt initWithTitle:@"Add Product to Order" message:@"Please enter a note" delegate:self cancelButtonTitle:@"Cancel" okButtonTitle:@"OK"];
+
+#ifdef NZVERSION
     [prompt setTextFieldStyle:UIKeyboardTypeNumberPad];
+    prompt.numberEntry = YES;
+#endif
+	
+    
     [prompt addObserver:self forKeyPath:@"buttonIndex" options:NSKeyValueObservingOptionNew context:nil];
     
     prompt.modalPresentationStyle = UIModalPresentationFormSheet;
     prompt.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:prompt animated:YES completion:nil];
+    
+#ifdef NZVERSION
+    prompt.view.superview.bounds = CGRectMake(0, 0, 300, 220);
+#else
     prompt.view.superview.bounds = CGRectMake(0, 0, 300, 200);
+#endif
 	[prompt release];
     
 }
@@ -356,7 +367,6 @@
     
     if(totalFacePlates == 0 ){
         // 4 gang horizontal has no faceplate
-        //NSLog(@"\n\nNO FACEPLATE !!\n\n");
         // this will never happen because the data has been manipulated to put in an empty faceplate
         vc1.productName = @"";
         [vc1 drawWithItems:[NSArray arrayWithObjects:self.selectedMechanismImage,nil]];
@@ -442,14 +452,23 @@
         
         if([[change objectForKey:@"new"] integerValue] == 1)
         {
-            NSString *entered = [(CollectInfoAlertView *)object enteredText];
+            
+            
             [self.shoppingCart addMechanismsToDefaultOrder:self.mechanismObject
                                            withProductName:self.selectedProductName];
-            [self.shoppingCart addCommentToActiveOrderLine:entered];
             
             if([self.currentFacePlates count] >= 1){
-                [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"] withProductName:self.selectedProductName];
+                [self.shoppingCart addFaceplateToDefaultOrder:[self getObjToScroll:currIndex forEntityName:@"Faceplate"]
+                                              withProductName:self.selectedProductName];
             }
+            
+            NSString *entered = [(CollectInfoAlertView *)object enteredText];
+            [self.shoppingCart addCommentToActiveOrderLine:entered];
+            
+#ifdef NZVERSION
+            NSString *count = [(CollectInfoAlertView *)object enteredCount];
+            [self.shoppingCart setProductCount:[count intValue]];
+#endif
             
             PartView *active = (PartView *)self.navigationController.topViewController;
             [active updateSelectedStatus];
