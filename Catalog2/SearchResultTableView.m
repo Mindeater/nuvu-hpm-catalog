@@ -273,6 +273,7 @@
     }
     [attrString endEditing];
     [label setAttributedText:attrString];
+    [attrString release];
 }
 
 
@@ -328,6 +329,7 @@
             [subPredicates addObject:[NSPredicate predicateWithFormat:@"name CONTAINS[cd] %@", term]];
         }
         NSPredicate *productPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
+        [subPredicates release];
         
         self.filteredListContents = [[[self fetchedResultsController] fetchedObjects] filteredArrayUsingPredicate:productPredicate];
 
@@ -351,6 +353,7 @@
                                       term]];
         }
         NSPredicate *mechPredicate = [NSCompoundPredicate andPredicateWithSubpredicates:subPredicates];
+        [subPredicates release];
         
 //        NSPredicate * mechPredicate = [NSPredicate predicateWithFormat:
 //                                       @"id CONTAINS[cd] %@ || product.brand.heading CONTAINS[cd] %@ || product.category.name CONTAINS[cd] %@ && count = 1",
@@ -401,6 +404,7 @@
 //                                     thisSearch,
 //                                     thisSearch];
         [request setPredicate:coverplatePredicate];
+        [subPredicates release];
         
         ////////////////////////
         // make sure there are no duplicates returned
