@@ -18,6 +18,10 @@
 		580579CB148DB962004C92F4 /* AddPartToOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 580579CA148DB962004C92F4 /* AddPartToOrder.m */; };
 		5821D1C81474AAF1004187E0 /* PartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5821D1C71474AAF1004187E0 /* PartView.m */; };
 		5821D1CE1474FE13004187E0 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5821D1CD1474FE13004187E0 /* QuartzCore.framework */; };
+		5830AF461851424000A334C1 /* Catalog2-NZ.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5830AF451851424000A334C1 /* Catalog2-NZ.sqlite */; };
+		5830AF491851491400A334C1 /* OrderLineDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5830AF481851491400A334C1 /* OrderLineDrawingView.m */; };
+		5830AF4A1851491400A334C1 /* OrderLineDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5830AF481851491400A334C1 /* OrderLineDrawingView.m */; };
+		5830AF4B1851491400A334C1 /* OrderLineDrawingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5830AF481851491400A334C1 /* OrderLineDrawingView.m */; };
 		58509B5414EE2D4D00509C50 /* cart-btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 58509B5314EE2D4D00509C50 /* cart-btn.png */; };
 		585107AA14936DDF005BF016 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 585107A914936DDF005BF016 /* MessageUI.framework */; };
 		5864135A17DDAF8B00B92D78 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5864135917DDAF8B00B92D78 /* Default-568h@2x.png */; };
@@ -65,8 +69,9 @@
 		58A435E214DFE7E600AB8191 /* Linea in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435DB14DFE7E600AB8191 /* Linea */; };
 		58A435EA14E2879100AB8191 /* NuvuDevLogo2.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */; };
 		58A6952E1503376B00424595 /* AppInstructionVideo_4MArch.mov in Resources */ = {isa = PBXBuildFile; fileRef = 58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */; };
-		58AB8A26184EBFE5009568DD /* HPM EXCEL.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A20184EBFE5009568DD /* HPM EXCEL.csv.plist */; };
-		58AB8A27184EBFE5009568DD /* HPM LINEA.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A21184EBFE5009568DD /* HPM LINEA.csv.plist */; };
+		58A92D33184FEDFC005B4503 /* HPM EXCEL.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58A92D31184FEDFC005B4503 /* HPM EXCEL.csv.plist */; };
+		58A92D34184FEDFC005B4503 /* HPM LINEA.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58A92D32184FEDFC005B4503 /* HPM LINEA.csv.plist */; };
+		58A92D36184FF493005B4503 /* nz_map.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58A92D35184FF493005B4503 /* nz_map.plist */; };
 		58AB8A28184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A22184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist */; };
 		58AB8A29184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A23184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist */; };
 		58AB8A2A184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58AB8A24184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist */; };
@@ -417,6 +422,9 @@
 		5821D1C61474AAF0004187E0 /* PartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PartView.h; sourceTree = "<group>"; };
 		5821D1C71474AAF1004187E0 /* PartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartView.m; sourceTree = "<group>"; };
 		5821D1CD1474FE13004187E0 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5830AF451851424000A334C1 /* Catalog2-NZ.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Catalog2-NZ.sqlite"; sourceTree = "<group>"; };
+		5830AF471851491400A334C1 /* OrderLineDrawingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderLineDrawingView.h; sourceTree = "<group>"; };
+		5830AF481851491400A334C1 /* OrderLineDrawingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderLineDrawingView.m; sourceTree = "<group>"; };
 		58509B5314EE2D4D00509C50 /* cart-btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart-btn.png"; sourceTree = "<group>"; };
 		585107A914936DDF005BF016 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		5864135917DDAF8B00B92D78 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -473,8 +481,9 @@
 		58A435DB14DFE7E600AB8191 /* Linea */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Linea; sourceTree = "<group>"; };
 		58A435E914E2879100AB8191 /* NuvuDevLogo2.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = NuvuDevLogo2.mov; sourceTree = "<group>"; };
 		58A6952D1503376B00424595 /* AppInstructionVideo_4MArch.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = AppInstructionVideo_4MArch.mov; sourceTree = "<group>"; };
-		58AB8A20184EBFE5009568DD /* HPM EXCEL.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPM EXCEL.csv.plist"; sourceTree = "<group>"; };
-		58AB8A21184EBFE5009568DD /* HPM LINEA.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPM LINEA.csv.plist"; sourceTree = "<group>"; };
+		58A92D31184FEDFC005B4503 /* HPM EXCEL.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPM EXCEL.csv.plist"; sourceTree = "<group>"; };
+		58A92D32184FEDFC005B4503 /* HPM LINEA.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "HPM LINEA.csv.plist"; sourceTree = "<group>"; };
+		58A92D35184FF493005B4503 /* nz_map.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nz_map.plist; sourceTree = "<group>"; };
 		58AB8A22184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Legrand ARTEOR AUSTRALIAN STYLE.csv.plist"; sourceTree = "<group>"; };
 		58AB8A23184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Legrand ARTEOR ROUND.csv.plist"; sourceTree = "<group>"; };
 		58AB8A24184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Legrand ARTEOR SQUARE.csv.plist"; sourceTree = "<group>"; };
@@ -750,6 +759,7 @@
 		586E4B1C146CC89B00A7C857 /* import */ = {
 			isa = PBXGroup;
 			children = (
+				5830AF451851424000A334C1 /* Catalog2-NZ.sqlite */,
 				58B181D01842CEB100C58815 /* Catalog2.sqlite */,
 				586E4B1D146CC8D700A7C857 /* LoadHPMData.h */,
 				586E4B1E146CC8D700A7C857 /* LoadHPMData.m */,
@@ -801,12 +811,13 @@
 		58AB8A1F184EBFC8009568DD /* NZLists */ = {
 			isa = PBXGroup;
 			children = (
-				58AB8A20184EBFE5009568DD /* HPM EXCEL.csv.plist */,
-				58AB8A21184EBFE5009568DD /* HPM LINEA.csv.plist */,
+				58A92D31184FEDFC005B4503 /* HPM EXCEL.csv.plist */,
+				58A92D32184FEDFC005B4503 /* HPM LINEA.csv.plist */,
 				58AB8A22184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist */,
 				58AB8A23184EBFE5009568DD /* Legrand ARTEOR ROUND.csv.plist */,
 				58AB8A24184EBFE5009568DD /* Legrand ARTEOR SQUARE.csv.plist */,
 				58AB8A25184EBFE5009568DD /* Legrand EXCEL LIFE.csv.plist */,
+				58A92D35184FF493005B4503 /* nz_map.plist */,
 			);
 			name = NZLists;
 			sourceTree = "<group>";
@@ -879,6 +890,8 @@
 				580579CA148DB962004C92F4 /* AddPartToOrder.m */,
 				58A435C914DA331400AB8191 /* OrderLineModal.h */,
 				58A435CA14DA331400AB8191 /* OrderLineModal.m */,
+				5830AF471851491400A334C1 /* OrderLineDrawingView.h */,
+				5830AF481851491400A334C1 /* OrderLineDrawingView.m */,
 			);
 			name = Orders;
 			sourceTree = "<group>";
@@ -1042,6 +1055,9 @@
 					586E4AE1146CC88300A7C857 = {
 						DevelopmentTeam = P4S82J6V69;
 					};
+					58CCE2F7184E9C4600AA75E2 = {
+						DevelopmentTeam = P4S82J6V69;
+					};
 					AE581607162B49B000C24710 = {
 						DevelopmentTeam = P4S82J6V69;
 					};
@@ -1162,10 +1178,12 @@
 				58CCE31E184E9C4700AA75E2 /* excel-life.csv.plist in Resources */,
 				58CCE31F184E9C4700AA75E2 /* bg-btn.png in Resources */,
 				58CCE320184E9C4700AA75E2 /* catalog-btn.png in Resources */,
+				58A92D34184FEDFC005B4503 /* HPM LINEA.csv.plist in Resources */,
 				58CCE321184E9C4700AA75E2 /* photo-btn.png in Resources */,
 				58CCE322184E9C4700AA75E2 /* search-btn.png in Resources */,
 				58CCE323184E9C4700AA75E2 /* setting-btn.png in Resources */,
 				58CCE324184E9C4700AA75E2 /* excel.csv.plist in Resources */,
+				58A92D36184FF493005B4503 /* nz_map.plist in Resources */,
 				58CCE325184E9C4700AA75E2 /* Paint_Sample_Chelsea_Green.jpg in Resources */,
 				58CCE326184E9C4700AA75E2 /* Paint_Sample_Foxdale.jpg in Resources */,
 				58CCE327184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_Half.jpg in Resources */,
@@ -1177,13 +1195,14 @@
 				58AB8A28184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist in Resources */,
 				58CCE32D184E9C4700AA75E2 /* arteor-rd.csv.plist in Resources */,
 				58CCE32E184E9C4700AA75E2 /* Catalog2.sqlite in Resources */,
+				58A92D33184FEDFC005B4503 /* HPM EXCEL.csv.plist in Resources */,
 				58CCE32F184E9C4700AA75E2 /* Wallpaper_blacktiles.jpg in Resources */,
 				58CCE330184E9C4700AA75E2 /* arteor-770.csv.plist in Resources */,
 				58CCE331184E9C4700AA75E2 /* Wallpaper_charcoalemblem.jpg in Resources */,
 				58CCE332184E9C4700AA75E2 /* Wallpaper_curvedstone.jpg in Resources */,
 				58CCE333184E9C4700AA75E2 /* Wallpaper_graphitecaesar.jpg in Resources */,
-				58AB8A26184EBFE5009568DD /* HPM EXCEL.csv.plist in Resources */,
 				58CCE334184E9C4700AA75E2 /* Wallpaper_lightcaesar.jpg in Resources */,
+				5830AF461851424000A334C1 /* Catalog2-NZ.sqlite in Resources */,
 				58CCE335184E9C4700AA75E2 /* Wallpaper_royalbrown.jpg in Resources */,
 				58CCE336184E9C4700AA75E2 /* Wallpaper_stripes.jpg in Resources */,
 				58CCE337184E9C4700AA75E2 /* Wallpaper_whitecaesar.jpg in Resources */,
@@ -1217,7 +1236,6 @@
 				58CCE352184E9C4700AA75E2 /* bt-living.csv.plist in Resources */,
 				58AB8A2B184EBFE5009568DD /* Legrand EXCEL LIFE.csv.plist in Resources */,
 				58CCE353184E9C4700AA75E2 /* Paint_Sample_Wagon_Gold.jpg in Resources */,
-				58AB8A27184EBFE5009568DD /* HPM LINEA.csv.plist in Resources */,
 				58CCE354184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle.jpg in Resources */,
 				58CCE355184E9C4700AA75E2 /* Paint_Sample_Hog_Bristle_tmb.jpg in Resources */,
 				58CCE356184E9C4700AA75E2 /* NuvuDevLogo2.mov in Resources */,
@@ -1333,6 +1351,7 @@
 				586E4AF9146CC88300A7C857 /* AppDelegate.m in Sources */,
 				586E4AFC146CC88300A7C857 /* Catalog2.xcdatamodeld in Sources */,
 				586E4B1F146CC8D700A7C857 /* LoadHPMData.m in Sources */,
+				5830AF491851491400A334C1 /* OrderLineDrawingView.m in Sources */,
 				58C691EC183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */,
 				586E4BDA146EA32700A7C857 /* RootView.m in Sources */,
 				586E4C05146F9D3B00A7C857 /* MechanismView.m in Sources */,
@@ -1373,6 +1392,7 @@
 				58CCE2FA184E9C4600AA75E2 /* AppDelegate.m in Sources */,
 				58CCE2FB184E9C4600AA75E2 /* Catalog2.xcdatamodeld in Sources */,
 				58CCE2FC184E9C4600AA75E2 /* LoadHPMData.m in Sources */,
+				5830AF4B1851491400A334C1 /* OrderLineDrawingView.m in Sources */,
 				58CCE2FD184E9C4600AA75E2 /* CollectInfoAlertView.m in Sources */,
 				58CCE2FE184E9C4600AA75E2 /* RootView.m in Sources */,
 				58CCE2FF184E9C4600AA75E2 /* MechanismView.m in Sources */,
@@ -1405,6 +1425,7 @@
 				AE58160A162B49B000C24710 /* AppDelegate.m in Sources */,
 				AE58160B162B49B000C24710 /* Catalog2.xcdatamodeld in Sources */,
 				AE58160C162B49B000C24710 /* LoadHPMData.m in Sources */,
+				5830AF4A1851491400A334C1 /* OrderLineDrawingView.m in Sources */,
 				58C691ED183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */,
 				AE58160D162B49B000C24710 /* RootView.m in Sources */,
 				AE58160E162B49B000C24710 /* MechanismView.m in Sources */,
@@ -1551,8 +1572,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				PROVISIONING_PROFILE = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1573,8 +1594,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				PROVISIONING_PROFILE = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1637,9 +1658,9 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog3 copy";
-				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1663,8 +1684,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog3 copy";
-				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				PROVISIONING_PROFILE = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -1690,9 +1711,9 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog2 copy";
-				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				PROVISIONING_PROFILE = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
+				"PROVISIONING_PROFILE[sdk=*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1713,8 +1734,8 @@
 					"\"$(SRCROOT)/Catalog2\"",
 				);
 				PRODUCT_NAME = "Catalog2 copy";
-				PROVISIONING_PROFILE = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "66472FEC-1F31-4EE7-A605-BE778F1F3F0A";
+				PROVISIONING_PROFILE = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4ABAD0ED-26FA-4B3D-978D-77AA11B37F5B";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
