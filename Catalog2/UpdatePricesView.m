@@ -19,6 +19,7 @@ static NSString * const kSeperator = @"|";
 @synthesize verbose,output, status;
 @synthesize pLists;
 @synthesize context = _context;
+@synthesize debug = _debug;
 
 -(void)dealloc
 {
@@ -38,6 +39,7 @@ static NSString * const kSeperator = @"|";
 - (void)viewDidLoad
 {
     //[super viewDidLoad];
+    _debug = NO;
     
     self.view = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]] autorelease];
 
@@ -83,10 +85,11 @@ static NSString * const kSeperator = @"|";
     [activityIndicator startAnimating];
 	// Do any additional setup after loading the view.
     
+    // get the file list from the main loader
     LoadHPMData *dataloader = [[LoadHPMData alloc]init];
     self.pLists = dataloader.pListFiles;
     [dataloader release];
-    fileCount = self.pLists.count;
+    fileCount = self.pLists.count -1;
     fileIndex = 0;
     [self startUpdate];
     
@@ -107,8 +110,15 @@ static NSString * const kSeperator = @"|";
 -(void) readNextFile
 {
     // catch completion
-    if(fileIndex +1 == fileCount){
-        [self finishUpdate];
+    if(fileIndex == fileCount){
+        //[self finishUpdate];
+        [self updateStatuswithMessage:@"Finished Update."];
+        [NSTimer scheduledTimerWithTimeInterval:3.0
+                                         target:self
+                                       selector:@selector(finishUpdate)
+                                       userInfo:nil
+                                        repeats:NO];
+
         return;
     }
     [self updateStatuswithMessage:
@@ -118,7 +128,7 @@ static NSString * const kSeperator = @"|";
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),^{
         // process the file
-        NSLog(@"processing %@",[[self.pLists objectAtIndex:fileIndex]objectAtIndex:0]);
+        NSLog(@"\n\n------------------\nprocessing %@\n\n",[[self.pLists objectAtIndex:fileIndex]objectAtIndex:0]);
         [NSThread sleepForTimeInterval:1.0];
         [self processFile];
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -162,7 +172,8 @@ static NSString * const kSeperator = @"|";
         while((product = [catEnum nextObject])){
             NSArray *prodNameParts = [product componentsSeparatedByString:kSeperator];
           
-            NSLog(@"3. - - Product INSERT : %@",product);
+            if(_debug) NSLog(@"3. - - Product INSERT : %@",product);
+            
             NSArray *keys = [[catInBrand objectForKey:catName] objectForKey:product];
 
             // Loop product parts
@@ -173,7 +184,7 @@ static NSString * const kSeperator = @"|";
                 NSString *nextHeading = [[[keys objectAtIndex:i+1] allKeys]    lastObject];
                 NSString *nextValue =   [[[keys objectAtIndex:i+1] allObjects] lastObject];
                 
-                NSLog(@"4. - - - - PART NAME : %@ ->",heading);
+                if(_debug) NSLog(@"4. - - - - PART NAME : %@ ->",heading);
                 
                 if ([heading isEqualToString:@"Mechanism 1"]
                     ||[heading isEqualToString:@"Frame"]
@@ -183,7 +194,9 @@ static NSString * const kSeperator = @"|";
                     if([nextHeading isEqualToString:@"Trade Price"]){
                         if (![value isEqualToString:@""]) {
                             // push in the mechanism
-                            NSLog(@" - Mech %@ price %f",value,[nextValue floatValue]);
+                            
+                            if(_debug) NSLog(@" - Mech %@ price %f",value,[nextValue floatValue]);
+                            
                             //NSLog(@" %d",[@"1" intValue]);
                             // NSLog(@"%@",heading);
                             [self updateEntity:@"Mechanism"
@@ -204,7 +217,7 @@ static NSString * const kSeperator = @"|";
                         //NSNumber *price = [[[productParts objectForKey:[keys objectAtIndex:i+2]]allObjects]lastObject];
                         NSString *price = [[[keys objectAtIndex:i+2] allObjects] lastObject];
                         // push in the mechanism
-                        NSLog(@"5. -  - - - Mechanism %@ price %@ quan %@",value,price,nextValue);
+                        if(_debug) NSLog(@"5. -  - - - Mechanism %@ price %@ quan %@",value,price,nextValue);
                         
                         
                         i+=3;
@@ -216,7 +229,7 @@ static NSString * const kSeperator = @"|";
                     if([nextHeading isEqualToString:@"Trade Price"]){
                         if (![value isEqualToString:@""]) {
                             // push in the FacePlate
-                            NSLog(@"6. - - - - - Plate %@ price %@",value,nextValue);
+                            if(_debug) NSLog(@"6. - - - - - Plate %@ price %@",value,nextValue);
                             
                             
                             i++;
@@ -241,9 +254,11 @@ static NSString * const kSeperator = @"|";
     // entityType will be Faceplate or Mechanism
     // how to make sure the part is uniquly identified ??
     
-    NSLog(@"\n\n%s",__FUNCTION__);
-    NSLog(@"PASSED: \nEntityName:%@\nentityNAmeField:%@\nproductName:%@\nprice:%f",
+    if(_debug) NSLog(@"\n\n%s",__FUNCTION__);
+    
+    if(_debug) NSLog(@"PASSED: \nEntityName:%@\nentityNAmeField:%@\nproductName:%@\nprice:%f",
           entityName,entityNameField,productName,value);
+    
     NSError *error=nil;
     
     
@@ -261,11 +276,14 @@ static NSString * const kSeperator = @"|";
     [request setPredicate:predicate];
     
     NSArray *result = [_context executeFetchRequest:request error:&error];
+    
     [request release];
-    //NSLog(@"%@",result);
+
     if(result.count >0){
         NSManagedObject *retrived = [result objectAtIndex:0];
-        NSLog(@"GOT : %@ price: %f",[retrived valueForKey:@"id"],[[retrived valueForKey:@"price"] doubleValue]);
+        
+        if(_debug) NSLog(@"GOT : %@ price: %f",[retrived valueForKey:@"id"],[[retrived valueForKey:@"price"] doubleValue]);
+        
         if([[retrived valueForKey:@"price"] floatValue] != value){
             [retrived setValue:[NSNumber numberWithFloat:value]
               forKey:@"price"];

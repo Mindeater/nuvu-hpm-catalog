@@ -24,6 +24,7 @@
 @property(nonatomic,retain)UITextField *output;
 @property(nonatomic,retain)UILabel *status;
 @property(nonatomic,retain)NSArray *pLists;
+@property(nonatomic)BOOL debug;
 
 @property(nonatomic,retain)NSManagedObjectContext *context;
 
