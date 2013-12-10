@@ -78,7 +78,7 @@
     }
     
     //////////////////////////////////////////////////////
-    // If there has never been an update make sure it runs
+    // update logic
     
     NSString *bundleVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
     NSString *appFirstStartOfVersionKey = [NSString stringWithFormat:@"first_start_%@", bundleVersion];
@@ -87,11 +87,13 @@
     if(!alreadyStartedOnVersion || [alreadyStartedOnVersion boolValue] == NO) {
         // first start of the current version
 #ifdef NZVERSION
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playMovie"];
 #else
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UpdatePrices"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"playMovie"];
 #endif
 
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"playMovie"];
+        
         [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:appFirstStartOfVersionKey];
         
         [[NSUserDefaults standardUserDefaults] synchronize];
@@ -265,8 +267,7 @@
         // 4. Replace it with our Shipped DB if there is one
         if (shippedStorePath) {
             NSError *copyError = nil;
-//            if(![fileManager copyItemAtPath:shippedStorePath toPath:storePath error:&copyError])
-            if(![fileManager moveItemAtPath:shippedStorePath toPath:storePath error:&copyError])
+            if(![fileManager copyItemAtPath:shippedStorePath toPath:storePath error:&copyError])
             {
                 NSLog(@"\n*****\nERROR Copying\n\n\n %@",[copyError localizedDescription]);
             }else{
