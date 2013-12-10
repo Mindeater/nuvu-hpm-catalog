@@ -56,15 +56,15 @@
   cancelButtonTitle:(NSString *)cancelButtonTitle
       okButtonTitle:(NSString *)okayButtonTitle
 {
-    if([self init])
+    if(self = [self init])
     {
-        self.heading = [[UILabel alloc] init];
+        self.heading = [[[UILabel alloc] init] autorelease];
         [self.heading setText:title];
         [self.heading setFont:[UIFont boldSystemFontOfSize:23.0]];
         self.heading.textAlignment = UITextAlignmentCenter;
-        self.subheading = [[UILabel alloc] init];
+        self.subheading = [[[UILabel alloc] init] autorelease];
         [self.subheading setText:message];
-        self.entry_txt = [[UITextField alloc] initWithFrame:CGRectMake(0,self.subheading.frame.size.height,400,30)];
+        self.entry_txt = [[[UITextField alloc] initWithFrame:CGRectMake(0,self.subheading.frame.size.height,400,30)]autorelease];
         self.cancel_btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         [self.cancel_btn setTitle:cancelButtonTitle forState:UIControlStateNormal];
         self.cancel_btn.tag = 0;
@@ -140,7 +140,7 @@
         UILabel *q_label = [[UILabel alloc] initWithFrame:CGRectMake(5, height, 140, 40)];
         [q_label setText:@"Quantity:"];
         [self.view addSubview:q_label];
-        self.qty_txt = [[UITextField alloc] initWithFrame:CGRectMake(150, height+5, 145, 30)];
+        self.qty_txt = [[[UITextField alloc] initWithFrame:CGRectMake(150, height+5, 145, 30)] autorelease];
         self.qty_txt.delegate = self;
         self.qty_txt.backgroundColor = [UIColor lightGrayColor];
         [self.qty_txt setText:@"1"];
