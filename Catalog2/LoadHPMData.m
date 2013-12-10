@@ -12,6 +12,7 @@
 
 @synthesize context;
 @synthesize pListFiles;
+@synthesize debug = _debug;
 
 
 -(void)dealloc
@@ -99,7 +100,7 @@
                                           [NSNumber numberWithInt:brandMenuOrder++],@"menuOrder",
                                           nil]];
          
-        NSLog(@"1. Brand INSERT : %@",[brand objectAtIndex:1]);
+        if(_debug) NSLog(@"1. Brand INSERT : %@",[brand objectAtIndex:1]);
         
         NSDictionary *catInBrand = [pListData objectForKey:[brand objectAtIndex:0]];
         
@@ -120,7 +121,7 @@
                                               //[NSNumber numberWithInt:categoryMenuOrder++],@"menuOrder",
                                               [NSNumber numberWithInt:[[catNameParts objectAtIndex:1] intValue]],@"menuOrder",
                                               nil]];
-             NSLog(@"2. - Category INSERT : %@",catName);
+             if(_debug) NSLog(@"2. - Category INSERT : %@",catName);
             
             // Loop products
             NSEnumerator *catEnum = [[catInBrand objectForKey:catName] keyEnumerator];
@@ -164,7 +165,7 @@
                                             [NSNumber numberWithInt:[[prodNameParts objectAtIndex:1] intValue]],@"menuOrder",
                                             nil]];
                  
-                NSLog(@"3. - - Product INSERT : %@",product);
+                if(_debug) NSLog(@"3. - - Product INSERT : %@",product);
                 
                 NSArray *keys = [[catInBrand objectForKey:catName] objectForKey:product];
                 
@@ -176,7 +177,7 @@
                     NSString *nextHeading = [[[keys objectAtIndex:i+1] allKeys]    lastObject];
                     NSString *nextValue =   [[[keys objectAtIndex:i+1] allObjects] lastObject];
                     
-                    NSLog(@"4. - - - - PART NAME : %@ ->",heading);
+                    if(_debug) NSLog(@"4. - - - - PART NAME : %@ ->",heading);
                     
                     if ([heading isEqualToString:@"Mechanism 1"]
                         ||[heading isEqualToString:@"Frame"]
@@ -214,7 +215,7 @@
                             //NSNumber *price = [[[productParts objectForKey:[keys objectAtIndex:i+2]]allObjects]lastObject];
                             NSString *price = [[[keys objectAtIndex:i+2] allObjects] lastObject];
                             // push in the mechanism
-                            NSLog(@"5. -  - - - Mechanism %@ price %@ quan %@",value,price,nextValue);
+                            if(_debug) NSLog(@"5. -  - - - Mechanism %@ price %@ quan %@",value,price,nextValue);
                             
                             //NSManagedObject *mechObj = 
                             [self addEntity:@"Mechanism"
@@ -234,7 +235,7 @@
                         if([nextHeading isEqualToString:@"Trade Price"]){
                             if (![value isEqualToString:@""]) {
                                 // push in the FacePlate
-                                NSLog(@"6. - - - - - Plate %@ price %@",value,nextValue);
+                                if(_debug) NSLog(@"6. - - - - - Plate %@ price %@",value,nextValue);
                                 
                                // NSManagedObject *plateObj = 
                                 [self addEntity:@"Faceplate"
@@ -261,6 +262,7 @@
 
 -(id)init
 {
+    _debug = YES;
     
 #ifdef NZVERSION
     self.pListFiles = [NSArray arrayWithObjects:

@@ -16,6 +16,7 @@
 
 @property(nonatomic,retain)NSManagedObjectContext *context;
 @property(nonatomic,retain)NSArray *pListFiles;
+@property(nonatomic)BOOL debug;
 
 
 
