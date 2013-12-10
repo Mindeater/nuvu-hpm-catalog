@@ -88,7 +88,10 @@
     {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+    if( ! countNum)
+    {
     countNum = 1;
+    }
     
     //self.view.backgroundColor = [UIColor redColor];
     self.view.backgroundColor = [UIColor clearColor];
