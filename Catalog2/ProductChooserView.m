@@ -28,6 +28,7 @@
 @synthesize vc1,vc2,vc3;
 @synthesize currIndex,prevIndex,nextIndex;
 @synthesize selectedProductIndex;
+@synthesize searchedResult;
 @synthesize vcIndex;
 
 
@@ -170,7 +171,7 @@
     //NSLog(@"\n^Chooser 1.^^^^^^\n Nav Controller :%@ \nNav Bar : %@^^^^^^^^^^\n\n",
       //    self.navigationItem, self.navigationController.navigationBar);
     
-    self.view.backgroundColor = [UIColor redColor];
+    //self.view.backgroundColor = [UIColor redColor];
     
     
     /////////////////////////////
@@ -188,10 +189,31 @@
     self.currentEntityName = @"Mechanism";
     
     // set up the current Index
-    prevIndex = [_fetchedResultsController.fetchedObjects count]-1;
-    currIndex = 0;
-    nextIndex = 1;
-    
+    if(self.searchedResult != nil)
+    {
+        currIndex = [_fetchedResultsController indexPathForObject:self.searchedResult].row;
+        if(currIndex == [_fetchedResultsController.fetchedObjects count]-1)
+        {
+            prevIndex = currIndex -1;
+            nextIndex = 0;
+        }
+        else if( currIndex == 0)
+        {
+            prevIndex = [_fetchedResultsController.fetchedObjects count]-1;
+            nextIndex = currIndex +1;
+        }
+        else
+        {
+            prevIndex = currIndex -1;
+            nextIndex = currIndex +1;
+        }
+        
+    }else{
+        // no search result
+        prevIndex = [_fetchedResultsController.fetchedObjects count]-1;
+        currIndex = 0;
+        nextIndex = 1;
+    }
 
     /*
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -210,6 +232,7 @@
     vc2.productName = [[_fetchedResultsController.fetchedObjects 
                         objectAtIndex:currIndex] 
                        valueForKey:@"name"];
+    vc2.countNum = currIndex +1;
     vc3.productName = [[_fetchedResultsController.fetchedObjects 
                         objectAtIndex:nextIndex] 
                        valueForKey:@"name"];

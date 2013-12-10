@@ -25,6 +25,7 @@
 	int nextIndex;
         
     int selectedProductIndex;
+    NSManagedObject *searchedResult;
     
     int vcIndex;
     
@@ -49,6 +50,7 @@
 
 @property(nonatomic,retain)NSString *currentBrand;
 @property(nonatomic,retain)NSString *currentCategory;
+
 @property(nonatomic,retain)NSString *currentEntityName;
 
 @property (nonatomic) int prevIndex;
@@ -56,6 +58,7 @@
 @property (nonatomic) int nextIndex;
 
 @property(nonatomic)int selectedProductIndex;
+@property(nonatomic, retain)NSManagedObject *searchedResult;
 
 @property(nonatomic)int vcIndex;
 
