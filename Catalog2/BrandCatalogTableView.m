@@ -47,7 +47,8 @@
     
     NSFetchedResultsController *theFetchedResultsController = 
     [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest 
-                                        managedObjectContext:_context sectionNameKeyPath:nil 
+                                        managedObjectContext:_context
+                                          sectionNameKeyPath:nil
                                                    cacheName:@"Brands"];
     
     
@@ -277,9 +278,6 @@
     
     NSArray *sortedResult = [[[sectionBrand valueForKey:@"category"] allObjects]sortedArrayUsingDescriptors:sortDescriptors];
     
-    //NSLog(@"\n\n\n\n SORTED RESULT ** \n\n%@\n\n",sortedResult);
-    // NSManagedObject *category = [[[sectionBrand valueForKey:@"category"] allObjects]objectAtIndex:indexPath.row];
-    //cell.textLabel.text = [category valueForKey:@"name"];
     cell.textLabel.text = [[sortedResult objectAtIndex:indexPath.row] valueForKey:@"name"];
 
     // custom coloring
