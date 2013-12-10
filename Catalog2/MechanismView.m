@@ -92,11 +92,9 @@
             // mechanism with more than one part
             
             // catch the Dedicated Plate mechanisms which have different images
-           /* NSLog(@"[[[[[[ - %u v %u",
-                  [[mech valueForKey:@"name"] rangeOfString:@"EXCEL LIFE DEDICATED PLATE"].location,
-                  NSNotFound);
-            */
-            if([self.productName rangeOfString:@"EXCEL LIFE DEDICATED PLATE"].location == NSNotFound){
+            if([self.categoryName rangeOfString:@"Dedicated Plate Vertical Switches"].location == NSNotFound){
+
+            //if([self.productName rangeOfString:@"EXCEL LIFE DEDICATED PLATE"].location == NSNotFound){
                 img = [NSString stringWithFormat:@"%@-x-%@",
                        [mech valueForKey:@"count"],
                        [[mech valueForKey:@"id"]
