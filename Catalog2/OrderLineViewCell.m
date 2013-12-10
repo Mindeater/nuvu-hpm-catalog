@@ -133,7 +133,7 @@
         [self addSubview:quantField];
         [self addSubview:commentField];
         [self addSubview:cell5];
-        self.backgroundView = [[OrderLineDrawingView alloc]initWithFrame:self.contentView.bounds];
+        self.backgroundView = [[[OrderLineDrawingView alloc]initWithFrame:self.contentView.bounds] autorelease];
         OrderLineDrawingView *bg = (OrderLineDrawingView *)self.backgroundView;
         bg.parent = self;
         bg.backgroundColor = [UIColor clearColor];
