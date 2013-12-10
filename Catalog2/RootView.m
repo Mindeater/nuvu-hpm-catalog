@@ -362,6 +362,7 @@
     UIView *aView = [[UIView alloc] initWithFrame:moviePlayer.view.bounds];
     [aView addGestureRecognizer:tap];
     [moviePlayer.view addSubview:aView];
+    [moviePlayer play];
     //[moviePlayer.view addGestureRecognizer:tap];
     [tap release];
     [aView release];
