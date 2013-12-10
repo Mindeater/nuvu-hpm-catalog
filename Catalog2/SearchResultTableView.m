@@ -587,10 +587,9 @@
                                                  valueForKey:@"name"];
             detailViewController.currentCategory = [[currentRecord valueForKey:@"category"]
                                                     valueForKey:@"name"];
+            detailViewController.searchedResult = currentRecord;
             detailViewController.context = self.context;
-            // detailViewController.managedObject = [_fetchedResultsController objectAtIndexPath:indexPath];
-            // ...
-            // Pass the selected object to the new view controller.
+
             
             [self.LINK.navigationController pushViewController:detailViewController animated:NO];
             [detailViewController release];
