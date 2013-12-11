@@ -59,6 +59,8 @@
 		5896F96414C8283500C23665 /* Paint_Sample_Wagon_Gold.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F96214C8283400C23665 /* Paint_Sample_Wagon_Gold.jpg */; };
 		5896F96614C828A200C23665 /* Paint_Sample_Hog_Bristle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F96514C828A100C23665 /* Paint_Sample_Hog_Bristle.jpg */; };
 		5896F96814C82B1000C23665 /* Paint_Sample_Hog_Bristle_tmb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5896F96714C82B0F00C23665 /* Paint_Sample_Hog_Bristle_tmb.jpg */; };
+		58A28C6E18571BB40039FD28 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58A28C6D18571BB40039FD28 /* Catalog2.sqlite */; };
+		58A28C6F18571BB40039FD28 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58A28C6D18571BB40039FD28 /* Catalog2.sqlite */; };
 		58A435CB14DA331400AB8191 /* OrderLineModal.m in Sources */ = {isa = PBXBuildFile; fileRef = 58A435CA14DA331400AB8191 /* OrderLineModal.m */; };
 		58A435DC14DFE7E600AB8191 /* Arteor770 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435D514DFE7E500AB8191 /* Arteor770 */; };
 		58A435DD14DFE7E600AB8191 /* ArteorRD in CopyFiles */ = {isa = PBXBuildFile; fileRef = 58A435D614DFE7E500AB8191 /* ArteorRD */; };
@@ -92,8 +94,6 @@
 		58B181CD1842B55B00C58815 /* excel.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BE1842B55B00C58815 /* excel.csv.plist */; };
 		58B181CE1842B55B00C58815 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BF1842B55B00C58815 /* linea.csv.plist */; };
 		58B181CF1842B55B00C58815 /* linea.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181BF1842B55B00C58815 /* linea.csv.plist */; };
-		58B181D11842CEB100C58815 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58B181D01842CEB100C58815 /* Catalog2.sqlite */; };
-		58B181D21842CEB100C58815 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58B181D01842CEB100C58815 /* Catalog2.sqlite */; };
 		58C691EC183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
 		58C691ED183E2FC7002FEA8A /* CollectInfoAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */; };
 		58CCE2F9184E9C4600AA75E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 586E4AF4146CC88300A7C857 /* main.m */; };
@@ -147,7 +147,6 @@
 		58CCE32B184E9C4700AA75E2 /* Paint_Sample_whitewall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CA149A075B009E89EB /* Paint_Sample_whitewall.jpg */; };
 		58CCE32C184E9C4700AA75E2 /* Paint_Sample_Woodland_Grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CB149A075B009E89EB /* Paint_Sample_Woodland_Grey.jpg */; };
 		58CCE32D184E9C4700AA75E2 /* arteor-rd.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B91842B55B00C58815 /* arteor-rd.csv.plist */; };
-		58CCE32E184E9C4700AA75E2 /* Catalog2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 58B181D01842CEB100C58815 /* Catalog2.sqlite */; };
 		58CCE32F184E9C4700AA75E2 /* Wallpaper_blacktiles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CC149A075B009E89EB /* Wallpaper_blacktiles.jpg */; };
 		58CCE330184E9C4700AA75E2 /* arteor-770.csv.plist in Resources */ = {isa = PBXBuildFile; fileRef = 58B181B81842B55B00C58815 /* arteor-770.csv.plist */; };
 		58CCE331184E9C4700AA75E2 /* Wallpaper_charcoalemblem.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 58CD95CD149A075B009E89EB /* Wallpaper_charcoalemblem.jpg */; };
@@ -470,6 +469,7 @@
 		5896F96214C8283400C23665 /* Paint_Sample_Wagon_Gold.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Wagon_Gold.jpg; sourceTree = "<group>"; };
 		5896F96514C828A100C23665 /* Paint_Sample_Hog_Bristle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Hog_Bristle.jpg; sourceTree = "<group>"; };
 		5896F96714C82B0F00C23665 /* Paint_Sample_Hog_Bristle_tmb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Paint_Sample_Hog_Bristle_tmb.jpg; sourceTree = "<group>"; };
+		58A28C6D18571BB40039FD28 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58A435C914DA331400AB8191 /* OrderLineModal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderLineModal.h; sourceTree = "<group>"; };
 		58A435CA14DA331400AB8191 /* OrderLineModal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderLineModal.m; sourceTree = "<group>"; };
 		58A435D514DFE7E500AB8191 /* Arteor770 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Arteor770; sourceTree = "<group>"; };
@@ -496,7 +496,6 @@
 		58B181BD1842B55B00C58815 /* excel-life.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "excel-life.csv.plist"; sourceTree = "<group>"; };
 		58B181BE1842B55B00C58815 /* excel.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = excel.csv.plist; sourceTree = "<group>"; };
 		58B181BF1842B55B00C58815 /* linea.csv.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = linea.csv.plist; sourceTree = "<group>"; };
-		58B181D01842CEB100C58815 /* Catalog2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Catalog2.sqlite; sourceTree = "<group>"; };
 		58C691EA183E2FC7002FEA8A /* CollectInfoAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectInfoAlertView.h; sourceTree = "<group>"; };
 		58C691EB183E2FC7002FEA8A /* CollectInfoAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectInfoAlertView.m; sourceTree = "<group>"; };
 		58CCE369184E9C4700AA75E2 /* Catalog3 copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catalog3 copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -759,8 +758,8 @@
 		586E4B1C146CC89B00A7C857 /* import */ = {
 			isa = PBXGroup;
 			children = (
+				58A28C6D18571BB40039FD28 /* Catalog2.sqlite */,
 				5830AF451851424000A334C1 /* Catalog2-NZ.sqlite */,
-				58B181D01842CEB100C58815 /* Catalog2.sqlite */,
 				586E4B1D146CC8D700A7C857 /* LoadHPMData.h */,
 				586E4B1E146CC8D700A7C857 /* LoadHPMData.m */,
 				58E76F92147E6203002D6504 /* CheckProductsForImages.h */,
@@ -1116,7 +1115,7 @@
 				58E01B33149D89350016C7F9 /* Paint_Sample_Chelsea_Green_tmb.jpg in Resources */,
 				58E01B34149D89350016C7F9 /* Paint_Sample_Foxdale_tmb.jpg in Resources */,
 				58B181C21842B55B00C58815 /* arteor-rd.csv.plist in Resources */,
-				58B181D11842CEB100C58815 /* Catalog2.sqlite in Resources */,
+				58A28C6E18571BB40039FD28 /* Catalog2.sqlite in Resources */,
 				58E01B35149D89350016C7F9 /* Paint_Sample_Hog_Bristle_Half_tmb.jpg in Resources */,
 				58E01B36149D89350016C7F9 /* Paint_Sample_Pollywaffle_tmb.jpg in Resources */,
 				58E01B37149D89350016C7F9 /* Paint_Sample_Rapid_Fire_tmb.jpg in Resources */,
@@ -1194,7 +1193,6 @@
 				58CCE32C184E9C4700AA75E2 /* Paint_Sample_Woodland_Grey.jpg in Resources */,
 				58AB8A28184EBFE5009568DD /* Legrand ARTEOR AUSTRALIAN STYLE.csv.plist in Resources */,
 				58CCE32D184E9C4700AA75E2 /* arteor-rd.csv.plist in Resources */,
-				58CCE32E184E9C4700AA75E2 /* Catalog2.sqlite in Resources */,
 				58A92D33184FEDFC005B4503 /* HPM EXCEL.csv.plist in Resources */,
 				58CCE32F184E9C4700AA75E2 /* Wallpaper_blacktiles.jpg in Resources */,
 				58CCE330184E9C4700AA75E2 /* arteor-770.csv.plist in Resources */,
@@ -1273,7 +1271,7 @@
 				AE581636162B49B000C24710 /* Paint_Sample_whitewall.jpg in Resources */,
 				AE581637162B49B000C24710 /* Paint_Sample_Woodland_Grey.jpg in Resources */,
 				58B181C31842B55B00C58815 /* arteor-rd.csv.plist in Resources */,
-				58B181D21842CEB100C58815 /* Catalog2.sqlite in Resources */,
+				58A28C6F18571BB40039FD28 /* Catalog2.sqlite in Resources */,
 				AE581638162B49B000C24710 /* Wallpaper_blacktiles.jpg in Resources */,
 				58B181C11842B55B00C58815 /* arteor-770.csv.plist in Resources */,
 				AE581639162B49B000C24710 /* Wallpaper_charcoalemblem.jpg in Resources */,
